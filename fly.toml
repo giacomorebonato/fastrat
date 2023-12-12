@@ -7,6 +7,7 @@ app = "fastrat"
 primary_region = "ams"
 
 [env]
+  HOST = "0.0.0.0"
   SITE_URL = "https://fastrat.fly.dev"
 
 [build]
