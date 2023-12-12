@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"noUnusedLocals": true,
+		"allowSyntheticDefaultImports": true,
+		"jsx": "react-jsx",
+		"esModuleInterop": true,
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"forceConsistentCasingInFileNames": true,
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"noEmit": true,
+		"paths": {
+			"#*": ["./src/*"]
+		},
+		"strict": true,
+		"skipLibCheck": true,
+		"useDefineForClassFields": true,
+		"target": "ESNext",
+		"types": ["vite/client"]
+	},
+	"exclude": ["dist/"]
+}
