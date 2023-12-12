@@ -4,6 +4,15 @@ import vike from 'vike/plugin'
 import { type UserConfig } from 'vite'
 
 const config: UserConfig = {
+	buildSteps: [
+		{ name: 'client' },
+		{
+			config: {
+				build: { ssr: true },
+			},
+			name: 'server',
+		},
+	],
 	plugins: [
 		vavite({
 			handlerEntry: 'src/index.ts',
