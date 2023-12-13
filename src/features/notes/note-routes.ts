@@ -12,13 +12,13 @@ export const noteRouter = router({
 				id: z.string(),
 			}),
 		)
-		.mutation(({ ctx, input }) => {
-			const result = ctx.db
+		.mutation(async ({ ctx, input }) => {
+			const result = await ctx.db
 				.delete(noteSchema)
 				.where(eq(noteSchema.id, input.id))
 				.run()
 
-			if (result.changes === 0) {
+			if (result.rowsAffected === 0) {
 				throw new TRPCError({ code: 'NOT_FOUND' })
 			}
 
@@ -26,8 +26,8 @@ export const noteRouter = router({
 		}),
 	get: publicProcedure
 		.input(z.object({ id: z.string() }))
-		.query(({ ctx, input }) => {
-			const note = ctx.db
+		.query(async ({ ctx, input }) => {
+			const note = await ctx.db
 				.select()
 				.from(noteSchema)
 				.where(eq(noteSchema.id, input.id))
@@ -39,8 +39,8 @@ export const noteRouter = router({
 
 			return note
 		}),
-	list: publicProcedure.query(({ ctx }) => {
-		const notes = ctx.db.select().from(noteSchema)
+	list: publicProcedure.query(async ({ ctx }) => {
+		const notes = await ctx.db.select().from(noteSchema)
 
 		return notes
 	}),
@@ -52,7 +52,7 @@ export const noteRouter = router({
 			}),
 		)
 		.mutation(async ({ ctx, input }) => {
-			const note = ctx.db
+			const note = await ctx.db
 				.insert(noteSchema)
 				.values({ ...input, updatedAt: new Date() })
 				.returning()

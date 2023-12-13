@@ -1,11 +1,15 @@
 import Path from 'node:path'
+import { createClient } from '@libsql/client'
+import { env } from '#features/server/env'
 import appRootPath from 'app-root-path'
-import Database from 'better-sqlite3'
-import { drizzle, type BetterSQLite3Database } from 'drizzle-orm/better-sqlite3'
-import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
+import { drizzle } from 'drizzle-orm/libsql'
+import { migrate } from 'drizzle-orm/libsql/migrator'
 
-export const sqliteDb = new Database('sqlite.db')
+const client = createClient({
+	authToken: env.TURSO_DB_AUTH_TOKEN,
+	url: env.TURSO_DB_URL,
+})
 
-export const db: BetterSQLite3Database = drizzle(sqliteDb)
+export const db = drizzle(client)
 
 migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'drizzle') })

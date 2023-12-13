@@ -1,5 +1,6 @@
-import { trpcClient } from '#features/browser/trpc-client'
+import { useQueryClient } from '@tanstack/react-query'
 import { Link } from '#features/browser/link'
+import { trpcClient } from '#features/browser/trpc-client'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import { ComponentType, useRef, useState } from 'react'
@@ -25,8 +26,19 @@ export const NotesView = function NotesView() {
 			toast(`Deleted note ${variables.id}`)
 		},
 	})
+	const queryClient = useQueryClient()
 	const upsertNote = trpcClient.note.upsert.useMutation({
 		onSuccess(note) {
+			queryClient.setQueryData(
+				[['note', 'list'], { type: 'query' }],
+				(oldData: typeof getNotes.data) => {
+					if (!oldData) {
+						return [note]
+					}
+					return [...oldData, note]
+				},
+			)
+
 			navigate(`/notes/${note.id}`)
 		},
 	})
@@ -78,7 +90,7 @@ export const NotesView = function NotesView() {
 
 	return (
 		<div
-			className='grid grid-flow-row grid-cols-1 gap-1 p-2'
+			className='grid grid-flow-row grid-cols-1 gap-1 p-4'
 			style={{
 				viewTransitionName: 'hero',
 			}}
@@ -87,7 +99,7 @@ export const NotesView = function NotesView() {
 				<span className='loading loading-dots loading-sm' />
 			) : (
 				<button
-					className='btn btn-secondary'
+					className='btn btn-secondary btn-sm'
 					onClick={() => {
 						upsertNote.mutate({
 							content: 'Write something',
@@ -100,7 +112,7 @@ export const NotesView = function NotesView() {
 			)}
 
 			{getNotes.data && (
-				<div className='h-[calc(100vh-128px)]'>
+				<div className='h-[calc(100vh-160px)]'>
 					<AutoSizer>
 						{({ height, width }) => {
 							return (
@@ -119,18 +131,4 @@ export const NotesView = function NotesView() {
 			)}
 		</div>
 	)
-}
-
-function getContent(text?: string) {
-	if (!text) {
-		return undefined
-	}
-	try {
-		return JSON.parse(text)
-	} catch {
-		// eslint-disable-next-line no-console
-		// console.error(error)
-	}
-
-	return undefined
 }

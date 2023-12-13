@@ -4,6 +4,6 @@ import type { Config } from 'drizzle-kit'
 
 export default {
 	schema: Path.join(Root.path, 'src', 'features', 'db', 'schema.ts'),
-	driver: 'better-sqlite',
+	driver: 'turso',
 	out: './drizzle',
 } satisfies Config

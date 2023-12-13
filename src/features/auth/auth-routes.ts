@@ -2,6 +2,7 @@ import { publicProcedure, router } from '#features/server/trpc-server'
 import { insertUserSchema, userSchema } from './user-schema'
 
 export const authRouter = router({
+	profile: publicProcedure.query(({ ctx }) => {}),
 	signUp: publicProcedure
 		.input(insertUserSchema)
 		.mutation(async ({ ctx, input }) => {

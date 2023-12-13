@@ -5,6 +5,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import { trpcClient } from '#features/browser/trpc-client'
 import { useEffect, useRef, useState } from 'react'
 import { useDebounce } from 'react-use'
+import { match, P } from 'ts-pattern'
 
 const getContent = (text?: string) => {
 	if (!text) {
@@ -81,6 +82,9 @@ const BlockNoteText = (props: {
 					})
 				})
 			},
+			onEditorReady(editor) {
+				editor.focus()
+			},
 		},
 		[props.id, props.content],
 	)
@@ -96,16 +100,22 @@ export function CreateNoteView(props: { id: string }) {
 
 	return (
 		<div className='p-4'>
-			<BlockNoteText
-				content={getNote.data?.content ?? ''}
-				id={props.id}
-				onChange={() => {
-					statusRef.current!.innerText! = 'Writing...'
-				}}
-				onSave={() => {
-					statusRef.current!.innerText! = 'Saved'
-				}}
-			/>
+			{match(getNote)
+				.with({ isLoading: true }, () => <span>Loading</span>)
+				.with({ data: P.not(undefined) }, () => (
+					<BlockNoteText
+						content={getNote.data!.content ?? ''}
+						id={props.id}
+						onChange={() => {
+							statusRef.current!.innerText! = 'Writing...'
+						}}
+						onSave={() => {
+							statusRef.current!.innerText! = 'Saved'
+						}}
+					/>
+				))
+				.otherwise(() => null)}
+
 			<div className='text-end'>
 				<span ref={statusRef} />
 			</div>

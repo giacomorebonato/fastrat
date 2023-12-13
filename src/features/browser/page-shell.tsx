@@ -43,20 +43,20 @@ export function PageShell({
 		<React.StrictMode>
 			<trpcClient.Provider client={apiClient} queryClient={queryClient}>
 				<QueryClientProvider client={queryClient}>
-						<Layout>
-							<main>{children}</main>
-							<ToastContainer
-								bodyClassName={() => 'text-sm font-white font-med block p-3'}
-								position='bottom-right'
-								toastClassName={(item) => {
-									return clsx(
-										contextClass[item?.type || 'default'],
-										'relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer my-2',
-									)
-								}}
-							/>
-						</Layout>
-						<ReactQueryDevtools buttonPosition='bottom-right' />
+					<Layout>
+						<main>{children}</main>
+						<ToastContainer
+							bodyClassName={() => 'text-sm font-white font-med block p-3'}
+							position='bottom-right'
+							toastClassName={(item) => {
+								return clsx(
+									contextClass[item?.type || 'default'],
+									'relative flex p-1 min-h-10 rounded-md justify-between overflow-hidden cursor-pointer my-2',
+								)
+							}}
+						/>
+					</Layout>
+					<ReactQueryDevtools buttonPosition='bottom-right' />
 				</QueryClientProvider>
 			</trpcClient.Provider>
 		</React.StrictMode>
@@ -123,19 +123,14 @@ function Layout({ children }: { children: React.ReactNode }) {
 					</li>
 				</ul>
 			</div>
-			<dialog className='modal' id='login-modal' ref={dialogRef}>
-				<div className='modal-box'>
-					<h3 className='text-lg font-bold'>Hello!</h3>
-					<p className='py-4'>
-						Press ESC key or click the button below to close
-					</p>
-					<div className='modal-action'>
-						<form method='dialog'>
-							{/* if there is a button in form, it will close the modal */}
-							<button className='btn'>Close</button>
-						</form>
-					</div>
+
+			<dialog className='modal' id='my_modal_2' ref={dialogRef}>
+				<div className='modal-box grid grid-cols-1'>
+					<a href='/login/google'>Login with Google</a>
 				</div>
+				<form className='modal-backdrop' method='dialog'>
+					<button>close</button>
+				</form>
 			</dialog>
 		</div>
 	)
