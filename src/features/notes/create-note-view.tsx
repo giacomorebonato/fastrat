@@ -98,6 +98,8 @@ export function CreateNoteView(props: { id: string }) {
 		id: props.id,
 	})
 
+	console.log(`props.id: ${props.id}`)
+
 	return (
 		<div className='p-4'>
 			{match(getNote)
