@@ -1,1 +1,0 @@
-ALTER TABLE notes ADD `title` text;

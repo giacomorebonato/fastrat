@@ -21,12 +21,11 @@ export async function createServer(options: { env: Env }) {
 	}
 
 	await server
-		.register(import('fastify-graceful-shutdown'))
-		.register(import('@fastify/websocket'))
 		.register(import('@fastify/cookie'), {
 			hook: 'onRequest',
 			secret: options.env.SECRET,
 		})
+		.register(import('@fastify/websocket'))
 		.register(googleAuth)
 		.register(fastifyTRPCPlugin, {
 			prefix: '/trpc',
@@ -49,13 +48,6 @@ export async function createServer(options: { env: Env }) {
 		}
 
 		void reply.code(statusCode).send(body)
-	})
-
-	server.after(() => {
-		server.gracefulShutdown((signal, next) => {
-			server.log.info(`Graceful shutdown`)
-			next()
-		})
 	})
 
 	await server.ready()

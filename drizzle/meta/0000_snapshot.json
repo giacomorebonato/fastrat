@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "c082f3c9-458c-4345-a836-37d1fa99e27f",
+  "id": "f05b6599-72f6-4096-8ed5-0672db4d9a44",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "notes": {
@@ -28,6 +28,13 @@
           "notNull": true,
           "autoincrement": false
         },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
         "updated_at": {
           "name": "updated_at",
           "type": "integer",
@@ -41,11 +48,18 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "user_keys": {
-      "name": "user_keys",
+    "user": {
+      "name": "user",
       "columns": {
-        "hashed_password": {
-          "name": "hashed_password",
+        "created_at": {
+          "name": "created_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "email": {
+          "name": "email",
           "type": "text",
           "primaryKey": false,
           "notNull": false,
@@ -58,43 +72,11 @@
           "notNull": true,
           "autoincrement": false
         },
-        "user_id": {
-          "name": "user_id",
-          "type": "text",
+        "updated_at": {
+          "name": "updated_at",
+          "type": "integer",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "user_sessions": {
-      "name": "user_sessions",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "text",
-          "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "users": {
-      "name": "users",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "text",
-          "primaryKey": true,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         }
       },

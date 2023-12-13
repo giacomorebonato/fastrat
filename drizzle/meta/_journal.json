@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1700568099030,
-      "tag": "0000_handy_changeling",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1702113575164,
-      "tag": "0001_chemical_swordsman",
+      "when": 1702508572799,
+      "tag": "0000_purple_wildside",
       "breakpoints": true
     }
   ]

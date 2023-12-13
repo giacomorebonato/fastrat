@@ -57,7 +57,8 @@ export const googleAuth = fastifyPlugin(async (fastify) => {
 				const userData = await response.json()
 				const googleUser = googleUserSchema.parse(userData)
 
-				db.insert(userSchema)
+				await db
+					.insert(userSchema)
 					.values({
 						email: googleUser.email,
 						id: Crypto.randomUUID(),
@@ -69,13 +70,14 @@ export const googleAuth = fastifyPlugin(async (fastify) => {
 						target: userSchema.id,
 					})
 
-				reply.setCookie('user', '', {
-					httpOnly: true,
-					secure: env.NODE_ENV === 'production',
-					signed: env.NODE_ENV === 'production',
-				})
-
-				reply.redirect('/')
+				reply
+					.setCookie('user', 'parallo', {
+						httpOnly: true,
+						path: '/',
+						secure: env.NODE_ENV === 'production',
+						signed: env.NODE_ENV === 'production',
+					})
+					.redirect('/')
 			},
 		)
 	})

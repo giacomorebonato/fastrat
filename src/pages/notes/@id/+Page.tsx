@@ -1,5 +1,7 @@
 import { NotesView } from '#features/notes/notes-view'
-import { ClientOnly } from '#features/server/client-only'
+import { ClientOnly } from 'vike-react/ClientOnly'
+
+// import { ClientOnly } from '#features/server/client-only'
 
 export function Page({ noteId }: { noteId: string }) {
 	return (
@@ -7,16 +9,15 @@ export function Page({ noteId }: { noteId: string }) {
 			<NotesView />
 
 			<ClientOnly
-				component={async () =>
+				fallback={<span>Loading</span>}
+				load={async () =>
 					await import('#features/notes/create-note-view').then((c) => ({
 						default: c.CreateNoteView,
 					}))
 				}
-				componentProps={{
-					id: noteId,
-				}}
-				fallback={() => <span>Loading</span>}
-			/>
+			>
+				{(Component) => <Component id={noteId} />}
+			</ClientOnly>
 		</div>
 	)
 }
