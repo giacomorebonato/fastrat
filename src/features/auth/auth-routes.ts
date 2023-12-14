@@ -1,21 +1,12 @@
 import { publicProcedure, router } from '#features/server/trpc-server'
-import { insertUserSchema, userSchema } from './user-schema'
 
 export const authRouter = router({
-	profile: publicProcedure.query(({ ctx }) => {}),
-	signUp: publicProcedure
-		.input(insertUserSchema)
-		.mutation(async ({ ctx, input }) => {
-			const result = ctx.db
-				.insert(userSchema)
-				.values(input)
-				.onConflictDoUpdate({
-					set: {
-						lastLoginAt: new Date(),
-					},
-					target: userSchema.id,
-				})
+	logout: publicProcedure.mutation(({ ctx }) => {
+		ctx.reply.clearCookie('user')
 
-			return {}
-		}),
+		return
+	}),
+	profile: publicProcedure.query(({ ctx }) => {
+		return ctx.user
+	}),
 })

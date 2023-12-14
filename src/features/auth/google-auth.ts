@@ -4,6 +4,7 @@ import { db } from '#features/db/db'
 import { env } from '#features/server/env'
 import { fastifyPlugin } from 'fastify-plugin'
 import { z } from 'zod'
+import { createToken } from './create-token'
 import { userSchema } from './user-schema'
 
 export const googleUserSchema = z.object({
@@ -50,18 +51,19 @@ export const googleAuth = fastifyPlugin(async (fastify) => {
 					'https://www.googleapis.com/oauth2/v2/userinfo',
 					{
 						headers: {
-							Authorization: 'Bearer ' + result.token.access_token,
+							Authorization: `Bearer ${result.token.access_token}`,
 						},
 					},
 				)
 				const userData = await response.json()
 				const googleUser = googleUserSchema.parse(userData)
+				const userId = Crypto.randomUUID()
 
 				await db
 					.insert(userSchema)
 					.values({
 						email: googleUser.email,
-						id: Crypto.randomUUID(),
+						id: userId,
 					})
 					.onConflictDoUpdate({
 						set: {
@@ -69,9 +71,20 @@ export const googleAuth = fastifyPlugin(async (fastify) => {
 						},
 						target: userSchema.id,
 					})
+				const token = createToken(
+					{
+						email: googleUser.email,
+						userId,
+					},
+					env.SECRET,
+				)
+				const inSevenDays = new Date()
+
+				inSevenDays.setDate(inSevenDays.getDate() + 7)
 
 				reply
-					.setCookie('user', 'parallo', {
+					.setCookie('user', token, {
+						expires: inSevenDays,
 						httpOnly: true,
 						path: '/',
 						secure: env.NODE_ENV === 'production',
