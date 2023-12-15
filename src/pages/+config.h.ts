@@ -1,4 +1,5 @@
 import { PageShell } from '#features/browser/page-shell'
+import { env } from '#features/server/env'
 // import logoUrl from '../assets/logo.svg'
 import vikeReact from 'vike-react'
 import type { Config } from 'vike/types'
@@ -16,5 +17,5 @@ export default {
 
 	// Head,
 	// <title>
-	title: 'FastRat',
+	title: env.NODE_ENV === 'production' ? 'FastRat' : 'FastRat Local',
 } satisfies Config
