@@ -4,6 +4,7 @@ import { db } from '#features/db/db'
 import { env } from '#features/server/env'
 import { fastifyPlugin } from 'fastify-plugin'
 import { z } from 'zod'
+import { USER_TOKEN } from './cookies'
 import { createToken } from './create-token'
 import { userSchema } from './user-schema'
 
@@ -83,7 +84,7 @@ export const googleAuth = fastifyPlugin(async (fastify) => {
 				inSevenDays.setDate(inSevenDays.getDate() + 7)
 
 				reply
-					.setCookie('user', token, {
+					.setCookie(USER_TOKEN, token, {
 						expires: inSevenDays,
 						httpOnly: true,
 						path: '/',

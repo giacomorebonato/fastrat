@@ -1,4 +1,5 @@
 import { type CreateFastifyContextOptions } from '@trpc/server/adapters/fastify'
+import { USER_TOKEN } from '#features/auth/cookies'
 import { parseToken } from '#features/auth/create-token'
 import { db } from '#features/db/db.js'
 import { z } from 'zod'
@@ -12,11 +13,11 @@ const userValidator = z.object({
 export function createContext({ req, res }: CreateFastifyContextOptions) {
 	let user: z.infer<typeof userValidator> | undefined
 
-	if (req.cookies.user) {
+	if (req.cookies[USER_TOKEN]) {
 		try {
 			user = parseToken({
 				secret: env.SECRET,
-				token: req.cookies.user,
+				token: req.cookies.userToken,
 				validator: userValidator,
 			})
 		} catch (error) {
