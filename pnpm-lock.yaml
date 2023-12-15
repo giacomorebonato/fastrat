@@ -23,6 +23,12 @@ dependencies:
   '@fastify/websocket':
     specifier: ^8.3.0
     version: 8.3.0
+  '@hocuspocus/extension-database':
+    specifier: ^2.8.1
+    version: 2.8.1(y-protocols@1.0.6)(yjs@13.6.10)
+  '@hocuspocus/provider':
+    specifier: ^2.8.1
+    version: 2.8.1(y-protocols@1.0.6)(yjs@13.6.10)
   '@hocuspocus/server':
     specifier: ^2.8.1
     version: 2.8.1(y-protocols@1.0.6)(yjs@13.6.10)
@@ -1614,6 +1620,36 @@ packages:
       lib0: 0.2.87
     dev: false
 
+  /@hocuspocus/extension-database@2.8.1(y-protocols@1.0.6)(yjs@13.6.10):
+    resolution: {integrity: sha512-IAsvThScS5WSiSlgYTTzIJXQ8tbmpyGnk2euoLBjuY41CRlBCBGTKul/de0CjcLDKK1c9MhEEBpvoEuUZnZjFQ==}
+    peerDependencies:
+      yjs: ^13.6.8
+    dependencies:
+      '@hocuspocus/server': 2.8.1(y-protocols@1.0.6)(yjs@13.6.10)
+      yjs: 13.6.10
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+      - y-protocols
+    dev: false
+
+  /@hocuspocus/provider@2.8.1(y-protocols@1.0.6)(yjs@13.6.10):
+    resolution: {integrity: sha512-OutRdoUMydPSAIZXcjY9GGkZY8RCSvG6fwAR2lbM8rYdKtFOEs9aKboqtvox4T2peY0yuW2cffTNfwaMhbZ3KQ==}
+    peerDependencies:
+      y-protocols: ^1.0.6
+      yjs: ^13.6.8
+    dependencies:
+      '@hocuspocus/common': 2.8.1
+      '@lifeomic/attempt': 3.0.3
+      lib0: 0.2.87
+      ws: 8.14.2
+      y-protocols: 1.0.6(yjs@13.6.10)
+      yjs: 13.6.10
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
   /@hocuspocus/server@2.8.1(y-protocols@1.0.6)(yjs@13.6.10):
     resolution: {integrity: sha512-3BJFcShMQxB8+A1uPSdKTeL+UZvVg+XS6vbdcyC6yCy3ZScLGjCP+IPAgiNwa5xvcUEr64yp8LCroM+gZHyxbQ==}
     peerDependencies:
@@ -1816,6 +1852,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@lifeomic/attempt@3.0.3:
+    resolution: {integrity: sha512-GlM2AbzrErd/TmLL3E8hAHmb5Q7VhDJp35vIbyPVA5Rz55LZuRr8pwL3qrwwkVNo05gMX1J44gURKb4MHQZo7w==}
+    dev: false
 
   /@lukeed/ms@2.0.1:
     resolution: {integrity: sha512-Xs/4RZltsAL7pkvaNStUQt7netTkyxrS0K+RILcVr3TRMS/ToOg4I6uNfhB9SlGsnWBym4U+EaXq0f0cEMNkHA==}

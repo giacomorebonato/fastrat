@@ -1,4 +1,5 @@
 import { fileURLToPath } from 'node:url'
+import { Server as HocusPocusServer } from '@hocuspocus/server'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import { googleAuth } from '#features/auth/google-auth'
 import fastify from 'fastify'
@@ -26,6 +27,7 @@ export async function createServer(options: { env: Env }) {
 			secret: options.env.SECRET,
 		})
 		.register(import('@fastify/websocket'))
+
 		.register(googleAuth)
 		.register(fastifyTRPCPlugin, {
 			prefix: '/trpc',

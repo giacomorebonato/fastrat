@@ -18,6 +18,8 @@
 		"@fastify/oauth2": "^7.7.0",
 		"@fastify/static": "^6.12.0",
 		"@fastify/websocket": "^8.3.0",
+		"@hocuspocus/extension-database": "^2.8.1",
+		"@hocuspocus/provider": "^2.8.1",
 		"@hocuspocus/server": "^2.8.1",
 		"@libsql/client": "0.4.0-pre.5",
 		"@react-email/components": "0.0.12",

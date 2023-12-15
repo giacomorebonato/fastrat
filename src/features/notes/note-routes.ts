@@ -1,7 +1,10 @@
+import { Database } from '@hocuspocus/extension-database'
+import { Server as HocusPocusServer } from '@hocuspocus/server'
 import { TRPCError } from '@trpc/server'
 import { noteSchema } from '#features/db/schema'
 import { publicProcedure, router } from '#features/server/trpc-server'
 import { eq } from 'drizzle-orm'
+import { FastifyInstance } from 'fastify'
 import { z } from 'zod'
 import { insertNoteSchema } from './note-schema'
 
