@@ -21,8 +21,8 @@ dependencies:
     specifier: ^6.12.0
     version: 6.12.0
   '@fastify/websocket':
-    specifier: ^8.2.0
-    version: 8.2.0
+    specifier: ^8.3.0
+    version: 8.3.0
   '@hocuspocus/server':
     specifier: ^2.8.1
     version: 2.8.1(y-protocols@1.0.6)(yjs@13.6.10)
@@ -58,7 +58,7 @@ dependencies:
     version: 18.2.17
   '@vitejs/plugin-react':
     specifier: ^4.2.1
-    version: 4.2.1(vite@5.0.8)
+    version: 4.2.1(vite@5.0.9)
   app-root-path:
     specifier: ^3.1.0
     version: 3.1.0
@@ -118,16 +118,16 @@ dependencies:
     version: 5.0.6
   vike:
     specifier: ^0.4.150
-    version: 0.4.150(vite@5.0.8)
+    version: 0.4.150(vite@5.0.9)
   vike-react:
     specifier: ^0.3.7
-    version: 0.3.7(react-dom@18.2.0)(react@18.2.0)(vike@0.4.150)(vite@5.0.8)
+    version: 0.3.7(react-dom@18.2.0)(react@18.2.0)(vike@0.4.150)(vite@5.0.9)
   y-protocols:
     specifier: ^1.0.6
     version: 1.0.6(yjs@13.6.10)
   y-websocket:
-    specifier: ^1.5.0
-    version: 1.5.0(yjs@13.6.10)
+    specifier: ^1.5.1
+    version: 1.5.1(yjs@13.6.10)
   yjs:
     specifier: ^13.6.10
     version: 13.6.10
@@ -138,7 +138,7 @@ dependencies:
 devDependencies:
   '@giacomorebonato/vavite':
     specifier: ^0.0.3
-    version: 0.0.3(vite@5.0.8)
+    version: 0.0.3(vite@5.0.9)
   '@ianvs/prettier-plugin-sort-imports':
     specifier: ^4.1.1
     version: 4.1.1(prettier@3.1.1)
@@ -173,8 +173,8 @@ devDependencies:
     specifier: ^4.1.5
     version: 4.1.5
   pino-pretty:
-    specifier: ^10.2.3
-    version: 10.2.3
+    specifier: ^10.3.0
+    version: 10.3.0
   postcss:
     specifier: ^8.4.32
     version: 8.4.32
@@ -194,8 +194,8 @@ devDependencies:
     specifier: ^5.3.3
     version: 5.3.3
   vite:
-    specifier: ^5.0.8
-    version: 5.0.8(@types/node@20.10.4)
+    specifier: ^5.0.9
+    version: 5.0.9(@types/node@20.10.4)
   vitest:
     specifier: ^1.0.4
     version: 1.0.4(@types/node@20.10.4)
@@ -1504,8 +1504,8 @@ packages:
       p-limit: 3.1.0
     dev: false
 
-  /@fastify/websocket@8.2.0:
-    resolution: {integrity: sha512-B4tlHFBKCX7tenEG9aUcQEpksW2e0+dgRTaH/05+cro1Xsq1+kSj+9IB9Gep7a0KbHZGrat+zBsOas6lRs5dFQ==}
+  /@fastify/websocket@8.3.0:
+    resolution: {integrity: sha512-i9lVHk6nKKQUMETdX5IDVrSxODJxy2mYU7CJ9BLWVtUZVuvB2a69CTuFyoapNWzLDuv0Z0DpAa2QyaTGPCIHZA==}
     dependencies:
       fastify-plugin: 4.5.1
       ws: 8.14.2
@@ -1555,21 +1555,21 @@ packages:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
     dev: false
 
-  /@giacomorebonato/vavite@0.0.3(vite@5.0.8):
+  /@giacomorebonato/vavite@0.0.3(vite@5.0.9):
     resolution: {integrity: sha512-zKwAmbSfo6w3Yc2Wj0op7esC++BALZj0ziS/ZLA7aTzJcQuT8NEaJ306BZcujjjkmztxoqqKFJY04t0jAuCYAQ==}
     hasBin: true
     peerDependencies:
       vite: ^2.8.1 || 3 || 4 || 5
     dependencies:
-      '@vavite-giacomorebonato/connect': 0.0.3(vite@5.0.8)
-      '@vavite-giacomorebonato/expose-vite-dev-server': 0.0.3(vite@5.0.8)
-      '@vavite-giacomorebonato/multibuild': 0.0.3(vite@5.0.8)
-      '@vavite-giacomorebonato/multibuild-cli': 0.0.3(vite@5.0.8)
-      '@vavite-giacomorebonato/node-loader': 0.0.3(vite@5.0.8)
-      '@vavite-giacomorebonato/reloader': 0.0.3(vite@5.0.8)
+      '@vavite-giacomorebonato/connect': 0.0.3(vite@5.0.9)
+      '@vavite-giacomorebonato/expose-vite-dev-server': 0.0.3(vite@5.0.9)
+      '@vavite-giacomorebonato/multibuild': 0.0.3(vite@5.0.9)
+      '@vavite-giacomorebonato/multibuild-cli': 0.0.3(vite@5.0.9)
+      '@vavite-giacomorebonato/node-loader': 0.0.3(vite@5.0.9)
+      '@vavite-giacomorebonato/reloader': 0.0.3(vite@5.0.9)
       cac: 6.7.14
       picocolors: 1.0.0
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     dev: true
 
   /@hapi/boom@10.0.1:
@@ -3097,37 +3097,37 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vavite-giacomorebonato/connect@0.0.3(vite@5.0.8):
+  /@vavite-giacomorebonato/connect@0.0.3(vite@5.0.9):
     resolution: {integrity: sha512-DdVtR7BRR6n8MUhzfAjBk0Ru9ZdVkNMeUhYbmF1KHqDtUM6XEDtA2wRUFwjYL3ItuXJ7Ofj0+9fErZRjXuVEjQ==}
     peerDependencies:
       vite: ^2.8.1 || 3 || 4 || 5
     dependencies:
       '@types/node': 20.10.4
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     dev: true
 
-  /@vavite-giacomorebonato/expose-vite-dev-server@0.0.3(vite@5.0.8):
+  /@vavite-giacomorebonato/expose-vite-dev-server@0.0.3(vite@5.0.9):
     resolution: {integrity: sha512-KzLJIwVaub+GN+2AEUW0I3cVOgMUjcjhN0qYcutomcoUS4qU10VhPiA2Vddi1vC1UUDguMbivC9sZfCpZF2clQ==}
     peerDependencies:
       vite: ^2.8.1 || 3 || 4 || 5
     dependencies:
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     dev: true
 
-  /@vavite-giacomorebonato/multibuild-cli@0.0.3(vite@5.0.8):
+  /@vavite-giacomorebonato/multibuild-cli@0.0.3(vite@5.0.9):
     resolution: {integrity: sha512-7QfX2mESOAqT+Bgqf21GbS82mQx7BR1GUCNQUgXXxuOKsLizu22rrDob9zX6NNalnUjBzG4otX2Je4VuvpWW9w==}
     hasBin: true
     peerDependencies:
       vite: ^2.8.1 || 3 || 4 || 5
     dependencies:
       '@types/node': 20.10.4
-      '@vavite-giacomorebonato/multibuild': 0.0.3(vite@5.0.8)
+      '@vavite-giacomorebonato/multibuild': 0.0.3(vite@5.0.9)
       cac: 6.7.14
       picocolors: 1.0.0
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     dev: true
 
-  /@vavite-giacomorebonato/multibuild@0.0.3(vite@5.0.8):
+  /@vavite-giacomorebonato/multibuild@0.0.3(vite@5.0.9):
     resolution: {integrity: sha512-VeiUbPH6j8tm8Fa/nglUIj2TC9Ep0Gw/uxHq0WE9ZBuZ9/SqQGFpJgP6ul0eEh+48icsK2jSnMRYuzE58eCo+w==}
     peerDependencies:
       vite: ^2.8.1 || 3 || 4 || 5
@@ -3135,27 +3135,27 @@ packages:
       '@types/node': 20.10.4
       cac: 6.7.14
       picocolors: 1.0.0
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     dev: true
 
-  /@vavite-giacomorebonato/node-loader@0.0.3(vite@5.0.8):
+  /@vavite-giacomorebonato/node-loader@0.0.3(vite@5.0.9):
     resolution: {integrity: sha512-vgsEi2EdJHPz5YcVAFs4EcBSGWSqUU0AE2x4ZSJb3KtES37zn9B61Rc6jGYbXkYBsblCBiT533ttgmMk4wFvpw==}
     hasBin: true
     peerDependencies:
       vite: ^2.8.1 || 3 || 4 || 5
     dependencies:
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     dev: true
 
-  /@vavite-giacomorebonato/reloader@0.0.3(vite@5.0.8):
+  /@vavite-giacomorebonato/reloader@0.0.3(vite@5.0.9):
     resolution: {integrity: sha512-0qzHG/W/2v6O6VbmbJpMykaUfd3RVBMF8nB15DBp17ChTh1wJ1cWJW8pn0VMLLYZ3vbyj4SqK+uj6ToG7sTbag==}
     peerDependencies:
       vite: ^2.8.1 || 3 || 4 || 5
     dependencies:
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     dev: true
 
-  /@vitejs/plugin-react@4.2.1(vite@5.0.8):
+  /@vitejs/plugin-react@4.2.1(vite@5.0.9):
     resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -3166,7 +3166,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -5746,11 +5746,8 @@ packages:
     resolution: {integrity: sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==}
     dev: true
 
-  /help-me@4.2.0:
-    resolution: {integrity: sha512-TAOnTB8Tz5Dw8penUuzHVrKNKlCIbwwbHnXraNJxPwf8LRtE2HlM84RYuezMFcwOJmoYOCWVDyJ8TQGxn9PgxA==}
-    dependencies:
-      glob: 8.1.0
-      readable-stream: 3.6.2
+  /help-me@5.0.0:
+    resolution: {integrity: sha512-7xgomUX6ADmcYzFik0HzAxh/73YlKR9bmFzf51CZwR+b6YtzU2m0u49hQCqV6SvlqIqsaxovfwdvbnsw3b/zpg==}
     dev: true
 
   /hoist-non-react-statics@3.3.2:
@@ -7652,15 +7649,15 @@ packages:
       readable-stream: 4.4.2
       split2: 4.2.0
 
-  /pino-pretty@10.2.3:
-    resolution: {integrity: sha512-4jfIUc8TC1GPUfDyMSlW1STeORqkoxec71yhxIpLDQapUu8WOuoz2TTCoidrIssyz78LZC69whBMPIKCMbi3cw==}
+  /pino-pretty@10.3.0:
+    resolution: {integrity: sha512-JthvQW289q3454mhM3/38wFYGWPiBMR28T3CpDNABzoTQOje9UKS7XCJQSnjWF9LQGQkGd8D7h0oq+qwiM3jFA==}
     hasBin: true
     dependencies:
       colorette: 2.0.20
       dateformat: 4.6.3
       fast-copy: 3.0.1
       fast-safe-stringify: 2.1.1
-      help-me: 4.2.0
+      help-me: 5.0.0
       joycon: 3.1.1
       minimist: 1.2.8
       on-exit-leak-free: 2.1.2
@@ -8278,10 +8275,13 @@ packages:
   /readable-stream@3.6.2:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
+    requiresBuild: true
     dependencies:
       inherits: 2.0.4
       string_decoder: 1.3.0
       util-deprecate: 1.0.2
+    dev: false
+    optional: true
 
   /readable-stream@4.4.2:
     resolution: {integrity: sha512-Lk/fICSyIhodxy1IDK2HazkeGjSmezAWX2egdtJnYhtzKEsBPJowlI6F6LPb5tqIQILrMbx22S5o3GuJavPusA==}
@@ -9548,7 +9548,7 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vike-react@0.3.7(react-dom@18.2.0)(react@18.2.0)(vike@0.4.150)(vite@5.0.8):
+  /vike-react@0.3.7(react-dom@18.2.0)(react@18.2.0)(vike@0.4.150)(vite@5.0.9):
     resolution: {integrity: sha512-m2RbQ5s3h3bFC+bxKjsqOUttYuWvuSKdBN2mCnUOTO1zIFxPIG8HyiVrYLXKRG//FT1Ae55YuQdx/hb5Qc8edQ==}
     peerDependencies:
       react: 18.x.x
@@ -9559,11 +9559,11 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-streaming: 0.3.18(react-dom@18.2.0)(react@18.2.0)
-      vike: 0.4.150(vite@5.0.8)
-      vite: 5.0.8(@types/node@20.10.4)
+      vike: 0.4.150(vite@5.0.9)
+      vite: 5.0.9(@types/node@20.10.4)
     dev: false
 
-  /vike@0.4.150(vite@5.0.8):
+  /vike@0.4.150(vite@5.0.9):
     resolution: {integrity: sha512-R2cfpRWTZb0WOgMDsh5oLGq9yJV4aPjEyjpnvy0Rkntv9YpX4EXp9MmNHUTqNJJqBeURtJKHQpfPbFRgbPjIbQ==}
     engines: {node: '>=16.0.0'}
     hasBin: true
@@ -9586,7 +9586,7 @@ packages:
       fast-glob: 3.3.1
       sirv: 2.0.3
       source-map-support: 0.5.21
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     dev: false
 
   /vite-node@1.0.4(@types/node@20.10.4):
@@ -9598,7 +9598,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -9610,8 +9610,8 @@ packages:
       - terser
     dev: true
 
-  /vite@5.0.8(@types/node@20.10.4):
-    resolution: {integrity: sha512-jYMALd8aeqR3yS9xlHd0OzQJndS9fH5ylVgWdB+pxTwxLKdO1pgC5Dlb398BUxpfaBxa4M9oT7j1g503Gaj5IQ==}
+  /vite@5.0.9(@types/node@20.10.4):
+    resolution: {integrity: sha512-wVqMd5kp28QWGgfYPDfrj771VyHTJ4UDlCteLH7bJDGDEamaz5hV8IX6h1brSGgnnyf9lI2RnzXq/JmD0c2wwg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -9689,7 +9689,7 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.8.1
-      vite: 5.0.8(@types/node@20.10.4)
+      vite: 5.0.9(@types/node@20.10.4)
       vite-node: 1.0.4(@types/node@20.10.4)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
@@ -9939,8 +9939,9 @@ packages:
       yjs: 13.6.10
     dev: false
 
-  /y-websocket@1.5.0(yjs@13.6.10):
-    resolution: {integrity: sha512-A8AO6XtnQlYwWFytWdkDCeXg4l8ghRTIw5h2YUgUYDmEC9ugWGIwYNW80yadhSFAF7CvuWTEkQNEpevnH6EiZw==}
+  /y-websocket@1.5.1(yjs@13.6.10):
+    resolution: {integrity: sha512-fi7G9RXzNQpW9S59DA0dgkdNBMF0hyaUGpXkRXiyUH2UIEEcQ9cv6gxf45lDzdmXgBtvw6Sk0DNuzKWmJIHimg==}
+    engines: {node: '>=16.0.0', npm: '>=8.0.0'}
     hasBin: true
     peerDependencies:
       yjs: ^13.5.6

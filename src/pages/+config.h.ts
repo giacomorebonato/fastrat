@@ -1,17 +1,20 @@
-import type { Config } from 'vike/types'
+import { PageShell } from '#features/browser/page-shell'
 // import logoUrl from '../assets/logo.svg'
 import vikeReact from 'vike-react'
-import { PageShell } from '#features/browser/page-shell'
+import type { Config } from 'vike/types'
 
 // Default configs (can be overridden by pages)
 export default {
-  Layout: PageShell,
-  // Head,
-  // <title>
-  title: 'My Vike + React App',
-  // <meta name="description">
-  description: 'Demo showcasing Vike + React',
-  // <link rel="icon" href="${favicon}" />
-  // favicon: logoUrl,
-  extends: vikeReact
+	Layout: PageShell,
+
+	// <meta name="description">
+	description: 'Template for application built with Fastify and React',
+
+	// <link rel="icon" href="${favicon}" />
+	// favicon: logoUrl,
+	extends: vikeReact,
+
+	// Head,
+	// <title>
+	title: 'FastRat',
 } satisfies Config
