@@ -15,17 +15,20 @@ export function createContext({ req, res }: CreateFastifyContextOptions) {
 	const userToken = req.cookies[USER_TOKEN]
 
 	if (userToken) {
-		try {
-			user = parseToken({
-				secret: env.SECRET,
-				token: userToken,
-				validator: userValidator,
-			})
-		} catch (error) {
-			if (error instanceof Error) {
-				req.log.warn(
-					`Couldn't parse user token: ${error.message}.\nToken:${userToken}`,
-				)
+		const unsigned = req.unsignCookie(userToken)
+		if (unsigned.valid && unsigned.value) {
+			try {
+				user = parseToken({
+					secret: env.SECRET,
+					token: unsigned.value,
+					validator: userValidator,
+				})
+			} catch (error) {
+				if (error instanceof Error) {
+					req.log.warn(
+						`Couldn't parse user token: ${error.message}.\nToken:${unsigned.value}`,
+					)
+				}
 			}
 		}
 	}
