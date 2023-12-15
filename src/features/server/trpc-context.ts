@@ -13,11 +13,17 @@ export function createContext({ req, res }: CreateFastifyContextOptions) {
 	let user: z.infer<typeof userValidator> | undefined
 
 	if (req.cookies.user) {
-		user = parseToken({
-			secret: env.SECRET,
-			token: req.cookies.user,
-			validator: userValidator,
-		})
+		try {
+			user = parseToken({
+				secret: env.SECRET,
+				token: req.cookies.user,
+				validator: userValidator,
+			})
+		} catch (error) {
+			if (error instanceof Error) {
+				req.log.warn(`Couldn't parse user token: ${error.message}`)
+			}
+		}
 	}
 
 	return { db, reply: res, request: req, user }
