@@ -1,6 +1,4 @@
 import { useQueryClient } from '@tanstack/react-query'
-import { Link } from '#features/browser/link'
-import { trpcClient } from '#features/browser/trpc-client'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import { ComponentType, useRef, useState } from 'react'
@@ -8,8 +6,10 @@ import { toast } from 'react-toastify'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { FixedSizeList as List, ListChildComponentProps } from 'react-window'
 import { navigate } from 'vike/client/router'
+import { Link } from '#features/browser/link'
+import { trpcClient } from '#features/browser/trpc-client'
 
-export const NotesView = function NotesView() {
+export function NotesView() {
 	const getNotes = trpcClient.note.list.useQuery(undefined, {
 		refetchOnMount: false,
 		refetchOnWindowFocus: false,
@@ -45,6 +45,7 @@ export const NotesView = function NotesView() {
 
 	const Row: ComponentType<ListChildComponentProps> = ({ index, style }) => {
 		const [isDeleting, setIsDeleting] = useState(false)
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const note = getNotes.data![index]
 		const linkRef = useRef<HTMLAnchorElement>()
 
@@ -58,6 +59,7 @@ export const NotesView = function NotesView() {
 					href={`/notes/${note.id}`}
 					isClientRouting
 					ref={(ref) => {
+						// biome-ignore lint/style/noNonNullAssertion: <explanation>
 						linkRef.current = ref!
 					}}
 				>
@@ -70,6 +72,7 @@ export const NotesView = function NotesView() {
 					</span>
 
 					<button
+						type='button'
 						className='btn btn-warning btn-sm no-underline hover:no-underline'
 						disabled={loadingIds[note.id]}
 						onClick={(e) => {
@@ -99,6 +102,7 @@ export const NotesView = function NotesView() {
 				<span className='loading loading-dots loading-sm' />
 			) : (
 				<button
+					type='button'
 					className='btn btn-secondary btn-sm'
 					onClick={() => {
 						upsertNote.mutate({

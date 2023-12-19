@@ -8,8 +8,7 @@ export type {
   / */
 	// When using Server Routing
 	PageContextClientWithServerRouting as PageContextClient,
-	PageContextWithServerRouting as PageContext,
-	//* /
+	PageContextWithServerRouting as PageContext, //* /
 } from 'vike/types'
 
 // https://vike.dev/pageContext#typescript

@@ -1,6 +1,6 @@
 import process from 'node:process'
-import { z } from 'zod'
 import 'dotenv/config'
+import { z } from 'zod'
 
 const schema = z.object({
 	GOOGLE_CLIENT_ID: z.string(),

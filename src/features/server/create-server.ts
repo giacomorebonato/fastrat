@@ -1,17 +1,17 @@
 import { fileURLToPath } from 'node:url'
-import { Server as HocusPocusServer } from '@hocuspocus/server'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
-import { googleAuth } from '#features/auth/google-auth'
 import fastify from 'fastify'
 import { renderPage } from 'vike/server'
+import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
 import { type Env } from './env'
 import { createContext } from './trpc-context'
+import { collaborationPlugin } from '#features/collaboration/collaboration-plugin'
 
 export async function createServer(options: { env: Env }) {
 	const server = fastify({
 		logger: true,
-		maxParamLength: 5000,
+		maxParamLength: 5_000,
 	})
 
 	if (options.env.NODE_ENV === 'production') {
@@ -22,18 +22,38 @@ export async function createServer(options: { env: Env }) {
 	}
 
 	await server
+		.register(import('@fastify/websocket'), {
+			connectionOptions: {
+				readableObjectMode: true,
+			},
+		})
 		.register(import('@fastify/cookie'), {
 			hook: 'onRequest',
 			secret: options.env.SECRET,
 		})
-		.register(import('@fastify/websocket'))
 
-		.register(googleAuth)
-		.register(fastifyTRPCPlugin, {
-			prefix: '/trpc',
-			trpcOptions: { createContext, router: apiRouter },
-			useWSS: true,
-		})
+	// .register(googleAuth)
+	// .register(fastifyTRPCPlugin, {
+	// 	prefix: '/trpc',
+	// 	trpcOptions: { createContext, router: apiRouter },
+	// 	// useWSS: true,
+	// })
+	// .register(collaborationPlugin, {
+	// 	prefix: '/collaboration',
+	// })
+
+	server.get(
+		'/ws',
+		{
+			websocket: true,
+		},
+		(connection) => {
+			connection.socket.on('message', (message) => {
+				// message.toString() === 'hi from client'
+				connection.socket.send('hi from server')
+			})
+		},
+	)
 
 	server.get('*', async (request, reply) => {
 		const pageContext = await renderPage({ urlOriginal: request.url })

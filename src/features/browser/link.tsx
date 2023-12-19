@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React, { ForwardedRef } from 'react'
-import { navigate } from 'vike/client/router'
 import { usePageContext } from 'vike-react/usePageContext'
+import { navigate } from 'vike/client/router'
 
 export const Link = React.forwardRef(function LinkWithRef(
 	{
@@ -10,6 +10,7 @@ export const Link = React.forwardRef(function LinkWithRef(
 	}: React.ComponentProps<'a'> & {
 		isActive?: boolean
 		isClientRouting?: boolean
+		href: string
 	},
 	ref: ForwardedRef<HTMLAnchorElement>,
 ) {
@@ -20,7 +21,7 @@ export const Link = React.forwardRef(function LinkWithRef(
 		customProps.onClick = (event) => {
 			event.preventDefault()
 
-			navigate(props.href!, {
+			navigate(props.href, {
 				keepScrollPosition: true,
 			})
 		}

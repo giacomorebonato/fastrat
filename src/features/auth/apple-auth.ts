@@ -1,6 +1,6 @@
 import { fastifyOauth2 } from '@fastify/oauth2'
-import { env } from '#features/server/env'
 import { fastifyPlugin } from 'fastify-plugin'
+import { env } from '#features/server/env'
 
 export const appleAuth = fastifyPlugin(async (fastify) => {
 	await fastify.register(fastifyOauth2, {

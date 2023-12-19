@@ -7,6 +7,7 @@ import type {
 export const onBeforeRender: OnBeforeRenderAsync = async (
 	pageContext: PageContextServer | PageContextClient,
 ): ReturnType<OnBeforeRenderAsync> => {
+	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	const noteId = pageContext.routeParams!.id
 
 	return {

@@ -2,7 +2,9 @@ import { sql } from 'drizzle-orm'
 import { blob, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 
 export const collaborationSchema = sqliteTable('collaboration', {
-	content: blob('content'),
+	content: blob('content', {
+		mode: 'json',
+	}),
 	createdAt: integer('created_at', {
 		mode: 'timestamp',
 	})

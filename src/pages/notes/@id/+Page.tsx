@@ -1,5 +1,5 @@
-import { NotesView } from '#features/notes/notes-view'
 import { ClientOnly } from 'vike-react/ClientOnly'
+import { NotesView } from '#features/notes/notes-view'
 
 export function Page({ noteId }: { noteId: string }) {
 	return (

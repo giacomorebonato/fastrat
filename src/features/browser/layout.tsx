@@ -1,9 +1,9 @@
+import clsx from 'clsx'
 import { useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
-import { trpcClient } from './trpc-client'
 import 'react-toastify/dist/ReactToastify.css'
-import clsx from 'clsx'
 import './main.css'
+import { trpcClient } from './trpc-client'
 
 const contextClass = {
 	dark: 'bg-white-600 font-gray-300',
@@ -41,6 +41,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 								viewBox='0 0 24 24'
 								xmlns='http://www.w3.org/2000/svg'
 							>
+								<title>Hamburger menu</title>
 								<path
 									d='M4 6h16M4 12h16M4 18h16'
 									strokeLinecap='round'
@@ -56,6 +57,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 					{profile.data ? (
 						<button
+							type='button'
 							className='btn btn-ghost'
 							onClick={() => {
 								logout.mutate()
@@ -67,7 +69,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						<button
 							className='btn btn-ghost'
 							onClick={() => {
-								dialogRef.current!.showModal()
+								dialogRef.current?.showModal()
 							}}
 							type='button'
 						>
@@ -95,10 +97,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				/>
 				<ul className='menu min-h-full w-80 bg-base-200 p-4'>
 					<li>
-						<a>Sidebar Item 1</a>
+						<a href='#test'>Sidebar Item 1</a>
 					</li>
 					<li>
-						<a>Sidebar Item 2</a>
+						<a href='#test'>Sidebar Item 2</a>
 					</li>
 				</ul>
 			</div>
@@ -108,7 +110,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					<a href='/login/google'>Login with Google</a>
 				</div>
 				<form className='modal-backdrop' method='dialog'>
-					<button>close</button>
+					<button type='button'>close</button>
 				</form>
 			</dialog>
 		</div>

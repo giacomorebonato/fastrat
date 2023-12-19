@@ -1,8 +1,8 @@
 import { type CreateFastifyContextOptions } from '@trpc/server/adapters/fastify'
+import { z } from 'zod'
 import { USER_TOKEN } from '#features/auth/cookies'
 import { parseToken } from '#features/auth/create-token'
 import { db } from '#features/db/db.js'
-import { z } from 'zod'
 import { env } from './env'
 
 const userValidator = z.object({
@@ -11,7 +11,7 @@ const userValidator = z.object({
 })
 
 export function createContext({ req, res }: CreateFastifyContextOptions) {
-	let user: z.infer<typeof userValidator> | undefined
+	let user: z.infer<typeof userValidator> | null = null
 	const userToken = req.cookies[USER_TOKEN]
 
 	if (userToken) {

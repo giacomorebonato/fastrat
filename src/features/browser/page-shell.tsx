@@ -1,9 +1,9 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { httpBatchLink } from '@trpc/react-query'
-import { trpcClient } from '#features/browser/trpc-client'
 import React, { useState } from 'react'
 import superjson from 'superjson'
+import { trpcClient } from '#features/browser/trpc-client'
 import { Layout } from './layout'
 import type { PageContext } from './types'
 
