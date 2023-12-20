@@ -12,7 +12,7 @@ const userValidator = z.object({
 
 export function createContext({ req, res }: CreateFastifyContextOptions) {
 	let user: z.infer<typeof userValidator> | null = null
-	const userToken = req.cookies[USER_TOKEN]
+	const userToken = req.cookies ? req.cookies[USER_TOKEN] : undefined
 
 	if (userToken) {
 		const unsigned = req.unsignCookie(userToken)

@@ -18,7 +18,10 @@ if (httpDevServer) {
 	})
 
 	httpDevServer.on('upgrade', (request, socket, head) => {
-		if (request.url === '/collaboration/documents') {
+		console.log({
+			request,
+		})
+		if (['/collaboration/documents', '/trpc'].includes(request.url!)) {
 			server.server.emit('upgrade', request, socket, head)
 		}
 	})

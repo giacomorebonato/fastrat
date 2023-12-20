@@ -22,38 +22,24 @@ export async function createServer(options: { env: Env }) {
 	}
 
 	await server
+		.register(import('@fastify/cookie'), {
+			hook: 'onRequest',
+			secret: options.env.SECRET,
+		})
 		.register(import('@fastify/websocket'), {
 			connectionOptions: {
 				readableObjectMode: true,
 			},
 		})
-		.register(import('@fastify/cookie'), {
-			hook: 'onRequest',
-			secret: options.env.SECRET,
-		})
-
 		.register(googleAuth)
 		.register(fastifyTRPCPlugin, {
 			prefix: '/trpc',
 			trpcOptions: { createContext, router: apiRouter },
-			// useWSS: true,
+			useWSS: true,
 		})
 		.register(collaborationPlugin, {
 			prefix: '/collaboration',
 		})
-
-	server.get(
-		'/ws',
-		{
-			websocket: true,
-		},
-		(connection) => {
-			connection.socket.on('message', (message) => {
-				// message.toString() === 'hi from client'
-				connection.socket.send('hi from server')
-			})
-		},
-	)
 
 	server.get('*', async (request, reply) => {
 		const pageContext = await renderPage({ urlOriginal: request.url })

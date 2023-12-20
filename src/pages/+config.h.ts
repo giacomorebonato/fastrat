@@ -13,7 +13,7 @@ export default ({
 	// <link rel="icon" href="${favicon}" />
 	// favicon: logoUrl,
 	extends: vikeReact,
-
+	passToClient: ['siteUrl'],
 	Head,
 	// <title>
 	title: process.env.NODE_ENV === 'production' ? 'FastRat' : 'FastRat Local',

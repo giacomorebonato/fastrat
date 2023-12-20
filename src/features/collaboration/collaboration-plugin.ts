@@ -4,6 +4,7 @@ import { eq } from 'drizzle-orm'
 import { db } from '#features/db/db'
 import { collaborationSchema } from './collaboration-schema'
 import { FastifyInstance } from 'fastify'
+import { applyWSSHandler } from '@trpc/server/adapters/ws'
 
 export const collaborationPlugin = (
 	server: FastifyInstance,
