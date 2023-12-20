@@ -7,17 +7,3 @@ export function Page() {
 		</div>
 	)
 }
-
-const ws = new WebSocket('ws://localhost:3000/ws')
-
-ws.onopen = (message) => {
-	console.log('open', message)
-}
-
-ws.onmessage = (message) => {
-	console.log(message)
-}
-
-ws.onerror = (error) => {
-	console.log(error)
-}

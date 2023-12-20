@@ -32,15 +32,15 @@ export async function createServer(options: { env: Env }) {
 			secret: options.env.SECRET,
 		})
 
-	// .register(googleAuth)
-	// .register(fastifyTRPCPlugin, {
-	// 	prefix: '/trpc',
-	// 	trpcOptions: { createContext, router: apiRouter },
-	// 	// useWSS: true,
-	// })
-	// .register(collaborationPlugin, {
-	// 	prefix: '/collaboration',
-	// })
+		.register(googleAuth)
+		.register(fastifyTRPCPlugin, {
+			prefix: '/trpc',
+			trpcOptions: { createContext, router: apiRouter },
+			// useWSS: true,
+		})
+		.register(collaborationPlugin, {
+			prefix: '/collaboration',
+		})
 
 	server.get(
 		'/ws',

@@ -15,7 +15,8 @@ const config: UserConfig = {
 	],
 	plugins: [
 		vavite({
-			handlerEntry: 'src/index.ts',
+			reloadOn: 'static-deps-change',
+			serverEntry: 'src/index.ts',
 			serveClientAssetsInDev: true,
 		}),
 		react(),
