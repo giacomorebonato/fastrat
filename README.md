@@ -1,6 +1,6 @@
 # Fastify + React = FastRat!
 
-![A rat on a skateboard](./logo.jpg)
+![A rat on a skateboard](src/images/logo.jpg)
 
 Fastrat is my personal and opinionated starter kit, based on technologies that I like to use.
 
