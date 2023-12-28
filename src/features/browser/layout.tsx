@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './main.css'
 import { trpcClient } from './trpc-client'
+import { P, match } from 'ts-pattern'
 
 const contextClass = {
 	dark: 'bg-white-600 font-gray-300',
@@ -55,27 +56,30 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						FastRat
 					</a>
 
-					{profile.data ? (
-						<button
-							type='button'
-							className='btn btn-ghost'
-							onClick={() => {
-								logout.mutate()
-							}}
-						>
-							Logout
-						</button>
-					) : (
-						<button
-							className='btn btn-ghost'
-							onClick={() => {
-								dialogRef.current?.showModal()
-							}}
-							type='button'
-						>
-							Login
-						</button>
-					)}
+					{match(profile.data)
+						.with(null, () => (
+							<button
+								className='btn btn-ghost'
+								onClick={() => {
+									dialogRef.current?.showModal()
+								}}
+								type='button'
+							>
+								Login
+							</button>
+						))
+						.with(P.not(undefined), () => (
+							<button
+								type='button'
+								className='btn btn-ghost'
+								onClick={() => {
+									logout.mutate()
+								}}
+							>
+								Logout
+							</button>
+						))
+						.otherwise(() => null)}
 				</div>
 				<main>{children}</main>
 				<ToastContainer

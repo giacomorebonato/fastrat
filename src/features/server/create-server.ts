@@ -4,9 +4,8 @@ import fastify from 'fastify'
 import { renderPage } from 'vike/server'
 import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
-import { type Env } from './env'
+import { env, type Env } from './env'
 import { createContext } from './trpc-context'
-import { collaborationPlugin } from '#features/collaboration/collaboration-plugin'
 
 export async function createServer(options: { env: Env }) {
 	const server = fastify({
@@ -37,12 +36,12 @@ export async function createServer(options: { env: Env }) {
 			trpcOptions: { createContext, router: apiRouter },
 			useWSS: true,
 		})
-		.register(collaborationPlugin, {
-			prefix: '/collaboration',
-		})
 
 	server.get('*', async (request, reply) => {
-		const pageContext = await renderPage({ urlOriginal: request.url })
+		const pageContext = await renderPage({
+			urlOriginal: request.url,
+			siteUrl: env.SITE_URL,
+		})
 		const { httpResponse } = pageContext
 
 		if (!httpResponse) {

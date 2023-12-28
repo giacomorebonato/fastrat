@@ -15,7 +15,13 @@ export function createContext({ req, res }: CreateFastifyContextOptions) {
 	const userToken = req.cookies ? req.cookies[USER_TOKEN] : undefined
 
 	if (userToken) {
-		const unsigned = req.unsignCookie(userToken)
+		const unsigned =
+			env.NODE_ENV === 'production'
+				? req.unsignCookie(userToken)
+				: {
+						valid: true,
+						value: userToken,
+				  }
 		if (unsigned.valid && unsigned.value) {
 			try {
 				user = parseToken({

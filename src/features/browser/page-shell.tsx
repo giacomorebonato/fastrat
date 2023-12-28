@@ -8,14 +8,23 @@ import { Layout } from './layout'
 import type { PageContext } from './types'
 import { TRPCClientRuntime, wsLink } from '@trpc/client'
 import { ApiRouter } from '#features/server/api-router'
-import { env } from '#features/server/env'
+// import { env } from '#features/server/env'
+import { usePageContext } from 'vike-react/usePageContext'
+import { z } from 'zod'
 
-function createLink(_trpcClientRuntime?: TRPCClientRuntime) {
+function createLink(siteUrl: string) {
 	if (typeof window === 'undefined') {
-		return httpBatchLink({ url: 'http://localhost:3000/trpc' })
+		return httpBatchLink({ url: `${siteUrl}/trpc` })
 	}
 
-	const wsClient = createWSClient({ url: 'ws://localhost:3000/trpc' })
+	const wsUrl = `${import.meta.env.PROD ? 'wss' : 'ws'}://${
+		window.location.host
+	}/trpc`
+	const httpUrl = `${import.meta.env.PROD ? 'https' : 'http'}://${
+		window.location.host
+	}/trpc`
+
+	const wsClient = createWSClient({ url: wsUrl })
 
 	return splitLink({
 		condition(op) {
@@ -24,23 +33,27 @@ function createLink(_trpcClientRuntime?: TRPCClientRuntime) {
 		true: wsLink<ApiRouter>({
 			client: wsClient,
 		}),
-		false: httpBatchLink({ url: 'http://localhost:3000/trpc' }),
+		false: httpBatchLink({ url: httpUrl }),
 	})
 }
+
+const pagePropsSchema = z.object({
+	siteUrl: z.string(),
+})
 
 export function PageShell({
 	children,
 }: {
 	children: React.ReactNode
-	pageContext: PageContext
 }) {
+	const pageContext = usePageContext()
 	const [queryClient] = useState(() => new QueryClient())
-
 	const [apiClient] = useState(() => {
+		const pageProps = pagePropsSchema.parse(pageContext)
 		return trpcClient.createClient({
 			transformer: superjson,
 
-			links: [createLink()],
+			links: [createLink(pageProps.siteUrl)],
 		})
 	})
 

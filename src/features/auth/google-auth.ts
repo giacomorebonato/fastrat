@@ -83,7 +83,7 @@ export const googleAuth = fastifyPlugin(async (fastify) => {
 
 				inSevenDays.setDate(inSevenDays.getDate() + 7)
 
-				request.log.info(`Setting userToken: ${token}`)
+				request.log.info(`Setting userToken`, { token })
 
 				reply
 					.setCookie(USER_TOKEN, token, {

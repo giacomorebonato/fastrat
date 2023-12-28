@@ -17,15 +17,15 @@ if (httpDevServer) {
 		server.server.emit('request', request, reply)
 	})
 
+	httpDevServer.on('close', () => {
+		server.server.emit('close')
+	})
+
 	httpDevServer.on('upgrade', (request, socket, head) => {
-		console.log({
-			request,
-		})
-		if (['/collaboration/documents', '/trpc'].includes(request.url!)) {
+		if (request?.url === '/trpc') {
 			server.server.emit('upgrade', request, socket, head)
 		}
 	})
 } else {
-	console.log('Starting prod server')
 	server.listen()
 }

@@ -10,8 +10,8 @@ export function Page({ noteId }: { noteId: string }) {
 				deps={[noteId]}
 				fallback={<span>Loading</span>}
 				load={async () =>
-					await import('#features/notes/create-note-view').then((c) => ({
-						default: c.CreateNoteView,
+					await import('#features/notes/create-note-input').then((c) => ({
+						default: c.CreateNoteInput,
 					}))
 				}
 			>

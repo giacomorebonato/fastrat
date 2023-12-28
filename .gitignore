@@ -6,3 +6,4 @@ sqlite.db
 /blob-report/
 /playwright/.cache/
 .env
+.DS_Store
