@@ -27,5 +27,8 @@ if (httpDevServer) {
 		}
 	})
 } else {
-	server.listen()
+	server.listen({
+		host: env.HOST,
+		port: env.PORT,
+	})
 }
