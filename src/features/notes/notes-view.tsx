@@ -40,6 +40,9 @@ export function NotesView() {
 		},
 	})
 	const upsertNote = trpcClient.note.upsert.useMutation({
+		onError(error) {
+			toast(error.message)
+		},
 		onSuccess(data) {
 			navigate(`/notes/${data.id}`)
 		},
