@@ -2,9 +2,9 @@ import clsx from 'clsx'
 import { useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { P, match } from 'ts-pattern'
 import './main.css'
 import { trpcClient } from './trpc-client'
-import { P, match } from 'ts-pattern'
 
 const contextClass = {
 	dark: 'bg-white-600 font-gray-300',

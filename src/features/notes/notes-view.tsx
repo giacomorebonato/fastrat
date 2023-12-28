@@ -1,9 +1,9 @@
+import { useQueryClient } from '@tanstack/react-query'
+import { toast } from 'react-toastify'
 import { navigate } from 'vike/client/router'
 import { trpcClient } from '#features/browser/trpc-client'
-import { NoteSelect } from './note-schema'
-import { useQueryClient } from '@tanstack/react-query'
 import { NoteRow } from './note-row'
-import { toast } from 'react-toastify'
+import { NoteSelect } from './note-schema'
 
 export function NotesView() {
 	const queryClient = useQueryClient()

@@ -1,11 +1,11 @@
 import { TRPCError } from '@trpc/server'
+import { observable } from '@trpc/server/observable'
 import { eq } from 'drizzle-orm'
+import { Emitter } from 'strict-event-emitter'
 import { z } from 'zod'
 import { noteSchema } from '#features/db/schema'
 import { publicProcedure, router } from '#features/server/trpc-server'
 import { NoteSelect, insertNoteSchema } from './note-schema'
-import { observable } from '@trpc/server/observable'
-import { Emitter } from 'strict-event-emitter'
 
 type Events = {
 	onDelete: [{ id: string }]

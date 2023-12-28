@@ -1,7 +1,7 @@
+import httpDevServer from '@giacomorebonato/vavite/http-dev-server'
 import type { FastifyInstance } from 'fastify'
 import { createServer } from '#features/server/create-server'
 import { env } from '#features/server/env.js'
-import httpDevServer from '@giacomorebonato/vavite/http-dev-server'
 
 declare global {
 	// biome-ignore lint/style/noVar: <explanation>

@@ -4,7 +4,7 @@ import fastify from 'fastify'
 import { renderPage } from 'vike/server'
 import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
-import { env, type Env } from './env'
+import { type Env, env } from './env'
 import { createContext } from './trpc-context'
 
 export async function createServer(options: { env: Env }) {

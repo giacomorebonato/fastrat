@@ -1,8 +1,8 @@
 // import logoUrl from '../assets/logo.svg'
 import vikeReact from 'vike-react'
 import type { Config } from 'vike/types'
-import { PageShell } from '#features/browser/page-shell'
 import { Head } from '#features/browser/head'
+import { PageShell } from '#features/browser/page-shell'
 
 export default ({
 	Layout: PageShell,

@@ -1,6 +1,6 @@
 import process from 'node:process'
 import 'dotenv/config'
-import { number, z } from 'zod'
+import { z } from 'zod'
 
 const schema = z.object({
 	GOOGLE_CLIENT_ID: z.string(),
@@ -9,7 +9,10 @@ const schema = z.object({
 	NODE_ENV: z
 		.enum(['development', 'test', 'production'])
 		.default('development'),
-	PORT: z.string().transform((value) => Number(value)),
+	PORT: z
+		.string()
+		.transform((value) => Number(value))
+		.default('3000'),
 	SECRET: z.string(),
 	SITE_URL: z.string().default('http://localhost:3000'),
 	TURSO_DB_AUTH_TOKEN: z.string(),

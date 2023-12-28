@@ -1,9 +1,9 @@
-import { useCallback, useEffect } from 'react'
-import { P, match } from 'ts-pattern'
-import { trpcClient } from '#features/browser/trpc-client'
 import _ from 'lodash'
+import { useCallback, useEffect } from 'react'
 import { toast } from 'react-toastify'
+import { P, match } from 'ts-pattern'
 import { navigate } from 'vike/client/router'
+import { trpcClient } from '#features/browser/trpc-client'
 
 export function CreateNoteInput(props: { id: string }) {
 	const getNote = trpcClient.note.get.useQuery(
