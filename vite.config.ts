@@ -8,7 +8,7 @@ const config: UserConfig = {
 		{ name: 'client' },
 		{
 			config: {
-				build: { ssr: true },
+				build: { ssr: true, target: 'esnext' },
 			},
 			name: 'server',
 		},
