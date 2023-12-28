@@ -15,6 +15,18 @@ type Events = {
 const emitter = new Emitter<Events>()
 
 export const noteRouter = router({
+	onDelete: publicProcedure.subscription(() => {
+		return observable<{ id: string }>((emit) => {
+			const emitNote = (data: { id: string }) => {
+				emit.next(data)
+			}
+			emitter.on('onDelete', emitNote)
+
+			return () => {
+				emitter.off('onDelete', emitNote)
+			}
+		})
+	}),
 	onUpsert: publicProcedure.subscription(() => {
 		return observable<NoteSelect>((emit) => {
 			const emitNote = (note: NoteSelect) => {

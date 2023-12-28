@@ -5,16 +5,32 @@ import { toast } from 'react-toastify'
 import { Link } from '#features/browser/link'
 import { trpcClient } from '#features/browser/trpc-client'
 import { NoteSelect } from './note-schema'
+import { useQueryClient } from '@tanstack/react-query'
 
 export const NoteRow = ({ note }: { note: NoteSelect }) => {
-	const getNotes = trpcClient.note.list.useQuery()
+	const queryClient = useQueryClient()
 	const [isDeleting, setIsDeleting] = useState(false)
+
+	trpcClient.note.onDelete.useSubscription(undefined, {
+		onData(data) {
+			queryClient.setQueryData(
+				[
+					['note', 'list'],
+					{
+						type: 'query',
+					},
+				],
+				(oldData: NoteSelect[] | undefined) => {
+					return oldData?.filter((item) => item.id !== data.id)
+				},
+			)
+		},
+	})
 	const deleteNote = trpcClient.note.delete.useMutation({
 		onMutate(variables) {
 			setIsDeleting(true)
 		},
 		onSuccess(data) {
-			getNotes.refetch()
 			setIsDeleting(false)
 			toast(`Deleted note ${data.id}`)
 		},
