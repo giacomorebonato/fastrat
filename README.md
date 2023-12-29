@@ -2,7 +2,13 @@
 
 ![A rat on a skateboard](src/images/logo.jpg)
 
-Fastrat is my personal and opinionated starter kit, based on technologies that I like to use.
+FastRat is a Fastify + React starter kit focusing on:
+
+1. a nice developer experience 
+2. easily switch from SPA and MPA, to leverage the best of both
+
+<details>
+  <summary>All the libraries and technologies used</summary>
 
 * [Fastify](https://fastify.dev)
   * a fast well maintained web framework
@@ -18,6 +24,8 @@ Fastrat is my personal and opinionated starter kit, based on technologies that I
   * for easy to use SQL database
 * [Fly.io](https://fly.io)
   * for deployment
+
+</details>
 
 ## Instructions
 
