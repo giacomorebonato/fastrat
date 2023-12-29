@@ -9,8 +9,6 @@
   />
 </p>
 
-![A rat on a skateboard](src/images/logo.jpg)
-
 FastRat is a Fastify + React starter kit focusing on:
 
 1. a nice developer experience 
