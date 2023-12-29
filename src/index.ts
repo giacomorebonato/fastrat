@@ -17,8 +17,8 @@ if (httpDevServer) {
 		server.server.emit('request', request, reply)
 	})
 
-	httpDevServer.on('close', () => {
-		server.server.emit('close')
+	httpDevServer.on('close', async () => {
+		await server.close()
 	})
 
 	httpDevServer.on('upgrade', (request, socket, head) => {
