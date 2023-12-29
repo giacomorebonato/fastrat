@@ -12,7 +12,7 @@ export default ({
 
 	// <link rel="icon" href="${favicon}" />
 	// favicon: logoUrl,
-	extends: vikeReact,
+	extends: [vikeReact],
 	passToClient: ['siteUrl'],
 	Head,
 	// <title>

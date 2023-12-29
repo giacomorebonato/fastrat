@@ -24,17 +24,17 @@ dependencies:
     specifier: 0.4.0-pre.5
     version: 0.4.0-pre.5
   '@tanstack/react-query':
-    specifier: ^5.15.0
-    version: 5.15.0(react@18.2.0)
+    specifier: ^5.15.3
+    version: 5.15.3(react@18.2.0)
   '@tanstack/react-query-devtools':
-    specifier: ^5.15.0
-    version: 5.15.0(@tanstack/react-query@5.15.0)(react@18.2.0)
+    specifier: ^5.15.3
+    version: 5.15.3(@tanstack/react-query@5.15.3)(react@18.2.0)
   '@trpc/client':
     specifier: 11.0.0-alpha-next-2023-11-21-11-13-12.106
     version: 11.0.0-alpha-next-2023-11-21-11-13-12.106(@trpc/server@11.0.0-alpha-next-2023-11-21-11-13-12.106)
   '@trpc/react-query':
     specifier: 11.0.0-alpha-next-2023-11-21-11-13-12.106
-    version: 11.0.0-alpha-next-2023-11-21-11-13-12.106(@tanstack/react-query@5.15.0)(@trpc/client@11.0.0-alpha-next-2023-11-21-11-13-12.106)(@trpc/server@11.0.0-alpha-next-2023-11-21-11-13-12.106)(react-dom@18.2.0)(react@18.2.0)
+    version: 11.0.0-alpha-next-2023-11-21-11-13-12.106(@tanstack/react-query@5.15.3)(@trpc/client@11.0.0-alpha-next-2023-11-21-11-13-12.106)(@trpc/server@11.0.0-alpha-next-2023-11-21-11-13-12.106)(react-dom@18.2.0)(react@18.2.0)
   '@trpc/server':
     specifier: 11.0.0-alpha-next-2023-11-21-11-13-12.106
     version: 11.0.0-alpha-next-2023-11-21-11-13-12.106
@@ -42,8 +42,8 @@ dependencies:
     specifier: ^20.10.5
     version: 20.10.5
   '@types/react':
-    specifier: ^18.2.45
-    version: 18.2.45
+    specifier: ^18.2.46
+    version: 18.2.46
   '@types/react-dom':
     specifier: ^18.2.18
     version: 18.2.18
@@ -61,7 +61,7 @@ dependencies:
     version: 16.3.1
   drizzle-orm:
     specifier: ^0.29.2
-    version: 0.29.2(@libsql/client@0.4.0-pre.5)(@types/react@18.2.45)(expo-sqlite@13.2.0)(react@18.2.0)
+    version: 0.29.2(@libsql/client@0.4.0-pre.5)(@types/react@18.2.46)(expo-sqlite@13.2.0)(react@18.2.0)
   drizzle-zod:
     specifier: ^0.5.1
     version: 0.5.1(drizzle-orm@0.29.2)(zod@3.22.4)
@@ -3173,19 +3173,19 @@ packages:
     resolution: {integrity: sha512-oz+xBIf+fanmAQ3CZrV4t+1VZiK2nyTcH3zY3G8ukzw+LwX2QGa04ZfF+OCOVF6tPZ2dn1cekMibUb4tevf/aw==}
     dev: false
 
-  /@tanstack/react-query-devtools@5.15.0(@tanstack/react-query@5.15.0)(react@18.2.0):
-    resolution: {integrity: sha512-wDF2I3eyVVzjaP7Jh8zW9pFbhg4T4cU8pltjoHE2aIY4oO+xnrhbI+curFVNJhczFZkTDLIc77hvlAN3Y8seyg==}
+  /@tanstack/react-query-devtools@5.15.3(@tanstack/react-query@5.15.3)(react@18.2.0):
+    resolution: {integrity: sha512-mOmYOSGkfrvuY5bYdGOm3nB7hywbVzNRvRNakHKcjwvBGhLYLEFGgdbzIXwEeaKyHOvplET9fWfdpoV90sff/A==}
     peerDependencies:
-      '@tanstack/react-query': ^5.15.0
+      '@tanstack/react-query': ^5.15.3
       react: ^18.0.0
     dependencies:
       '@tanstack/query-devtools': 5.15.0
-      '@tanstack/react-query': 5.15.0(react@18.2.0)
+      '@tanstack/react-query': 5.15.3(react@18.2.0)
       react: 18.2.0
     dev: false
 
-  /@tanstack/react-query@5.15.0(react@18.2.0):
-    resolution: {integrity: sha512-hWLuZ2Hg9HzmHJ3VtWzhvK+sTxPz+rIIujYUxzapPoU9PPXe7NCm8k8EaKpm+Sc65FM7Dljfk/Ov9yYMhwg9vw==}
+  /@tanstack/react-query@5.15.3(react@18.2.0):
+    resolution: {integrity: sha512-FP30X1oLUJGcekg92cwpRk6+wtzWcsvbz+ezoxOovI8VhtmTKe7R/hDmdPyFML1RVht01ugq/jmJOKygas61EA==}
     peerDependencies:
       react: ^18.0.0
     dependencies:
@@ -3201,7 +3201,7 @@ packages:
       '@trpc/server': 11.0.0-alpha-next-2023-11-21-11-13-12.106
     dev: false
 
-  /@trpc/react-query@11.0.0-alpha-next-2023-11-21-11-13-12.106(@tanstack/react-query@5.15.0)(@trpc/client@11.0.0-alpha-next-2023-11-21-11-13-12.106)(@trpc/server@11.0.0-alpha-next-2023-11-21-11-13-12.106)(react-dom@18.2.0)(react@18.2.0):
+  /@trpc/react-query@11.0.0-alpha-next-2023-11-21-11-13-12.106(@tanstack/react-query@5.15.3)(@trpc/client@11.0.0-alpha-next-2023-11-21-11-13-12.106)(@trpc/server@11.0.0-alpha-next-2023-11-21-11-13-12.106)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-5oJmgYykcgFwRYEWTm+dzrbK90qxMcT0jvsNyfwJF+Bv47dsZ+MhrvHYhLPzEbiFF594lsgrarAE2ljYj8Im2A==}
     peerDependencies:
       '@tanstack/react-query': ^5.0.0
@@ -3210,7 +3210,7 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@tanstack/react-query': 5.15.0(react@18.2.0)
+      '@tanstack/react-query': 5.15.3(react@18.2.0)
       '@trpc/client': 11.0.0-alpha-next-2023-11-21-11-13-12.106(@trpc/server@11.0.0-alpha-next-2023-11-21-11-13-12.106)
       '@trpc/server': 11.0.0-alpha-next-2023-11-21-11-13-12.106
       react: 18.2.0
@@ -3302,11 +3302,11 @@ packages:
   /@types/react-dom@18.2.18:
     resolution: {integrity: sha512-TJxDm6OfAX2KJWJdMEVTwWke5Sc/E/RlnPGvGfS0W7+6ocy2xhDVQVh/KvC2Uf7kACs+gDytdusDSdWfWkaNzw==}
     dependencies:
-      '@types/react': 18.2.45
+      '@types/react': 18.2.46
     dev: false
 
-  /@types/react@18.2.45:
-    resolution: {integrity: sha512-TtAxCNrlrBp8GoeEp1npd5g+d/OejJHFxS3OWmrPBMFaVQMSN0OFySozJio5BHxTuTeug00AVXVAjfDSfk+lUg==}
+  /@types/react@18.2.46:
+    resolution: {integrity: sha512-nNCvVBcZlvX4NU1nRRNV/mFl1nNRuTuslAJglQsq+8ldXe5Xv0Wd2f7WTE3jOxhLH2BFfiZGC6GCp+kHQbgG+w==}
     dependencies:
       '@types/prop-types': 15.7.9
       '@types/scheduler': 0.16.5
@@ -4588,7 +4588,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.29.2(@libsql/client@0.4.0-pre.5)(@types/react@18.2.45)(expo-sqlite@13.2.0)(react@18.2.0):
+  /drizzle-orm@0.29.2(@libsql/client@0.4.0-pre.5)(@types/react@18.2.46)(expo-sqlite@13.2.0)(react@18.2.0):
     resolution: {integrity: sha512-BhwCwuSQqUoLVc7wtgIkuWexY127Z9+yDbuXU7QWZbMC2XE48jecvAThW9apQaDoaxQmwQ+ObyPfPb4zL4Bgsw==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -4654,7 +4654,7 @@ packages:
         optional: true
     dependencies:
       '@libsql/client': 0.4.0-pre.5
-      '@types/react': 18.2.45
+      '@types/react': 18.2.46
       expo-sqlite: 13.2.0(expo@49.0.21)
       react: 18.2.0
     dev: false
@@ -4665,7 +4665,7 @@ packages:
       drizzle-orm: '>=0.23.13'
       zod: '*'
     dependencies:
-      drizzle-orm: 0.29.2(@libsql/client@0.4.0-pre.5)(@types/react@18.2.45)(expo-sqlite@13.2.0)(react@18.2.0)
+      drizzle-orm: 0.29.2(@libsql/client@0.4.0-pre.5)(@types/react@18.2.46)(expo-sqlite@13.2.0)(react@18.2.0)
       zod: 3.22.4
     dev: false
 
