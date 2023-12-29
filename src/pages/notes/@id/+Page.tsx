@@ -4,19 +4,23 @@ import { NotesView } from '#features/notes/notes-view'
 export function Page({ noteId }: { noteId: string }) {
 	return (
 		<div className='flex flex-col md:flex-row'>
-			<ClientOnly
-				deps={[noteId]}
-				fallback={<span>Loading</span>}
-				load={async () =>
-					await import('#features/notes/create-note-input').then((c) => ({
-						default: c.CreateNoteInput,
-					}))
-				}
-			>
-				{(Component) => <Component id={noteId} />}
-			</ClientOnly>
+			<div className='flex-1'>
+				<ClientOnly
+					deps={[noteId]}
+					fallback={<span>Loading</span>}
+					load={async () =>
+						await import('#features/notes/create-note-input').then((c) => ({
+							default: c.CreateNoteInput,
+						}))
+					}
+				>
+					{(Component) => <Component id={noteId} />}
+				</ClientOnly>
+			</div>
 
-			<NotesView />
+			<div className='flex-1'>
+				<NotesView />
+			</div>
 		</div>
 	)
 }

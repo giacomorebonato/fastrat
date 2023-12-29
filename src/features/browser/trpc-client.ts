@@ -9,9 +9,9 @@ import type { ApiRouter } from '../server/api-router.js'
 
 export const trpcClient = createTRPCReact<ApiRouter>()
 
-export function createLink(siteUrl: string) {
-	if (typeof window === 'undefined') {
-		return httpBatchLink({ url: `${siteUrl}/trpc` })
+export function createLink() {
+	if (import.meta.env.SSR) {
+		return httpBatchLink({ url: `${process.env.SITE_URL}/trpc` })
 	}
 
 	const wsUrl = `${import.meta.env.PROD ? 'wss' : 'ws'}://${
