@@ -1,7 +1,10 @@
 import { NotesView } from '#features/notes/notes-view'
+import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import logo from '#images/logo.jpg'
 
 export function Page() {
+	useNoteSubscriptions()
+
 	return (
 		<div className='flex flex-col md:flex-row'>
 			<div className='flex justify-center p-4 flex-1'>

@@ -19,6 +19,7 @@ export function CreateNoteInput(props: { id: string }) {
 			toast(error.message)
 		},
 	})
+
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	const debouncedUpsert = useCallback(
 		_.debounce((e: React.ChangeEvent<HTMLTextAreaElement>) => {

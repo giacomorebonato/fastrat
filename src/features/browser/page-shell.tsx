@@ -5,22 +5,19 @@ import React from 'react'
 import superjson from 'superjson'
 import { createLink, trpcClient } from '#features/browser/trpc-client'
 import { Layout } from './layout'
-import { useConstant } from './use-constant'
+
+const queryClient = new QueryClient()
+const apiClient = trpcClient.createClient({
+	transformer: superjson,
+
+	links: [createLink()],
+})
 
 export function PageShell({
 	children,
 }: {
 	children: React.ReactNode
 }) {
-	const queryClient = useConstant(() => new QueryClient())
-	const apiClient = useConstant(() => {
-		return trpcClient.createClient({
-			transformer: superjson,
-
-			links: [createLink()],
-		})
-	})
-
 	return (
 		<React.StrictMode>
 			<trpcClient.Provider client={apiClient} queryClient={queryClient}>

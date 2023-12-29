@@ -1,44 +1,11 @@
-import { useQueryClient } from '@tanstack/react-query'
 import { toast } from 'react-toastify'
 import { navigate } from 'vike/client/router'
 import { trpcClient } from '#features/browser/trpc-client'
 import { NoteRow } from './note-row'
-import { NoteSelect } from './note-schema'
 
 export function NotesView() {
-	const queryClient = useQueryClient()
 	const getNotes = trpcClient.note.list.useQuery()
-	trpcClient.note.onUpsert.useSubscription(undefined, {
-		onError(error) {
-			toast(error.message)
-		},
-		onData(subscribedNote) {
-			queryClient.setQueryData(
-				[
-					['note', 'list'],
-					{
-						type: 'query',
-					},
-				],
-				(oldData: NoteSelect[] | undefined) => {
-					if (!oldData) {
-						return []
-					}
-					if (oldData.every((note) => note.id !== subscribedNote.id)) {
-						return [...oldData, subscribedNote]
-					}
 
-					return oldData.map((note) => {
-						if (note.id === subscribedNote.id) {
-							return { ...subscribedNote }
-						}
-
-						return { ...note }
-					})
-				},
-			)
-		},
-	})
 	const upsertNote = trpcClient.note.upsert.useMutation({
 		onError(error) {
 			toast(error.message)

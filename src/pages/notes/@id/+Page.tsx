@@ -1,7 +1,10 @@
 import { ClientOnly } from 'vike-react/ClientOnly'
 import { NotesView } from '#features/notes/notes-view'
+import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 
 export function Page({ noteId }: { noteId: string }) {
+	useNoteSubscriptions()
+
 	return (
 		<div className='flex flex-col md:flex-row'>
 			<div className='flex-1'>
