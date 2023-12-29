@@ -1,5 +1,14 @@
 # Fastify + React = FastRat!
 
+<p align="center">
+  <img 
+    src="https://github.com/giacomorebonato/fastrat/blob/main/src/images/logo.jpg?raw=true" 
+    alt="A rat on a skateboard"
+    width='200'
+    height='200'
+  />
+</p>
+
 ![A rat on a skateboard](src/images/logo.jpg)
 
 FastRat is a Fastify + React starter kit focusing on:
