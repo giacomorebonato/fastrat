@@ -11,6 +11,9 @@ dependencies:
   '@fastify/oauth2':
     specifier: ^7.8.0
     version: 7.8.0
+  '@fastify/restartable':
+    specifier: ^2.2.0
+    version: 2.2.0
   '@fastify/static':
     specifier: ^6.12.0
     version: 6.12.0
@@ -2743,6 +2746,14 @@ packages:
       '@fastify/cookie': 9.2.0
       fastify-plugin: 4.5.1
       simple-oauth2: 5.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@fastify/restartable@2.2.0:
+    resolution: {integrity: sha512-sksvEyt9SLISEiphXZpbvodLVATYJ4kaFQ1+Inb6nb9+hOqEX6Q1DEtytqpQsg5BYDhDAr+vEoXXto/CatgCHQ==}
+    dependencies:
+      fastify: 4.25.2
     transitivePeerDependencies:
       - supports-color
     dev: false

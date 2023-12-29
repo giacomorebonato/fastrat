@@ -1,16 +1,21 @@
 import httpDevServer from '@giacomorebonato/vavite/http-dev-server'
-import type { FastifyInstance } from 'fastify'
+import { restartable } from '@fastify/restartable'
 import { createServer } from '#features/server/create-server'
 import { env } from '#features/server/env.js'
 
 declare global {
 	// biome-ignore lint/style/noVar: <explanation>
-	var fastify: FastifyInstance
+	var server: Awaited<ReturnType<typeof createServer>>
 }
 
-const server = await createServer({
-	env,
-})
+if (!globalThis.server) {
+	globalThis.server = await restartable(createServer, {
+		logger: true,
+		maxParamLength: 5_000,
+	})
+} else {
+	await globalThis.server.restart()
+}
 
 if (httpDevServer) {
 	httpDevServer.on('request', (request, reply) => {

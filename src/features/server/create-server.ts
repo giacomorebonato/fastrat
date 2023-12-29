@@ -1,19 +1,19 @@
 import { fileURLToPath } from 'node:url'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
-import fastify from 'fastify'
+import FastifyAsType, { FastifyServerOptions } from 'fastify'
 import { renderPage } from 'vike/server'
 import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
-import { type Env, env } from './env'
+import { env } from './env'
 import { createContext } from './trpc-context'
 
-export async function createServer(options: { env: Env }) {
-	const server = fastify({
-		logger: true,
-		maxParamLength: 5_000,
-	})
+export async function createServer(
+	fastify: typeof FastifyAsType,
+	options: FastifyServerOptions,
+) {
+	const server = fastify(options)
 
-	if (options.env.NODE_ENV === 'production') {
+	if (env.NODE_ENV === 'production') {
 		await server.register(import('@fastify/static'), {
 			prefix: '/assets/',
 			root: fileURLToPath(new URL('../client/assets', import.meta.url)),
@@ -23,7 +23,7 @@ export async function createServer(options: { env: Env }) {
 	await server
 		.register(import('@fastify/cookie'), {
 			hook: 'onRequest',
-			secret: options.env.SECRET,
+			secret: env.SECRET,
 		})
 		.register(import('@fastify/websocket'), {
 			connectionOptions: {
