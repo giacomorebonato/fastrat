@@ -14,7 +14,11 @@ if (!globalThis.server) {
 		maxParamLength: 5_000,
 	})
 } else {
-	await globalThis.server.restart()
+	globalThis.server = await restartable(createServer, {
+		logger: true,
+		maxParamLength: 5_000,
+	})
+	// await globalThis.server.restart() // doesn't work with livereload
 }
 
 if (httpDevServer) {

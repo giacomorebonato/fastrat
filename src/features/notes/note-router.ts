@@ -86,6 +86,8 @@ export const noteRouter = router({
 		const notes = await ctx.db.select().from(noteSchema)
 
 		return notes
+		// comment for quickly testing dev mode livereload
+		// return [...notes, { id: 'pippo', content: 'pluto' }]
 	}),
 	upsert: publicProcedure
 		.input(
