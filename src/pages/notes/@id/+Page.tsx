@@ -3,9 +3,7 @@ import { NotesView } from '#features/notes/notes-view'
 
 export function Page({ noteId }: { noteId: string }) {
 	return (
-		<div className='grid grid-flow-col grid-cols-2 grid-rows-1 gap-x-2'>
-			<NotesView />
-
+		<div className='flex flex-col md:flex-row'>
 			<ClientOnly
 				deps={[noteId]}
 				fallback={<span>Loading</span>}
@@ -17,6 +15,8 @@ export function Page({ noteId }: { noteId: string }) {
 			>
 				{(Component) => <Component id={noteId} />}
 			</ClientOnly>
+
+			<NotesView />
 		</div>
 	)
 }

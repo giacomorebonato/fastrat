@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
-import FastifyAsType, { FastifyServerOptions } from 'fastify'
+import { type FastifyServerOptions, fastify } from 'fastify'
 import { renderPage } from 'vike/server'
 import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
@@ -8,8 +8,10 @@ import { env } from './env'
 import { createContext } from './trpc-context'
 
 export async function createServer(
-	fastify: typeof FastifyAsType,
-	options: FastifyServerOptions,
+	options: FastifyServerOptions = {
+		logger: true,
+		maxParamLength: 5_000,
+	},
 ) {
 	const server = fastify(options)
 

@@ -6,6 +6,7 @@ import { z } from 'zod'
 import { noteSchema } from '#features/db/schema'
 import { publicProcedure, router } from '#features/server/trpc-server'
 import { NoteSelect, insertNoteSchema } from './note-schema'
+import { desc } from 'drizzle-orm'
 
 type Events = {
 	onDelete: [{ id: string }]
@@ -83,11 +84,12 @@ export const noteRouter = router({
 			return note
 		}),
 	list: publicProcedure.query(async ({ ctx }) => {
-		const notes = await ctx.db.select().from(noteSchema)
+		const notes = await ctx.db
+			.select()
+			.from(noteSchema)
+			.orderBy(desc(noteSchema.createdAt))
 
 		return notes
-		// comment for quickly testing dev mode livereload
-		// return [...notes, { id: 'pippo', content: 'pluto' }]
 	}),
 	upsert: publicProcedure
 		.input(
