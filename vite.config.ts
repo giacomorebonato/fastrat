@@ -1,4 +1,4 @@
-import { vavite } from '@giacomorebonato/vavite'
+import { vavite } from 'vavite'
 import react from '@vitejs/plugin-react'
 import vike from 'vike/plugin'
 import { type UserConfig } from 'vite'

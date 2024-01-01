@@ -15,6 +15,8 @@ type Events = {
 
 const emitter = new Emitter<Events>()
 
+console.log('pippo')
+
 export const noteRouter = router({
 	onDelete: publicProcedure.subscription(() => {
 		return observable<{ id: string }>((emit) => {

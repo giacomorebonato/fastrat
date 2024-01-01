@@ -1,4 +1,4 @@
-import httpDevServer from '@giacomorebonato/vavite/http-dev-server'
+import httpDevServer from 'vavite/http-dev-server'
 import { createServer } from '#features/server/create-server'
 import { env } from '#features/server/env.js'
 
@@ -14,14 +14,14 @@ if (httpDevServer) {
 		server.server.emit('request', request, reply)
 	})
 
-	httpDevServer.on('close', async () => {
-		await server.close()
-	})
-
 	httpDevServer.on('upgrade', (request, socket, head) => {
 		if (request?.url === '/trpc') {
 			server.server.emit('upgrade', request, socket, head)
 		}
+	})
+
+	httpDevServer.on('close', async () => {
+		await server.close()
 	})
 } else {
 	server.listen({
