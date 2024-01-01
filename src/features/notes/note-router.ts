@@ -13,9 +13,12 @@ type Events = {
 	onUpsert: [NoteSelect]
 }
 
-const emitter = new Emitter<Events>()
+declare global {
+	// biome-ignore lint/style/noVar: <explanation>
+	var noteEmitter: Emitter<Events>
+}
 
-console.log('pippo')
+globalThis.noteEmitter ??= new Emitter<Events>()
 
 export const noteRouter = router({
 	onDelete: publicProcedure.subscription(() => {
@@ -23,10 +26,10 @@ export const noteRouter = router({
 			const emitNote = (data: { id: string }) => {
 				emit.next(data)
 			}
-			emitter.on('onDelete', emitNote)
+			noteEmitter.on('onDelete', emitNote)
 
 			return () => {
-				emitter.off('onDelete', emitNote)
+				noteEmitter.off('onDelete', emitNote)
 			}
 		})
 	}),
@@ -35,10 +38,10 @@ export const noteRouter = router({
 			const emitNote = (note: NoteSelect) => {
 				emit.next(note)
 			}
-			emitter.on('onUpsert', emitNote)
+			noteEmitter.on('onUpsert', emitNote)
 
 			return () => {
-				emitter.off('onUpsert', emitNote)
+				noteEmitter.off('onUpsert', emitNote)
 			}
 		})
 	}),
@@ -66,7 +69,7 @@ export const noteRouter = router({
 				})
 			}
 
-			emitter.emit('onDelete', { id: input.id })
+			noteEmitter.emit('onDelete', { id: input.id })
 
 			return { id: input.id }
 		}),
@@ -118,7 +121,7 @@ export const noteRouter = router({
 				})
 				.all()
 
-			emitter.emit('onUpsert', notes[0])
+			noteEmitter.emit('onUpsert', notes[0])
 
 			return notes[0]
 		}),
