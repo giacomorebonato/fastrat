@@ -4,10 +4,15 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+env:
+  HOST: 0.0.0.0
+  SECRET: b23282827-999-888c-b574-4c0eb48c8123
+  TURSO_DB_URL: file:local.db
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
