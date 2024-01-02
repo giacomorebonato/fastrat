@@ -32,12 +32,19 @@ export async function createServer(
 				readableObjectMode: true,
 			},
 		})
-		.register(googleAuth)
-		.register(fastifyTRPCPlugin, {
-			prefix: '/trpc',
-			trpcOptions: { createContext, router: apiRouter },
-			useWSS: true,
+
+	if (env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET) {
+		await server.register(googleAuth, {
+			GOOGLE_CLIENT_ID: env.GOOGLE_CLIENT_ID,
+			GOOGLE_CLIENT_SECRET: env.GOOGLE_CLIENT_SECRET,
 		})
+	}
+
+	await server.register(fastifyTRPCPlugin, {
+		prefix: '/trpc',
+		trpcOptions: { createContext, router: apiRouter },
+		useWSS: true,
+	})
 
 	server.get('*', async (request, reply) => {
 		const pageContext = await renderPage({
@@ -63,3 +70,5 @@ export async function createServer(
 
 	return await server
 }
+
+export type FastRatServer = Awaited<ReturnType<typeof createServer>>
