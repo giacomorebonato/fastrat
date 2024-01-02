@@ -3,8 +3,8 @@ import 'dotenv/config'
 import { z } from 'zod'
 
 const schema = z.object({
-	GOOGLE_CLIENT_ID: z.string().nullable(),
-	GOOGLE_CLIENT_SECRET: z.string().nullable(),
+	GOOGLE_CLIENT_ID: z.optional(z.string()),
+	GOOGLE_CLIENT_SECRET: z.optional(z.string()),
 	HOST: z.string(),
 	NODE_ENV: z
 		.enum(['development', 'test', 'production'])
@@ -15,7 +15,7 @@ const schema = z.object({
 		.default('3000'),
 	SECRET: z.string(),
 	SITE_URL: z.string().default('http://localhost:3000'),
-	TURSO_DB_AUTH_TOKEN: z.string(),
+	TURSO_DB_AUTH_TOKEN: z.optional(z.string()),
 	TURSO_DB_URL: z.string(),
 })
 
