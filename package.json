@@ -4,9 +4,9 @@
 		"dev": "vavite serve | pino-pretty",
 		"build": "del dist && vavite build",
 		"start": "node dist/server/index.mjs",
-		"test": "check && tsc",
+		"test": "biome check src && tsc && vitest",
 		"test:e2e": "playwright test",
-		"check": "biome check --apply ./src",
+		"check": "biome check --apply src",
 		"tsc": "tsc"
 	},
 	"imports": {
