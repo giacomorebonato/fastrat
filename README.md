@@ -58,6 +58,12 @@ Check the answer to the question "Should I pre-render?" on [Vike docs](https://v
 
 Vike gives you total control around this behaviour and it's well documented.
 
+## tRPC
+
+This project comes with [tRPC](https://trpc.io) ready to be used.
+Check [note-router.ts](src/features/notes/note-router.ts) to see how queries, mutations and subscriptions can be implemented.  
+All the routers are collected in [api-router.ts](src/features/server/api-router.ts), but you can organise files in the way you prefer.
+
 ## Credits
 
 This project has been inspired by other starter kit
