@@ -9,15 +9,35 @@
   />
 </p>
 
-FastRat is a Fastify + React starter kit focusing on:
+<p align="center">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black" alt="JavaScript">
+<img src="https://img.shields.io/badge/PostCSS-DD3A0A.svg?style=flat&logo=PostCSS&logoColor=white" alt="PostCSS">
+<img src="https://img.shields.io/badge/Autoprefixer-DD3735.svg?style=flat&logo=Autoprefixer&logoColor=white" alt="Autoprefixer">
+<img src="https://img.shields.io/badge/YAML-CB171E.svg?style=flat&logo=YAML&logoColor=white" alt="YAML">
+<img src="https://img.shields.io/badge/Vitest-6E9F18.svg?style=flat&logo=Vitest&logoColor=white" alt="Vitest">
+<img src="https://img.shields.io/badge/Vite-646CFF.svg?style=flat&logo=Vite&logoColor=white" alt="Vite">
+<img src="https://img.shields.io/badge/React-61DAFB.svg?style=flat&logo=React&logoColor=black" alt="React">
+<img src="https://img.shields.io/badge/Lodash-3492FF.svg?style=flat&logo=Lodash&logoColor=white" alt="Lodash">
 
-1. a nice developer experience 
-2. easily switch from SPA and MPA, to leverage the best of both
+<img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat&logo=TypeScript&logoColor=white" alt="TypeScript">
+<img src="https://img.shields.io/badge/Docker-2496ED.svg?style=flat&logo=Docker&logoColor=white" alt="Docker">
+<img src="https://img.shields.io/badge/GitHub%20Actions-2088FF.svg?style=flat&logo=GitHub-Actions&logoColor=white" alt="GitHub%20Actions">
+<img src="https://img.shields.io/badge/GitHub-181717.svg?style=flat&logo=GitHub&logoColor=white" alt="GitHub">
+<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white" alt="JSON">
+<img src="https://img.shields.io/badge/Fastify-000000.svg?style=flat&logo=Fastify&logoColor=white" alt="Fastify">
+<img src="https://img.shields.io/badge/Markdown-000000.svg?style=flat&logo=Markdown&logoColor=white" alt="Markdown">
+</p>
+
+![license](https://img.shields.io/github/license/giacomorebonato/fastrat?style=flat&labelColor=E5E4E2&color=869BB3)
+![repo-language-count](https://img.shields.io/github/languages/count/giacomorebonato/fastrat?style=flat&labelColor=E5E4E2&color=869BB3)
+![repo-top-language](https://img.shields.io/github/languages/top/giacomorebonato/fastrat?style=flat&labelColor=E5E4E2&color=869BB3)
+![last-commit](https://img.shields.io/github/last-commit/giacomorebonato/fastrat?style=flat&labelColor=E5E4E2&color=869BB3)
+</div>
 
 <details>
 <summary>
 
-## All the libraries and technologies used
+## Based on these libraries
 
 </summary>
 
@@ -79,7 +99,7 @@ It should be easy for you to re-use this example to add other authentication pro
 
 </summary>
 
-Project starts with pre-rendering enabled. Meaning that React components are rendered at build time and not when a request comes in.
+Project starts with pre-rendering enabled. Meaning that React components are rendered at build time and not when a request comes in.  
 Check the answer to the question "Should I pre-render?" on [Vike docs](https://vike.dev/pre-rendering#should-i-pre-render).
 
 Vike gives you total control around this behaviour and it's well documented.

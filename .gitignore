@@ -8,3 +8,4 @@ sqlite.db
 .env
 .DS_Store
 local.db
+readme-ai.md
