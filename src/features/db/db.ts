@@ -12,4 +12,4 @@ const client = createClient({
 
 export const db = drizzle(client)
 
-migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'drizzle') })
+migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'migrations') })
