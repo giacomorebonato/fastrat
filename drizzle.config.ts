@@ -10,5 +10,5 @@ export default ({
 	},
 	schema: Path.join(Root.path, 'src', 'features', 'db', 'schema.ts'),
 	driver: 'turso',
-	out: './drizzle',
+	out: './migrations',
 } satisfies Config)

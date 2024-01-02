@@ -16,7 +16,7 @@ const schema = z.object({
 	SECRET: z.string(),
 	SITE_URL: z.string().default('http://localhost:3000'),
 	TURSO_DB_AUTH_TOKEN: z.optional(z.string()),
-	TURSO_DB_URL: z.string(),
+	TURSO_DB_URL: z.string().default('file:local.db'),
 })
 
 export const env = schema.parse(process.env)
