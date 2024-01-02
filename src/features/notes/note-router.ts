@@ -7,6 +7,7 @@ import { noteSchema } from '#features/db/schema'
 import { publicProcedure, router } from '#features/server/trpc-server'
 import { NoteSelect, insertNoteSchema } from './note-schema'
 import { desc } from 'drizzle-orm'
+import { env } from '#features/server/env'
 
 type Events = {
 	onDelete: [{ id: string }]
@@ -52,7 +53,7 @@ export const noteRouter = router({
 			}),
 		)
 		.mutation(async ({ input, ctx }) => {
-			if (!ctx.user) {
+			if (env.GOOGLE_CLIENT_ID && !ctx.user) {
 				throw new TRPCError({
 					code: 'UNAUTHORIZED',
 					message: 'You need to be authenticated',
@@ -104,7 +105,7 @@ export const noteRouter = router({
 			}),
 		)
 		.mutation(async ({ ctx, input }) => {
-			if (!ctx.user) {
+			if (env.GOOGLE_CLIENT_ID && !ctx.user) {
 				throw new TRPCError({
 					code: 'UNAUTHORIZED',
 					message: 'You need to be authenticated',
@@ -113,7 +114,12 @@ export const noteRouter = router({
 
 			const notes = await ctx.db
 				.insert(noteSchema)
-				.values({ ...input, updatedAt: new Date(), creatorId: ctx.user.userId })
+				.values({
+					...input,
+					updatedAt: new Date(),
+					// biome-ignore lint/style/noNonNullAssertion: <explanation>
+					creatorId: ctx.user!.userId,
+				})
 				.returning()
 				.onConflictDoUpdate({
 					set: input,

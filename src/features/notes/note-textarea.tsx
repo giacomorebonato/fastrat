@@ -5,7 +5,7 @@ import { P, match } from 'ts-pattern'
 import { navigate } from 'vike/client/router'
 import { trpcClient } from '#features/browser/trpc-client'
 
-export function CreateNoteInput(props: { id: string }) {
+export function NoteTextarea(props: { id: string }) {
 	const getNote = trpcClient.note.get.useQuery(
 		{
 			id: props.id,

@@ -1,5 +1,5 @@
 import { ClientOnly } from 'vike-react/ClientOnly'
-import { NotesView } from '#features/notes/notes-view'
+import { NoteList } from '#features/notes/note-list'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 
 export function Page({ noteId }: { noteId: string }) {
@@ -12,8 +12,8 @@ export function Page({ noteId }: { noteId: string }) {
 					deps={[noteId]}
 					fallback={<span>Loading</span>}
 					load={async () =>
-						await import('#features/notes/create-note-input').then((c) => ({
-							default: c.CreateNoteInput,
+						await import('#features/notes/note-textarea').then((c) => ({
+							default: c.NoteTextarea,
 						}))
 					}
 				>
@@ -22,7 +22,7 @@ export function Page({ noteId }: { noteId: string }) {
 			</div>
 
 			<div className='flex-1'>
-				<NotesView />
+				<NoteList />
 			</div>
 		</div>
 	)

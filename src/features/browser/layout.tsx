@@ -61,6 +61,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 							.with(null, () => (
 								<button
 									className='btn btn-ghost'
+									data-testid='btn-login'
 									onClick={() => {
 										dialogRef.current?.showModal()
 									}}

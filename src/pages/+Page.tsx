@@ -1,4 +1,4 @@
-import { NotesView } from '#features/notes/notes-view'
+import { NoteList } from '#features/notes/note-list'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import logo from '#images/logo.jpg'
 
@@ -15,7 +15,7 @@ export function Page() {
 				/>
 			</div>
 			<div className='flex-1'>
-				<NotesView />
+				<NoteList />
 			</div>
 		</div>
 	)

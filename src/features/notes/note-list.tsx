@@ -3,7 +3,7 @@ import { navigate } from 'vike/client/router'
 import { trpcClient } from '#features/browser/trpc-client'
 import { NoteRow } from './note-row'
 
-export function NotesView() {
+export function NoteList() {
 	const getNotes = trpcClient.note.list.useQuery()
 
 	const upsertNote = trpcClient.note.upsert.useMutation({

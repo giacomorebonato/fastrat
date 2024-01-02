@@ -7,3 +7,4 @@ sqlite.db
 /playwright/.cache/
 .env
 .DS_Store
+local.db

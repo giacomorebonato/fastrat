@@ -3,8 +3,8 @@ import 'dotenv/config'
 import { z } from 'zod'
 
 const schema = z.object({
-	GOOGLE_CLIENT_ID: z.string(),
-	GOOGLE_CLIENT_SECRET: z.string(),
+	GOOGLE_CLIENT_ID: z.string().nullable(),
+	GOOGLE_CLIENT_SECRET: z.string().nullable(),
 	HOST: z.string(),
 	NODE_ENV: z
 		.enum(['development', 'test', 'production'])
