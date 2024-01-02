@@ -1,7 +1,7 @@
 import { useQueryClient } from '@tanstack/react-query'
+import { toast } from 'react-toastify'
 import { trpcClient } from '#features/browser/trpc-client'
 import { NoteSelect } from './note-schema'
-import { toast } from 'react-toastify'
 
 export const useNoteSubscriptions = () => {
 	const queryClient = useQueryClient()
