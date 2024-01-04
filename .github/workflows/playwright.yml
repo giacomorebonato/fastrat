@@ -7,6 +7,8 @@ on:
 env:
   HOST: 0.0.0.0
   SECRET: b23282827-999-888c-b574-4c0eb48c8123
+  TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+  TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
   TURSO_DB_URL: file:local.db
 jobs:
   test:
