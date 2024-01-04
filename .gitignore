@@ -9,3 +9,6 @@ sqlite.db
 .DS_Store
 local.db
 readme-ai.md
+user.json
+gha-creds-*.json
+
