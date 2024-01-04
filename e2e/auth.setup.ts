@@ -37,13 +37,7 @@ setup('authenticate', async ({ page }, testInfo) => {
 
 	await page.waitForTimeout(10_000)
 
-	const verificationCodeButton = await page.getByText(
-		/Confirm your recovery email/,
-	)
-
-	if (verificationCodeButton) {
-		verificationCodeButton.click()
-	}
+	await page.getByText(/Confirm your recovery email/).click()
 
 	const logoutScreenshot = await page.screenshot()
 	await testInfo.attach('screenshot', {
@@ -51,7 +45,7 @@ setup('authenticate', async ({ page }, testInfo) => {
 		contentType: 'image/png',
 	})
 
-	await page.locator('input[type=email]').fill('grebonato@outlook.ie')
+	// await page.locator('input[type=email]').fill('grebonato@outlook.ie')
 
 	await expect(page.getByTestId('btn-logout')).toBeVisible()
 

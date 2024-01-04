@@ -3,6 +3,7 @@ import 'dotenv/config'
 import { z } from 'zod'
 
 const schema = z.object({
+	CI: z.optional(z.boolean()),
 	GOOGLE_CLIENT_ID: z.optional(z.string()),
 	GOOGLE_CLIENT_SECRET: z.optional(z.string()),
 	HOST: z.string(),
