@@ -21,13 +21,7 @@ jobs:
     - name: Run Playwright tests
       run: xvfb-run --auto-servernum --server-args='-screen 0 1024x768x24' pnpm exec playwright test
       env:
-        GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-        GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-        TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
-        TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
-        HOST: 0.0.0.0
         CI: true
-        SECRET: b23282827-999-888c-b574-4c0eb48c8123
     - uses: actions/upload-artifact@v4
       if: always()
       with:

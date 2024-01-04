@@ -6,12 +6,12 @@ const schema = z.object({
 	CI: z.optional(z.string().transform(Boolean)),
 	GOOGLE_CLIENT_ID: z.optional(z.string()),
 	GOOGLE_CLIENT_SECRET: z.optional(z.string()),
-	HOST: z.string(),
+	HOST: z.string().default('0.0.0.0'),
 	NODE_ENV: z
 		.enum(['development', 'test', 'production'])
 		.default('development'),
 	PORT: z.string().transform(Number).default('3000'),
-	SECRET: z.string(),
+	SECRET: z.string().default('a-good-repository-secret'),
 	SITE_URL: z.string().default('http://localhost:3000'),
 	TEST_EMAIL: z.optional(z.string()),
 	TEST_PASSWORD: z.optional(z.string()),

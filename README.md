@@ -70,9 +70,7 @@
    * `gh repo clone giacomorebonato/fastrat-test`
 2. Install dependencies
    * `pnpm install`
-3. Set `.env` file
-   * `cp .env.example .env`
-4. Start the project
+3. Start the project
    * `pnpm dev`
 
 </details>
