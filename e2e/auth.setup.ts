@@ -51,7 +51,7 @@ setup('authenticate', async ({ page }, testInfo) => {
 		contentType: 'image/png',
 	})
 
-	await page.locator('input').fill('grebonato@outlook.ie')
+	await page.locator('input[type=email]').fill('grebonato@outlook.ie')
 
 	await expect(page.getByTestId('btn-logout')).toBeVisible()
 
