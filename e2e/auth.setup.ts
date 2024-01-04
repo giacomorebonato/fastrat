@@ -21,10 +21,7 @@ setup('authenticate', async ({ page }, testInfo) => {
 		contentType: 'image/png',
 	})
 
-	console.log(`Page url: ${page.url()}`)
-
-	// biome-ignore lint/style/noNonNullAssertion: <explanation>
-	await page.locator('input[type=email]').fill(env.TEST_EMAIL!)
+	await page.locator('input[type=email]').fill(env.TEST_EMAIL)
 
 	await page.getByText('Next').click()
 
@@ -34,16 +31,9 @@ setup('authenticate', async ({ page }, testInfo) => {
 		contentType: 'image/png',
 	})
 
-	// biome-ignore lint/style/noNonNullAssertion: <explanation>
-	await page.locator('input[type=password]').fill(env.TEST_PASSWORD!)
+	await page.locator('input[type=password]').fill(env.TEST_PASSWORD)
 
 	await page.getByText('Next').click()
-
-	const verificationCodeButton = await page.getByText(/Get a verification code/)
-
-	if (verificationCodeButton) {
-		verificationCodeButton.click()
-	}
 
 	await page.waitForTimeout(10_000)
 
