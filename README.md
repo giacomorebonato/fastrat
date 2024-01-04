@@ -120,6 +120,22 @@ All the routers are collected in [api-router.ts](src/features/server/api-router.
 
 <details>
 
+<details>
+<summary>
+
+### Deploy
+
+</summary>
+
+* This website deploys automatically to Fly.io
+  * https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/
+  * [GitHub action](.github/workflows/fly.yml)
+* [Environment variables](src/features/server/env.ts)
+  * https://fly.io/docs/rails/the-basics/configuration/
+  * [fly.toml](fly.toml)
+
+</details>
+
 ## Credits
 
 This project has been inspired by other starter kit
