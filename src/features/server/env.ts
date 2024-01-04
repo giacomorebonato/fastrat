@@ -15,6 +15,8 @@ const schema = z.object({
 		.default('3000'),
 	SECRET: z.string(),
 	SITE_URL: z.string().default('http://localhost:3000'),
+	TEST_EMAIL: z.optional(z.string()),
+	TEST_PASSWORD: z.optional(z.string()),
 	TURSO_DB_AUTH_TOKEN: z.optional(z.string()),
 	TURSO_DB_URL: z.string().default('file:local.db'),
 })

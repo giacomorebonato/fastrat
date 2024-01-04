@@ -25,7 +25,7 @@ export const NoteRow = ({ note }: { note: NoteSelect }) => {
 	const linkRef = useRef<HTMLAnchorElement>()
 
 	return (
-		<motion.div key={note.id}>
+		<motion.div key={note.id} data-testid={`note-${note.id}`}>
 			<Link
 				className={clsx(
 					'link flex p-2 text-center !no-underline',

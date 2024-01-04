@@ -5,7 +5,9 @@
 		"build": "del dist && vavite build",
 		"start": "node dist/server/index.mjs",
 		"test": "biome check src && tsc && vitest",
-		"test:e2e": "playwright test",
+		"e2e": "del local.db && playwright test",
+		"e2e:headed": "del local.db && playwright test --headed",
+		"e2e:ui": "del local.db && playwright test --ui",
 		"check": "biome check --apply src",
 		"tsc": "tsc"
 	},

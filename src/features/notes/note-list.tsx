@@ -18,6 +18,7 @@ export function NoteList() {
 	return (
 		<div
 			className='grid grid-flow-row grid-cols-1 gap-1 p-4'
+			data-testid='note-list'
 			style={{
 				viewTransitionName: 'hero',
 			}}

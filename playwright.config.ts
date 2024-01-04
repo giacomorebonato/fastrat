@@ -1,10 +1,11 @@
 import { defineConfig, devices } from '@playwright/test'
+import appRootPath from 'app-root-path'
+import Path from 'node:path'
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -19,8 +20,22 @@ export default defineConfig({
 	/* Configure projects for major browsers */
 	projects: [
 		{
-			name: 'chromium',
-			use: { ...devices['Desktop Chrome'] },
+			// https://playwright.dev/docs/auth
+			name: 'setup',
+			testMatch: /.*\.setup\.ts/,
+			use: {
+				...devices['Desktop Chrome'],
+				headless: false,
+			},
+		},
+
+		{
+			name: 'tests',
+			use: {
+				...devices['Desktop Chrome'],
+				storageState: Path.join(appRootPath.path, 'e2e', 'user.json'),
+			},
+			dependencies: ['setup'],
 		},
 	],
 
@@ -30,7 +45,7 @@ export default defineConfig({
 	/* Retry on CI only */
 	retries: process.env.CI ? 2 : 0,
 
-	testDir: './tests',
+	testDir: './e2e',
 
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
