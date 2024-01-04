@@ -33,6 +33,7 @@ export default defineConfig({
 			use: {
 				...devices['Desktop Chrome'],
 				storageState: Path.join(appRootPath.path, 'e2e', 'user.json'),
+				screenshot: 'only-on-failure',
 			},
 			dependencies: ['setup'],
 		},
