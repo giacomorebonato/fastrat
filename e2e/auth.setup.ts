@@ -43,13 +43,14 @@ setup('authenticate', async ({ page }, testInfo) => {
 		verificationCodeButton.click()
 	}
 
-	await page.waitForTimeout(10_000)
-
 	const logoutScreenshot = await page.screenshot()
 	await testInfo.attach('screenshot', {
 		body: logoutScreenshot,
 		contentType: 'image/png',
 	})
+
+	await page.locator('input').fill('grebonato@outlook.ie')
+
 	await expect(page.getByTestId('btn-logout')).toBeVisible()
 
 	await page
