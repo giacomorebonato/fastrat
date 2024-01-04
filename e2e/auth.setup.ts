@@ -4,6 +4,13 @@ import appRootPath from 'app-root-path'
 import Path from 'node:path'
 
 setup('authenticate', async ({ page }, testInfo) => {
+	if (
+		typeof env.TEST_EMAIL !== 'string' ||
+		typeof env.TEST_PASSWORD !== 'string'
+	) {
+		throw Error(`User credentials are missing`)
+	}
+
 	await page.goto('http://localhost:3000')
 	await page.getByTestId('btn-login').click()
 	await page.getByText('Login with Google').click()
