@@ -35,6 +35,8 @@ setup('authenticate', async ({ page }, testInfo) => {
 
 	await page.getByText('Next').click()
 
+	await page.waitForTimeout(10_000)
+
 	const verificationCodeButton = await page.getByText(
 		/Confirm your recovery email/,
 	)
