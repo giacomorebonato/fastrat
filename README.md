@@ -118,7 +118,7 @@ This project comes with [tRPC](https://trpc.io) ready to be used.
 Check [note-router.ts](src/features/notes/note-router.ts) to see how queries, mutations and subscriptions can be implemented.  
 All the routers are collected in [api-router.ts](src/features/server/api-router.ts), but you can organise files in the way you prefer.
 
-<details>
+</details>
 
 <details>
 
