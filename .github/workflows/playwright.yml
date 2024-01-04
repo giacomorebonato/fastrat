@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: 21
@@ -27,7 +28,6 @@ jobs:
         HOST: 0.0.0.0
         CI: true
         SECRET: b23282827-999-888c-b574-4c0eb48c8123
-        TURSO_DB_URL: file:local.db
     - uses: actions/upload-artifact@v4
       if: always()
       with:
