@@ -1,4 +1,4 @@
-# Fastify + React = FastRat!
+# Fastify + React = FastRat! <!-- omit from toc -->
 
 <p align="center">
   <img 
@@ -9,14 +9,13 @@
   />
 </p>
 
-- [Fastify + React = FastRat!](#fastify--react--fastrat)
-  - [Based on these libraries](#based-on-these-libraries)
-  - [Instructions for development](#instructions-for-development)
-  - [Authentication](#authentication)
-  - [SSR](#ssr)
-  - [tRPC](#trpc)
-  - [Deploy](#deploy)
-  - [Credits](#credits)
+- [Based on these libraries](#based-on-these-libraries)
+- [Instructions for development](#instructions-for-development)
+- [Authentication](#authentication)
+- [SSR](#ssr)
+- [tRPC](#trpc)
+- [Deploy](#deploy)
+- [Credits](#credits)
 
 ## Based on these libraries
 
