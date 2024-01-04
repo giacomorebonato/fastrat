@@ -1,5 +1,6 @@
 import Crypto from 'node:crypto'
 import { fastifyOauth2 } from '@fastify/oauth2'
+import { FastifyReply } from 'fastify'
 import { fastifyPlugin } from 'fastify-plugin'
 import { z } from 'zod'
 import { db } from '#features/db/db'
@@ -7,7 +8,6 @@ import { env } from '#features/server/env'
 import { USER_TOKEN } from './cookies'
 import { createToken } from './create-token'
 import { userSchema } from './user-schema'
-import { FastifyReply } from 'fastify'
 
 export const googleUserSchema = z.object({
 	email: z.string(),
