@@ -40,6 +40,11 @@ setup('authenticate', async ({ page }, testInfo) => {
 	await page.getByText('Next').click()
 	await page.waitForTimeout(10_000)
 
+	const logoutScreenshot = await page.screenshot()
+	await testInfo.attach('screenshot', {
+		body: logoutScreenshot,
+		contentType: 'image/png',
+	})
 	await expect(page.getByTestId('btn-logout')).toBeVisible()
 
 	await page
