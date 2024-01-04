@@ -21,6 +21,8 @@ setup('authenticate', async ({ page }, testInfo) => {
 		contentType: 'image/png',
 	})
 
+	console.log(`Page url: ${page.url()}`)
+
 	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	await page.locator('input[type=email]').fill(env.TEST_EMAIL!)
 
