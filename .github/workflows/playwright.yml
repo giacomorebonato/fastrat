@@ -13,8 +13,6 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 21
-    - name: Install xvfb
-      run: sudo apt-get install xvfb
     - name: Install dependencies
       run: npm install -g pnpm && pnpm install
     - name: Install Playwright Browsers
@@ -27,6 +25,7 @@ jobs:
         TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
         TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
         HOST: 0.0.0.0
+        CI: true
         SECRET: b23282827-999-888c-b574-4c0eb48c8123
         TURSO_DB_URL: file:local.db
     - uses: actions/upload-artifact@v4
