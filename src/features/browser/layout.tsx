@@ -72,6 +72,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 							))
 							.with(P.not(undefined), () => (
 								<button
+									data-testid='btn-logout'
 									type='button'
 									className='btn btn-ghost'
 									onClick={() => {

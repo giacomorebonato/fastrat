@@ -1,0 +1,11 @@
+import { test as setup } from '@playwright/test'
+import appRootPath from 'app-root-path'
+import Path from 'node:path'
+
+setup('authenticate', async ({ page }, testInfo) => {
+	await page.goto('http://localhost:3000/login/google/ci')
+
+	await page
+		.context()
+		.storageState({ path: Path.join(appRootPath.path, 'e2e', 'user.json') })
+})
