@@ -14,6 +14,7 @@ test('creates a note and ensures note list is updated from websockets', async ({
 	const ws = await getWebSocket(page)
 
 	await expect(page).toHaveTitle(/FastRat/)
+	await page.getByText('Logout').isVisible()
 	await page.locator('textarea').isVisible()
 
 	await page.getByText('Create Note').click()

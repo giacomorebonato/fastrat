@@ -33,12 +33,10 @@ export async function createServer(
 			},
 		})
 
-	if (env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET) {
-		await server.register(googleAuth, {
-			GOOGLE_CLIENT_ID: env.GOOGLE_CLIENT_ID,
-			GOOGLE_CLIENT_SECRET: env.GOOGLE_CLIENT_SECRET,
-		})
-	}
+	await server.register(googleAuth, {
+		GOOGLE_CLIENT_ID: env.GOOGLE_CLIENT_ID,
+		GOOGLE_CLIENT_SECRET: env.GOOGLE_CLIENT_SECRET,
+	})
 
 	await server.register(fastifyTRPCPlugin, {
 		prefix: '/trpc',

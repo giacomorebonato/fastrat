@@ -17,6 +17,7 @@ const config: UserConfig = {
 		vavite({
 			reloadOn: 'static-deps-change',
 			serverEntry: 'src/index.ts',
+			handlerEntry: 'src/handler.ts',
 			serveClientAssetsInDev: true,
 		}),
 		react(),

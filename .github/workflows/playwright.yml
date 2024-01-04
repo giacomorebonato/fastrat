@@ -1,9 +1,9 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
 jobs:
   test:
     timeout-minutes: 60
@@ -19,9 +19,9 @@ jobs:
     - name: Install Playwright Browsers
       run: pnpm exec playwright install --with-deps
     - name: Run Playwright tests
-      run: xvfb-run --auto-servernum --server-args='-screen 0 1024x768x24' pnpm exec playwright test
+      run: pnpm e2e
       env:
-        CI: true
+        NODE_ENV: development
     - uses: actions/upload-artifact@v4
       if: always()
       with:
