@@ -46,7 +46,7 @@ export const googleAuth = fastifyPlugin<{
 		startRedirectPath: '/login/google',
 	})
 
-	if (env.CI) {
+	if (env.NODE_ENV === 'development') {
 		fastify.get('/login/google/ci', async (request, reply) => {
 			await updateDatabaseAndRedirect({
 				reply,
