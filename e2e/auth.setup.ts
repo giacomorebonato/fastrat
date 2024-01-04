@@ -15,6 +15,12 @@ setup('authenticate', async ({ page }, testInfo) => {
 	await page.getByTestId('btn-login').click()
 	await page.getByText('Login with Google').click()
 
+	const googleScreenshot = await page.screenshot()
+	await testInfo.attach('screenshot', {
+		body: googleScreenshot,
+		contentType: 'image/png',
+	})
+
 	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	await page.locator('input[type=email]').fill(env.TEST_EMAIL!)
 

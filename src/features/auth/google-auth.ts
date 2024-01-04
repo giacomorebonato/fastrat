@@ -19,6 +19,8 @@ export const googleUserSchema = z.object({
 	verified_email: z.boolean(),
 })
 
+const isProduction = env.NODE_ENV === 'production'
+
 export const googleAuth = fastifyPlugin<{
 	GOOGLE_CLIENT_ID: string
 	GOOGLE_CLIENT_SECRET: string
@@ -86,8 +88,8 @@ export const googleAuth = fastifyPlugin<{
 					expires: inSevenDays,
 					httpOnly: true,
 					path: '/',
-					secure: env.NODE_ENV === 'production',
-					signed: env.NODE_ENV === 'production',
+					secure: isProduction,
+					signed: isProduction,
 				})
 				.redirect('/')
 		} catch (error) {
