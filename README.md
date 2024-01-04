@@ -37,7 +37,7 @@
 <details>
 <summary>
 
-## Based on these libraries
+### Based on these libraries
 
 </summary>
 
@@ -47,12 +47,13 @@
   * for frontend tooling and bundling
 * [Vike](https://vike.dev)
   * a Vite plugin to create your own NextJS
-* [Trpc](https://trpc.io/docs/server/adapters/fastify)
+* [tRPC](https://trpc.io/docs/server/adapters/fastify)
   * for end points with E2E type safety
 * [Vavite](https://github.com/cyco130/vavite)
   * for running and compiling Node code with Vite
 * [Turso db](https://turso.tech)
   * for easy to use SQL database
+  * fallbacks to [libsql](https://github.com/tursodatabase/libsql) locally
 * [Fly.io](https://fly.io)
   * for deployment
 
@@ -62,7 +63,7 @@
 
 <summary open>
 
-## Instructions
+### Instructions
 
 </summary>
 
@@ -79,7 +80,7 @@
 
 <summary>
 
-## Authentication
+### Authentication
 
 </summary>
 
@@ -93,7 +94,7 @@ It should be easy for you to re-use this example to add other authentication pro
 
 <summary>
 
-## SSR
+### SSR
 
 </summary>
 
@@ -109,7 +110,7 @@ Vike gives you total control around this behaviour and it's well documented.
 
 <summary>
 
-## tRPC
+### tRPC
 
 </summary>
 
