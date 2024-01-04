@@ -38,6 +38,13 @@ setup('authenticate', async ({ page }, testInfo) => {
 	await page.locator('input[type=password]').fill(env.TEST_PASSWORD!)
 
 	await page.getByText('Next').click()
+
+	const verificationCodeButton = await page.getByText(/Get a verification code/)
+
+	if (verificationCodeButton) {
+		verificationCodeButton.click()
+	}
+
 	await page.waitForTimeout(10_000)
 
 	const logoutScreenshot = await page.screenshot()
