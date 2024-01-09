@@ -18,5 +18,8 @@
 			"quoteStyle": "single",
 			"jsxQuoteStyle": "single"
 		}
+	},
+	"files": {
+		"ignore": ["*.ico", "*.jpg"]
 	}
 }
