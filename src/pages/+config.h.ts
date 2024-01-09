@@ -3,7 +3,7 @@ import type { Config } from 'vike/types'
 import { Head } from '#features/browser/head'
 import { PageShell } from '#features/browser/page-shell'
 
-export default ({
+export default {
 	Layout: PageShell,
 
 	// <meta name="description">
@@ -15,4 +15,4 @@ export default ({
 	Head,
 	// <title>
 	title: process.env.NODE_ENV === 'production' ? 'FastRat' : 'FastRat Local',
-} satisfies Config)
+} satisfies Config
