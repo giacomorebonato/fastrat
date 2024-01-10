@@ -20,6 +20,6 @@
 		}
 	},
 	"files": {
-		"ignore": ["*.ico", "*.jpg"]
+		"ignore": ["*.ico", "*.jpg", "src/routeTree.gen.ts"]
 	}
 }

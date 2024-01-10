@@ -2,13 +2,15 @@ import _ from 'lodash'
 import { useCallback, useEffect } from 'react'
 import { toast } from 'react-toastify'
 import { P, match } from 'ts-pattern'
-import { navigate } from 'vike/client/router'
 import { trpcClient } from '#features/browser/trpc-client'
+import { useNavigate } from '@tanstack/react-router'
 
-export function NoteTextarea(props: { id: string }) {
+export function NoteTextarea(props: { noteId: string }) {
+	const navigate = useNavigate()
+
 	const getNote = trpcClient.note.get.useQuery(
 		{
-			id: props.id,
+			id: props.noteId,
 		},
 		{
 			retry: 0,
@@ -33,9 +35,11 @@ export function NoteTextarea(props: { id: string }) {
 	useEffect(() => {
 		if (getNote.error) {
 			toast(getNote.error.message)
-			navigate('/')
+			navigate({
+				to: '/',
+			})
 		}
-	}, [getNote.error])
+	}, [navigate, getNote.error])
 
 	return (
 		<div className='p-4'>

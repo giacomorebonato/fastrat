@@ -1,7 +1,7 @@
 import { vavite } from 'vavite'
 import react from '@vitejs/plugin-react'
-import vike from 'vike/plugin'
 import { type UserConfig } from 'vite'
+import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 
 const config: UserConfig = {
 	buildSteps: [
@@ -21,10 +21,7 @@ const config: UserConfig = {
 			serveClientAssetsInDev: true,
 		}),
 		react(),
-		vike({
-			disableAutoFullBuild: true,
-			prerender: true,
-		}),
+		TanStackRouterVite(),
 	],
 }
 

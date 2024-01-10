@@ -1,8 +1,11 @@
 import { fileURLToPath } from 'node:url'
+import { createMemoryHistory } from '@tanstack/react-router'
+import { StartServer } from '@tanstack/react-router-server/server'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import { type FastifyServerOptions, fastify } from 'fastify'
-import { renderPage } from 'vike/server'
+import ReactDOMServer from 'react-dom/server'
 import { googleAuth } from '#features/auth/google-auth'
+import { createRouter } from '#router'
 import { apiRouter } from './api-router'
 import { env } from './env'
 import { createContext } from './trpc-context'
@@ -45,23 +48,24 @@ export async function createServer(
 	})
 
 	server.get('*', async (request, reply) => {
-		const pageContext = await renderPage({
-			urlOriginal: request.url,
-			siteUrl: env.SITE_URL,
+		const router = createRouter()
+		const memoryHistory = createMemoryHistory({
+			initialEntries: [request.url],
 		})
-		const { httpResponse } = pageContext
+		router.update({
+			history: memoryHistory,
+			context: {
+				...router.options.context,
+				head: '<meta>Pippo</meta>',
+			},
+		})
+		await router.load()
 
-		if (!httpResponse) {
-			return 'no response'
-		}
+		const appHtml = ReactDOMServer.renderToString(
+			<StartServer router={router} />,
+		)
 
-		const { body, headers, statusCode } = httpResponse
-
-		for (const [key, value] of headers) {
-			void reply.header(key, value)
-		}
-
-		void reply.code(statusCode).send(body)
+		void reply.code(200).type('text/html').send(`<!DOCTYPE html>${appHtml}`)
 	})
 
 	await server.ready()
