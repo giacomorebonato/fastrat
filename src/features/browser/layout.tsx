@@ -104,7 +104,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						className='drawer-overlay'
 						htmlFor='my-drawer-3'
 					/>
-					<ul className='menu min-h-full w-80 bg-base-200 p-4'>
+					<ul className='menu min-h-full w-3/4 bg-base-200 p-4'>
 						<li>
 							<a href='#test'>Sidebar Item 1</a>
 						</li>
