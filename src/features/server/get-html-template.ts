@@ -3,13 +3,18 @@ import Path from 'node:path'
 import appRootPath from 'app-root-path'
 import { env } from './env'
 
-export const getHtmlTemplate = ({ appHtml }: { appHtml: string }) => {
+export const getHtmlTemplate = ({
+	appHtml,
+	title,
+}: { appHtml: string; title: string }) => {
 	const indexPath =
 		env.NODE_ENV === 'production'
 			? Path.join(appRootPath.path, 'dist/client/index.html')
 			: Path.join(appRootPath.path, 'index.html')
 
 	let code = Fs.readFileSync(indexPath, 'utf-8')
+
+	code = code.replace('<!--app-title-->', title)
 
 	if (env.NODE_ENV === 'development') {
 		code = code.replace(

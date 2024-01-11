@@ -1,4 +1,3 @@
-import Fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { createMemoryHistory } from '@tanstack/react-router'
 import { StartServer } from '@tanstack/react-router-server/server'
@@ -71,7 +70,10 @@ export async function createServer(
 			<StartServer router={router} />,
 		)
 
-		void reply.code(200).type('text/html').send(getHtmlTemplate({ appHtml }))
+		void reply
+			.code(200)
+			.type('text/html')
+			.send(getHtmlTemplate({ appHtml, title: 'FastRat' }))
 	})
 
 	await server.ready()
