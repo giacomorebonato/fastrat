@@ -8,22 +8,17 @@ export const Route = new FileRoute('/notes/$noteId').createRoute({
 	parseParams: (params) => ({
 		noteId: z.string().parse(params.noteId),
 	}),
-	loader: async ({ params }) => {
-		return {
-			noteId: params.noteId,
-		}
-	},
 	component: NoteComponent,
 })
 
 function NoteComponent() {
 	useNoteSubscriptions()
-	const loaderData = Route.useLoaderData()
+	const { noteId } = Route.useParams()
 
 	return (
 		<div className='flex flex-col md:flex-row'>
 			<div className='flex-1'>
-				<NoteTextarea noteId={loaderData.noteId} />
+				<NoteTextarea noteId={noteId} />
 			</div>
 
 			<div className='flex-1'>

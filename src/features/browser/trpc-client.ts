@@ -13,7 +13,7 @@ const getProtocol = (
 	type: 'http' | 'ws' = 'http',
 ): 'http' | 'https' | 'ws' | 'wss' => {
 	if (typeof window !== 'undefined') {
-		if (window.location.protocol === 'https') {
+		if (window.location.protocol === 'https:') {
 			return `${type}s`
 		}
 
