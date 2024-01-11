@@ -9,7 +9,9 @@ import type { ApiRouter } from '../server/api-router.js'
 
 export const trpcClient = createTRPCReact<ApiRouter>()
 
-const getProtocol = (type: 'http' | 'ws' = 'http') => {
+const getProtocol = (
+	type: 'http' | 'ws' = 'http',
+): 'http' | 'https' | 'ws' | 'wss' => {
 	if (typeof window !== 'undefined') {
 		if (window.location.protocol === 'https') {
 			return `${type}s`
@@ -18,7 +20,11 @@ const getProtocol = (type: 'http' | 'ws' = 'http') => {
 		return type
 	}
 
-	return import.meta.env.PROD ? 'wss' : 'ws'
+	if (import.meta.env.PROD) {
+		return `${type}s`
+	}
+
+	return type
 }
 
 export function createLink() {

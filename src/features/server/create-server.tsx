@@ -50,10 +50,6 @@ export async function createServer(
 	})
 
 	server.get('*', async (request, reply) => {
-		// if (viteDevServer) {
-		// } else {
-		// }
-
 		const router = createRouter()
 		const memoryHistory = createMemoryHistory({
 			initialEntries: [request.url],
