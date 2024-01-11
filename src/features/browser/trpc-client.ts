@@ -9,17 +9,25 @@ import type { ApiRouter } from '../server/api-router.js'
 
 export const trpcClient = createTRPCReact<ApiRouter>()
 
+const getProtocol = (type: 'http' | 'ws' = 'http') => {
+	if (typeof window !== 'undefined') {
+		if (window.location.protocol === 'https') {
+			return `${type}s`
+		}
+
+		return type
+	}
+
+	return import.meta.env.PROD ? 'wss' : 'ws'
+}
+
 export function createLink() {
 	if (import.meta.env.SSR) {
 		return httpBatchLink({ url: `${process.env.SITE_URL}/trpc` })
 	}
 
-	const wsUrl = `${import.meta.env.PROD ? 'wss' : 'ws'}://${
-		window.location.host
-	}/trpc`
-	const httpUrl = `${import.meta.env.PROD ? 'https' : 'http'}://${
-		window.location.host
-	}/trpc`
+	const wsUrl = `${getProtocol('ws')}://${window.location.host}/trpc`
+	const httpUrl = `${getProtocol('http')}://${window.location.host}/trpc`
 
 	const wsClient = createWSClient({ url: wsUrl })
 

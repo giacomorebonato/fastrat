@@ -1,10 +1,15 @@
 import { fileURLToPath } from 'node:url'
+import { createMemoryHistory } from '@tanstack/react-router'
+import { StartServer } from '@tanstack/react-router-server/server'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import { type FastifyServerOptions, fastify } from 'fastify'
-import { renderPage } from 'vike/server'
+import ReactDOMServer from 'react-dom/server'
+import { createRouter } from '#create-router'
 import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
 import { env } from './env'
+// import viteDevServer from 'vavite/vite-dev-server'
+import { getHtmlTemplate } from './get-html-template'
 import { createContext } from './trpc-context'
 
 export async function createServer(
@@ -45,23 +50,30 @@ export async function createServer(
 	})
 
 	server.get('*', async (request, reply) => {
-		const pageContext = await renderPage({
-			urlOriginal: request.url,
-			siteUrl: env.SITE_URL,
+		// if (viteDevServer) {
+		// } else {
+		// }
+
+		const router = createRouter()
+		const memoryHistory = createMemoryHistory({
+			initialEntries: [request.url],
 		})
-		const { httpResponse } = pageContext
+		router.update({
+			history: memoryHistory,
+			context: {
+				...router.options.context,
+			},
+		})
+		await router.load()
 
-		if (!httpResponse) {
-			return 'no response'
-		}
+		const appHtml = ReactDOMServer.renderToString(
+			<StartServer router={router} />,
+		)
 
-		const { body, headers, statusCode } = httpResponse
-
-		for (const [key, value] of headers) {
-			void reply.header(key, value)
-		}
-
-		void reply.code(statusCode).send(body)
+		void reply
+			.code(200)
+			.type('text/html')
+			.send(getHtmlTemplate({ appHtml, title: 'FastRat' }))
 	})
 
 	await server.ready()

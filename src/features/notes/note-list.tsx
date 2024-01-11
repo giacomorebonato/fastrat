@@ -1,9 +1,10 @@
+import { useNavigate } from '@tanstack/react-router'
 import { toast } from 'react-toastify'
-import { navigate } from 'vike/client/router'
 import { trpcClient } from '#features/browser/trpc-client'
 import { NoteRow } from './note-row'
 
 export function NoteList() {
+	const navigate = useNavigate()
 	const getNotes = trpcClient.note.list.useQuery()
 
 	const upsertNote = trpcClient.note.upsert.useMutation({
@@ -11,7 +12,12 @@ export function NoteList() {
 			toast(error.message)
 		},
 		onSuccess(data) {
-			navigate(`/notes/${data.id}`)
+			navigate({
+				to: `/notes/$noteId`,
+				params: {
+					noteId: data.id,
+				},
+			})
 		},
 	})
 

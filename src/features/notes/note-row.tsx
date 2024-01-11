@@ -1,8 +1,8 @@
+import { Link } from '@tanstack/react-router'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { toast } from 'react-toastify'
-import { Link } from '#features/browser/link'
 import { trpcClient } from '#features/browser/trpc-client'
 import { NoteSelect } from './note-schema'
 
@@ -27,12 +27,14 @@ export const NoteRow = ({ note }: { note: NoteSelect }) => {
 	return (
 		<motion.div key={note.id} data-testid={`note-${note.id}`}>
 			<Link
+				to='/notes/$noteId'
+				params={{
+					noteId: note.id,
+				}}
 				className={clsx(
 					'link flex p-2 text-center !no-underline',
 					'hover:link-hover hover:bg-accent-content hover:no-underline',
 				)}
-				href={`/notes/${note.id}`}
-				isClientRouting
 				ref={(ref) => {
 					// biome-ignore lint/style/noNonNullAssertion: <explanation>
 					linkRef.current = ref!

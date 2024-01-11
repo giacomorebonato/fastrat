@@ -1,8 +1,13 @@
+import { FileRoute } from '@tanstack/react-router'
 import { NoteList } from '#features/notes/note-list'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import logo from '#images/logo.jpg'
 
-export function Page() {
+export const Route = new FileRoute('/').createRoute({
+	component: IndexComponent,
+})
+
+function IndexComponent() {
 	useNoteSubscriptions()
 
 	return (

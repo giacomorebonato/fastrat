@@ -1,3 +1,5 @@
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import clsx from 'clsx'
 import { useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
@@ -121,6 +123,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					<button>close</button>
 				</form>
 			</dialog>
+			<ReactQueryDevtools buttonPosition='bottom-left' />
+			<TanStackRouterDevtools position='bottom-right' />
 		</>
 	)
 }

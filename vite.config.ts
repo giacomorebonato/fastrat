@@ -1,16 +1,28 @@
 import { vavite } from 'vavite'
 import react from '@vitejs/plugin-react'
-import vike from 'vike/plugin'
 import { type UserConfig } from 'vite'
+import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 
 const config: UserConfig = {
 	buildSteps: [
-		{ name: 'client' },
 		{
+			name: 'client',
 			config: {
-				build: { ssr: true, target: 'esnext' },
+				build: {
+					outDir: 'dist/client',
+					manifest: true,
+				},
 			},
+		},
+		{
 			name: 'server',
+			config: {
+				build: {
+					target: 'node21',
+					ssr: true,
+					outDir: 'dist/server',
+				},
+			},
 		},
 	],
 	plugins: [
@@ -21,10 +33,7 @@ const config: UserConfig = {
 			serveClientAssetsInDev: true,
 		}),
 		react(),
-		vike({
-			disableAutoFullBuild: true,
-			prerender: true,
-		}),
+		TanStackRouterVite(),
 	],
 }
 
