@@ -1,7 +1,7 @@
-import appRootPath from 'app-root-path'
-import { env } from './env'
 import Fs from 'node:fs'
 import Path from 'node:path'
+import appRootPath from 'app-root-path'
+import { env } from './env'
 
 export const getHtmlTemplate = ({ appHtml }: { appHtml: string }) => {
 	const indexPath =

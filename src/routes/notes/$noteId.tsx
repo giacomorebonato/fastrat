@@ -1,8 +1,8 @@
 import { FileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { NoteList } from '#features/notes/note-list'
-import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import { NoteTextarea } from '#features/notes/note-textarea'
+import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 
 export const Route = new FileRoute('/notes/$noteId').createRoute({
 	parseParams: (params) => ({

@@ -5,13 +5,13 @@ import { StartServer } from '@tanstack/react-router-server/server'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import { type FastifyServerOptions, fastify } from 'fastify'
 import ReactDOMServer from 'react-dom/server'
-import { googleAuth } from '#features/auth/google-auth'
 import { createRouter } from '#create-router'
+import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
 import { env } from './env'
-import { createContext } from './trpc-context'
 // import viteDevServer from 'vavite/vite-dev-server'
 import { getHtmlTemplate } from './get-html-template'
+import { createContext } from './trpc-context'
 
 export async function createServer(
 	options: FastifyServerOptions = {

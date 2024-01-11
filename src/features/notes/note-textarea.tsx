@@ -1,9 +1,9 @@
+import { useNavigate } from '@tanstack/react-router'
 import _ from 'lodash'
 import { useCallback, useEffect } from 'react'
 import { toast } from 'react-toastify'
 import { P, match } from 'ts-pattern'
 import { trpcClient } from '#features/browser/trpc-client'
-import { useNavigate } from '@tanstack/react-router'
 
 export function NoteTextarea(props: { noteId: string }) {
 	const navigate = useNavigate()
