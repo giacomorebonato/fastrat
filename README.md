@@ -21,7 +21,6 @@
 
 * [Fastify](https://fastify.dev): a fast well maintained web framework
 * [Vite](https://vitejs.dev): for frontend tooling and bundling
-* [Vike](https://vike.dev): a Vite plugin for creating your own NextJS
 * [tRPC](https://trpc.io/docs/server/adapters/fastify): for end points with E2E type safety
 * [Vavite](https://github.com/cyco130/vavite): for running and compiling Node code with Vite
 * [Turso db](https://turso.tech): SQLite database which fallbacks to [libsql](https://github.com/tursodatabase/libsql) locally
@@ -46,10 +45,6 @@ It should be easy for you to re-use this example to add other authentication pro
 
 ## SSR
 
-Project starts with [pre-rendering enabled](vite.config.ts#L26). Meaning that React components are rendered at build time and not when a request comes in.  
-Check the answer to the question "Should I pre-render?" on [Vike docs](https://vike.dev/pre-rendering#should-i-pre-render).
-
-Vike gives you total control around this behaviour and it's well documented.
 
 ## tRPC
 

@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import { P, match } from 'ts-pattern'
 import './main.css'
 import { trpcClient } from './trpc-client'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 
 const contextClass = {
 	dark: 'bg-white-600 font-gray-300',
@@ -121,6 +123,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					<button>close</button>
 				</form>
 			</dialog>
+			<ReactQueryDevtools buttonPosition='bottom-left' />
+			<TanStackRouterDevtools position='bottom-right' />
 		</>
 	)
 }

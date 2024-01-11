@@ -5,12 +5,24 @@ import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 
 const config: UserConfig = {
 	buildSteps: [
-		{ name: 'client' },
 		{
+			name: 'client',
 			config: {
-				build: { ssr: true, target: 'esnext' },
+				build: {
+					outDir: 'dist/client',
+					manifest: true,
+				},
 			},
+		},
+		{
 			name: 'server',
+			config: {
+				build: {
+					target: 'node21',
+					ssr: true,
+					outDir: 'dist/server',
+				},
+			},
 		},
 	],
 	plugins: [

@@ -1,3 +1,4 @@
+import Fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { createMemoryHistory } from '@tanstack/react-router'
 import { StartServer } from '@tanstack/react-router-server/server'
@@ -5,10 +6,12 @@ import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import { type FastifyServerOptions, fastify } from 'fastify'
 import ReactDOMServer from 'react-dom/server'
 import { googleAuth } from '#features/auth/google-auth'
-import { createRouter } from '#router'
+import { createRouter } from '#create-router'
 import { apiRouter } from './api-router'
 import { env } from './env'
 import { createContext } from './trpc-context'
+// import viteDevServer from 'vavite/vite-dev-server'
+import { getHtmlTemplate } from './get-html-template'
 
 export async function createServer(
 	options: FastifyServerOptions = {
@@ -48,6 +51,10 @@ export async function createServer(
 	})
 
 	server.get('*', async (request, reply) => {
+		// if (viteDevServer) {
+		// } else {
+		// }
+
 		const router = createRouter()
 		const memoryHistory = createMemoryHistory({
 			initialEntries: [request.url],
@@ -56,7 +63,6 @@ export async function createServer(
 			history: memoryHistory,
 			context: {
 				...router.options.context,
-				head: '<meta>Pippo</meta>',
 			},
 		})
 		await router.load()
@@ -65,7 +71,7 @@ export async function createServer(
 			<StartServer router={router} />,
 		)
 
-		void reply.code(200).type('text/html').send(`<!DOCTYPE html>${appHtml}`)
+		void reply.code(200).type('text/html').send(getHtmlTemplate({ appHtml }))
 	})
 
 	await server.ready()
