@@ -7,7 +7,8 @@ const getWebSocket = (page: Page): Promise<WebSocket> => {
 	})
 }
 
-test('creates a note and ensures note list is updated from websockets', async ({
+test('creates a note and ensures note list is updated from websockets and that SSR is happening', async ({
+	browser,
 	page,
 }) => {
 	await page.goto('http://localhost:3000')
@@ -41,4 +42,17 @@ test('creates a note and ensures note list is updated from websockets', async ({
 		.textContent()
 
 	expect(text).toEqual('Beautiful day')
+
+	const context = await browser.newContext({
+		javaScriptEnabled: false,
+	})
+
+	const pageWithoutJS = await context.newPage()
+	await pageWithoutJS.goto(`http://localhost:3000/notes/${noteId}`)
+
+	const content = await pageWithoutJS.content()
+
+	expect(content).toContain(
+		'<textarea class="textarea textarea-bordered w-full">Beautiful day</textarea>',
+	)
 })

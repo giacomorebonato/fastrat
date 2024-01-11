@@ -123,8 +123,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					<button>close</button>
 				</form>
 			</dialog>
-			<ReactQueryDevtools buttonPosition='bottom-left' />
-			<TanStackRouterDevtools position='bottom-right' />
+
+			<section className='devtools'>
+				<ReactQueryDevtools buttonPosition='bottom-left' />
+				<TanStackRouterDevtools position='bottom-right' />
+			</section>
 		</>
 	)
 }

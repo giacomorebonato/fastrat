@@ -9,10 +9,10 @@ export const noteSchema = sqliteTable('notes', {
 	}),
 	creatorId: text('creator_id'),
 	id: text('id').notNull().primaryKey(),
-	title: text('title'),
 	updatedAt: integer('updated_at', { mode: 'timestamp' }),
 })
 
+export type NoteRecord = typeof noteSchema.$inferSelect
 export type NoteSelect = InferSelectModel<typeof noteSchema>
 export type NoteInsert = InferInsertModel<typeof noteSchema>
 export const insertNoteSchema = createInsertSchema(noteSchema)

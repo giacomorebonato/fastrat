@@ -8,6 +8,7 @@ import { noteSchema } from '#features/db/schema'
 import { env } from '#features/server/env'
 import { publicProcedure, router } from '#features/server/trpc-server'
 import { NoteSelect, insertNoteSchema } from './note-schema'
+import { getNoteById } from './note-queries'
 
 type Events = {
 	onDelete: [{ id: string }]
@@ -76,12 +77,8 @@ export const noteRouter = router({
 		}),
 	get: publicProcedure
 		.input(z.object({ id: z.string() }))
-		.query(async ({ ctx, input }) => {
-			const note = await ctx.db
-				.select()
-				.from(noteSchema)
-				.where(eq(noteSchema.id, input.id))
-				.get()
+		.query(async ({ input }) => {
+			const note = await getNoteById(input.id)
 
 			if (!note) {
 				throw new TRPCError({ code: 'BAD_REQUEST', message: 'Note not found' })
