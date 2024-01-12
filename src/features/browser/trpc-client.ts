@@ -12,7 +12,7 @@ export const trpcClient = createTRPCReact<ApiRouter>()
 const getProtocol = (
 	type: 'http' | 'ws' = 'http',
 ): 'http' | 'https' | 'ws' | 'wss' => {
-	if (typeof window !== 'undefined') {
+	if (import.meta.env.SSR) {
 		if (window.location.protocol === 'https:') {
 			return `${type}s`
 		}

@@ -45,8 +45,6 @@ export function NoteTextarea(props: {
 		}
 	}, [navigate, getNote.error])
 
-	console.log({ getNote })
-
 	return (
 		<div className='p-4'>
 			{match(getNote)

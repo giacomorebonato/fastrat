@@ -7,9 +7,8 @@ import ReactDOMServer from 'react-dom/server'
 import { createRouter } from '#create-router'
 import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
+import { createPageHtml } from './create-page-html'
 import { env } from './env'
-// import viteDevServer from 'vavite/vite-dev-server'
-import { getHtmlTemplate } from './get-html-template'
 import { createContext } from './trpc-context'
 
 export async function createServer(
@@ -66,10 +65,7 @@ export async function createServer(
 			<StartServer router={router} />,
 		)
 
-		void reply
-			.code(200)
-			.type('text/html')
-			.send(getHtmlTemplate({ appHtml, title: 'FastRat' }))
+		void reply.code(200).type('text/html').send(createPageHtml(appHtml))
 	})
 
 	await server.ready()

@@ -21,6 +21,20 @@ const config: UserConfig = {
 					target: 'node21',
 					ssr: true,
 					outDir: 'dist/server',
+					rollupOptions: {
+						onwarn(warning, handler) {
+							if (
+								warning.message.includes('is dynamically imported by') &&
+								warning.message.includes(
+									'dynamic import will not move module into another chunk',
+								)
+							) {
+								return
+							}
+
+							handler(warning)
+						},
+					},
 				},
 			},
 		},

@@ -55,4 +55,5 @@ test('creates a note and ensures note list is updated from websockets and that S
 	expect(content).toContain(
 		'<textarea class="textarea textarea-bordered w-full">Beautiful day</textarea>',
 	)
+	expect(content).toContain(`<title>Fastrat - Beautiful day</title>`)
 })
