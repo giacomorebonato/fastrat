@@ -13,7 +13,7 @@ export const createPageHtml = (appHtml: string) => {
 	let code = Fs.readFileSync(indexPath, 'utf-8')
 
 	let customHead = ''
-	customHead += extractCustomHead(appHtml).code
+	customHead += extractCustomHead(appHtml)
 
 	if (env.NODE_ENV === 'development') {
 		customHead += `<script type="module" src="/@vite/client"></script>
