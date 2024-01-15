@@ -50,7 +50,7 @@
 	},
 	"type": "module",
 	"devDependencies": {
-		"@biomejs/biome": "1.5.1",
+		"@biomejs/biome": "1.5.2",
 		"@playwright/test": "^1.40.1",
 		"@types/lodash": "^4.14.202",
 		"@types/node": "^20.11.0",
