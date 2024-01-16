@@ -1,7 +1,10 @@
+import Fs from 'node:fs'
+import Path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createMemoryHistory } from '@tanstack/react-router'
 import { StartServer } from '@tanstack/react-router-server/server'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
+import appRootPath from 'app-root-path'
 import { type FastifyServerOptions, fastify } from 'fastify'
 import ReactDOMServer from 'react-dom/server'
 import { createRouter } from '#create-router'
@@ -10,9 +13,6 @@ import { apiRouter } from './api-router'
 import { createPageHtml } from './create-page-html'
 import { env } from './env'
 import { createContext } from './trpc-context'
-import Path from 'node:path'
-import appRootPath from 'app-root-path'
-import Fs from 'node:fs'
 
 const getWorkboxFilename = () => {
 	const files = Fs.readdirSync(Path.join(appRootPath.path, 'dist/client'))

@@ -1,5 +1,3 @@
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import clsx from 'clsx'
 import { Suspense, lazy, useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
