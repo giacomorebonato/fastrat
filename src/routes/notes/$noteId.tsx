@@ -11,13 +11,11 @@ export const Route = new FileRoute('/notes/$noteId').createRoute({
 		noteId: z.string().parse(params.noteId),
 	}),
 	async loader({ params }): Promise<NoteRecord | undefined> {
-		// https://github.com/KeJunMao/vite-plugin-conditional-compile
-		// #v-ifdef SSR
-		const { getNoteById } = await import('#features/notes/note-queries')
+		if (import.meta.env.SSR) {
+			const { getNoteById } = await import('#features/notes/note-queries')
 
-		return getNoteById(params.noteId)
-
-		// #v-endif
+			return getNoteById(params.noteId)
+		}
 	},
 	component: NoteComponent,
 })
