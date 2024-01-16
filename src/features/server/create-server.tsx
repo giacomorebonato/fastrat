@@ -10,6 +10,16 @@ import { apiRouter } from './api-router'
 import { createPageHtml } from './create-page-html'
 import { env } from './env'
 import { createContext } from './trpc-context'
+import Path from 'node:path'
+import appRootPath from 'app-root-path'
+import Fs from 'node:fs'
+
+const getWorkboxFilename = () => {
+	const files = Fs.readdirSync(Path.join(appRootPath.path, 'dist/client'))
+	const file = files.find((file) => file.startsWith('workbox'))
+
+	return file
+}
 
 export async function createServer(
 	options: FastifyServerOptions = {
@@ -47,6 +57,20 @@ export async function createServer(
 		trpcOptions: { createContext, router: apiRouter },
 		useWSS: true,
 	})
+
+	for (const url of [
+		'/manifest.webmanifest',
+		'/sw.js',
+		'/registerSW.js',
+		`/${getWorkboxFilename()}`,
+	]) {
+		server.get(url, (request, reply) => {
+			const filename = request.url.slice(1)
+			const filePath = Path.join(appRootPath.path, 'dist/client')
+
+			reply.sendFile(filename, filePath)
+		})
+	}
 
 	server.get('*', async (request, reply) => {
 		const router = createRouter()

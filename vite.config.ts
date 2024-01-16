@@ -45,7 +45,29 @@ const config: UserConfig = {
 		},
 	],
 	plugins: [
-		VitePWA(),
+		VitePWA({
+			injectRegister: 'script',
+			registerType: 'autoUpdate',
+			workbox: {
+				maximumFileSizeToCacheInBytes: 10_000_000,
+				globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+			},
+			manifest: {
+				name: 'FastRat',
+				// icons: [
+				// 	{
+				// 		src: '/pwa-192x192.png',
+				// 		sizes: '192x192',
+				// 		type: 'image/png',
+				// 	},
+				// 	{
+				// 		src: '/pwa-512x512.png',
+				// 		sizes: '512x512',
+				// 		type: 'image/png',
+				// 	},
+				// ],
+			},
+		}),
 		vavite({
 			reloadOn: 'static-deps-change',
 			serverEntry: 'src/index.ts',
