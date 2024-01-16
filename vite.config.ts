@@ -2,7 +2,6 @@ import { vavite } from 'vavite'
 import react from '@vitejs/plugin-react'
 import { type UserConfig } from 'vite'
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
-import ConditionalCompile from 'vite-plugin-conditional-compiler'
 
 const config: UserConfig = {
 	buildSteps: [
@@ -18,6 +17,10 @@ const config: UserConfig = {
 		{
 			name: 'server',
 			config: {
+				define: {
+					VITE_SSR: JSON.stringify(true),
+					SSR: JSON.stringify(true),
+				},
 				build: {
 					target: 'node21',
 					ssr: true,
@@ -41,7 +44,6 @@ const config: UserConfig = {
 		},
 	],
 	plugins: [
-		ConditionalCompile(),
 		vavite({
 			reloadOn: 'static-deps-change',
 			serverEntry: 'src/index.ts',
