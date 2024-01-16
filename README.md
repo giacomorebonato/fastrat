@@ -9,26 +9,23 @@
   />
 </p>
 
-- [Based on these libraries](#based-on-these-libraries)
-- [Instructions for development](#instructions-for-development)
+- [Quickstart](#quickstart)
 - [Authentication](#authentication)
 - [SSR](#ssr)
-- [Based on these libraries](#based-on-these-libraries-1)
-- [Instructions for development](#instructions-for-development-1)
 - [tRPC](#trpc)
 - [Deploy](#deploy)
 - [Credits](#credits)
 
-## Based on these libraries
+## Based on these libraries <!-- omit from toc -->
 
 * [Fastify](https://fastify.dev): a fast well maintained web framework
 * [Vite](https://vitejs.dev): for frontend tooling and bundling
 * [tRPC](https://trpc.io/docs/server/adapters/fastify): for end points with E2E type safety
-* [Vavite](https://github.com/cyco130/vavite): for running and compiling Node code with Vite
+* [Vavite](https://github.com/cyco130/vavite): use Vite to compile and bundle both client and server code
 * [Turso db](https://turso.tech): SQLite database which fallbacks to [libsql](https://github.com/tursodatabase/libsql) locally
 * [Fly.io](https://fly.io): for deployment
 
-## Instructions for development
+## Quickstart
 
 ```bash
 gh repo clone giacomorebonato/fastrat-test # clone the repository
@@ -46,37 +43,7 @@ It should be easy for you to re-use this example to add other authentication pro
 
 
 ## SSR
-# Fastify + React = FastRat! <!-- omit from toc -->
 
-<p align="center">
-  <img 
-    src="https://github.com/giacomorebonato/fastrat/blob/main/src/images/logo.jpg?raw=true" 
-    alt="A rat on a skateboard"
-    width='200'
-    height='200'
-  />
-</p>
-
-- [Based on these libraries](#based-on-these-libraries)
-- [Instructions for development](#instructions-for-development)
-- [Authentication](#authentication)
-- [SSR](#ssr)
-- [Based on these libraries](#based-on-these-libraries-1)
-- [Instructions for development](#instructions-for-development-1)
-- [tRPC](#trpc)
-- [Deploy](#deploy)
-- [Credits](#credits)
-
-## Based on these libraries
-
-* [Fastify](https://fastify.dev): a fast well maintained web framework
-* [Vite](https://vitejs.dev): for frontend tooling and bundling
-* [tRPC](https://trpc.io/docs/server/adapters/fastify): for end points with E2E type safety
-* [Vavite](https://github.com/cyco130/vavite): for running and compiling Node code with Vite
-* [Turso db](https://turso.tech): SQLite database which fallbacks to [libsql](https://github.com/tursodatabase/libsql) locally
-* [Fly.io](https://fly.io): for deployment
-
-## Instructions for development
 
 ## tRPC
 
