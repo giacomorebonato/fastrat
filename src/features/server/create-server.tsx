@@ -72,6 +72,11 @@ export async function createServer(
 		})
 	}
 
+	// this is for the service worker cache
+	server.get('/index.html', (request, reply) => {
+		reply.type('text/html').send(createPageHtml(''))
+	})
+
 	server.get('*', async (request, reply) => {
 		const router = createRouter()
 		const memoryHistory = createMemoryHistory({

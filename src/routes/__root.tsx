@@ -10,8 +10,6 @@ export const Route = rootRouteWithContext<RouterContext>()({
 	component: RootComponent,
 })
 
-const intervalMS = 60 * 60 * 1000
-
 const queryClient = new QueryClient()
 const apiClient = trpcClient.createClient({
 	transformer: superjson,

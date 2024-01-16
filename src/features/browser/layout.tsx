@@ -6,6 +6,7 @@ import { P, match } from 'ts-pattern'
 import './main.css'
 import { ReloadPrompt } from './reload-prompt'
 import { trpcClient } from './trpc-client'
+import { Link } from '@tanstack/react-router'
 
 const contextClass = {
 	dark: 'bg-white-600 font-gray-300',
@@ -60,9 +61,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 								</svg>
 							</label>
 						</div>
-						<a className='link mx-2 flex-1 px-2 no-underline' href='/'>
+						<Link className='link mx-2 flex-1 px-2 no-underline' to='/'>
 							FastRat
-						</a>
+						</Link>
 
 						{match(profile.data)
 							.with(null, () => (

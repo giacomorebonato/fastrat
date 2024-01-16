@@ -46,7 +46,7 @@ const config: UserConfig = {
 	],
 	plugins: [
 		VitePWA({
-			injectRegister: 'script',
+			injectRegister: 'auto',
 			registerType: 'autoUpdate',
 			workbox: {
 				maximumFileSizeToCacheInBytes: 10_000_000,
@@ -66,6 +66,9 @@ const config: UserConfig = {
 				// 		type: 'image/png',
 				// 	},
 				// ],
+			},
+			devOptions: {
+				enabled: true,
 			},
 		}),
 		vavite({
