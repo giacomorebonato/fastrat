@@ -1,11 +1,12 @@
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import clsx from 'clsx'
-import { useRef } from 'react'
+import { Suspense, lazy, useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { P, match } from 'ts-pattern'
 import './main.css'
+import { ReloadPrompt } from './reload-prompt'
 import { trpcClient } from './trpc-client'
 
 const contextClass = {
@@ -16,6 +17,12 @@ const contextClass = {
 	success: 'bg-blue-600',
 	warning: 'bg-orange-400',
 } as const
+
+const Devtools = import.meta.env.DEV
+	? lazy(() => {
+			return import('./devtools').then((c) => ({ default: c.Devtools }))
+	  })
+	: () => null
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	const dialogRef = useRef<HTMLDialogElement | null>(null)
@@ -124,10 +131,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				</form>
 			</dialog>
 
-			<section className='devtools'>
-				<ReactQueryDevtools buttonPosition='bottom-left' />
-				<TanStackRouterDevtools position='bottom-right' />
-			</section>
+			<ReloadPrompt />
+			<Suspense>
+				<Devtools />
+			</Suspense>
 		</>
 	)
 }

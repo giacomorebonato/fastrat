@@ -2,6 +2,7 @@ import { vavite } from 'vavite'
 import react from '@vitejs/plugin-react'
 import { type UserConfig } from 'vite'
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
+import { VitePWA } from 'vite-plugin-pwa'
 
 const config: UserConfig = {
 	buildSteps: [
@@ -44,6 +45,7 @@ const config: UserConfig = {
 		},
 	],
 	plugins: [
+		VitePWA(),
 		vavite({
 			reloadOn: 'static-deps-change',
 			serverEntry: 'src/index.ts',

@@ -16,7 +16,7 @@
 		"skipLibCheck": true,
 		"useDefineForClassFields": true,
 		"target": "ESNext",
-		"types": ["vite/client"]
+		"types": ["vite/client", "vite-plugin-pwa/react"]
 	},
 	"exclude": ["dist/"]
 }
