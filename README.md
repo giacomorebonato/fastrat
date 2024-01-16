@@ -9,24 +9,23 @@
   />
 </p>
 
-- [Based on these libraries](#based-on-these-libraries)
-- [Instructions for development](#instructions-for-development)
+- [Quickstart](#quickstart)
 - [Authentication](#authentication)
 - [SSR](#ssr)
 - [tRPC](#trpc)
 - [Deploy](#deploy)
 - [Credits](#credits)
 
-## Based on these libraries
+## Based on these libraries <!-- omit from toc -->
 
 * [Fastify](https://fastify.dev): a fast well maintained web framework
 * [Vite](https://vitejs.dev): for frontend tooling and bundling
 * [tRPC](https://trpc.io/docs/server/adapters/fastify): for end points with E2E type safety
-* [Vavite](https://github.com/cyco130/vavite): for running and compiling Node code with Vite
+* [Vavite](https://github.com/cyco130/vavite): use Vite to compile and bundle both client and server code
 * [Turso db](https://turso.tech): SQLite database which fallbacks to [libsql](https://github.com/tursodatabase/libsql) locally
 * [Fly.io](https://fly.io): for deployment
 
-## Instructions for development
+## Quickstart
 
 ```bash
 gh repo clone giacomorebonato/fastrat-test # clone the repository
