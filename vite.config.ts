@@ -51,6 +51,7 @@ const config: UserConfig = {
 			workbox: {
 				maximumFileSizeToCacheInBytes: 10_000_000,
 				globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+				navigateFallbackDenylist: [/^\/login\/google/],
 			},
 			manifest: {
 				name: 'FastRat',
