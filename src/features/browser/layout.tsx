@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import clsx from 'clsx'
 import { Suspense, lazy, useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
@@ -6,7 +7,6 @@ import { P, match } from 'ts-pattern'
 import './main.css'
 import { ReloadPrompt } from './reload-prompt'
 import { trpcClient } from './trpc-client'
-import { Link } from '@tanstack/react-router'
 
 const contextClass = {
 	dark: 'bg-white-600 font-gray-300',

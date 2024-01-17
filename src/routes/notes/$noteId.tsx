@@ -1,7 +1,6 @@
 import { FileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { NoteList } from '#features/notes/note-list'
-import { NoteRecord } from '#features/notes/note-schema'
 import { NoteTextarea } from '#features/notes/note-textarea'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import { CustomHead } from '#features/server/custom-head'
