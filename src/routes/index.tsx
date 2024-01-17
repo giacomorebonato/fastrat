@@ -27,11 +27,15 @@ function IndexComponent() {
 				<meta property='og:type' content='website' />
 			</CustomHead>
 			<div className='flex justify-center p-4 flex-1'>
-				<img
-					src={logo}
-					alt='A rat going fast on their skateboard'
-					className='rounded max-h-80'
-				/>
+				<div>
+					<img
+						src={logo}
+						alt='A rat going fast on their skateboard'
+						className='rounded'
+						width={400}
+						height={400}
+					/>
+				</div>
 			</div>
 			<div className='flex-1'>
 				<NoteList />
