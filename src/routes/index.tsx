@@ -6,10 +6,20 @@ import logo from '#images/logo.jpg'
 
 export const Route = new FileRoute('/').createRoute({
 	component: IndexComponent,
+	async loader() {
+		if (import.meta.env.SSR) {
+			const { getNotes } = await import('#features/notes/note-queries')
+
+			return {
+				notes: await getNotes(),
+			}
+		}
+	},
 })
 
 function IndexComponent() {
 	useNoteSubscriptions()
+	const loaderData = Route.useLoaderData()
 
 	return (
 		<div className='flex flex-col md:flex-row'>
@@ -38,7 +48,7 @@ function IndexComponent() {
 				</div>
 			</div>
 			<div className='flex-1'>
-				<NoteList />
+				<NoteList notes={loaderData?.notes} />
 			</div>
 		</div>
 	)

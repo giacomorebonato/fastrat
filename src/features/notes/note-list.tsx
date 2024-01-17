@@ -2,10 +2,13 @@ import { useNavigate } from '@tanstack/react-router'
 import { toast } from 'react-toastify'
 import { trpcClient } from '#features/browser/trpc-client'
 import { NoteRow } from './note-row'
+import { NoteRecord } from './note-schema'
 
-export function NoteList() {
+export function NoteList({ notes }: { notes?: NoteRecord[] }) {
 	const navigate = useNavigate()
-	const getNotes = trpcClient.note.list.useQuery()
+	const getNotes = trpcClient.note.list.useQuery(undefined, {
+		initialData: notes,
+	})
 
 	const upsertNote = trpcClient.note.upsert.useMutation({
 		onError(error) {

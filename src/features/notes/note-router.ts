@@ -7,7 +7,7 @@ import { z } from 'zod'
 import { noteSchema } from '#features/db/schema'
 import { env } from '#features/server/env'
 import { publicProcedure, router } from '#features/server/trpc-server'
-import { getNoteById } from './note-queries'
+import { getNoteById, getNotes } from './note-queries'
 import { NoteSelect, insertNoteSchema } from './note-schema'
 
 type Events = {
@@ -87,12 +87,7 @@ export const noteRouter = router({
 			return note
 		}),
 	list: publicProcedure.query(async ({ ctx }) => {
-		const notes = await ctx.db
-			.select()
-			.from(noteSchema)
-			.orderBy(desc(noteSchema.createdAt))
-
-		return notes
+		return getNotes()
 	}),
 	upsert: publicProcedure
 		.input(
