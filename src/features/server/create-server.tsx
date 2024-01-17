@@ -77,6 +77,12 @@ export async function createServer(
 		reply.type('text/html').send(createPageHtml(''))
 	})
 
+	server.get('/googleeaf3b21d2e7978d5.html', (request, reply) => {
+		reply
+			.type('text/plain')
+			.send('google-site-verification: googleeaf3b21d2e7978d5.html')
+	})
+
 	server.get('*', async (request, reply) => {
 		const router = createRouter()
 		const memoryHistory = createMemoryHistory({

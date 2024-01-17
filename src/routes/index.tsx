@@ -14,7 +14,17 @@ function IndexComponent() {
 	return (
 		<div className='flex flex-col md:flex-row'>
 			<CustomHead>
-				<title suppressHydrationWarning>FastRat</title>
+				<title>FastRat</title>
+				<meta
+					name='description'
+					content='A starter kit for fully typesafe monolyth. With Fastify + React (SSR).'
+				/>
+				<meta property='og:title' content='FastRat' />
+				<meta
+					property='og:description'
+					content='A starter kit for building web application and SSR ready when SEO matters.'
+				/>
+				<meta property='og:type' content='website' />
 			</CustomHead>
 			<div className='flex justify-center p-4 flex-1'>
 				<img
