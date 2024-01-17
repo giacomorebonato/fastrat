@@ -67,9 +67,6 @@ const config: UserConfig = {
 				// 	},
 				// ],
 			},
-			devOptions: {
-				enabled: true,
-			},
 		}),
 		vavite({
 			reloadOn: 'static-deps-change',
@@ -78,7 +75,12 @@ const config: UserConfig = {
 			serveClientAssetsInDev: true,
 		}),
 		react(),
-		TanStackRouterVite(),
+		TanStackRouterVite({
+			quoteStyle: 'single',
+			future: {
+				unstable_codeSplitting: true,
+			},
+		}),
 	],
 }
 
