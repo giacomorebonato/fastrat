@@ -53,6 +53,9 @@ const config: UserConfig = {
 				globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
 				navigateFallbackDenylist: [/^\/login\/google/],
 			},
+			devOptions: {
+				enabled: true,
+			},
 			manifest: {
 				name: 'FastRat',
 				// icons: [
