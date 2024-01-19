@@ -4,12 +4,11 @@
 		"dev": "vavite serve --port 3000 | pino-pretty",
 		"build": "del dist && vavite build",
 		"start": "node dist/server/index.js",
-		"test": "biome check src && tsc && vitest",
+		"test": "tsc && vitest",
 		"e2e": "del local.db && playwright test",
 		"e2e:headed": "del local.db && playwright test --headed",
 		"e2e:ui": "del local.db && playwright test --ui",
-		"check": "biome check --apply src",
-		"tsc": "tsc"
+		"check": "biome check --apply src"
 	},
 	"imports": {
 		"#*": "./src/*"
@@ -76,6 +75,5 @@
 		"vite-plugin-pwa": "^0.17.4",
 		"vitest": "^1.1.3",
 		"workbox-window": "^7.0.0"
-	},
-	"packageManager": "^pnpm@8.0.0"
+	}
 }
