@@ -15,6 +15,10 @@ import { env } from './env'
 import { createContext } from './trpc-context'
 
 const getWorkboxFilename = () => {
+	if (env.NODE_ENV !== 'production') {
+		return null
+	}
+
 	const files = Fs.readdirSync(Path.join(appRootPath.path, 'dist/client'))
 	const file = files.find((file) => file.startsWith('workbox'))
 
@@ -63,7 +67,7 @@ export async function createServer(
 		'/sw.js',
 		'/registerSW.js',
 		`/${getWorkboxFilename()}`,
-	]) {
+	].filter(Boolean)) {
 		server.get(url, (request, reply) => {
 			const filename = request.url.slice(1)
 			const filePath = Path.join(appRootPath.path, 'dist/client')

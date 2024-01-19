@@ -1,7 +1,8 @@
-import { vavite } from 'vavite'
-import react from '@vitejs/plugin-react'
-import { type UserConfig } from 'vite'
+import mdx from '@mdx-js/rollup'
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
+import react from '@vitejs/plugin-react'
+import { vavite } from 'vavite'
+import { type UserConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 const config: UserConfig = {
@@ -51,6 +52,10 @@ const config: UserConfig = {
 			workbox: {
 				maximumFileSizeToCacheInBytes: 10_000_000,
 				globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+				navigateFallbackDenylist: [/^\/login\/google/],
+			},
+			devOptions: {
+				enabled: false, // https://vite-pwa-org.netlify.app/guide/development
 			},
 			manifest: {
 				name: 'FastRat',
@@ -68,6 +73,7 @@ const config: UserConfig = {
 				// ],
 			},
 		}),
+		mdx(),
 		vavite({
 			reloadOn: 'static-deps-change',
 			serverEntry: 'src/index.ts',
