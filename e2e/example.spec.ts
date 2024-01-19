@@ -11,7 +11,7 @@ test('creates a note and ensures note list is updated from websockets and that S
 	browser,
 	page,
 }) => {
-	await page.goto('http://localhost:3000')
+	await page.goto('http://localhost:3000/notes')
 	const ws = await getWebSocket(page)
 
 	await expect(page).toHaveTitle(/FastRat/)

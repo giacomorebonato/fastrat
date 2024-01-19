@@ -1,7 +1,6 @@
 import { FileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { NoteList } from '#features/notes/note-list'
-import { NoteRecord } from '#features/notes/note-schema'
 import { NoteTextarea } from '#features/notes/note-textarea'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import { CustomHead } from '#features/server/custom-head'
@@ -10,14 +9,16 @@ export const Route = new FileRoute('/notes/$noteId').createRoute({
 	parseParams: (params) => ({
 		noteId: z.string().parse(params.noteId),
 	}),
-	async loader({ params }): Promise<NoteRecord | undefined> {
-		// https://github.com/KeJunMao/vite-plugin-conditional-compile
-		// #v-ifdef SSR
-		const { getNoteById } = await import('#features/notes/note-queries')
+	async loader({ params }) {
+		if (import.meta.env.SSR) {
+			const { getNoteById } = await import('#features/notes/note-queries')
+			const { getNotes } = await import('#features/notes/note-queries')
 
-		return getNoteById(params.noteId)
-
-		// #v-endif
+			return {
+				note: await getNoteById(params.noteId),
+				notes: await getNotes(),
+			}
+		}
 	},
 	component: NoteComponent,
 })
@@ -30,14 +31,17 @@ function NoteComponent() {
 	return (
 		<div className='flex flex-col md:flex-row'>
 			<CustomHead>
-				<title>{`Fastrat - ${loaderData?.content.substring(0, 20)}`}</title>
+				<title>{`Fastrat - ${loaderData?.note?.content.substring(
+					0,
+					20,
+				)}`}</title>
 			</CustomHead>
 			<div className='flex-1'>
-				<NoteTextarea noteId={noteId} initalData={loaderData} />
+				<NoteTextarea noteId={noteId} initalData={loaderData?.note} />
 			</div>
 
 			<div className='flex-1'>
-				<NoteList />
+				<NoteList notes={loaderData?.notes} />
 			</div>
 		</div>
 	)

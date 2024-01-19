@@ -1,7 +1,10 @@
+import Fs from 'node:fs'
+import Path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createMemoryHistory } from '@tanstack/react-router'
 import { StartServer } from '@tanstack/react-router-server/server'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
+import appRootPath from 'app-root-path'
 import { type FastifyServerOptions, fastify } from 'fastify'
 import ReactDOMServer from 'react-dom/server'
 import { createRouter } from '#create-router'
@@ -10,6 +13,17 @@ import { apiRouter } from './api-router'
 import { createPageHtml } from './create-page-html'
 import { env } from './env'
 import { createContext } from './trpc-context'
+
+const getWorkboxFilename = () => {
+	if (env.NODE_ENV !== 'production') {
+		return null
+	}
+
+	const files = Fs.readdirSync(Path.join(appRootPath.path, 'dist/client'))
+	const file = files.find((file) => file.startsWith('workbox'))
+
+	return file
+}
 
 export async function createServer(
 	options: FastifyServerOptions = {
@@ -46,6 +60,31 @@ export async function createServer(
 		prefix: '/trpc',
 		trpcOptions: { createContext, router: apiRouter },
 		useWSS: true,
+	})
+
+	for (const url of [
+		'/manifest.webmanifest',
+		'/sw.js',
+		'/registerSW.js',
+		`/${getWorkboxFilename()}`,
+	].filter(Boolean)) {
+		server.get(url, (request, reply) => {
+			const filename = request.url.slice(1)
+			const filePath = Path.join(appRootPath.path, 'dist/client')
+
+			reply.sendFile(filename, filePath)
+		})
+	}
+
+	// this is for the service worker cache
+	server.get('/index.html', (request, reply) => {
+		reply.type('text/html').send(createPageHtml(''))
+	})
+
+	server.get('/googleeaf3b21d2e7978d5.html', (request, reply) => {
+		reply
+			.type('text/plain')
+			.send('google-site-verification: googleeaf3b21d2e7978d5.html')
 	})
 
 	server.get('*', async (request, reply) => {

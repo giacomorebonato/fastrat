@@ -1,8 +1,9 @@
-import { vavite } from 'vavite'
-import react from '@vitejs/plugin-react'
-import { type UserConfig } from 'vite'
+import mdx from '@mdx-js/rollup'
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
-import ConditionalCompile from 'vite-plugin-conditional-compiler'
+import react from '@vitejs/plugin-react'
+import { vavite } from 'vavite'
+import { type UserConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 const config: UserConfig = {
 	buildSteps: [
@@ -18,6 +19,10 @@ const config: UserConfig = {
 		{
 			name: 'server',
 			config: {
+				define: {
+					VITE_SSR: JSON.stringify(true),
+					SSR: JSON.stringify(true),
+				},
 				build: {
 					target: 'node21',
 					ssr: true,
@@ -41,7 +46,34 @@ const config: UserConfig = {
 		},
 	],
 	plugins: [
-		ConditionalCompile(),
+		VitePWA({
+			injectRegister: 'auto',
+			registerType: 'autoUpdate',
+			workbox: {
+				maximumFileSizeToCacheInBytes: 10_000_000,
+				globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+				navigateFallbackDenylist: [/^\/login\/google/],
+			},
+			devOptions: {
+				enabled: false, // https://vite-pwa-org.netlify.app/guide/development
+			},
+			manifest: {
+				name: 'FastRat',
+				// icons: [
+				// 	{
+				// 		src: '/pwa-192x192.png',
+				// 		sizes: '192x192',
+				// 		type: 'image/png',
+				// 	},
+				// 	{
+				// 		src: '/pwa-512x512.png',
+				// 		sizes: '512x512',
+				// 		type: 'image/png',
+				// 	},
+				// ],
+			},
+		}),
+		mdx(),
 		vavite({
 			reloadOn: 'static-deps-change',
 			serverEntry: 'src/index.ts',
@@ -49,7 +81,12 @@ const config: UserConfig = {
 			serveClientAssetsInDev: true,
 		}),
 		react(),
-		TanStackRouterVite(),
+		TanStackRouterVite({
+			quoteStyle: 'single',
+			future: {
+				unstable_codeSplitting: true,
+			},
+		}),
 	],
 }
 

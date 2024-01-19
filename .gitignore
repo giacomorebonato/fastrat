@@ -1,6 +1,7 @@
 node_modules/
 dist/
 sqlite.db
+/dev-dist/
 /test-results/
 /playwright-report/
 /blob-report/
