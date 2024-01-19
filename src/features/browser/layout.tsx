@@ -1,6 +1,6 @@
-import { Link } from '@tanstack/react-router'
+import { Link, useRouter } from '@tanstack/react-router'
 import clsx from 'clsx'
-import { Suspense, lazy, useRef } from 'react'
+import React, { Suspense, lazy, useEffect, useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { P, match } from 'ts-pattern'
@@ -17,11 +17,7 @@ const contextClass = {
 	warning: 'bg-orange-400',
 } as const
 
-const Devtools = import.meta.env.DEV
-	? lazy(() => {
-			return import('./devtools').then((c) => ({ default: c.Devtools }))
-	  })
-	: () => null
+let Devtools: React.FC = () => null
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	const dialogRef = useRef<HTMLDialogElement | null>(null)
@@ -32,11 +28,38 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			utils.auth.profile.reset()
 		},
 	})
+	const router = useRouter()
+	const checboxRef = useRef<HTMLInputElement>(null)
+
+	useEffect(() => {
+		const unsuscribe = router.history.subscribe(() => {
+			if (checboxRef.current) {
+				checboxRef.current.checked = false
+			}
+		})
+
+		return () => {
+			unsuscribe()
+		}
+	}, [router.history])
+
+	useEffect(() => {
+		if (import.meta.env.DEV && !import.meta.env.SSR) {
+			Devtools = lazy(() => {
+				return import('./devtools').then((c) => ({ default: c.Devtools }))
+			})
+		}
+	})
 
 	return (
 		<>
 			<div className='drawer'>
-				<input className='drawer-toggle' id='my-drawer-3' type='checkbox' />
+				<input
+					className='drawer-toggle'
+					id='my-drawer-3'
+					type='checkbox'
+					ref={checboxRef}
+				/>
 				<div className='drawer-content flex flex-col'>
 					<div className='navbar w-full bg-base-300 pr-4'>
 						<div className='flex-none'>
@@ -130,7 +153,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			</dialog>
 
 			<ReloadPrompt />
-			<Suspense>
+
+			<Suspense fallback={<div />}>
 				<Devtools />
 			</Suspense>
 		</>
