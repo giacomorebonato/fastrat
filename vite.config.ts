@@ -55,7 +55,7 @@ const config: UserConfig = {
 				navigateFallbackDenylist: [/^\/login\/google/],
 			},
 			devOptions: {
-				enabled: true,
+				enabled: false, // https://vite-pwa-org.netlify.app/guide/development
 			},
 			manifest: {
 				name: 'FastRat',
