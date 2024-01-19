@@ -1,7 +1,6 @@
 import { TRPCError } from '@trpc/server'
 import { observable } from '@trpc/server/observable'
 import { eq } from 'drizzle-orm'
-import { desc } from 'drizzle-orm'
 import { Emitter } from 'strict-event-emitter'
 import { z } from 'zod'
 import { noteSchema } from '#features/db/schema'
