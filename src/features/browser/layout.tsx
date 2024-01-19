@@ -112,10 +112,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					/>
 					<ul className='menu min-h-full w-3/4 bg-base-200 p-4'>
 						<li>
-							<a href='#test'>Sidebar Item 1</a>
-						</li>
-						<li>
-							<a href='#test'>Sidebar Item 2</a>
+							<Link className='link' to='/notes'>
+								Demo App
+							</Link>
 						</li>
 					</ul>
 				</div>

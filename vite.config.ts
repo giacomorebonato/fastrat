@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { type UserConfig } from 'vite'
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 import { VitePWA } from 'vite-plugin-pwa'
+import mdx from '@mdx-js/rollup'
 
 const config: UserConfig = {
 	buildSteps: [
@@ -72,6 +73,7 @@ const config: UserConfig = {
 				// ],
 			},
 		}),
+		mdx(),
 		vavite({
 			reloadOn: 'static-deps-change',
 			serverEntry: 'src/index.ts',

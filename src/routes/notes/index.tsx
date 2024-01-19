@@ -1,11 +1,10 @@
 import { FileRoute } from '@tanstack/react-router'
-import WhyFastRat from '#features/blog/why-fastrat.mdx'
 import { NoteList } from '#features/notes/note-list'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import { CustomHead } from '#features/server/custom-head'
 import logo from '#images/logo.jpg'
 
-export const Route = new FileRoute('/').createRoute({
+export const Route = new FileRoute('/notes/').createRoute({
 	component: IndexComponent,
 	async loader() {
 		if (import.meta.env.SSR) {
@@ -37,20 +36,19 @@ function IndexComponent() {
 				/>
 				<meta property='og:type' content='website' />
 			</CustomHead>
-
-			<div className='prose mx-auto'>
-				<div className='flex justify-center p-4 flex-1'>
-					<div>
-						<img
-							src={logo}
-							alt='A rat going fast on their skateboard'
-							className='rounded'
-							width={400}
-							height={400}
-						/>
-					</div>
+			<div className='flex justify-center p-4 flex-1'>
+				<div>
+					<img
+						src={logo}
+						alt='A rat going fast on their skateboard'
+						className='rounded'
+						width={400}
+						height={400}
+					/>
 				</div>
-				<WhyFastRat />
+			</div>
+			<div className='flex-1'>
+				<NoteList notes={loaderData?.notes} />
 			</div>
 		</div>
 	)
