@@ -21,4 +21,4 @@ jobs:
         uses: biomejs/setup-biome@v2
         
       - name: Run Biome
-        run: biome ci .
+        run: biome ci src

@@ -1,9 +1,9 @@
-import { vavite } from 'vavite'
-import react from '@vitejs/plugin-react'
-import { type UserConfig } from 'vite'
-import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
-import { VitePWA } from 'vite-plugin-pwa'
 import mdx from '@mdx-js/rollup'
+import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
+import react from '@vitejs/plugin-react'
+import { vavite } from 'vavite'
+import { type UserConfig } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 const config: UserConfig = {
 	buildSteps: [

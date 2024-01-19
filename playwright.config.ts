@@ -1,6 +1,6 @@
+import Path from 'node:path'
 import { defineConfig, devices } from '@playwright/test'
 import appRootPath from 'app-root-path'
-import Path from 'node:path'
 
 /**
  * Read environment variables from file.
