@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("./OpenSans.ttf");
+  font-family: "Cardo";
+  src: url("./Cardo-Regular.ttf");
 }

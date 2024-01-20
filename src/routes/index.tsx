@@ -26,7 +26,7 @@ function IndexComponent() {
 				<meta property='og:type' content='website' />
 			</CustomHead>
 
-			<div className='prose mx-auto py-8 font-open-sans px-4 md:px-0'>
+			<div className='prose mx-auto py-8 font-cardo px-4 md:px-0 text-lg'>
 				<WhyFastRat />
 			</div>
 		</div>

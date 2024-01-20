@@ -3,7 +3,7 @@ const config = {
 	content: ['./src/**/*.{ts,tsx}'],
 	theme: {
 		fontFamily: {
-      'open-sans': ["OpenSans", "sans-serif"]
+      cardo: ["Cardo", "sans-serif"]
     },
 		extend: {},
 	},
