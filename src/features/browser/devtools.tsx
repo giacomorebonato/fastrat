@@ -4,16 +4,8 @@ import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 export const Devtools = () => {
 	return (
 		<section className='devtools'>
-			<ReactQueryDevtools buttonPosition='bottom-left' />
-			<TanStackRouterDevtools
-				position='bottom-left'
-				toggleButtonProps={{
-					style: {
-						zIndex: 2,
-						left: 60,
-					},
-				}}
-			/>
+			<ReactQueryDevtools buttonPosition='bottom-right' />
+			<TanStackRouterDevtools position='bottom-left' />
 		</section>
 	)
 }
