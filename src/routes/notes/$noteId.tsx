@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { NoteList } from '#features/notes/note-list'
 import { NoteTextarea } from '#features/notes/note-textarea'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
-import { CustomHead } from '#features/server/custom-head'
+import { Helmet } from 'react-helmet-async'
 
 export const Route = new FileRoute('/notes/$noteId').createRoute({
 	parseParams: (params) => ({
@@ -30,12 +30,12 @@ function NoteComponent() {
 
 	return (
 		<div className='flex flex-col md:flex-row'>
-			<CustomHead>
+			<Helmet>
 				<title>{`Fastrat - ${loaderData?.note?.content.substring(
 					0,
 					20,
 				)}`}</title>
-			</CustomHead>
+			</Helmet>
 			<div className='flex-1'>
 				<NoteTextarea noteId={noteId} initalData={loaderData?.note} />
 			</div>

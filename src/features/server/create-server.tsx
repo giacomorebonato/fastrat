@@ -1,3 +1,5 @@
+import through from 'through'
+import { ReadableStream } from 'node:stream/web'
 import Fs from 'node:fs'
 import Path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -6,13 +8,20 @@ import { StartServer } from '@tanstack/react-router-server/server'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import appRootPath from 'app-root-path'
 import { type FastifyServerOptions, fastify } from 'fastify'
-import ReactDOMServer from 'react-dom/server'
+import ReactDOMServer, {
+	renderToNodeStream,
+	renderToPipeableStream,
+	renderToReadableStream,
+} from 'react-dom/server'
 import { createRouter } from '#create-router'
 import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
 import { createPageHtml } from './create-page-html'
 import { env } from './env'
 import { createContext } from './trpc-context'
+import { getDataFromTree } from 'react-apollo'
+import { createTemplate } from './create-template'
+import { PassThrough, Readable, Writable } from 'node:stream'
 
 const getWorkboxFilename = () => {
 	if (env.NODE_ENV !== 'production') {
@@ -23,6 +32,25 @@ const getWorkboxFilename = () => {
 	const file = files.find((file) => file.startsWith('workbox'))
 
 	return file
+}
+
+class HtmlWritable extends Writable {
+	chunks = []
+	html = ''
+
+	getHtml() {
+		return this.html
+	}
+
+	_write(chunk, encoding, callback) {
+		this.chunks.push(chunk)
+		callback()
+	}
+
+	_final(callback) {
+		this.html = Buffer.concat(this.chunks).toString()
+		callback()
+	}
 }
 
 export async function createServer(
@@ -88,6 +116,8 @@ export async function createServer(
 	})
 
 	server.get('*', async (request, reply) => {
+		request.helmetContext = {}
+
 		const router = createRouter()
 		const memoryHistory = createMemoryHistory({
 			initialEntries: [request.url],
@@ -96,15 +126,35 @@ export async function createServer(
 			history: memoryHistory,
 			context: {
 				...router.options.context,
+				helmetContext: request.helmetContext,
 			},
 		})
 		await router.load()
 
-		const appHtml = ReactDOMServer.renderToString(
+		await getDataFromTree(<StartServer router={router} />)
+
+		const { head, footer } = createTemplate(request.helmetContext.helmet)
+
+		const pass = new PassThrough()
+
+		pass.write(head)
+
+		const pipeableStream = renderToPipeableStream(
 			<StartServer router={router} />,
+			{
+				onShellReady() {
+					pipeableStream.pipe(pass).write(footer)
+				},
+				onShellError(error) {
+					reply.code(500)
+					console.error(error)
+				},
+			},
 		)
 
-		void reply.code(200).type('text/html').send(createPageHtml(appHtml))
+		reply.code(200).type('text/html').send(pass)
+
+		return reply
 	})
 
 	await server.ready()

@@ -5,8 +5,12 @@ import superjson from 'superjson'
 import { Layout } from '#features/browser/layout'
 import { createLink, trpcClient } from '#features/browser/trpc-client'
 import { type RouterContext } from '../router-context'
+import { HelmetProvider } from 'react-helmet-async'
 
 export const Route = rootRouteWithContext<RouterContext>()({
+	loader({ context }) {
+		return { helmetContext: context.helmetContext }
+	},
 	component: RootComponent,
 })
 
@@ -18,14 +22,18 @@ const apiClient = trpcClient.createClient({
 })
 
 function RootComponent() {
+	const loaderData = Route.useLoaderData()
+
 	return (
-		<trpcClient.Provider client={apiClient} queryClient={queryClient}>
-			<QueryClientProvider client={queryClient}>
-				<Layout>
-					<Outlet />
-				</Layout>
-			</QueryClientProvider>
-			<DehydrateRouter />
-		</trpcClient.Provider>
+		<HelmetProvider context={loaderData.helmetContext}>
+			<trpcClient.Provider client={apiClient} queryClient={queryClient}>
+				<QueryClientProvider client={queryClient}>
+					<Layout>
+						<Outlet />
+					</Layout>
+				</QueryClientProvider>
+				<DehydrateRouter />
+			</trpcClient.Provider>
+		</HelmetProvider>
 	)
 }

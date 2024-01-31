@@ -1,8 +1,8 @@
 import { FileRoute } from '@tanstack/react-router'
 import { NoteList } from '#features/notes/note-list'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
-import { CustomHead } from '#features/server/custom-head'
 import logo from '#images/logo.jpg'
+import { Helmet } from 'react-helmet-async'
 
 export const Route = new FileRoute('/notes/').createRoute({
 	component: IndexComponent,
@@ -23,7 +23,7 @@ function IndexComponent() {
 
 	return (
 		<div className='flex flex-col md:flex-row'>
-			<CustomHead>
+			<Helmet>
 				<title>FastRat</title>
 				<meta
 					name='description'
@@ -35,7 +35,7 @@ function IndexComponent() {
 					content='A starter kit for building web application and SSR ready when SEO matters.'
 				/>
 				<meta property='og:type' content='website' />
-			</CustomHead>
+			</Helmet>
 			<div className='flex justify-center p-4 flex-1'>
 				<div>
 					<img
