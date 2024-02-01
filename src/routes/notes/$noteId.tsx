@@ -1,11 +1,11 @@
 import { FileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
 import { z } from 'zod'
+import { Layout } from '#features/browser/layout'
 import { trpcClient } from '#features/browser/trpc-client'
 import { NoteList } from '#features/notes/note-list'
 import { NoteTextarea } from '#features/notes/note-textarea'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
-import { Layout } from '#features/browser/layout'
 
 export const Route = new FileRoute('/notes/$noteId').createRoute({
 	parseParams: (params) => ({

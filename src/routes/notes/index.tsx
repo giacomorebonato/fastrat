@@ -1,9 +1,9 @@
 import { FileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
+import { Layout } from '#features/browser/layout'
 import { NoteList } from '#features/notes/note-list'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import logo from '#images/logo.jpg'
-import { Layout } from '#features/browser/layout'
 
 export const Route = new FileRoute('/notes/').createRoute({
 	component: IndexComponent,
