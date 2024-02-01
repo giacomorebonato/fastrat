@@ -1,3 +1,15 @@
+import { HelmetServerState } from 'react-helmet-async'
+
 export type RouterContext = {
-	head: string
+	helmetContext: {
+		helmet?: HelmetServerState
+	}
+}
+
+declare module 'fastify' {
+	interface FastifyRequest {
+		helmetContext: {
+			helmet?: HelmetServerState
+		}
+	}
 }
