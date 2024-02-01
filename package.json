@@ -2,12 +2,13 @@
 	"scripts": {
 		"db:generate": "NODE_OPTIONS='--import tsx' drizzle-kit generate:sqlite",
 		"dev": "vavite serve --port 3000 | pino-pretty",
-		"build": "del dist && vavite build",
+		"build": "pnpm clean && vavite build",
+		"clean": "pnpm clean && del sqlite.db",
 		"start": "node dist/server/index.js",
 		"test": "tsc && vitest",
-		"e2e": "del sqlite.db && playwright test",
-		"e2e:headed": "del sqlite.db && playwright test --headed",
-		"e2e:ui": "del sqlite.db && playwright test --ui",
+		"e2e": "pnpm clean && playwright test",
+		"e2e:headed": "pnpm clean && playwright test --headed",
+		"e2e:ui": "pnpm clean && playwright test --ui",
 		"check": "biome check --apply src"
 	},
 	"imports": {
