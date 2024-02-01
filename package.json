@@ -3,7 +3,7 @@
 		"db:generate": "NODE_OPTIONS='--import tsx' drizzle-kit generate:sqlite",
 		"dev": "vavite serve --port 3000 | pino-pretty",
 		"build": "pnpm clean && vavite build",
-		"clean": "pnpm clean && del sqlite.db",
+		"clean": "del dist && del sqlite.db",
 		"start": "node dist/server/index.js",
 		"test": "tsc && vitest",
 		"e2e": "pnpm clean && playwright test",
