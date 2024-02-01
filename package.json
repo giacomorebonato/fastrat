@@ -5,9 +5,9 @@
 		"build": "del dist && vavite build",
 		"start": "node dist/server/index.js",
 		"test": "tsc && vitest",
-		"e2e": "del local.db && playwright test",
-		"e2e:headed": "del local.db && playwright test --headed",
-		"e2e:ui": "del local.db && playwright test --ui",
+		"e2e": "del sqlite.db && playwright test",
+		"e2e:headed": "del sqlite.db && playwright test --headed",
+		"e2e:ui": "del sqlite.db && playwright test --ui",
 		"check": "biome check --apply src"
 	},
 	"imports": {

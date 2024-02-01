@@ -2,7 +2,6 @@ import Fs from 'node:fs'
 import Path from 'node:path'
 import appRootPath from 'app-root-path'
 import { env } from './env'
-import { extractCustomHead } from './extract-custom-head'
 
 export const createPageHtml = (appHtml: string) => {
 	const indexPath =

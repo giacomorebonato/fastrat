@@ -1,11 +1,12 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Outlet, rootRouteWithContext } from '@tanstack/react-router'
 import { DehydrateRouter } from '@tanstack/react-router-server/client'
+import { HelmetProvider } from 'react-helmet-async'
+import { HelmetServerState } from 'react-helmet-async'
 import superjson from 'superjson'
 import { Layout } from '#features/browser/layout'
 import { createLink, trpcClient } from '#features/browser/trpc-client'
 import { type RouterContext } from '../router-context'
-import { HelmetProvider } from 'react-helmet-async'
 
 export const Route = rootRouteWithContext<RouterContext>()({
 	loader({ context }) {
@@ -22,7 +23,9 @@ const apiClient = trpcClient.createClient({
 })
 
 function RootComponent() {
-	const loaderData = Route.useLoaderData()
+	const loaderData = Route.useLoaderData<{
+		helmetContext: { helmet: HelmetServerState }
+	}>()
 
 	return (
 		<HelmetProvider context={loaderData.helmetContext}>

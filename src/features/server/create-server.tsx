@@ -1,27 +1,21 @@
-import through from 'through'
-import { ReadableStream } from 'node:stream/web'
 import Fs from 'node:fs'
 import Path from 'node:path'
+import { PassThrough } from 'node:stream'
 import { fileURLToPath } from 'node:url'
 import { createMemoryHistory } from '@tanstack/react-router'
 import { StartServer } from '@tanstack/react-router-server/server'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import appRootPath from 'app-root-path'
 import { type FastifyServerOptions, fastify } from 'fastify'
-import ReactDOMServer, {
-	renderToNodeStream,
-	renderToPipeableStream,
-	renderToReadableStream,
-} from 'react-dom/server'
+import { getDataFromTree } from 'react-apollo'
+import { renderToPipeableStream } from 'react-dom/server'
 import { createRouter } from '#create-router'
 import { googleAuth } from '#features/auth/google-auth'
 import { apiRouter } from './api-router'
 import { createPageHtml } from './create-page-html'
+import { createTemplate } from './create-template'
 import { env } from './env'
 import { createContext } from './trpc-context'
-import { getDataFromTree } from 'react-apollo'
-import { createTemplate } from './create-template'
-import { PassThrough, Readable, Writable } from 'node:stream'
 
 const getWorkboxFilename = () => {
 	if (env.NODE_ENV !== 'production') {
@@ -32,25 +26,6 @@ const getWorkboxFilename = () => {
 	const file = files.find((file) => file.startsWith('workbox'))
 
 	return file
-}
-
-class HtmlWritable extends Writable {
-	chunks = []
-	html = ''
-
-	getHtml() {
-		return this.html
-	}
-
-	_write(chunk, encoding, callback) {
-		this.chunks.push(chunk)
-		callback()
-	}
-
-	_final(callback) {
-		this.html = Buffer.concat(this.chunks).toString()
-		callback()
-	}
 }
 
 export async function createServer(
@@ -131,9 +106,11 @@ export async function createServer(
 		})
 		await router.load()
 
+		// this is to populate helmetContext meta data for <head /> ahead of rendering
 		await getDataFromTree(<StartServer router={router} />)
 
-		const { head, footer } = createTemplate(request.helmetContext.helmet)
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
+		const { head, footer } = createTemplate(request.helmetContext!.helmet!)
 
 		const pass = new PassThrough()
 

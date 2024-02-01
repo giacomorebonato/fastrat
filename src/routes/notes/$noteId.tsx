@@ -1,9 +1,10 @@
 import { FileRoute } from '@tanstack/react-router'
+import { Helmet } from 'react-helmet-async'
 import { z } from 'zod'
+import { trpcClient } from '#features/browser/trpc-client'
 import { NoteList } from '#features/notes/note-list'
 import { NoteTextarea } from '#features/notes/note-textarea'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
-import { Helmet } from 'react-helmet-async'
 
 export const Route = new FileRoute('/notes/$noteId').createRoute({
 	parseParams: (params) => ({
@@ -28,13 +29,17 @@ function NoteComponent() {
 	const { noteId } = Route.useParams()
 	const loaderData = Route.useLoaderData()
 
+	const noteQuery = trpcClient.note.get.useQuery(
+		{ id: noteId },
+		{
+			initialData: loaderData?.note,
+		},
+	)
+
 	return (
 		<div className='flex flex-col md:flex-row'>
 			<Helmet>
-				<title>{`Fastrat - ${loaderData?.note?.content.substring(
-					0,
-					20,
-				)}`}</title>
+				<title>{`Fastrat - ${noteQuery.data?.content.substring(0, 20)}`}</title>
 			</Helmet>
 			<div className='flex-1'>
 				<NoteTextarea noteId={noteId} initalData={loaderData?.note} />

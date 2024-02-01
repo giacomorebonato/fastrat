@@ -4,7 +4,9 @@ import { routeTree } from './routeTree.gen'
 export function createRouter() {
 	return new Router({
 		routeTree,
-		context: {},
+		context: {
+			helmetContext: {},
+		},
 		defaultPreload: 'intent',
 	})
 }
