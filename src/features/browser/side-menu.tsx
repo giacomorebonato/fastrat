@@ -14,6 +14,9 @@ const SmoothLink = ({ children, href }: { children: string; href: string }) => {
 		const titleElement = document.getElementById(destination)
 
 		if (titleElement) {
+			// biome-ignore lint/style/noNonNullAssertion: needs to be done in a better React way
+			;(document.getElementById('my-drawer-3')! as HTMLInputElement).checked =
+				false
 			titleElement.scrollIntoView({
 				behavior: 'smooth',
 			})
