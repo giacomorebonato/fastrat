@@ -17,7 +17,7 @@
 	"dependencies": {
 		"@fastify/cookie": "^9.2.0",
 		"@fastify/oauth2": "7.8.0",
-		"@fastify/static": "^6.12.0",
+		"@fastify/static": "^7.0.0",
 		"@fastify/websocket": "^8.3.1",
 		"@libsql/client": "0.4.3",
 		"@mdx-js/mdx": "^3.0.0",
