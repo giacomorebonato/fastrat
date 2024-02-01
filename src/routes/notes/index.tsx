@@ -1,6 +1,7 @@
 import { FileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
 import { Layout } from '#features/browser/layout'
+import { SideMenu } from '#features/browser/side-menu'
 import { NoteList } from '#features/notes/note-list'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import logo from '#images/logo.jpg'
@@ -23,7 +24,7 @@ function IndexComponent() {
 	const loaderData = Route.useLoaderData()
 
 	return (
-		<Layout>
+		<Layout sidebar={<SideMenu withBookmarks={false} />}>
 			<div className='flex flex-col md:flex-row'>
 				<Helmet>
 					<title>FastRat</title>

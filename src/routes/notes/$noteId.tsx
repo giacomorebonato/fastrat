@@ -2,6 +2,7 @@ import { FileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
 import { z } from 'zod'
 import { Layout } from '#features/browser/layout'
+import { SideMenu } from '#features/browser/side-menu'
 import { trpcClient } from '#features/browser/trpc-client'
 import { NoteList } from '#features/notes/note-list'
 import { NoteTextarea } from '#features/notes/note-textarea'
@@ -38,7 +39,7 @@ function NoteComponent() {
 	)
 
 	return (
-		<Layout>
+		<Layout sidebar={<SideMenu withBookmarks={false} />}>
 			<div className='flex flex-col md:flex-row'>
 				<Helmet>
 					<title>{`Fastrat - ${noteQuery.data?.content.substring(

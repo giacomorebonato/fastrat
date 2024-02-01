@@ -13,7 +13,7 @@ function IndexComponent() {
 	useNoteSubscriptions()
 
 	return (
-		<Layout sidebar={<SideMenu />}>
+		<Layout sidebar={<SideMenu withBookmarks />}>
 			<div className='flex flex-col md:flex-row'>
 				<Helmet>
 					<title>FastRat</title>

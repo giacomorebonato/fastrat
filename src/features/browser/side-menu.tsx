@@ -31,30 +31,33 @@ const SmoothLink = ({ children, href }: { children: string; href: string }) => {
 	)
 }
 
-export const SideMenu = () => {
+export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 	return (
 		<ul
 			className='menu bg-base-200 w-56 rounded-box h-full font-cardo'
 			role='navigation'
 		>
-			<li>
-				<h2 className='menu-title'>Content</h2>
-				<ul>
-					<li>
-						{}
-						<SmoothLink href='#why-fastrat'>Why FastRat?</SmoothLink>
-					</li>
-					<li>
-						<SmoothLink href='#spa-or-mpa'>SPA or MPA</SmoothLink>
-					</li>
-					<li>
-						<SmoothLink href='#great-dx'>Great DX</SmoothLink>
-					</li>
-					<li>
-						<SmoothLink href='#fully-typed'>Fully typed</SmoothLink>
-					</li>
-				</ul>
-			</li>
+			{withBookmarks && (
+				<li>
+					<h2 className='menu-title'>Content</h2>
+					<ul>
+						<li>
+							{}
+							<SmoothLink href='#why-fastrat'>Why FastRat?</SmoothLink>
+						</li>
+						<li>
+							<SmoothLink href='#spa-or-mpa'>SPA or MPA</SmoothLink>
+						</li>
+						<li>
+							<SmoothLink href='#great-dx'>Great DX</SmoothLink>
+						</li>
+						<li>
+							<SmoothLink href='#fully-typed'>Fully typed</SmoothLink>
+						</li>
+					</ul>
+				</li>
+			)}
+
 			<li>
 				<h2 className='menu-title'>Demo Apps</h2>
 				<ul>
