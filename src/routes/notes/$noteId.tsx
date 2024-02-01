@@ -5,6 +5,7 @@ import { trpcClient } from '#features/browser/trpc-client'
 import { NoteList } from '#features/notes/note-list'
 import { NoteTextarea } from '#features/notes/note-textarea'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
+import { Layout } from '#features/browser/layout'
 
 export const Route = new FileRoute('/notes/$noteId').createRoute({
 	parseParams: (params) => ({
@@ -37,17 +38,22 @@ function NoteComponent() {
 	)
 
 	return (
-		<div className='flex flex-col md:flex-row'>
-			<Helmet>
-				<title>{`Fastrat - ${noteQuery.data?.content.substring(0, 20)}`}</title>
-			</Helmet>
-			<div className='flex-1'>
-				<NoteTextarea noteId={noteId} initalData={loaderData?.note} />
-			</div>
+		<Layout>
+			<div className='flex flex-col md:flex-row'>
+				<Helmet>
+					<title>{`Fastrat - ${noteQuery.data?.content.substring(
+						0,
+						20,
+					)}`}</title>
+				</Helmet>
+				<div className='flex-1'>
+					<NoteTextarea noteId={noteId} initalData={loaderData?.note} />
+				</div>
 
-			<div className='flex-1'>
-				<NoteList notes={loaderData?.notes} />
+				<div className='flex-1'>
+					<NoteList notes={loaderData?.notes} />
+				</div>
 			</div>
-		</div>
+		</Layout>
 	)
 }

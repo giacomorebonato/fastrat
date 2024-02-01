@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { NoteList } from '#features/notes/note-list'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
 import logo from '#images/logo.jpg'
+import { Layout } from '#features/browser/layout'
 
 export const Route = new FileRoute('/notes/').createRoute({
 	component: IndexComponent,
@@ -22,34 +23,36 @@ function IndexComponent() {
 	const loaderData = Route.useLoaderData()
 
 	return (
-		<div className='flex flex-col md:flex-row'>
-			<Helmet>
-				<title>FastRat</title>
-				<meta
-					name='description'
-					content='A starter kit for fully typesafe monolyth. With Fastify + React (SSR).'
-				/>
-				<meta property='og:title' content='FastRat' />
-				<meta
-					property='og:description'
-					content='A starter kit for building web application and SSR ready when SEO matters.'
-				/>
-				<meta property='og:type' content='website' />
-			</Helmet>
-			<div className='flex justify-center p-4 flex-1'>
-				<div>
-					<img
-						src={logo}
-						alt='A rat going fast on their skateboard'
-						className='rounded'
-						width={400}
-						height={400}
+		<Layout>
+			<div className='flex flex-col md:flex-row'>
+				<Helmet>
+					<title>FastRat</title>
+					<meta
+						name='description'
+						content='A starter kit for fully typesafe monolyth. With Fastify + React (SSR).'
 					/>
+					<meta property='og:title' content='FastRat' />
+					<meta
+						property='og:description'
+						content='A starter kit for building web application and SSR ready when SEO matters.'
+					/>
+					<meta property='og:type' content='website' />
+				</Helmet>
+				<div className='flex justify-center p-4 flex-1'>
+					<div>
+						<img
+							src={logo}
+							alt='A rat going fast on their skateboard'
+							className='rounded'
+							width={400}
+							height={400}
+						/>
+					</div>
+				</div>
+				<div className='flex-1'>
+					<NoteList notes={loaderData?.notes} />
 				</div>
 			</div>
-			<div className='flex-1'>
-				<NoteList notes={loaderData?.notes} />
-			</div>
-		</div>
+		</Layout>
 	)
 }

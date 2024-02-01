@@ -31,9 +31,7 @@ function RootComponent() {
 		<HelmetProvider context={loaderData.helmetContext}>
 			<trpcClient.Provider client={apiClient} queryClient={queryClient}>
 				<QueryClientProvider client={queryClient}>
-					<Layout>
-						<Outlet />
-					</Layout>
+					<Outlet />
 				</QueryClientProvider>
 				<DehydrateRouter />
 			</trpcClient.Provider>

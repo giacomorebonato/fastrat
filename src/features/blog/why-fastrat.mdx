@@ -1,6 +1,6 @@
 import logo from '#images/logo.jpg'
 
-## Modern Web Development with FastRat
+<h1 id='modern-fastrat'>Modern Web Development with FastRat</h1>
 
 <img
   src={logo}
@@ -17,7 +17,7 @@ If in the past native applications could have an advantage, web applications are
 
 I still find flabbergasting that VSCode can be opened on each GitHub repository by pressing `.` and the editor will persist all the preferences that are in sync.
 
-## Why FastRat (Fastify + React)
+<h2 id='why-fastrat'>Why FastRat (Fastify + React)</h2>
 
 JavaScript world changes so quickly that often we ask ourselves if we are learning something new, just because it's trendy or if it's something that we truly believe it's an improvement.
 I remember when in the early days of React, everyone was reminding to everyone on Twitter that:
@@ -30,7 +30,7 @@ So, with the same spirit, here I am composing React with my favourite backend fr
 Fastify is well maintained, has Node contributors among the maintainers and it is used by many companies in production.
 That's why I consider it a safe bet.
 
-### SPA or MPA?
+<h2 id='spa-or-mpa'>SPA or MPA?</h2>
 
 I want to have both in the same project. Why? 
  
@@ -38,7 +38,7 @@ I think that it's a very common case to rely on a SPA for a private dashboard, b
 
 FastRat renders the HTML on the first request and then uses client side routing when the interaction happens on the page.
 
-### Great Developer Experience
+<h2 id='great-dx'>Great Developer Experience</h2>
 
 When using NextJS I like that with one command I have both my frontend and backend running and that I can share code between the two and import it in the same way.  
 This wouldn't have been possible without [Vite](https://vitejs.dev) and [Vavite](https://github.com/cyco130/vavite).
@@ -46,9 +46,13 @@ This wouldn't have been possible without [Vite](https://vitejs.dev) and [Vavite]
 When you run `pnpm dev` all your code is running and changes to code are applied immediately without restarting the server.  
 This happens because Vavite is using Vite to compile both frontend and backend code.
 
-### Fully typed
+<h2 id='fully-typed'>Fully typed</h2>
 
-[tRPC](https://trpc.io) adapter for Fastify is used for E2E type safety for requests from browser to server.
+FastRat uses the modern libraries that allow to type every aspect of your apps:
+* [tRPC](https://trpc.io) adapter for Fastify is used for E2E type safety for requests from browser to server
+* [Tanstack Router](https://tanstack.com/router/latest)
+* [Zod](https://github.com/colinhacks/zod)
+* [Drizzle ORM](https://www.google.com/search?q=drizzle+orm&sourceid=chrome&ie=UTF-8)
 
 ### Deployment freedom
 
