@@ -1,5 +1,5 @@
-import { authRouter } from '#features/auth/auth-routes'
-import { noteRouter } from '#features/notes/note-router'
+import { authRouter } from '#auth/auth-routes'
+import { noteRouter } from '#notes/note-router'
 import { router } from './trpc-server'
 
 export const apiRouter = router({

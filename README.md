@@ -9,10 +9,28 @@
   />
 </p>
 
-- [Quickstart](#quickstart)
+## Quickstart <!-- omit from toc -->
+
+```bash
+gh repo clone giacomorebonato/fastrat-test # clone the repository
+pnpm install # install dependencies
+pnpm dev     # start the project in dev mode
+```
+
+To enable authentication and a production database, rename `.env.example` to `.env` and fill the fields properly.  
+In a production environment, you should set those environment variables directly.
+
+[Example with Fly.io](https://fly.io/docs/reference/secrets/)
+
+```bash
+fly secrets set TURSO_DB_URL=libsql://link-to-your-turso-db.turso.io
+```
+
+
 - [Authentication](#authentication)
 - [SSR](#ssr)
 - [tRPC](#trpc)
+- [Testing](#testing)
 - [Deploy](#deploy)
 - [Credits](#credits)
 
@@ -25,13 +43,6 @@
 * [Turso db](https://turso.tech): SQLite database which fallbacks to [libsql](https://github.com/tursodatabase/libsql) locally
 * [Fly.io](https://fly.io): for deployment
 
-## Quickstart
-
-```bash
-gh repo clone giacomorebonato/fastrat-test # clone the repository
-pnpm install # install dependencies
-pnpm dev # start the project in dev mode
-```
 
 Thanks to Vavite, any change to frontend or backend code will be reflected immediately, without manually restarting the server.
 
@@ -44,12 +55,28 @@ It should be easy for you to re-use this example to add other authentication pro
 
 ## SSR
 
+SSR is achieved by following [Tanstack router examples](https://github.com/TanStack/router/tree/main/examples/react/basic-ssr-streaming-file-based).
+The page content is streamed and meta tags in `<head />` are rendered following [react-helmet-async examples](https://github.com/staylor/react-helmet-async?tab=readme-ov-file#streams).
+
 
 ## tRPC
 
 This project comes with [tRPC](https://trpc.io) ready to be used.
 Check [note-router.ts](src/features/notes/note-router.ts) to see how queries, mutations and subscriptions can be implemented.  
 All the routers are collected in [api-router.ts](src/features/server/api-router.ts), but you can organise files in the way you prefer.
+
+## Testing
+
+This starter contains a few unit tests and an E2E test.
+
+```bash
+pnpm test        # uses Vitest to run unit tests
+pnpm e2e         # uses PlayWright to run E2E tests
+pnpm e2e:headed  # uses PlayWright to run E2E tests opening the browser
+```
+
+The present E2E tests verify that the page is server rendered and that websockets are working.
+
 
 ## Deploy
 

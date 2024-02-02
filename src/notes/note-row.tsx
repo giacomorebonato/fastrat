@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { toast } from 'react-toastify'
-import { trpcClient } from '#features/browser/trpc-client'
+import { trpcClient } from '#browser/trpc-client'
 import { NoteSelect } from './note-schema'
 
 export const NoteRow = ({ note }: { note: NoteSelect }) => {
