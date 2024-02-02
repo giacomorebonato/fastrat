@@ -30,6 +30,7 @@ fly secrets set TURSO_DB_URL=libsql://link-to-your-turso-db.turso.io
 - [Authentication](#authentication)
 - [SSR](#ssr)
 - [tRPC](#trpc)
+- [Testing](#testing)
 - [Deploy](#deploy)
 - [Credits](#credits)
 
@@ -63,6 +64,19 @@ The page content is streamed and meta tags in `<head />` are rendered following 
 This project comes with [tRPC](https://trpc.io) ready to be used.
 Check [note-router.ts](src/features/notes/note-router.ts) to see how queries, mutations and subscriptions can be implemented.  
 All the routers are collected in [api-router.ts](src/features/server/api-router.ts), but you can organise files in the way you prefer.
+
+## Testing
+
+This starter contains a few unit tests and an E2E test.
+
+```bash
+pnpm test        # uses Vitest to run unit tests
+pnpm e2e         # uses PlayWright to run E2E tests
+pnpm e2e:headed  # uses PlayWright to run E2E tests opening the browser
+```
+
+The present E2E tests verify that the page is server rendered and that websockets are working.
+
 
 ## Deploy
 
