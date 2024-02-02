@@ -1,5 +1,5 @@
-import { createServer } from '#features/server/create-server'
-import { env } from '#features/server/env.js'
+import { createServer } from '#server/create-server'
+import { env } from '#server/env.js'
 
 const server = await createServer()
 

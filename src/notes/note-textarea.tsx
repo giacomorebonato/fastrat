@@ -3,7 +3,7 @@ import _ from 'lodash'
 import { useCallback, useEffect } from 'react'
 import { toast } from 'react-toastify'
 import { P, match } from 'ts-pattern'
-import { trpcClient } from '#features/browser/trpc-client'
+import { trpcClient } from '#browser/trpc-client'
 import { NoteRecord } from './note-schema'
 
 export function NoteTextarea(props: {
