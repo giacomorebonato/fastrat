@@ -5,7 +5,7 @@ export function createRouter() {
 	return new Router({
 		routeTree,
 		context: {
-			head: '',
+			helmetContext: {},
 		},
 		defaultPreload: 'intent',
 	})

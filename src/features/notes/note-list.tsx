@@ -44,6 +44,7 @@ export function NoteList({ notes }: { notes?: NoteRecord[] }) {
 							id: crypto.randomUUID(),
 						})
 					}}
+					data-testid='btn-create-note'
 				>
 					Create Note
 				</button>

@@ -18,7 +18,7 @@ test('creates a note and ensures note list is updated from websockets and that S
 	await page.getByText('Logout').isVisible()
 	await page.locator('textarea').isVisible()
 
-	await page.getByText('Create Note').click()
+	await page.getByTestId('btn-create-note').click()
 
 	await page.waitForURL('http://localhost:3000/notes/*')
 
@@ -30,10 +30,9 @@ test('creates a note and ensures note list is updated from websockets and that S
 
 	await ws.waitForEvent('framereceived', {
 		predicate: (ev) => {
-			return (
-				JSON.parse(ev.payload.toString()).result.data.json.content ===
-				'Beautiful day'
-			)
+			const content = JSON.parse(ev.payload as string).result.data.json.content
+			const found = content === 'Beautiful day'
+			return found
 		},
 	})
 
@@ -55,5 +54,7 @@ test('creates a note and ensures note list is updated from websockets and that S
 	expect(content).toContain(
 		'<textarea class="textarea textarea-bordered w-full">Beautiful day</textarea>',
 	)
-	expect(content).toContain(`<title>Fastrat - Beautiful day</title>`)
+	expect(content).toContain(
+		`<title data-rh="true">Fastrat - Beautiful day</title>`,
+	)
 })

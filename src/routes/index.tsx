@@ -1,7 +1,9 @@
 import { FileRoute } from '@tanstack/react-router'
+import { Helmet } from 'react-helmet-async'
 import WhyFastRat from '#features/blog/why-fastrat.mdx'
+import { Layout } from '#features/browser/layout'
+import { SideMenu } from '#features/browser/side-menu'
 import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
-import { CustomHead } from '#features/server/custom-head'
 
 export const Route = new FileRoute('/').createRoute({
 	component: IndexComponent,
@@ -11,24 +13,29 @@ function IndexComponent() {
 	useNoteSubscriptions()
 
 	return (
-		<div className='flex flex-col md:flex-row'>
-			<CustomHead>
-				<title>FastRat</title>
-				<meta
-					name='description'
-					content='A starter kit for fully typesafe monolyth. With Fastify + React (SSR).'
-				/>
-				<meta property='og:title' content='FastRat - Modern Web Development' />
-				<meta
-					property='og:description'
-					content='A starter kit for building web application and SSR ready when SEO matters.'
-				/>
-				<meta property='og:type' content='website' />
-			</CustomHead>
+		<Layout sidebar={<SideMenu withBookmarks />}>
+			<div className='flex flex-col md:flex-row'>
+				<Helmet>
+					<title>FastRat</title>
+					<meta
+						name='description'
+						content='A starter kit for fully typesafe monolyth. With Fastify + React (SSR).'
+					/>
+					<meta
+						property='og:title'
+						content='FastRat - Modern Web Development'
+					/>
+					<meta
+						property='og:description'
+						content='A starter kit for building web application and SSR ready when SEO matters.'
+					/>
+					<meta property='og:type' content='website' />
+				</Helmet>
 
-			<div className='prose mx-auto py-8 font-cardo px-4 md:px-0 text-lg'>
-				<WhyFastRat />
+				<main className='prose mx-auto py-8 font-cardo px-4 md:px-0 text-lg'>
+					<WhyFastRat />
+				</main>
 			</div>
-		</div>
+		</Layout>
 	)
 }
