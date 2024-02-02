@@ -5,7 +5,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import { HelmetServerState } from 'react-helmet-async'
 import superjson from 'superjson'
 import { createLink, trpcClient } from '#browser/trpc-client'
-import { type RouterContext } from '../router-context'
+import { RouterContext } from '#types/router-context'
 
 export const Route = rootRouteWithContext<RouterContext>()({
 	loader({ context }) {
