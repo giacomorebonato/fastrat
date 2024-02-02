@@ -5,11 +5,12 @@
 		"build": "pnpm clean && vavite build",
 		"clean": "del dist && del sqlite.db",
 		"start": "node dist/server/index.js",
-		"test": "tsc && vitest",
+		"test": "tsc && vitest run",
 		"e2e": "pnpm clean && playwright test",
 		"e2e:headed": "pnpm clean && playwright test --headed",
 		"e2e:ui": "pnpm clean && playwright test --ui",
-		"check": "biome check --apply src"
+		"check": "biome check --apply src",
+		"prepare": "husky"
 	},
 	"imports": {
 		"#*": "./src/*"
@@ -70,6 +71,7 @@
 		"daisyui": "^4.6.0",
 		"del-cli": "^5.1.0",
 		"drizzle-kit": "^0.20.10",
+		"husky": "^9.0.10",
 		"pino-pretty": "^10.3.1",
 		"postcss": "^8.4.33",
 		"tailwindcss": "^3.4.1",
