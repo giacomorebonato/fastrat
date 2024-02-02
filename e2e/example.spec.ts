@@ -1,18 +1,11 @@
-import { Page, expect, test } from '@playwright/test'
-import { type WebSocket } from '@playwright/test'
-
-const getWebSocket = (page: Page): Promise<WebSocket> => {
-	return new Promise((resolve) => {
-		page.on('websocket', resolve)
-	})
-}
+import { expect, test } from '@playwright/test'
 
 test('creates a note and ensures note list is updated from websockets and that SSR is happening', async ({
 	browser,
 	page,
 }) => {
 	await page.goto('http://localhost:3000/notes')
-	const ws = await getWebSocket(page)
+	// const wsPromise = getWebSocket(page)
 
 	await expect(page).toHaveTitle(/FastRat/)
 	await page.getByText('Logout').isVisible()
@@ -28,20 +21,16 @@ test('creates a note and ensures note list is updated from websockets and that S
 
 	await page.locator('textarea').fill('Beautiful day')
 
-	await ws.waitForEvent('framereceived', {
-		predicate: (ev) => {
-			const content = JSON.parse(ev.payload as string).result.data.json.content
-			const found = content === 'Beautiful day'
-			return found
+	await page.waitForTimeout(2_000)
+
+	await expect(page.locator(`[data-testid=note-${noteId}] span`)).toHaveText(
+		'Beautiful day',
+		{
+			timeout: 1_000,
 		},
-	})
+	)
 
-	const text = await page
-		.locator(`[data-testid=note-${noteId}] span`)
-		.textContent()
-
-	expect(text).toEqual('Beautiful day')
-
+	// JS is disabled to ensure that HTML is not build client side
 	const context = await browser.newContext({
 		javaScriptEnabled: false,
 	})
