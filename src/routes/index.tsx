@@ -1,8 +1,8 @@
 import { FileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
+import WhyFastRat from '#blog/why-fastrat.mdx'
 import { Layout } from '#browser/layout'
 import { SideMenu } from '#browser/side-menu'
-import WhyFastRat from '#blog/why-fastrat.mdx'
 import { useNoteSubscriptions } from '#notes/use-note-subscriptions'
 
 export const Route = new FileRoute('/').createRoute({
