@@ -1,5 +1,4 @@
-import { Page, expect, test } from '@playwright/test'
-import { type WebSocket } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test('creates a note and ensures note list is updated from websockets and that SSR is happening', async ({
 	browser,
