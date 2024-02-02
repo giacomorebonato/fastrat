@@ -4,7 +4,7 @@ import { DehydrateRouter } from '@tanstack/react-router-server/client'
 import { HelmetProvider } from 'react-helmet-async'
 import { HelmetServerState } from 'react-helmet-async'
 import superjson from 'superjson'
-import { createLink, trpcClient } from '#features/browser/trpc-client'
+import { createLink, trpcClient } from '#browser/trpc-client'
 import { type RouterContext } from '../router-context'
 
 export const Route = rootRouteWithContext<RouterContext>()({

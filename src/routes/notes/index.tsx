@@ -1,16 +1,16 @@
 import { FileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
-import { Layout } from '#features/browser/layout'
-import { SideMenu } from '#features/browser/side-menu'
-import { NoteList } from '#features/notes/note-list'
-import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
+import { Layout } from '#browser/layout'
+import { SideMenu } from '#browser/side-menu'
 import logo from '#images/logo.jpg'
+import { NoteList } from '#notes/note-list'
+import { useNoteSubscriptions } from '#notes/use-note-subscriptions'
 
 export const Route = new FileRoute('/notes/').createRoute({
 	component: IndexComponent,
 	async loader() {
 		if (import.meta.env.SSR) {
-			const { getNotes } = await import('#features/notes/note-queries')
+			const { getNotes } = await import('#notes/note-queries')
 
 			return {
 				notes: await getNotes(),
