@@ -1,6 +1,6 @@
 import { useNavigate } from '@tanstack/react-router'
 import { toast } from 'react-toastify'
-import { trpcClient } from '#features/browser/trpc-client'
+import { trpcClient } from '#browser/trpc-client'
 import { NoteRow } from './note-row'
 import { NoteRecord } from './note-schema'
 
@@ -44,6 +44,7 @@ export function NoteList({ notes }: { notes?: NoteRecord[] }) {
 							id: crypto.randomUUID(),
 						})
 					}}
+					data-testid='btn-create-note'
 				>
 					Create Note
 				</button>

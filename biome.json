@@ -20,6 +20,6 @@
 		}
 	},
 	"files": {
-		"ignore": ["*.ico", "*.jpg", "src/routeTree.gen.ts", "migrations/"]
+		"ignore": ["*.ico", "*.jpg", "src/route-tree.gen.ts", "migrations/"]
 	}
 }

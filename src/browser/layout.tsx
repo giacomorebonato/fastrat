@@ -19,7 +19,10 @@ const contextClass = {
 
 let Devtools: React.FC = () => null
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({
+	children,
+	sidebar,
+}: { children: React.ReactNode; sidebar?: React.ReactNode }) {
 	const dialogRef = useRef<HTMLDialogElement | null>(null)
 	const utils = trpcClient.useUtils()
 	const profile = trpcClient.auth.profile.useQuery()
@@ -53,7 +56,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 	return (
 		<>
-			<div className='drawer'>
+			<div className='drawer lg:drawer-open'>
 				<input
 					className='drawer-toggle'
 					id='my-drawer-3'
@@ -65,7 +68,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						<div className='flex-none'>
 							<label
 								aria-label='open sidebar'
-								className='btn btn-square btn-ghost'
+								className='btn btn-square btn-ghost lg:hidden'
 								htmlFor='my-drawer-3'
 							>
 								<svg
@@ -84,14 +87,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
 								</svg>
 							</label>
 						</div>
-						<Link className='link mx-2 flex-1 px-2 no-underline' to='/'>
-							FastRat
-						</Link>
 
+						<div className='flex-1 font-cardo'>
+							<Link
+								className='link mx-2 px-2 no-underline hover:link-hover'
+								to='/'
+							>
+								FastRat
+							</Link>
+							<a
+								className='link no-underline hover:link-hover'
+								href='https://github.com/giacomorebonato/fastrat'
+								target='_blank'
+								rel='noreferrer'
+							>
+								GitHub
+							</a>
+						</div>
 						{match(profile.data)
 							.with(null, () => (
 								<button
-									className='btn btn-ghost'
+									className='btn btn-ghost font-cardo'
 									data-testid='btn-login'
 									onClick={() => {
 										dialogRef.current?.showModal()
@@ -105,7 +121,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 								<button
 									data-testid='btn-logout'
 									type='button'
-									className='btn btn-ghost'
+									className='btn btn-ghost font-cardo'
 									onClick={() => {
 										logout.mutate()
 									}}
@@ -133,13 +149,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						className='drawer-overlay'
 						htmlFor='my-drawer-3'
 					/>
-					<ul className='menu min-h-full w-3/4 bg-base-200 p-4'>
-						<li>
-							<Link className='link' to='/notes'>
-								Demo App
-							</Link>
-						</li>
-					</ul>
+					{sidebar}
 				</div>
 			</div>
 			<dialog className='modal' id='my_modal_2' ref={dialogRef}>

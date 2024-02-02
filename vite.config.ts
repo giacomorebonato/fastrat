@@ -88,6 +88,9 @@ const config: UserConfig = {
 			},
 		}),
 	],
+	ssr: {
+		noExternal: ['react-helmet-async'],
+	},
 }
 
 export default config

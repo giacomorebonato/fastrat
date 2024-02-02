@@ -2,7 +2,6 @@ import Fs from 'node:fs'
 import Path from 'node:path'
 import appRootPath from 'app-root-path'
 import { env } from './env'
-import { extractCustomHead } from './extract-custom-head'
 
 export const createPageHtml = (appHtml: string) => {
 	const indexPath =
@@ -13,7 +12,8 @@ export const createPageHtml = (appHtml: string) => {
 	let code = Fs.readFileSync(indexPath, 'utf-8')
 
 	let customHead = ''
-	customHead += extractCustomHead(appHtml)
+	// const customHeadResult = extractCustomHead(appHtml)
+	// customHead += customHeadResult?.code
 
 	if (env.NODE_ENV === 'development') {
 		customHead += `<script type="module" src="/@vite/client"></script>
