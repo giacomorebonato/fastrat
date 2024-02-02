@@ -1,20 +1,26 @@
 import { FileRoute } from '@tanstack/react-router'
+import { Helmet } from 'react-helmet-async'
 import { z } from 'zod'
-import { NoteList } from '#features/notes/note-list'
-import { NoteRecord } from '#features/notes/note-schema'
-import { NoteTextarea } from '#features/notes/note-textarea'
-import { useNoteSubscriptions } from '#features/notes/use-note-subscriptions'
-import { CustomHead } from '#features/server/custom-head'
+import { Layout } from '#browser/layout'
+import { SideMenu } from '#browser/side-menu'
+import { trpcClient } from '#browser/trpc-client'
+import { NoteList } from '#notes/note-list'
+import { NoteTextarea } from '#notes/note-textarea'
+import { useNoteSubscriptions } from '#notes/use-note-subscriptions'
 
 export const Route = new FileRoute('/notes/$noteId').createRoute({
 	parseParams: (params) => ({
 		noteId: z.string().parse(params.noteId),
 	}),
-	async loader({ params }): Promise<NoteRecord | undefined> {
+	async loader({ params }) {
 		if (import.meta.env.SSR) {
-			const { getNoteById } = await import('#features/notes/note-queries')
+			const { getNoteById } = await import('#notes/note-queries')
+			const { getNotes } = await import('#notes/note-queries')
 
-			return getNoteById(params.noteId)
+			return {
+				note: await getNoteById(params.noteId),
+				notes: await getNotes(),
+			}
 		}
 	},
 	component: NoteComponent,
@@ -25,18 +31,30 @@ function NoteComponent() {
 	const { noteId } = Route.useParams()
 	const loaderData = Route.useLoaderData()
 
-	return (
-		<div className='flex flex-col md:flex-row'>
-			<CustomHead>
-				<title>{`Fastrat - ${loaderData?.content.substring(0, 20)}`}</title>
-			</CustomHead>
-			<div className='flex-1'>
-				<NoteTextarea noteId={noteId} initalData={loaderData} />
-			</div>
+	const noteQuery = trpcClient.note.get.useQuery(
+		{ id: noteId },
+		{
+			initialData: loaderData?.note,
+		},
+	)
 
-			<div className='flex-1'>
-				<NoteList />
+	return (
+		<Layout sidebar={<SideMenu withBookmarks={false} />}>
+			<div className='flex flex-col md:flex-row'>
+				<Helmet>
+					<title>{`Fastrat - ${noteQuery.data?.content.substring(
+						0,
+						20,
+					)}`}</title>
+				</Helmet>
+				<div className='flex-1'>
+					<NoteTextarea noteId={noteId} initalData={loaderData?.note} />
+				</div>
+
+				<div className='flex-1'>
+					<NoteList notes={loaderData?.notes} />
+				</div>
 			</div>
-		</div>
+		</Layout>
 	)
 }

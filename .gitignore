@@ -1,6 +1,7 @@
 node_modules/
 dist/
 sqlite.db
+/dev-dist/
 /test-results/
 /playwright-report/
 /blob-report/
@@ -11,3 +12,4 @@ local.db
 readme-ai.md
 /e2e/user.json
 gha-creds-*.json
+vite.config.ts.*

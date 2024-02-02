@@ -1,0 +1,60 @@
+import logo from '#images/logo.jpg'
+
+<h1 id='modern-fastrat'>Modern Web Development with FastRat</h1>
+
+<img
+  src={logo}
+  alt='A rat going fast on their skateboard'
+  className='rounded mx-auto'
+  width={200}
+  height={200}
+/>
+
+Doing modern web development can mean different things, for example you can have a very sophisticated interaction with legacy code, or you might be building a "simple" landing page, but with very modern tooling.
+
+It's nice that we can ask us this question, because web development over the years went very far and it's reaching many different devices.
+If in the past native applications could have an advantage, web applications are more and more shortening the distance, across every platform.
+
+I still find flabbergasting that VSCode can be opened on each GitHub repository by pressing `.` and the editor will persist all the preferences that are in sync.
+
+<h2 id='why-fastrat'>Why FastRat (Fastify + React)</h2>
+
+JavaScript world changes so quickly that often we ask ourselves if we are learning something new, just because it's trendy or if it's something that we truly believe it's an improvement.
+I remember when in the early days of React, everyone was reminding to everyone on Twitter that:
+
+> It is not a framework!
+
+And I think that it was a good thing, because it fostered composition and build many cool projects around it.
+So, with the same spirit, here I am composing React with my favourite backend framework which is Fastify.
+
+Fastify is well maintained, has Node contributors among the maintainers and it is used by many companies in production.
+That's why I consider it a safe bet.
+
+<h2 id='spa-or-mpa'>SPA or MPA?</h2>
+
+I want to have both in the same project. Why? 
+ 
+I think that it's a very common case to rely on a SPA for a private dashboard, but we might still need some SSR rendered page if for example we are building an e-commerce and our product pages need to be crawled by Google or any other search engine.
+
+FastRat renders the HTML on the first request and then uses client side routing when the interaction happens on the page.
+
+<h2 id='great-dx'>Great Developer Experience</h2>
+
+When using NextJS I like that with one command I have both my frontend and backend running and that I can share code between the two and import it in the same way.  
+This wouldn't have been possible without [Vite](https://vitejs.dev) and [Vavite](https://github.com/cyco130/vavite).
+
+When you run `pnpm dev` all your code is running and changes to code are applied immediately without restarting the server.  
+This happens because Vavite is using Vite to compile both frontend and backend code.
+
+<h2 id='fully-typed'>Fully typed</h2>
+
+FastRat uses the modern libraries that allow to type every aspect of your apps:
+* [tRPC](https://trpc.io) adapter for Fastify is used for E2E type safety for requests from browser to server
+* [Tanstack Router](https://tanstack.com/router/latest)
+* [Zod](https://github.com/colinhacks/zod)
+* [Drizzle ORM](https://www.google.com/search?q=drizzle+orm&sourceid=chrome&ie=UTF-8)
+
+### Deployment freedom
+
+This project can run anywhere Docker containers run.  
+This website is configured to automatically deploy to [Fly.io](https://fly.io) which for me is the easiest option.

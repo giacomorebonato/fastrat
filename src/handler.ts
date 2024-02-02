@@ -1,6 +1,6 @@
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import type { Socket } from 'node:net'
-import { createServer } from '#features/server/create-server'
+import { createServer } from '#server/create-server'
 
 const server = await createServer()
 
