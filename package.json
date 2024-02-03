@@ -38,7 +38,7 @@
 		"drizzle-orm": "^0.29.3",
 		"drizzle-zod": "^0.5.1",
 		"fast-jwt": "^3.3.2",
-		"fastify": "4.25.2",
+		"fastify": "4.26.0",
 		"fastify-plugin": "^4.5.1",
 		"framer-motion": "^11.0.0",
 		"lodash": "^4.17.21",
