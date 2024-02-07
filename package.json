@@ -45,7 +45,7 @@
 		"react": "^18.2.0",
 		"react-apollo": "^3.1.5",
 		"react-dom": "^18.2.0",
-		"react-toastify": "^10.0.0",
+		"react-toastify": "10.0.4",
 		"react-helmet-async": "^2.0.4",
 		"react-use": "^17.4.2",
 		"strict-event-emitter": "^0.5.1",
