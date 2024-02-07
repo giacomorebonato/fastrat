@@ -16,6 +16,7 @@
 		"#*": "./src/*"
 	},
 	"dependencies": {
+		"@apollo/client": "^3.9.3",
 		"@fastify/cookie": "^9.2.0",
 		"@fastify/oauth2": "7.8.0",
 		"@fastify/static": "^7.0.0",
@@ -43,7 +44,6 @@
 		"framer-motion": "^11.0.0",
 		"lodash": "^4.17.21",
 		"react": "^18.2.0",
-		"react-apollo": "^3.1.5",
 		"react-dom": "^18.2.0",
 		"react-helmet-async": "^2.0.4",
 		"react-toastify": "^9.1.3",
