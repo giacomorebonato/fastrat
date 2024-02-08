@@ -28,7 +28,7 @@ fly secrets set TURSO_DB_URL=libsql://link-to-your-turso-db.turso.io
 
 
 - [Authentication](#authentication)
-- [SSR](#ssr)
+- [SSR and Routing](#ssr-and-routing)
 - [tRPC](#trpc)
 - [Testing](#testing)
 - [Deploy](#deploy)
@@ -53,7 +53,7 @@ You can check how authentication is achieved in [src/features/auth/google-auth.t
 It should be easy for you to re-use this example to add other authentication providers.
 
 
-## SSR
+## SSR and Routing
 
 SSR is achieved by following [Tanstack router examples](https://github.com/TanStack/router/tree/main/examples/react/basic-ssr-streaming-file-based).
 The page content is streamed and meta tags in `<head />` are rendered following [react-helmet-async examples](https://github.com/staylor/react-helmet-async?tab=readme-ov-file#streams).
@@ -79,6 +79,8 @@ The present E2E tests verify that the page is server rendered and that websocket
 
 
 ## Deploy
+
+You can deploy FastRat everywhere Docker runs.
 
 * This website deploys automatically to Fly.io
   * https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/

@@ -19,10 +19,6 @@ const config: UserConfig = {
 		{
 			name: 'server',
 			config: {
-				define: {
-					VITE_SSR: JSON.stringify(true),
-					SSR: JSON.stringify(true),
-				},
 				build: {
 					target: 'node21',
 					ssr: true,
