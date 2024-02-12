@@ -79,9 +79,6 @@ const config: UserConfig = {
 		react(),
 		TanStackRouterVite({
 			quoteStyle: 'single',
-			future: {
-				unstable_codeSplitting: true,
-			},
 		}),
 	],
 	ssr: {
