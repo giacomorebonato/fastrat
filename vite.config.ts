@@ -4,8 +4,14 @@ import react from '@vitejs/plugin-react'
 import { vavite } from 'vavite'
 import { type UserConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { splitVendorChunkPlugin } from 'vite'
 
 const config: UserConfig = {
+	resolve: {
+		alias: {
+			lodash: 'lodash-es',
+		},
+	},
 	buildSteps: [
 		{
 			name: 'client',
@@ -13,6 +19,22 @@ const config: UserConfig = {
 				build: {
 					outDir: 'dist/client',
 					manifest: true,
+					rollupOptions: {
+						output: {
+							manualChunks(id: string) {
+								if (
+									id.includes('react-toastify') ||
+									id.includes('framer-motion') ||
+									id.includes('react-helmet-async')
+								) {
+									return 'react-libs'
+								}
+								if (id.includes('@tanstack') || id.includes('@trpc')) {
+									return '@tanstack'
+								}
+							},
+						},
+					},
 				},
 			},
 		},
@@ -77,6 +99,7 @@ const config: UserConfig = {
 			serveClientAssetsInDev: true,
 		}),
 		react(),
+		splitVendorChunkPlugin(),
 		TanStackRouterVite({
 			quoteStyle: 'single',
 		}),

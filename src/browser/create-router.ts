@@ -1,11 +1,12 @@
-import { Router } from '@tanstack/react-router'
+import { createRouter as createTanstackRouter } from '@tanstack/react-router'
 import { routeTree } from '../route-tree.gen'
 
 export function createRouter() {
-	return new Router({
+	return createTanstackRouter({
 		routeTree,
 		context: {
 			helmetContext: {},
+			redirect: {},
 		},
 		defaultPreload: 'intent',
 	})

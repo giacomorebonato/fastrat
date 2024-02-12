@@ -91,7 +91,10 @@ export async function createServer(
 	})
 
 	server.get('*', async (request, reply) => {
+		// helmetContext and redirect are passed to the rendering router
+		// and mutated, so we can verify their data
 		request.helmetContext = {}
+		request.redirect = {}
 
 		const router = createRouter()
 		const memoryHistory = createMemoryHistory({
@@ -102,12 +105,17 @@ export async function createServer(
 			context: {
 				...router.options.context,
 				helmetContext: request.helmetContext,
+				redirect: request.redirect,
 			},
 		})
 		await router.load()
 
 		// this is to populate helmetContext meta data for <head /> ahead of rendering
 		await getDataFromTree(<StartServer router={router} />)
+
+		if (request.redirect.to) {
+			return reply.code(302).redirect(request.redirect.to)
+		}
 
 		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const { head, footer } = createTemplate(request.helmetContext!.helmet!)

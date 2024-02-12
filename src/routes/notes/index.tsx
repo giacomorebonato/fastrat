@@ -1,4 +1,4 @@
-import { FileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
 import { Layout } from '#browser/layout'
 import { SideMenu } from '#browser/side-menu'
@@ -6,7 +6,7 @@ import logo from '#images/logo.jpg'
 import { NoteList } from '#notes/note-list'
 import { useNoteSubscriptions } from '#notes/use-note-subscriptions'
 
-export const Route = new FileRoute('/notes/').createRoute({
+export const Route = createFileRoute('/notes/')({
 	component: IndexComponent,
 	async loader() {
 		if (import.meta.env.SSR) {

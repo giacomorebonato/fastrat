@@ -4,9 +4,13 @@ import React, { Suspense, lazy, useEffect, useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { P, match } from 'ts-pattern'
-import './main.css'
-import { ReloadPrompt } from './reload-prompt'
 import { trpcClient } from './trpc-client'
+
+const LazyPwaReloadPrompt = lazy(() =>
+	import('./pwa-reload-prompt').then((c) => ({
+		default: c.PwaReloadPrompt,
+	})),
+)
 
 const contextClass = {
 	dark: 'bg-white-600 font-gray-300',
@@ -162,7 +166,9 @@ export function Layout({
 				</form>
 			</dialog>
 
-			<ReloadPrompt />
+			<Suspense fallback={null}>
+				<LazyPwaReloadPrompt />
+			</Suspense>
 
 			<Suspense fallback={<div />}>
 				<Devtools />

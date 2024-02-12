@@ -47,3 +47,12 @@ test('creates a note and ensures note list is updated from websockets and that S
 		`<title data-rh="true">Fastrat - Beautiful day</title>`,
 	)
 })
+
+test(`it redirects from server side when passing not existing id in the URL`, async ({
+	browser,
+	page,
+}) => {
+	const response = await page.goto('http://localhost:3000/notes/12345')
+
+	expect(response?.url()).toEqual('http://localhost:3000/notes')
+})

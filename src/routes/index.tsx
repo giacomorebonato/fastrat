@@ -1,11 +1,11 @@
-import { FileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
 import WhyFastRat from '#blog/why-fastrat.mdx'
 import { Layout } from '#browser/layout'
 import { SideMenu } from '#browser/side-menu'
 import { useNoteSubscriptions } from '#notes/use-note-subscriptions'
 
-export const Route = new FileRoute('/').createRoute({
+export const Route = createFileRoute('/')({
 	component: IndexComponent,
 })
 

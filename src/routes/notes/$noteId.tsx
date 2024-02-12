@@ -1,4 +1,4 @@
-import { FileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
 import { z } from 'zod'
 import { Layout } from '#browser/layout'
@@ -8,17 +8,24 @@ import { NoteList } from '#notes/note-list'
 import { NoteTextarea } from '#notes/note-textarea'
 import { useNoteSubscriptions } from '#notes/use-note-subscriptions'
 
-export const Route = new FileRoute('/notes/$noteId').createRoute({
+export const Route = createFileRoute('/notes/$noteId')({
 	parseParams: (params) => ({
 		noteId: z.string().parse(params.noteId),
 	}),
-	async loader({ params }) {
+	async loader({ context, params }) {
 		if (import.meta.env.SSR) {
 			const { getNoteById } = await import('#notes/note-queries')
 			const { getNotes } = await import('#notes/note-queries')
+			const note = await getNoteById(params.noteId)
+
+			if (!note) {
+				// this redirect is read server side
+				// before rendering the React tree
+				context.redirect.to = '/notes'
+			}
 
 			return {
-				note: await getNoteById(params.noteId),
+				note,
 				notes: await getNotes(),
 			}
 		}
@@ -48,7 +55,7 @@ function NoteComponent() {
 					)}`}</title>
 				</Helmet>
 				<div className='flex-1'>
-					<NoteTextarea noteId={noteId} initalData={loaderData?.note} />
+					<NoteTextarea note={noteQuery.data} />
 				</div>
 
 				<div className='flex-1'>
