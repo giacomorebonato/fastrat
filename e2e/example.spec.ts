@@ -4,6 +4,11 @@ test('creates a note and ensures note list is updated from websockets and that S
 	browser,
 	page,
 }) => {
+	page.on('console', (msg) => {
+		if (msg.type() === 'error') {
+			throw Error(msg.text())
+		}
+	})
 	await page.goto('http://localhost:3000/notes')
 	// const wsPromise = getWebSocket(page)
 
@@ -49,7 +54,6 @@ test('creates a note and ensures note list is updated from websockets and that S
 })
 
 test(`it redirects from server side when passing not existing id in the URL`, async ({
-	browser,
 	page,
 }) => {
 	const response = await page.goto('http://localhost:3000/notes/12345')
