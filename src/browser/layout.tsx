@@ -6,11 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { P, match } from 'ts-pattern'
 import { trpcClient } from './trpc-client'
 
-const LazyPwaReloadPrompt = lazy(() =>
-	import('./pwa-reload-prompt').then((c) => ({
-		default: c.PwaReloadPrompt,
-	})),
-)
+let LazyPwaReloadPrompt: React.FC = () => null
 
 const contextClass = {
 	dark: 'bg-white-600 font-gray-300',
@@ -54,6 +50,13 @@ export function Layout({
 		if (import.meta.env.DEV && !import.meta.env.SSR) {
 			Devtools = lazy(() => {
 				return import('./devtools').then((c) => ({ default: c.Devtools }))
+			})
+		}
+		if (import.meta.env.PROD) {
+			LazyPwaReloadPrompt = lazy(() => {
+				return import('./pwa-reload-prompt').then((c) => ({
+					default: c.PwaReloadPrompt,
+				}))
 			})
 		}
 	})
@@ -166,7 +169,7 @@ export function Layout({
 				</form>
 			</dialog>
 
-			<Suspense fallback={null}>
+			<Suspense fallback={<div />}>
 				<LazyPwaReloadPrompt />
 			</Suspense>
 
