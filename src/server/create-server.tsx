@@ -84,6 +84,12 @@ export async function createServer(
 		reply.type('text/html').send(createPageHtml(''))
 	})
 
+	server.get('/robots.txt', (request, reply) => {
+		reply
+			.type('text/plain')
+			.send(Fs.readFileSync(Path.join(appRootPath.path, 'robots.txt')))
+	})
+
 	server.get('/googleeaf3b21d2e7978d5.html', (request, reply) => {
 		reply
 			.type('text/plain')
