@@ -17,16 +17,7 @@ import { createTemplate } from './create-template'
 import { env } from './env'
 import { createContext } from './trpc-context'
 
-const getWorkboxFilename = () => {
-	if (env.NODE_ENV !== 'production') {
-		return null
-	}
-
-	const files = Fs.readdirSync(Path.join(appRootPath.path, 'dist/client'))
-	const file = files.find((file) => file.startsWith('workbox'))
-
-	return file
-}
+const distClientPath = Path.join(appRootPath.path, 'dist/client')
 
 export async function createServer(
 	options: FastifyServerOptions = {
@@ -65,24 +56,25 @@ export async function createServer(
 		useWSS: true,
 	})
 
-	for (const url of [
-		'/manifest.webmanifest',
-		'/sw.js',
-		'/registerSW.js',
-		`/${getWorkboxFilename()}`,
-	].filter(Boolean)) {
-		server.get(url, (request, reply) => {
-			const filename = request.url.slice(1)
-			const filePath = Path.join(appRootPath.path, 'dist/client')
-
-			reply.sendFile(filename, filePath)
+	if (env.NODE_ENV === 'production') {
+		const files = Fs.readdirSync(distClientPath).filter((file) => {
+			return !Fs.statSync(Path.join(distClientPath, file)).isDirectory()
 		})
-	}
 
-	// this is for the service worker cache
-	server.get('/index.html', (request, reply) => {
-		reply.type('text/html').send(createPageHtml(''))
-	})
+		for (const url of files.map((file) => `/${file}`)) {
+			server.get(url, (request, reply) => {
+				const filename = request.url.slice(1)
+				const filePath = Path.join(appRootPath.path, 'dist/client')
+
+				// this is for the service worker cache
+				if (filename === 'index.html') {
+					reply.type('text/html').send(createPageHtml(''))
+				} else {
+					reply.sendFile(filename, filePath)
+				}
+			})
+		}
+	}
 
 	server.get('/robots.txt', (request, reply) => {
 		reply

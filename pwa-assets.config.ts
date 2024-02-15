@@ -7,7 +7,7 @@ import {
 export default defineConfig({
 	headLinkOptions: {
 		preset: '2023',
-		basePath: '/src/images/',
+		basePath: '/',
 	},
 	preset: combinePresetAndAppleSplashScreens(
 		{ ...minimal2023Preset },
@@ -19,5 +19,5 @@ export default defineConfig({
 		},
 		['iPad Air 9.7"'],
 	),
-	images: ['src/images/logo.svg'],
+	images: ['./public/logo.svg'],
 })
