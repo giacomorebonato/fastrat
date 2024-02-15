@@ -69,6 +69,15 @@ export async function createServer(
 				// this is for the service worker cache
 				if (filename === 'index.html') {
 					reply.type('text/html').send(createPageHtml(''))
+				} else if (filename === 'manifest.webmanifest') {
+					reply
+						.type('application/manifest+json')
+						.send(
+							Fs.readFileSync(
+								Path.join(distClientPath, 'manifest.webmanifest'),
+								'utf-8',
+							),
+						)
 				} else {
 					reply.sendFile(filename, filePath)
 				}
