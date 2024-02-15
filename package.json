@@ -86,11 +86,5 @@
 		"vite-plugin-pwa": "^0.18.1",
 		"vitest": "^1.2.2",
 		"workbox-window": "^7.0.0"
-	},
-	"pnpm": {
-		"supportedArchitectures": {
-			"os": ["current"],
-			"cpu": ["arm64"]
-		}
 	}
 }
