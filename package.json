@@ -22,7 +22,7 @@
 		"@fastify/oauth2": "7.8.0",
 		"@fastify/static": "^7.0.1",
 		"@fastify/websocket": "^8.3.1",
-		"@libsql/client": "0.4.3",
+		"@libsql/client": "0.5.0",
 		"@mdx-js/mdx": "^3.0.0",
 		"@mdx-js/react": "^3.0.0",
 		"@tanstack/react-query": "^5.20.1",
