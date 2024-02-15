@@ -77,18 +77,38 @@ const config: UserConfig = {
 			},
 			manifest: {
 				name: 'FastRat',
-				// icons: [
-				// 	{
-				// 		src: '/pwa-192x192.png',
-				// 		sizes: '192x192',
-				// 		type: 'image/png',
-				// 	},
-				// 	{
-				// 		src: '/pwa-512x512.png',
-				// 		sizes: '512x512',
-				// 		type: 'image/png',
-				// 	},
-				// ],
+				icons: [
+					{
+						src: 'src/images/logo-64.png',
+						sizes: '64x64',
+						type: 'image/png',
+					},
+					{
+						src: 'src/images/logo-180.png',
+						sizes: '180x180',
+						type: 'image/png',
+					},
+					{
+						src: 'src/images/logo-192.png',
+						sizes: '192x192',
+						type: 'image/png',
+					},
+					{
+						src: 'src/images/logo-256.png',
+						sizes: '256x256',
+						type: 'image/png',
+					},
+					{
+						src: 'src/images/logo-512.png',
+						sizes: '512x512',
+						type: 'image/png',
+					},
+					{
+						src: 'src/images/logo-1024.png',
+						sizes: '1024x1024',
+						type: 'image/png',
+					},
+				],
 			},
 		}),
 		mdx(),
