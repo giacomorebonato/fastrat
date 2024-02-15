@@ -10,7 +10,7 @@
 		"e2e:headed": "pnpm clean && playwright test --headed",
 		"e2e:ui": "pnpm clean && playwright test --ui",
 		"check": "biome check --apply src",
-		"generate-pwa-assets": "pwa-assets-generator --preset minimal-2023 src/images/logo.svg",
+		"generate-pwa-assets": "pwa-assets-generator",
 		"prepare": "husky"
 	},
 	"imports": {
