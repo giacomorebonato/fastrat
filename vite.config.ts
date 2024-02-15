@@ -6,6 +6,7 @@ import { type UserConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { splitVendorChunkPlugin } from 'vite'
 
+const imagesRoot = 'src/images/'
 const config: UserConfig = {
 	resolve: {
 		alias: {
@@ -76,37 +77,32 @@ const config: UserConfig = {
 				enabled: false, // https://vite-pwa-org.netlify.app/guide/development
 			},
 			manifest: {
+				theme_color: '#F4E2CA',
 				name: 'FastRat',
+				short_name: 'FastRat',
+				description:
+					'A starter kit with great DX for building PWA with Fastify + React',
 				icons: [
 					{
-						src: 'src/images/logo-64.png',
+						src: `${imagesRoot}pwa-64x64.png`,
 						sizes: '64x64',
 						type: 'image/png',
 					},
 					{
-						src: 'src/images/logo-180.png',
-						sizes: '180x180',
-						type: 'image/png',
-					},
-					{
-						src: 'src/images/logo-192.png',
+						src: `${imagesRoot}pwa-192x192.png`,
 						sizes: '192x192',
 						type: 'image/png',
 					},
 					{
-						src: 'src/images/logo-256.png',
-						sizes: '256x256',
-						type: 'image/png',
-					},
-					{
-						src: 'src/images/logo-512.png',
+						src: `${imagesRoot}pwa-512x512.png`,
 						sizes: '512x512',
 						type: 'image/png',
 					},
 					{
-						src: 'src/images/logo-1024.png',
-						sizes: '1024x1024',
+						src: `${imagesRoot}maskable-icon-512x512.png`,
+						sizes: '512x512',
 						type: 'image/png',
+						purpose: 'maskable',
 					},
 				],
 			},
