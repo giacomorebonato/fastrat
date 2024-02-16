@@ -112,7 +112,7 @@ const config: UserConfig = {
 				screenshots: [
 					{
 						src: 'wide-screenshot.webp',
-						sizes: '1280x720',
+						sizes: '1232x720',
 						type: 'image/webp',
 						form_factor: 'wide',
 						label: 'Homescreen of FastRat',
