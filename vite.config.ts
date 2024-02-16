@@ -65,15 +65,20 @@ const config: UserConfig = {
 	],
 	plugins: [
 		VitePWA({
-			injectRegister: 'auto',
+			// https://vite-pwa-org.netlify.app/workbox/generate-sw.html
+			strategies: 'generateSW',
 			registerType: 'autoUpdate',
 			workbox: {
 				maximumFileSizeToCacheInBytes: 10_000_000,
 				globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
 				navigateFallbackDenylist: [/^\/login\/google/],
+				navigateFallback: '/app-shell',
 			},
 			devOptions: {
-				enabled: false, // https://vite-pwa-org.netlify.app/guide/development
+				enabled: true, // https://vite-pwa-org.netlify.app/guide/development
+				suppressWarnings: true,
+				type: 'module',
+				navigateFallback: '/app-shell',
 			},
 			manifest: {
 				theme_color: '#F4E2CA',

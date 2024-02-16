@@ -61,28 +61,21 @@ export async function createServer(
 			return !Fs.statSync(Path.join(distClientPath, file)).isDirectory()
 		})
 
-		for (const url of files.map((file) => `/${file}`)) {
+		for (const url of files
+			.map((file) => `/${file}`)
+			.filter((file) => file !== 'index.html')) {
 			server.get(url, (request, reply) => {
 				const filename = request.url.slice(1)
 				const filePath = Path.join(appRootPath.path, 'dist/client')
 
-				// this is for the service worker cache
-				if (filename === 'index.html') {
-					reply.type('text/html').send(createPageHtml(''))
-				} else if (filename === 'manifest.webmanifest') {
-					reply
-						.type('application/manifest+json')
-						.send(
-							Fs.readFileSync(
-								Path.join(distClientPath, 'manifest.webmanifest'),
-								'utf-8',
-							),
-						)
-				} else {
-					reply.sendFile(filename, filePath)
-				}
+				reply.sendFile(filename, filePath)
 			})
 		}
+
+		server.get('/app-shell', (request, reply) => {
+			// this is for the service worker cache
+			reply.type('text/html').send(createPageHtml(''))
+		})
 	}
 
 	server.get('/robots.txt', (request, reply) => {

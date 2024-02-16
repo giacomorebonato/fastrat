@@ -8,8 +8,8 @@ export function PwaReloadPrompt() {
 		needRefresh: [needRefresh, setNeedRefresh],
 		updateServiceWorker,
 	} = useRegisterSW({
-		onRegistered(r) {
-			console.log(`SW Registered: ${r}`)
+		onRegistered(registration) {
+			console.log(`SW Registered`, registration)
 		},
 		onRegisterError(error) {
 			console.log('SW registration error', error)
