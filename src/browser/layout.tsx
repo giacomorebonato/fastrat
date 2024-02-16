@@ -1,6 +1,6 @@
 import { Link, useRouter } from '@tanstack/react-router'
 import clsx from 'clsx'
-import React, { Suspense, lazy, useEffect, useRef } from 'react'
+import React, { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { P, match } from 'ts-pattern'
@@ -23,6 +23,7 @@ export function Layout({
 	children,
 	sidebar,
 }: { children: React.ReactNode; sidebar?: React.ReactNode }) {
+	const [isMount, setIsMount] = useState(false)
 	const dialogRef = useRef<HTMLDialogElement | null>(null)
 	const utils = trpcClient.useUtils()
 	const profile = trpcClient.auth.profile.useQuery()
@@ -45,6 +46,10 @@ export function Layout({
 			unsuscribe()
 		}
 	}, [router.history])
+
+	useEffect(() => {
+		setIsMount(true)
+	}, [])
 
 	useEffect(() => {
 		if (import.meta.env.DEV && !import.meta.env.SSR) {
@@ -150,7 +155,11 @@ export function Layout({
 						}}
 					/>
 				</div>
-				<div className='drawer-side sm:hidden'>
+				<div
+					className={clsx('drawer-side sm:hidden', {
+						'drawer-side-before-mount': !isMount,
+					})}
+				>
 					<label
 						aria-label='close sidebar'
 						className='drawer-overlay'

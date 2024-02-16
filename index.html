@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="src/browser/high-priority.css" />
+    <style>
+      /* trick to avoid drawer flickering */
+@media screen and (max-width: 640px) {
+  .drawer-side-before-mount {
+    display: none !important;
+  }
+}
+    </style>
     <link rel="stylesheet" type="text/css" href="src/browser/main.css" />
 
     <!-- PWA start -->
