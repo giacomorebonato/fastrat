@@ -19,22 +19,22 @@ const config: UserConfig = {
 				build: {
 					outDir: 'dist/client',
 					manifest: true,
-					rollupOptions: {
-						output: {
-							manualChunks(id: string) {
-								if (
-									id.includes('react-toastify') ||
-									id.includes('framer-motion') ||
-									id.includes('react-helmet-async')
-								) {
-									return 'react-libs'
-								}
-								if (id.includes('@tanstack') || id.includes('@trpc')) {
-									return '@tanstack'
-								}
-							},
-						},
-					},
+					// rollupOptions: {
+					// 	output: {
+					// 		manualChunks(id: string) {
+					// 			if (
+					// 				id.includes('react-toastify') ||
+					// 				id.includes('framer-motion') ||
+					// 				id.includes('react-helmet-async')
+					// 			) {
+					// 				return 'react-libs'
+					// 			}
+					// 			if (id.includes('@tanstack') || id.includes('@trpc')) {
+					// 				return '@tanstack'
+					// 			}
+					// 		},
+					// 	},
+					// },
 				},
 			},
 		},
