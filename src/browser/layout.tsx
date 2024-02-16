@@ -69,6 +69,7 @@ export function Layout({
 					id='my-drawer-3'
 					type='checkbox'
 					ref={checboxRef}
+					defaultChecked={false}
 				/>
 				<div className='drawer-content flex flex-col'>
 					<div className='navbar w-full bg-base-300 pr-4'>
