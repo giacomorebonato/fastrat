@@ -12,7 +12,6 @@ import { renderToPipeableStream } from 'react-dom/server'
 import { googleAuth } from '#auth/google-auth'
 import { createRouter } from '#browser/create-router'
 import { apiRouter } from './api-router'
-import { createPageHtml } from './create-page-html'
 import { createTemplate } from './create-template'
 import { env } from './env'
 import { createContext } from './trpc-context'
@@ -61,9 +60,7 @@ export async function createServer(
 			return !Fs.statSync(Path.join(distClientPath, file)).isDirectory()
 		})
 
-		for (const url of files
-			.map((file) => `/${file}`)
-			.filter((file) => file !== 'index.html')) {
+		for (const url of files.map((file) => `/${file}`)) {
 			server.get(url, (request, reply) => {
 				const filename = request.url.slice(1)
 				const filePath = Path.join(appRootPath.path, 'dist/client')
@@ -71,11 +68,6 @@ export async function createServer(
 				reply.sendFile(filename, filePath)
 			})
 		}
-
-		server.get('/app-shell', (request, reply) => {
-			// this is for the service worker cache
-			reply.type('text/html').send(createPageHtml(''))
-		})
 	}
 
 	server.get('/robots.txt', (request, reply) => {

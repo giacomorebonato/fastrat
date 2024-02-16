@@ -67,18 +67,18 @@ const config: UserConfig = {
 		VitePWA({
 			// https://vite-pwa-org.netlify.app/workbox/generate-sw.html
 			strategies: 'generateSW',
-			registerType: 'autoUpdate',
+			registerType: 'prompt',
 			workbox: {
 				maximumFileSizeToCacheInBytes: 10_000_000,
 				globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
 				navigateFallbackDenylist: [/^\/login\/google/],
-				navigateFallback: '/app-shell',
+				navigateFallback: '/index.html',
 			},
 			devOptions: {
 				enabled: true, // https://vite-pwa-org.netlify.app/guide/development
 				suppressWarnings: true,
 				type: 'module',
-				navigateFallback: '/app-shell',
+				navigateFallback: '/index.html',
 			},
 			manifest: {
 				theme_color: '#F4E2CA',
@@ -107,6 +107,15 @@ const config: UserConfig = {
 						sizes: '512x512',
 						type: 'image/png',
 						purpose: 'maskable',
+					},
+				],
+				screenshots: [
+					{
+						src: 'wide-screenshot.webp',
+						sizes: '1280x720',
+						type: 'image/webp',
+						form_factor: 'wide',
+						label: 'Homescreen of FastRat',
 					},
 				],
 			},
