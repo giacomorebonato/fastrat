@@ -69,7 +69,6 @@ export function Layout({
 					id='my-drawer-3'
 					type='checkbox'
 					ref={checboxRef}
-					defaultChecked={false}
 				/>
 				<div className='drawer-content flex flex-col'>
 					<div className='navbar w-full bg-base-300 pr-4'>
@@ -151,7 +150,7 @@ export function Layout({
 						}}
 					/>
 				</div>
-				<div className='drawer-side'>
+				<div className='drawer-side sm:hidden'>
 					<label
 						aria-label='close sidebar'
 						className='drawer-overlay'

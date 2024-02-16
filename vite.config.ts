@@ -79,7 +79,7 @@ const config: UserConfig = {
 			},
 			devOptions: {
 				enabled: true, // https://vite-pwa-org.netlify.app/guide/development
-				suppressWarnings: true,
+				suppressWarnings: false,
 				type: 'module',
 				navigateFallback: '/index.html',
 			},
