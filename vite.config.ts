@@ -19,22 +19,25 @@ const config: UserConfig = {
 				build: {
 					outDir: 'dist/client',
 					manifest: true,
-					// rollupOptions: {
-					// 	output: {
-					// 		manualChunks(id: string) {
-					// 			if (
-					// 				id.includes('react-toastify') ||
-					// 				id.includes('framer-motion') ||
-					// 				id.includes('react-helmet-async')
-					// 			) {
-					// 				return 'react-libs'
-					// 			}
-					// 			if (id.includes('@tanstack') || id.includes('@trpc')) {
-					// 				return '@tanstack'
-					// 			}
-					// 		},
-					// 	},
-					// },
+					rollupOptions: {
+						output: {
+							manualChunks(id: string) {
+								if (id.includes('lodash')) {
+									return 'lodash'
+								}
+								if (
+									id.includes('react-toastify') ||
+									id.includes('framer-motion') ||
+									id.includes('react-helmet-async')
+								) {
+									return 'react-libs'
+								}
+								if (id.includes('@tanstack') || id.includes('@trpc')) {
+									return '@tanstack'
+								}
+							},
+						},
+					},
 				},
 			},
 		},
@@ -115,6 +118,12 @@ const config: UserConfig = {
 						sizes: '1232x720',
 						type: 'image/webp',
 						form_factor: 'wide',
+						label: 'Homescreen of FastRat',
+					},
+					{
+						src: 'mobile-screenshot.webp',
+						sizes: '1046x1150',
+						type: 'image/webp',
 						label: 'Homescreen of FastRat',
 					},
 				],

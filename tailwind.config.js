@@ -3,7 +3,7 @@ const config = {
 	content: ['./src/**/*.{ts,tsx}'],
 	theme: {
 		fontFamily: {
-      cardo: ["Cardo", "sans-serif"]
+      cardo: ["Cardo", "serif"]
     },
 		extend: {},
 	},
