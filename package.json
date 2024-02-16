@@ -69,6 +69,7 @@
 		"@vitejs/plugin-react": "^4.2.1",
 		"@vitest/coverage-v8": "^1.2.2",
 		"autoprefixer": "^10.4.17",
+		"cssnano": "^6.0.3",
 		"daisyui": "^4.6.2",
 		"del-cli": "^5.1.0",
 		"drizzle-kit": "^0.20.14",
