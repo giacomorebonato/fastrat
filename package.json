@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"db:generate": "NODE_OPTIONS='--import tsx' drizzle-kit generate:sqlite",
+		"db:generate": "drizzle-kit generate:sqlite",
 		"dev": "vavite serve --port 3000 | pino-pretty",
 		"build": "pnpm clean && vavite build",
 		"clean": "del dist && del sqlite.db",
@@ -69,7 +69,6 @@
 		"@vitejs/plugin-react": "^4.2.1",
 		"@vitest/coverage-v8": "^1.2.2",
 		"autoprefixer": "^10.4.17",
-		"cssnano": "^6.0.3",
 		"daisyui": "^4.6.2",
 		"del-cli": "^5.1.0",
 		"drizzle-kit": "^0.20.14",
@@ -79,11 +78,9 @@
 		"postcss": "^8.4.35",
 		"sharp": "^0.33.2",
 		"tailwindcss": "^3.4.1",
-		"tsx": "^4.7.1",
 		"typescript": "^5.3.3",
 		"vavite": "^4.0.3",
 		"vite": "^5.1.1",
-		"vite-plugin-imp": "^2.4.0",
 		"vite-plugin-pwa": "^0.18.1",
 		"vitest": "^1.2.2",
 		"workbox-window": "^7.0.0"
