@@ -81,7 +81,7 @@
 		"typescript": "^5.3.3",
 		"vavite": "^4.0.3",
 		"vite": "^5.1.1",
-		"vite-plugin-pwa": "^0.18.1",
+		"vite-plugin-pwa": "^0.19.0",
 		"vitest": "^1.2.2",
 		"workbox-window": "^7.0.0"
 	}
