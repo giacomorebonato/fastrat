@@ -26,6 +26,10 @@ function IndexComponent() {
 						property='og:description'
 						content='A starter kit for building web application and SSR ready when SEO matters.'
 					/>
+					<meta
+						name='keywords'
+						content='Fastify, React, TypeScript, SSR, PWA, SEO'
+					/>
 					<meta property='og:type' content='website' />
 				</Helmet>
 
