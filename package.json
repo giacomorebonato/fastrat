@@ -21,7 +21,7 @@
 		"@fastify/cookie": "^9.3.1",
 		"@fastify/oauth2": "7.8.0",
 		"@fastify/static": "^7.0.1",
-		"@fastify/websocket": "^8.3.1",
+		"@fastify/websocket": "^9.0.0",
 		"@libsql/client": "0.5.0",
 		"@mdx-js/mdx": "^3.0.0",
 		"@mdx-js/react": "^3.0.0",
@@ -81,7 +81,7 @@
 		"typescript": "^5.3.3",
 		"vavite": "^4.0.3",
 		"vite": "^5.1.1",
-		"vite-plugin-pwa": "^0.18.1",
+		"vite-plugin-pwa": "^0.19.0",
 		"vitest": "^1.2.2",
 		"workbox-window": "^7.0.0"
 	}
