@@ -51,6 +51,9 @@ export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 							<SmoothLink href='#seo'>SEO</SmoothLink>
 						</li>
 						<li>
+							<SmoothLink href='#pwa'>PWA</SmoothLink>
+						</li>
+						<li>
 							<SmoothLink href='#great-dx'>Great DX</SmoothLink>
 						</li>
 						<li>
