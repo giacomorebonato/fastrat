@@ -38,6 +38,11 @@ I think that it's a very common case to rely on a SPA for a private dashboard, b
 
 FastRat renders the HTML on the first request and then uses client side routing when the interaction happens on the page.
 
+<h2 id='seo'>SEO</h2>
+
+Since FastRat does SSR, it's a good solution for building pages that need to be crawled by search engines.  
+[react-helmet-async](https://github.com/staylor/react-helmet-async) can be used to add any metalink/markup to the `<head />` of the page.
+
 <h2 id='great-dx'>Great Developer Experience</h2>
 
 When using NextJS I like that with one command I have both my frontend and backend running and that I can share code between the two and import it in the same way.  

@@ -42,11 +42,13 @@ export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 					<h2 className='menu-title'>Content</h2>
 					<ul>
 						<li>
-							{}
 							<SmoothLink href='#why-fastrat'>Why FastRat?</SmoothLink>
 						</li>
 						<li>
 							<SmoothLink href='#spa-or-mpa'>SPA or MPA</SmoothLink>
+						</li>
+						<li>
+							<SmoothLink href='#seo'>SEO</SmoothLink>
 						</li>
 						<li>
 							<SmoothLink href='#great-dx'>Great DX</SmoothLink>

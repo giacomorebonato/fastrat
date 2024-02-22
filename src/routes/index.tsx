@@ -21,10 +21,7 @@ function IndexComponent() {
 						name='description'
 						content='A starter kit for fully typesafe monolyth. With Fastify + React (SSR).'
 					/>
-					<meta
-						property='og:title'
-						content='FastRat - Modern Web Development'
-					/>
+					<meta property='og:title' content='FastRat - Fastify + React' />
 					<meta
 						property='og:description'
 						content='A starter kit for building web application and SSR ready when SEO matters.'
