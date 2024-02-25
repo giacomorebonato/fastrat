@@ -21,8 +21,8 @@ dependencies:
     specifier: ^9.0.0
     version: 9.0.0
   '@libsql/client':
-    specifier: 0.5.1
-    version: 0.5.1
+    specifier: 0.5.2
+    version: 0.5.2
   '@mdx-js/mdx':
     specifier: ^3.0.0
     version: 3.0.0
@@ -67,7 +67,7 @@ dependencies:
     version: 16.4.2
   drizzle-orm:
     specifier: ^0.29.3
-    version: 0.29.3(@libsql/client@0.5.1)(@types/react@18.2.55)(react@18.2.0)
+    version: 0.29.3(@libsql/client@0.5.2)(@types/react@18.2.55)(react@18.2.0)
   drizzle-zod:
     specifier: ^0.5.1
     version: 0.5.1(drizzle-orm@0.29.3)(zod@3.22.4)
@@ -2355,10 +2355,10 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@libsql/client@0.5.1:
-    resolution: {integrity: sha512-gzdQVPVi/64BRKP6sg+JvHTht95OHNjaldjhBrfB79H8hc/djUwWYuo9+C/+zCQ73IR+js2xTtUgNzn8bLZ/7A==}
+  /@libsql/client@0.5.2:
+    resolution: {integrity: sha512-aHnYjsqE4QWhb+HdJj2HtLw6QBt61veSu6IQgFO5rxzdY/rb69YAgYF0ZvpVoMn12B/t9U9U7H3ow/IADo4Yhg==}
     dependencies:
-      '@libsql/core': 0.5.1
+      '@libsql/core': 0.5.2
       '@libsql/hrana-client': 0.5.6
       js-base64: 3.7.5
       libsql: 0.3.2
@@ -2368,8 +2368,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@libsql/core@0.5.1:
-    resolution: {integrity: sha512-oEkns102z5bLbGSQjZGAm4Ce+TwOuA8g7a86dRkGtEhOSIErw21yL0+t1oYrPtOXluDtTQ80cTvru8EoMMr78Q==}
+  /@libsql/core@0.5.2:
+    resolution: {integrity: sha512-sBo55JJXRiggymOy91MvI+lJ15U8BdWBHytAeszpebhhbrkuTfd+5jDoB3sSZ0dMH0NIPAVQEEQnQldAO+SDXg==}
     dependencies:
       js-base64: 3.7.5
     dev: false
@@ -4968,7 +4968,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.29.3(@libsql/client@0.5.1)(@types/react@18.2.55)(react@18.2.0):
+  /drizzle-orm@0.29.3(@libsql/client@0.5.2)(@types/react@18.2.55)(react@18.2.0):
     resolution: {integrity: sha512-uSE027csliGSGYD0pqtM+SAQATMREb3eSM/U8s6r+Y0RFwTKwftnwwSkqx3oS65UBgqDOM0gMTl5UGNpt6lW0A==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -5039,7 +5039,7 @@ packages:
       sqlite3:
         optional: true
     dependencies:
-      '@libsql/client': 0.5.1
+      '@libsql/client': 0.5.2
       '@types/react': 18.2.55
       react: 18.2.0
     dev: false
@@ -5050,7 +5050,7 @@ packages:
       drizzle-orm: '>=0.23.13'
       zod: '*'
     dependencies:
-      drizzle-orm: 0.29.3(@libsql/client@0.5.1)(@types/react@18.2.55)(react@18.2.0)
+      drizzle-orm: 0.29.3(@libsql/client@0.5.2)(@types/react@18.2.55)(react@18.2.0)
       zod: 3.22.4
     dev: false
 
