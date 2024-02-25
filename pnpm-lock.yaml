@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@apollo/client':
     specifier: ^3.9.4
-    version: 3.9.5(@types/react@18.2.55)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+    version: 3.9.5(@types/react@18.2.58)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
   '@fastify/cookie':
     specifier: ^9.3.1
     version: 9.3.1
@@ -28,7 +28,7 @@ dependencies:
     version: 3.0.0
   '@mdx-js/react':
     specifier: ^3.0.0
-    version: 3.0.0(@types/react@18.2.55)(react@18.2.0)
+    version: 3.0.0(@types/react@18.2.58)(react@18.2.0)
   '@tanstack/react-query':
     specifier: ^5.20.1
     version: 5.20.1(react@18.2.0)
@@ -67,7 +67,7 @@ dependencies:
     version: 16.4.5
   drizzle-orm:
     specifier: ^0.29.3
-    version: 0.29.4(@libsql/client@0.5.2)(@types/react@18.2.55)(react@18.2.0)
+    version: 0.29.4(@libsql/client@0.5.2)(@types/react@18.2.58)(react@18.2.0)
   drizzle-zod:
     specifier: ^0.5.1
     version: 0.5.1(drizzle-orm@0.29.4)(zod@3.22.4)
@@ -135,7 +135,7 @@ devDependencies:
     version: 20.11.17
   '@types/react':
     specifier: ^18.2.55
-    version: 18.2.55
+    version: 18.2.58
   '@types/react-dom':
     specifier: ^18.2.19
     version: 18.2.19
@@ -229,7 +229,7 @@ packages:
       leven: 3.1.0
     dev: true
 
-  /@apollo/client@3.9.5(@types/react@18.2.55)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+  /@apollo/client@3.9.5(@types/react@18.2.58)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-7y+c8MTPU+hhTwvcGVtMMGIgWduzrvG1mz5yJMRyqYbheBkkky3Lki6ADWVSBXG1lZoOtPYvB2zDgVfKb2HSsw==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
@@ -258,7 +258,7 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      rehackt: 0.0.5(@types/react@18.2.55)(react@18.2.0)
+      rehackt: 0.0.5(@types/react@18.2.58)(react@18.2.0)
       response-iterator: 0.2.6
       symbol-observable: 4.0.0
       ts-invariant: 0.10.3
@@ -2614,14 +2614,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@mdx-js/react@3.0.0(@types/react@18.2.55)(react@18.2.0):
+  /@mdx-js/react@3.0.0(@types/react@18.2.58)(react@18.2.0):
     resolution: {integrity: sha512-nDctevR9KyYFyV+m+/+S4cpzCWHqj+iHDHq3QrsWezcC+B17uZdIWgCguESUkwFhM3n/56KxWVE3V6EokrmONQ==}
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
     dependencies:
       '@types/mdx': 2.0.11
-      '@types/react': 18.2.55
+      '@types/react': 18.2.58
       react: 18.2.0
     dev: false
 
@@ -3656,17 +3656,17 @@ packages:
   /@types/react-dom@18.2.19:
     resolution: {integrity: sha512-aZvQL6uUbIJpjZk4U8JZGbau9KDeAwMfmhyWorxgBkqDIEf6ROjRozcmPIicqsUwPUjbkDfHKgGee1Lq65APcA==}
     dependencies:
-      '@types/react': 18.2.55
+      '@types/react': 18.2.58
     dev: true
 
   /@types/react-helmet@6.1.11:
     resolution: {integrity: sha512-0QcdGLddTERotCXo3VFlUSWO3ztraw8nZ6e3zJSgG7apwV5xt+pJUS8ewPBqT4NYB1optGLprNQzFleIY84u/g==}
     dependencies:
-      '@types/react': 18.2.55
+      '@types/react': 18.2.58
     dev: true
 
-  /@types/react@18.2.55:
-    resolution: {integrity: sha512-Y2Tz5P4yz23brwm2d7jNon39qoAtMMmalOQv6+fEFt1mT+FcM3D841wDpoUvFXhaYenuROCy3FZYqdTjM7qVyA==}
+  /@types/react@18.2.58:
+    resolution: {integrity: sha512-TaGvMNhxvG2Q0K0aYxiKfNDS5m5ZsoIBBbtfUorxdH4NGSXIlYvZxLJI+9Dd3KjeB3780bciLyAb7ylO8pLhPw==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -5202,7 +5202,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.29.4(@libsql/client@0.5.2)(@types/react@18.2.55)(react@18.2.0):
+  /drizzle-orm@0.29.4(@libsql/client@0.5.2)(@types/react@18.2.58)(react@18.2.0):
     resolution: {integrity: sha512-ZnSM8TAxFhzH7p1s3+w3pRE/eKaOeNkH9SKitm717pubDVVcV2I0BCDBPGKV+pe02+wMfw37ntlTcCyo2rA3IA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -5274,7 +5274,7 @@ packages:
         optional: true
     dependencies:
       '@libsql/client': 0.5.2
-      '@types/react': 18.2.55
+      '@types/react': 18.2.58
       react: 18.2.0
     dev: false
 
@@ -5284,7 +5284,7 @@ packages:
       drizzle-orm: '>=0.23.13'
       zod: '*'
     dependencies:
-      drizzle-orm: 0.29.4(@libsql/client@0.5.2)(@types/react@18.2.55)(react@18.2.0)
+      drizzle-orm: 0.29.4(@libsql/client@0.5.2)(@types/react@18.2.58)(react@18.2.0)
       zod: 3.22.4
     dev: false
 
@@ -8760,7 +8760,7 @@ packages:
       jsesc: 0.5.0
     dev: true
 
-  /rehackt@0.0.5(@types/react@18.2.55)(react@18.2.0):
+  /rehackt@0.0.5(@types/react@18.2.58)(react@18.2.0):
     resolution: {integrity: sha512-BI1rV+miEkaHj8zd2n+gaMgzu/fKz7BGlb4zZ6HAiY9adDmJMkaDcmuXlJFv0eyKUob+oszs3/2gdnXUrzx2Tg==}
     peerDependencies:
       '@types/react': '*'
@@ -8771,7 +8771,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.2.55
+      '@types/react': 18.2.58
       react: 18.2.0
     dev: false
 
