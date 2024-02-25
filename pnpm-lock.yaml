@@ -82,7 +82,7 @@ dependencies:
     version: 4.5.1
   framer-motion:
     specifier: ^11.0.3
-    version: 11.0.3(react-dom@18.2.0)(react@18.2.0)
+    version: 11.0.6(react-dom@18.2.0)(react@18.2.0)
   lodash-es:
     specifier: ^4.17.21
     version: 4.17.21
@@ -106,7 +106,7 @@ dependencies:
     version: 2.2.1
   ts-pattern:
     specifier: ^5.0.6
-    version: 5.0.6
+    version: 5.0.8
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -165,7 +165,7 @@ devDependencies:
     version: 0.20.14
   husky:
     specifier: ^9.0.10
-    version: 9.0.10
+    version: 9.0.11
   npm-run-all2:
     specifier: ^6.1.2
     version: 6.1.2
@@ -5913,8 +5913,8 @@ packages:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
     dev: true
 
-  /framer-motion@11.0.3(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-6x2poQpIWBdbZwLd73w6cKZ1I9IEPIU94C6/Swp1Zt3LJ+sB5bPe1E2wC6EH5hSISXNkMJ4afH7AdwS7MrtkWw==}
+  /framer-motion@11.0.6(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-BpO3mWF8UwxzO3Ca5AmSkrg14QYTeJa9vKgoLOoBdBdTPj0e81i1dMwnX6EQJXRieUx20uiDBXq8bA6y7N6b8Q==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -6432,8 +6432,8 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
-  /husky@9.0.10:
-    resolution: {integrity: sha512-TQGNknoiy6bURzIO77pPRu+XHi6zI7T93rX+QnJsoYFf3xdjKOur+IlfqzJGMHIK/wXrLg+GsvMs8Op7vI2jVA==}
+  /husky@9.0.11:
+    resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
     engines: {node: '>=18'}
     hasBin: true
     dev: true
@@ -9854,8 +9854,8 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /ts-pattern@5.0.6:
-    resolution: {integrity: sha512-Y+jOjihlFriWzcBjncPCf2/am+Hgz7LtsWs77pWg5vQQKLQj07oNrJryo/wK2G0ndNaoVn2ownFMeoeAuReu3Q==}
+  /ts-pattern@5.0.8:
+    resolution: {integrity: sha512-aafbuAQOTEeWmA7wtcL94w6I89EgLD7F+IlWkr596wYxeb0oveWDO5dQpv85YP0CGbxXT/qXBIeV6IYLcoZ2uA==}
     dev: false
 
   /tslib@2.6.2:
