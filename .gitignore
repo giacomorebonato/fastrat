@@ -14,3 +14,4 @@ readme-ai.md
 gha-creds-*.json
 vite.config.ts.*
 coverage/
+.idea/

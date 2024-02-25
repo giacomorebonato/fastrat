@@ -16,7 +16,9 @@ function IndexComponent() {
 		<Layout sidebar={<SideMenu withBookmarks />}>
 			<div className='flex flex-col md:flex-row'>
 				<Helmet>
-					<title>FastRat</title>
+					<title>
+						FastRat - Build SEO friendly applications with Fastify + React
+					</title>
 					<meta
 						name='description'
 						content='A starter kit for fully typesafe monolyth. With Fastify + React (SSR).'

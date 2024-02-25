@@ -39,6 +39,7 @@ fly secrets set TURSO_DB_URL=libsql://link-to-your-turso-db.turso.io
 * [Fastify](https://fastify.dev): a fast well maintained web framework
 * [Vite](https://vitejs.dev): for frontend tooling and bundling
 * [tRPC](https://trpc.io/docs/server/adapters/fastify): for end points with E2E type safety
+* [Tanstack Router](https://tanstack.com/router/latest): for filesystem based routes with type safety
 * [Vavite](https://github.com/cyco130/vavite): use Vite to compile and bundle both client and server code
 * [Turso db](https://turso.tech): SQLite database which fallbacks to [libsql](https://github.com/tursodatabase/libsql) locally
 * [Fly.io](https://fly.io): for deployment
@@ -49,7 +50,7 @@ Thanks to Vavite, any change to frontend or backend code will be reflected immed
 ## Authentication
 
 Provide `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` into the `.env` file to allow Google authentication ([instructions](https://www.balbooa.com/help/gridbox-documentation/integrations/other/google-client-id)).  
-You can check how authentication is achieved in [src/features/auth/google-auth.ts](src/features/auth/google-auth.ts) by leveraging [fastify-oauth2](https://github.com/fastify/fastify-oauth2).  
+You can check how authentication is achieved in [src/features/auth/google-auth.ts](src/auth/google-auth.ts) by leveraging [fastify-oauth2](https://github.com/fastify/fastify-oauth2).  
 It should be easy for you to re-use this example to add other authentication providers.
 
 
@@ -62,8 +63,8 @@ The page content is streamed and meta tags in `<head />` are rendered following 
 ## tRPC
 
 This project comes with [tRPC](https://trpc.io) ready to be used.
-Check [note-router.ts](src/features/notes/note-router.ts) to see how queries, mutations and subscriptions can be implemented.  
-All the routers are collected in [api-router.ts](src/features/server/api-router.ts), but you can organise files in the way you prefer.
+Check [note-router.ts](src/notes/note-router.ts) to see how queries, mutations and subscriptions can be implemented.  
+All the routers are collected in [api-router.ts](src/server/api-router.ts), but you can organise files in the way you prefer.
 
 ## Testing
 
@@ -91,7 +92,7 @@ You can deploy FastRat everywhere Docker runs.
 
 ## Credits
 
-This project has been inspired by other starter kit
+This project has been inspired by other starter kits:
 
 - [create-t3-app](https://github.com/t3-oss/create-t3-app)
 - [epic-stack](https://github.com/epicweb-dev/epic-stack)
