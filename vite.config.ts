@@ -73,7 +73,7 @@ const config: UserConfig = {
 			registerType: 'prompt',
 			workbox: {
 				maximumFileSizeToCacheInBytes: 10_000_000,
-				globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+				globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}'],
 				navigateFallbackDenylist: [/^\/login\/google/],
 				navigateFallback: '/index.html',
 			},
