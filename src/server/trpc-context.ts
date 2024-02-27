@@ -16,7 +16,7 @@ export function createContext({ req, res }: CreateFastifyContextOptions) {
 
 	if (userToken) {
 		const unsigned =
-			env.NODE_ENV === 'production'
+			env.NODE_ENV === 'production' && !env.CI
 				? req.unsignCookie(userToken)
 				: {
 						valid: true,

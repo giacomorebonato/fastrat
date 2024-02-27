@@ -1,9 +1,18 @@
 import { createServer } from '#server/create-server'
 import { env } from '#server/env.js'
 
-const server = await createServer()
+async function start() {
+	try {
+		const server = await createServer()
 
-server.listen({
-	host: env.HOST,
-	port: env.PORT,
-})
+		await server.listen({
+			host: env.HOST,
+			port: env.PORT,
+		})
+	} catch (error) {
+		console.error(`Error starting server`)
+		throw error
+	}
+}
+
+start()

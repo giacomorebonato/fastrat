@@ -15,7 +15,7 @@ export const createTemplate = <const T extends HelmetServerState>(
 	const code = Fs.readFileSync(indexPath, 'utf-8')
 	let head = code.slice(0, code.indexOf('<!--app-head-->'))
 
-	for (const htmlElement of Object.values(helmet)) {
+	for (const htmlElement of Object.values(helmet || {})) {
 		if (typeof htmlElement.toString === 'function') {
 			head += htmlElement.toString()
 		}
