@@ -16,21 +16,19 @@ function IndexComponent() {
 		<Layout sidebar={<SideMenu withBookmarks />}>
 			<div className='flex flex-col md:flex-row'>
 				<Helmet>
-					<title>
-						FastRat - Build SEO friendly applications with Fastify + React
-					</title>
+					<title>React Fastify Starter Kit - Build SSR Apps with Ease</title>
 					<meta
 						name='description'
-						content='A starter kit for fully typesafe monolyth. With Fastify + React (SSR).'
+						content='Get started with React and Fastify server-side rendering (SSR). Our starter kit simplifies development and provides a robust foundation for your projects.'
+					/>
+					<meta
+						name='keywords'
+						content='React, Fastify, SSR, starter kit, template, server-side rendering'
 					/>
 					<meta property='og:title' content='FastRat - Fastify + React' />
 					<meta
 						property='og:description'
 						content='A starter kit for building web application and SSR ready when SEO matters.'
-					/>
-					<meta
-						name='keywords'
-						content='Fastify, React, TypeScript, SSR, PWA, SEO'
 					/>
 					<meta property='og:type' content='website' />
 				</Helmet>
