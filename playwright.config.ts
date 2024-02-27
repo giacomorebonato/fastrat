@@ -11,13 +11,8 @@ import appRootPath from 'app-root-path'
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-	/* Fail the build on CI if you accidentally left test.only in the source code. */
 	forbidOnly: !!process.env.CI,
-
-	/* Run tests in files in parallel */
 	fullyParallel: true,
-
-	/* Configure projects for major browsers */
 	projects: [
 		{
 			// https://playwright.dev/docs/auth
@@ -58,7 +53,7 @@ export default defineConfig({
 
 	/* Run your local dev server before starting the tests */
 	webServer: {
-		command: 'pnpm dev',
+		command: 'pnpm build && pnpm start',
 		reuseExistingServer: !process.env.CI,
 		url: 'http://localhost:3000',
 	},

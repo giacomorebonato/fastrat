@@ -1,4 +1,4 @@
 {
-	"recommendations": ["biomejs.biome-nightly"],
+	"recommendations": ["biomejs.biome"],
 	"unwantedRecommendations": []
 }
