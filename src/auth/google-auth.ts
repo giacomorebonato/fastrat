@@ -46,9 +46,11 @@ export const googleAuth = fastifyPlugin<{
 		startRedirectPath: '/login/google',
 	})
 
-	if (env.NODE_ENV === 'development') {
+	if (env.CI) {
+		fastify.log.warn(`Google credentials not set. Falling back to fake authentication route for testing.`)
+
 		fastify.get('/login/google/ci', async (request, reply) => {
-			await updateDatabaseAndRedirect({
+			return await updateDatabaseAndRedirect({
 				reply,
 				user: {
 					// biome-ignore lint/style/noNonNullAssertion: <explanation>
@@ -132,8 +134,8 @@ async function updateDatabaseAndRedirect({
 			expires: inSevenDays,
 			httpOnly: true,
 			path: '/',
-			secure: isProduction,
-			signed: isProduction,
+			secure: isProduction && !env.CI,
+			signed: isProduction && !env.CI,
 		})
 		.redirect('/')
 }
