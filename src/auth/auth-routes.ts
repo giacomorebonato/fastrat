@@ -7,8 +7,8 @@ export const authRouter = router({
 		ctx.reply.clearCookie(USER_TOKEN, {
 			httpOnly: true,
 			path: '/',
-			secure: env.NODE_ENV === 'production',
-			signed: env.NODE_ENV === 'production',
+			secure: env.NODE_ENV === 'production' && !env.CI,
+			signed: env.NODE_ENV === 'production' && !env.CI,
 		})
 
 		return

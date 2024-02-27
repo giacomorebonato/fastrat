@@ -4,7 +4,7 @@
 		"dev": "vavite serve --port 3000 | pino-pretty",
 		"build": "pnpm clean && vavite build",
 		"clean": "del dist && del sqlite.db",
-		"start": "node dist/server/index.js",
+		"start": "NODE_ENV=production node dist/server/index.js",
 		"test": "tsc && vitest run --coverage",
 		"e2e": "pnpm clean && playwright test",
 		"e2e:headed": "pnpm clean && playwright test --headed",
