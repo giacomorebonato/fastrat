@@ -1,7 +1,7 @@
 import { createServer } from '#server/create-server'
 import { env } from '#server/env.js'
 
-async function start ()  {
+async function start() {
 	try {
 		const server = await createServer()
 

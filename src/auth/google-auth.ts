@@ -47,7 +47,9 @@ export const googleAuth = fastifyPlugin<{
 	})
 
 	if (env.CI) {
-		fastify.log.warn(`Google credentials not set. Falling back to fake authentication route for testing.`)
+		fastify.log.warn(
+			`Google credentials not set. Falling back to fake authentication route for testing.`,
+		)
 
 		fastify.get('/login/google/ci', async (request, reply) => {
 			return await updateDatabaseAndRedirect({

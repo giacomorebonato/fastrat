@@ -3,19 +3,19 @@ import Path from 'node:path'
 import { PassThrough } from 'node:stream'
 import { getDataFromTree } from '@apollo/client/react/ssr'
 import { createMemoryHistory } from '@tanstack/react-router'
+import { StartServer } from '@tanstack/react-router-server/server'
 import appRootPath from 'app-root-path'
 import { fastifyPlugin } from 'fastify-plugin'
 import { renderToPipeableStream } from 'react-dom/server'
 import { createRouter } from '#browser/create-router'
 import { createTemplate } from './create-template'
-import { StartServer } from '@tanstack/react-router-server/server'
 
 const distClientPath = import.meta.env.PROD
 	? Path.join(appRootPath.path, 'dist/client')
 	: Path.join(appRootPath.path, 'public')
 
 export const vitePlugin = fastifyPlugin(async (fastify) => {
-  if (import.meta.env.PROD) {
+	if (import.meta.env.PROD) {
 		await fastify.register(import('@fastify/static'), {
 			prefix: '/assets/',
 			root: Path.join(appRootPath.path, 'dist/client/assets'),
@@ -26,7 +26,7 @@ export const vitePlugin = fastifyPlugin(async (fastify) => {
 		return !Fs.statSync(Path.join(distClientPath, file)).isDirectory()
 	})
 
-  for (const url of files.map((file) => `/${file}`)) {
+	for (const url of files.map((file) => `/${file}`)) {
 		fastify.get(url, (request, reply) => {
 			const filename = request.url.slice(1)
 
