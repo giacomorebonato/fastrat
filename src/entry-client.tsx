@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom/client'
 
+import { RouterProvider } from '@tanstack/react-router'
 import { StartClient } from '@tanstack/react-router-server/client'
 import React from 'react'
 import { createRouter } from './browser/create-router'
-import { RouterProvider } from '@tanstack/react-router'
 
 const router = createRouter()
 const divRoot = document.getElementById('root') as HTMLDivElement
