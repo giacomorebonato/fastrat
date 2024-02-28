@@ -38,7 +38,10 @@ export function PwaReloadPrompt() {
 						<button
 							type='button'
 							className='ReloadPrompt-toast-button'
-							onClick={() => updateServiceWorker(true)}
+							onClick={() => {
+								updateServiceWorker(true)
+								window.location.reload()
+							}}
 						>
 							Reload
 						</button>
