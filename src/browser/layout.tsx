@@ -150,7 +150,7 @@ export function Layout({
 						}}
 					/>
 				</div>
-				<div className='drawer-side sm:hidden'>
+				<div className='drawer-side'>
 					<label
 						aria-label='close sidebar'
 						className='drawer-overlay'

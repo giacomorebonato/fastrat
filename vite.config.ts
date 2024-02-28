@@ -78,7 +78,7 @@ const config: UserConfig = {
 				navigateFallback: '/index.html',
 			},
 			devOptions: {
-				enabled: true, // https://vite-pwa-org.netlify.app/guide/development
+				enabled: false, // https://vite-pwa-org.netlify.app/guide/development
 				suppressWarnings: false,
 				type: 'module',
 				navigateFallback: '/index.html',
