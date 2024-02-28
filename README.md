@@ -30,6 +30,7 @@ fly secrets set TURSO_DB_URL=libsql://link-to-your-turso-db.turso.io
 - [Authentication](#authentication)
 - [SSR and Routing](#ssr-and-routing)
 - [tRPC](#trpc)
+- [Server side data fetching](#server-side-data-fetching)
 - [Testing](#testing)
 - [Deploy](#deploy)
 - [Credits](#credits)
@@ -65,6 +66,31 @@ The page content is streamed and meta tags in `<head />` are rendered following 
 This project comes with [tRPC](https://trpc.io) ready to be used.
 Check [note-router.ts](src/notes/note-router.ts) to see how queries, mutations and subscriptions can be implemented.  
 All the routers are collected in [api-router.ts](src/server/api-router.ts), but you can organise files in the way you prefer.
+
+## Server side data fetching
+
+Server side data fetching is needed if you want to render HTML on server side (for SEO for example).  
+It happens in the [route loader function](src/routes/notes/$noteId.tsx) defined in Tanstack router.  
+As in the link you have to be mindful that the loader runs both server and client side, hence you should guard dynamic server only import inside of the `if (import.meta.env.SSR)` condition.  
+You can then assign the fetched data to React-Query `initialData` parameter, like this:
+
+```typescript
+const loaderData = Route.useLoaderData()
+
+const noteQuery = trpcClient.note.get.useQuery(
+  { id: noteId },
+  {
+    initialData: loaderData?.note,
+  },
+)
+```
+
+With this practice we ensure that:
+
+* HTML is rendered if the page is accessed through server side routing
+* a request is made to fetch data if the page is accessed through client side routing
+
+This probably looks less magical than `getServerSideProps`, but still gives you full control over the rendering process.
 
 ## Testing
 
