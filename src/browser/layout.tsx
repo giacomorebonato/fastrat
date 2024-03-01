@@ -138,7 +138,7 @@ export function Layout({
 							))
 							.otherwise(() => null)}
 					</div>
-					<main>{children}</main>
+					{children}
 					<ToastContainer
 						bodyClassName={() => 'text-sm font-white font-med block p-3'}
 						position='bottom-right'
