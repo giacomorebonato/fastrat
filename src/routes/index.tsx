@@ -33,7 +33,7 @@ function IndexComponent() {
 					<meta property='og:type' content='website' />
 				</Helmet>
 
-				<main className='prose mx-auto py-8 font-cardo px-4 md:px-0 text-lg'>
+				<main className='prose mx-auto py-8  px-4 md:px-0 text-lg'>
 					<WhyFastRat />
 				</main>
 			</div>

@@ -1,9 +1,11 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 const config = {
 	content: ['./src/**/*.{ts,tsx}'],
 	theme: {
 		fontFamily: {
-      cardo: ["Cardo", "serif"]
+			sans: ['"Proxima Nova"', ...defaultTheme.fontFamily.sans],
     },
 		extend: {},
 	},

@@ -95,7 +95,7 @@ export function Layout({
 							</label>
 						</div>
 
-						<div className='flex-1 font-cardo'>
+						<div className='flex-1 '>
 							<Link
 								className='link mx-2 px-2 no-underline hover:link-hover'
 								to='/'
@@ -114,7 +114,7 @@ export function Layout({
 						{match(profile.data)
 							.with(null, () => (
 								<button
-									className='btn btn-ghost font-cardo'
+									className='btn btn-ghost '
 									data-testid='btn-login'
 									onClick={() => {
 										dialogRef.current?.showModal()
@@ -128,7 +128,7 @@ export function Layout({
 								<button
 									data-testid='btn-logout'
 									type='button'
-									className='btn btn-ghost font-cardo'
+									className='btn btn-ghost '
 									onClick={() => {
 										logout.mutate()
 									}}

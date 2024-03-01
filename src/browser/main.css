@@ -2,8 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Cardo, serif";
-  src: url("./Cardo-Regular.ttf");
-  font-display: swap;
-}
