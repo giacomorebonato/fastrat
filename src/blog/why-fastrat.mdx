@@ -48,6 +48,8 @@ Since FastRat does SSR, it's a good solution for building pages that need to be 
 
 <h2 id='pwa'>PWA</h2>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z8MjdQGyjfA?si=dpuigcgglmPz6jh2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 This starter kit uses [vite-plugin-pwa](https://vite-pwa-org.netlify.app) to provide the experience of an offline first web application.  
 Read more about [Progressive Web Apps](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps).
 
@@ -59,15 +61,32 @@ This wouldn't have been possible without [Vite](https://vitejs.dev) and [Vavite]
 When you run `pnpm dev` all your code is running and changes to code are applied immediately without restarting the server.  
 This happens because Vavite is using Vite to compile both frontend and backend code.
 
-<h2 id='fully-typed'>Fully typed</h2>
+<h2 id='fully-typed'>Fully typed with TypeScript</h2>
 
 FastRat uses the modern libraries that allow to type every aspect of your apps:
-* [tRPC](https://trpc.io) adapter for Fastify is used for E2E type safety for requests from browser to server
-* [Tanstack Router](https://tanstack.com/router/latest)
-* [Zod](https://github.com/colinhacks/zod)
-* [Drizzle ORM](https://www.google.com/search?q=drizzle+orm&sourceid=chrome&ie=UTF-8)
+
+<h3>tRPC</h3>
+
+[tRPC](https://trpc.io) adapter for Fastify is used for E2E type safety for requests from browser to server.  
+End points appears in Tanstack Query intellisense and are type checked.
+
+<h3>Tanstack Router</h3>
+
+[Tanstack Router](https://tanstack.com/router/latest) is used both for server side and client side routing.  
+When using it's link component you'll be guided to the available routes.  
+It's particularly useful when you start to store more data in URL params and query strings.
+
+<h3>Drizzle ORM</h3>
+
+[Drizzle ORM](https://orm.drizzle.team/) is a tiny layer on top of SQL (lite in this case).  
+It handles schema, migrations and queries.
+
+<h3>Zod</h3>
+
+Everytime that you need to validate an object structure and to infer its type, you can use [Zod](https://github.com/colinhacks/zod).  
+Which is also at the root of the tRPC functionality.
 
 ### Deployment freedom
 
 This project can run anywhere Docker containers run.  
-This website is configured to automatically deploy to [Fly.io](https://fly.io) which for me is the easiest option.
+This website automatically deploys to [Fly.io](https://fly.io) leveraging their [GitHub action](https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/) that runs when merge into the main branch.
