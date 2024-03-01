@@ -72,6 +72,7 @@
 		"daisyui": "^4.6.2",
 		"del-cli": "^5.1.0",
 		"drizzle-kit": "^0.20.14",
+		"happy-dom": "^13.6.2",
 		"husky": "^9.0.10",
 		"npm-run-all2": "^6.1.2",
 		"pino-pretty": "^10.3.1",
