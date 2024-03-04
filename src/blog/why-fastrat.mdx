@@ -41,10 +41,31 @@ I think that it's a very common case to rely on a SPA for a private dashboard, b
 
 FastRat renders the HTML on the first request and then uses client side routing when the interaction happens on the page.
 
+<h2 id='server-side-data-fetching'>Server side data fetching</h2>
+
+With FastRat you can achieve what in NextJS can be done through <a className='link' href='https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props' target='_blank'>getServerSideProps</a>.  
+We are just leveraging what <a href='https://tanstack.com/router/latest/docs/framework/react/guide/data-loading' target='_blank'>Tanstack Router</a> offers for the purpose, which is the loader function on the route definition.
+
+Check these key points in this sample app's file [src/routes/notes/$noteId.tsx](./src/routes/notes/$noteId.tsx)
+
+* the loader executes on server side when the page is requested directly
+* executes on client side when client side routing happens
+* the condition `if (import.meta.env.SSR)` is used to conditionally access the database only on server
+* server bundle doesn't contain frontend code and vice versa (Vite apparently does that)
+* fetched data can be passed to Tanstack Query `initialData` for the first render
+
+Points worth mentioning:
+
+* directives `'use server'` and `'use client'` are not supported, so you have to be mindful about not importing server only code into the client and vice versa
+* we are not supporting [React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
+
+Things might change in the future, but the current solution is reliable and automatically tested on this repository.  
+
 <h2 id='seo'>SEO</h2>
 
-Since FastRat does SSR, it's a good solution for building pages that need to be crawled by search engines.  
-[react-helmet-async](https://github.com/staylor/react-helmet-async) can be used to add any metalink/markup to the `<head />` of the page.
+We can then leverage server side data fetching for building pages that need to be crawled by search engines.  
+<a className='link' href='https://github.com/staylor/react-helmet-async' target='_blank'>react-helmet-async</a> can be used to add any metalink/markup to the `<head />` of the page.  
+The markup in the `<head />` will be updated both on SSR and client side routing.
 
 <h2 id='pwa'>PWA</h2>
 

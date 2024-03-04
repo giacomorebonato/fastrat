@@ -45,8 +45,14 @@ export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 							<SmoothLink href='#spa-or-mpa'>SPA or MPA</SmoothLink>
 						</li>
 						<li>
+							<SmoothLink href='#server-side-data-fetching'>
+								Data fetching
+							</SmoothLink>
+						</li>
+						<li>
 							<SmoothLink href='#seo'>SEO</SmoothLink>
 						</li>
+
 						<li>
 							<SmoothLink href='#pwa'>PWA</SmoothLink>
 						</li>
