@@ -6,14 +6,15 @@ import { env } from './env'
 
 export const createTemplate = <const T extends HelmetServerState>(
 	helmet: T | null = null,
+	nodeEnv = env.NODE_ENV,
 ) => {
 	const indexPath =
-		env.NODE_ENV === 'production'
+		nodeEnv === 'production'
 			? Path.join(appRootPath.path, 'dist/client/index.html')
 			: Path.join(appRootPath.path, 'index.html')
 
 	const code = Fs.readFileSync(indexPath, 'utf-8')
-	let head = code.slice(0, code.indexOf('<!--app-head-->'))
+	let head = code.slice(0, code.indexOf('</head>'))
 
 	for (const htmlElement of Object.values(helmet || {})) {
 		if (typeof htmlElement.toString === 'function') {
@@ -21,7 +22,7 @@ export const createTemplate = <const T extends HelmetServerState>(
 		}
 	}
 
-	if (env.NODE_ENV === 'development') {
+	if (nodeEnv === 'development') {
 		head += `<script type="module" src="/@vite/client"></script>
 		<script type="module">
 import RefreshRuntime from "/@react-refresh"
@@ -33,8 +34,9 @@ window.__vite_plugin_react_preamble_installed__ = true
 	}
 	head += '</head><body><div id="root">'
 
-	let footer = '</div>'
-	footer += code.slice(code.indexOf('<script '))
+	const footer = code.slice(
+		code.indexOf(`<!--app-html-->`) + `<!--app-html-->`.length,
+	)
 
 	return { head, footer }
 }
