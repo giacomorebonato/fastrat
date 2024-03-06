@@ -6,6 +6,7 @@ import { createMemoryHistory } from '@tanstack/react-router'
 import { StartServer } from '@tanstack/react-router-server/server'
 import appRootPath from 'app-root-path'
 import { fastifyPlugin } from 'fastify-plugin'
+import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
 import { createRouter } from '#browser/create-router'
 import { createTemplate } from './create-template'
@@ -68,10 +69,14 @@ export const vitePlugin = fastifyPlugin(async (fastify) => {
 
 		pass.write(head)
 
+		const callbackName = isbot(request.headers['user-agent'])
+			? 'onAllReady'
+			: 'onShellReady'
+
 		const pipeableStream = renderToPipeableStream(
 			<StartServer router={router} />,
 			{
-				onShellReady() {
+				[callbackName]: () => {
 					pipeableStream.pipe(pass).write(footer)
 				},
 				onShellError(error) {

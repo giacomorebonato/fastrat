@@ -5,7 +5,7 @@ import { HelmetServerState } from 'react-helmet-async'
 import { env } from './env'
 
 export const createTemplate = <const T extends HelmetServerState>(
-	helmet: T,
+	helmet: T | null = null,
 ) => {
 	const indexPath =
 		env.NODE_ENV === 'production'

@@ -83,6 +83,9 @@ dependencies:
   framer-motion:
     specifier: ^11.0.3
     version: 11.0.8(react-dom@18.2.0)(react@18.2.0)
+  isbot:
+    specifier: ^5.1.1
+    version: 5.1.1
   lodash-es:
     specifier: ^4.17.21
     version: 4.17.21
@@ -7102,6 +7105,11 @@ packages:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
     dev: true
 
+  /isbot@5.1.1:
+    resolution: {integrity: sha512-l4ArJhXWgEahbPEY5nVNh3Ojr0s4Eg2evSAmEQ6QkiFIwdsHg2wThzCMs/kcqgNc1D4HxwEg3+FEYP+bgAiplA==}
+    engines: {node: '>=18'}
+    dev: false
+
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
@@ -11090,7 +11098,6 @@ packages:
 
   /workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
-    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
     dependencies:
       workbox-background-sync: 7.0.0
       workbox-core: 7.0.0
