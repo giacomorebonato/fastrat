@@ -1,1 +1,1 @@
-pnpm exec run-p "test" "check" "e2e"
+pnpm build && pnpm exec run-p "test" "test:types" "check" "e2e"

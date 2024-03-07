@@ -6,6 +6,7 @@ import { createMemoryHistory } from '@tanstack/react-router'
 import { StartServer } from '@tanstack/react-router-server/server'
 import appRootPath from 'app-root-path'
 import { fastifyPlugin } from 'fastify-plugin'
+import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
 import { createRouter } from '#browser/create-router'
 import { createTemplate } from './create-template'
@@ -64,26 +65,37 @@ export const vitePlugin = fastifyPlugin(async (fastify) => {
 		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const { head, footer } = createTemplate(request.helmetContext!.helmet!)
 
-		const pass = new PassThrough()
+		const passStream = new PassThrough()
 
-		pass.write(head)
+		passStream.write(head)
 
+		const callbackName = isbot(request.headers['user-agent'])
+			? 'onAllReady'
+			: 'onShellReady'
+
+		let didError = false
+		reply.type('text/html')
+		// https://react.dev/reference/react-dom/server/renderToPipeableStream
 		const pipeableStream = renderToPipeableStream(
 			<StartServer router={router} />,
 			{
-				onShellReady() {
-					pipeableStream.pipe(pass).write(footer)
+				[callbackName]: () => {
+					reply.code(didError ? 500 : 200)
+					pipeableStream.pipe(passStream).write(footer)
 				},
 				onShellError(error) {
-					reply.code(500)
+					console.error(error)
+
+					return reply.code(500).send(`<h1>Something went wrong</h1>`)
+				},
+				onError(error) {
+					didError = true
 					console.error(error)
 				},
 			},
 		)
 
-		reply.code(200).type('text/html').send(pass)
-
-		return reply
+		return reply.send(passStream)
 	})
 })
 
