@@ -13,6 +13,15 @@ export async function createServer(
 ) {
 	const server = fastify(options)
 
+	server.addHook('onRequest', (request, reply, done) => {
+		request.log.info({ hostname: request.hostname })
+		if (request.hostname === 'fastrat.fly.dev') {
+			return reply.redirect(301, `https://www.fastrat.dev${request.url}`)
+		}
+
+		done()
+	})
+
 	await server
 		.register(import('./vite-plugin'))
 		.register(import('@fastify/cookie'), {
