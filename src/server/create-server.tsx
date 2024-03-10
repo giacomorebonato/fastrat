@@ -15,7 +15,7 @@ export async function createServer(
 
 	server.addHook('onRequest', (request, reply, done) => {
 		request.log.info({ hostname: request.hostname })
-		if (request.hostname === 'fastrat.fly.dev') {
+		if (['fastrat.fly.dev', 'fastrat.dev'].includes(request.hostname)) {
 			return reply.redirect(301, `https://www.fastrat.dev${request.url}`)
 		}
 
