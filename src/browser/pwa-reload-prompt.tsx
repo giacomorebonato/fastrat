@@ -1,4 +1,4 @@
-import './reload-prompt.css'
+import './pwa-reload-prompt.css'
 
 import { useRegisterSW } from 'virtual:pwa-register/react'
 
@@ -38,7 +38,17 @@ export function PwaReloadPrompt() {
 						<button
 							type='button'
 							className='ReloadPrompt-toast-button'
-							onClick={() => updateServiceWorker(true)}
+							onClick={() => {
+								updateServiceWorker(true)
+									.then(() => {
+										console.log(`Service worker updated. The page will refresh`)
+									})
+									.catch((error) => {
+										console.error(`Error updating service worker`)
+
+										throw error
+									})
+							}}
 						>
 							Reload
 						</button>

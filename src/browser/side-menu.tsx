@@ -33,10 +33,7 @@ const SmoothLink = ({ children, href }: { children: string; href: string }) => {
 
 export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 	return (
-		<ul
-			className='menu bg-base-200 w-56 rounded-box h-full font-cardo'
-			role='navigation'
-		>
+		<ul className='menu bg-base-200 w-56 rounded-box h-full ' role='navigation'>
 			{withBookmarks && (
 				<li>
 					<h2 className='menu-title'>Content</h2>
@@ -48,8 +45,14 @@ export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 							<SmoothLink href='#spa-or-mpa'>SPA or MPA</SmoothLink>
 						</li>
 						<li>
+							<SmoothLink href='#server-side-data-fetching'>
+								Data fetching
+							</SmoothLink>
+						</li>
+						<li>
 							<SmoothLink href='#seo'>SEO</SmoothLink>
 						</li>
+
 						<li>
 							<SmoothLink href='#pwa'>PWA</SmoothLink>
 						</li>

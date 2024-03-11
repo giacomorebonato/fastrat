@@ -1,4 +1,4 @@
-import logo from '#images/logo.jpg'
+import logo from '#images/logo.webp'
 
 <h1 id='modern-fastrat'>Modern Web Development with Fastify + React</h1>
 
@@ -41,12 +41,35 @@ I think that it's a very common case to rely on a SPA for a private dashboard, b
 
 FastRat renders the HTML on the first request and then uses client side routing when the interaction happens on the page.
 
+<h2 id='server-side-data-fetching'>Server side data fetching</h2>
+
+With FastRat you can achieve what in NextJS can be done through <a className='link' href='https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props' target='_blank'>getServerSideProps</a>.  
+We are just leveraging what <a href='https://tanstack.com/router/latest/docs/framework/react/guide/data-loading' target='_blank'>Tanstack Router</a> offers for the purpose, which is the loader function on the route definition.
+
+Check these key points in this sample app's file [src/routes/notes/$noteId.tsx](./src/routes/notes/$noteId.tsx)
+
+* the loader executes on server side when the page is requested directly
+* executes on client side when client side routing happens
+* the condition `if (import.meta.env.SSR)` is used to conditionally access the database only on server
+* server bundle doesn't contain frontend code and vice versa (Vite apparently does that)
+* fetched data can be passed to Tanstack Query `initialData` for the first render
+
+Points worth mentioning:
+
+* directives `'use server'` and `'use client'` are not supported, so you have to be mindful about not importing server only code into the client and vice versa
+* we are not supporting [React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
+
+Things might change in the future, but the current solution is reliable and automatically tested on this repository.  
+
 <h2 id='seo'>SEO</h2>
 
-Since FastRat does SSR, it's a good solution for building pages that need to be crawled by search engines.  
-[react-helmet-async](https://github.com/staylor/react-helmet-async) can be used to add any metalink/markup to the `<head />` of the page.
+We can then leverage server side data fetching for building pages that need to be crawled by search engines.  
+<a className='link' href='https://github.com/staylor/react-helmet-async' target='_blank'>react-helmet-async</a> can be used to add any metalink/markup to the `<head />` of the page.  
+The markup in the `<head />` will be updated both on SSR and client side routing.
 
 <h2 id='pwa'>PWA</h2>
+
+<iframe className='w-full' width="560" height="315" src="https://www.youtube.com/embed/Z8MjdQGyjfA?si=dpuigcgglmPz6jh2" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" />
 
 This starter kit uses [vite-plugin-pwa](https://vite-pwa-org.netlify.app) to provide the experience of an offline first web application.  
 Read more about [Progressive Web Apps](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps).
@@ -59,15 +82,32 @@ This wouldn't have been possible without [Vite](https://vitejs.dev) and [Vavite]
 When you run `pnpm dev` all your code is running and changes to code are applied immediately without restarting the server.  
 This happens because Vavite is using Vite to compile both frontend and backend code.
 
-<h2 id='fully-typed'>Fully typed</h2>
+<h2 id='fully-typed'>Fully typed with TypeScript</h2>
 
 FastRat uses the modern libraries that allow to type every aspect of your apps:
-* [tRPC](https://trpc.io) adapter for Fastify is used for E2E type safety for requests from browser to server
-* [Tanstack Router](https://tanstack.com/router/latest)
-* [Zod](https://github.com/colinhacks/zod)
-* [Drizzle ORM](https://www.google.com/search?q=drizzle+orm&sourceid=chrome&ie=UTF-8)
+
+<h3>tRPC</h3>
+
+[tRPC](https://trpc.io) adapter for Fastify is used for E2E type safety for requests from browser to server.  
+End points appears in Tanstack Query intellisense and are type checked.
+
+<h3>Tanstack Router</h3>
+
+[Tanstack Router](https://tanstack.com/router/latest) is used both for server side and client side routing.  
+When using it's link component you'll be guided to the available routes.  
+It's particularly useful when you start to store more data in URL params and query strings.
+
+<h3>Drizzle ORM</h3>
+
+[Drizzle ORM](https://orm.drizzle.team/) is a tiny layer on top of SQL (lite in this case).  
+It handles schema, migrations and queries.
+
+<h3>Zod</h3>
+
+Everytime that you need to validate an object structure and to infer its type, you can use [Zod](https://github.com/colinhacks/zod).  
+Which is also at the root of the tRPC functionality.
 
 ### Deployment freedom
 
 This project can run anywhere Docker containers run.  
-This website is configured to automatically deploy to [Fly.io](https://fly.io) which for me is the easiest option.
+This website automatically deploys to [Fly.io](https://fly.io) leveraging their [GitHub action](https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/) that runs when merge into the main branch.

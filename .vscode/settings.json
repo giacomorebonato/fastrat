@@ -1,3 +1,6 @@
 {
-	"editor.defaultFormatter": "biomejs.biome-nightly"
+	"editor.defaultFormatter": "biomejs.biome",
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	}
 }
