@@ -1,5 +1,5 @@
 import { createSigner, createVerifier } from 'fast-jwt'
-import { ZodRawShape, z } from 'zod'
+import type { ZodRawShape, z } from 'zod'
 
 export const createToken = <T extends object>(
 	params: T,

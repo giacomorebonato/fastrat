@@ -24,7 +24,6 @@ const SmoothLink = ({ children, href }: { children: string; href: string }) => {
 	}, [])
 
 	return (
-		// biome-ignore lint/a11y/useValidAnchor: <explanation>
 		<a href={href} onClick={smoothScroll}>
 			{children}
 		</a>

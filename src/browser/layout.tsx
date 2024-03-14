@@ -1,6 +1,7 @@
 import { Link, useRouter } from '@tanstack/react-router'
 import clsx from 'clsx'
-import React, { Suspense, lazy, useEffect, useRef } from 'react'
+import type React from 'react'
+import { Suspense, lazy, useEffect, useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { P, match } from 'ts-pattern'
