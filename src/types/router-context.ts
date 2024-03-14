@@ -1,4 +1,4 @@
-import { HelmetServerState } from 'react-helmet-async'
+import type { HelmetServerState } from 'react-helmet-async'
 
 export type RouterContext = {
 	helmetContext: {

@@ -7,7 +7,7 @@ import { noteSchema } from '#db/schema'
 import { env } from '#server/env'
 import { publicProcedure, router } from '#server/trpc-server'
 import { getNoteById, getNotes } from './note-queries'
-import { NoteSelect, insertNoteSchema } from './note-schema'
+import { type NoteSelect, insertNoteSchema } from './note-schema'
 
 type Events = {
 	onDelete: [{ id: string }]
@@ -15,7 +15,6 @@ type Events = {
 }
 
 declare global {
-	// biome-ignore lint/style/noVar: <explanation>
 	var noteEmitter: Emitter<Events>
 }
 

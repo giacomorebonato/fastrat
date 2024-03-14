@@ -1,6 +1,6 @@
 import Crypto from 'node:crypto'
 import { fastifyOauth2 } from '@fastify/oauth2'
-import { FastifyReply } from 'fastify'
+import type { FastifyReply } from 'fastify'
 import { fastifyPlugin } from 'fastify-plugin'
 import { z } from 'zod'
 import { db } from '#db/db'
