@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { toast } from 'react-toastify'
 import { trpcClient } from '#browser/trpc-client'
-import { NoteSelect } from './note-schema'
+import type { NoteSelect } from './note-schema'
 
 export const NoteRow = ({ note }: { note: NoteSelect }) => {
 	const [isDeleting, setIsDeleting] = useState(false)

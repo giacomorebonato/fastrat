@@ -1,7 +1,7 @@
 import Fs from 'node:fs'
 import Path from 'node:path'
 import appRootPath from 'app-root-path'
-import { HelmetServerState } from 'react-helmet-async'
+import type { HelmetServerState } from 'react-helmet-async'
 import { env } from './env'
 
 export const createTemplate = <const T extends HelmetServerState>(

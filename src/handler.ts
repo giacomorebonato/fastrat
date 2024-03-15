@@ -18,7 +18,6 @@ declare module 'node:http' {
 }
 
 declare global {
-	// biome-ignore lint/style/noVar: <explanation>
 	var ready: boolean
 }
 
