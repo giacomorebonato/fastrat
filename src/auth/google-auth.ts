@@ -14,7 +14,7 @@ export const googleUserSchema = z.object({
 	family_name: z.string(),
 	given_name: z.string(),
 	id: z.string(),
-	locale: z.string(),
+	locale: z.string().default('en'),
 	name: z.string(),
 	picture: z.string(),
 	verified_email: z.boolean(),
@@ -86,7 +86,7 @@ export const googleAuth = fastifyPlugin<{
 			const user = googleUserSchema.parse(userData)
 
 			await updateDatabaseAndRedirect({
-				user: { ...user, locale: user.locale ?? 'en' },
+				user,
 				reply,
 			})
 		} catch (error) {
