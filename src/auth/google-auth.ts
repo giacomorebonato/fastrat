@@ -86,7 +86,7 @@ export const googleAuth = fastifyPlugin<{
 			const user = googleUserSchema.parse(userData)
 
 			await updateDatabaseAndRedirect({
-				user,
+				user: {...user, locale: user.locale ?? 'en' },
 				reply,
 			})
 		} catch (error) {
