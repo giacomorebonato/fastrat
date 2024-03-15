@@ -1,4 +1,4 @@
-import { type CreateFastifyContextOptions } from '@trpc/server/adapters/fastify'
+import type { CreateFastifyContextOptions } from '@trpc/server/adapters/fastify'
 import { z } from 'zod'
 import { USER_TOKEN } from '#auth/cookies'
 import { parseToken } from '#auth/create-token'

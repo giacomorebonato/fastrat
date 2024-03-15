@@ -8,7 +8,7 @@ primary_region = "ams"
 
 [env]
   HOST = "0.0.0.0"
-  SITE_URL = "https://fastrat.fly.dev"
+  SITE_URL = "https://www.fastrat.dev"
 
 [build]
 
