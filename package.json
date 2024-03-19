@@ -49,7 +49,7 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-helmet-async": "^2.0.4",
-		"react-toastify": "10.0.4",
+		"react-toastify": "10.0.5",
 		"strict-event-emitter": "^0.5.1",
 		"superjson": "^2.2.1",
 		"ts-pattern": "^5.0.6",
