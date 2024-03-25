@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@apollo/client':
     specifier: ^3.9.4
-    version: 3.9.7(@types/react@18.2.64)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
+    version: 3.9.9(@types/react@18.2.64)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
   '@fastify/cookie':
     specifier: ^9.3.1
     version: 9.3.1
@@ -246,8 +246,8 @@ packages:
       leven: 3.1.0
     dev: true
 
-  /@apollo/client@3.9.7(@types/react@18.2.64)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-OEEwt55bkFhqihCT5d75KUxZt50JZ9MuIYwG7VZlyPPIAb9K+qzVWlXWlf3tB5DaV43yXkUSLQfNpdIBFOB55Q==}
+  /@apollo/client@3.9.9(@types/react@18.2.64)(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-/sMecU/M0WK9knrguts1lSLV8xFKzIgOMVb4mi6MOxgJXjliDB8PvOtmXhTqh2cVMMR4TzXgOnb+af/690zlQw==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5
