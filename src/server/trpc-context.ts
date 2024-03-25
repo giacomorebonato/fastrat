@@ -21,7 +21,7 @@ export function createContext({ req, res }: CreateFastifyContextOptions) {
 				: {
 						valid: true,
 						value: userToken,
-				  }
+					}
 		if (unsigned.valid && unsigned.value) {
 			try {
 				user = parseToken({
