@@ -126,7 +126,7 @@ devDependencies:
     version: 1.42.1
   '@tailwindcss/typography':
     specifier: ^0.5.10
-    version: 0.5.10(tailwindcss@3.4.2)
+    version: 0.5.10(tailwindcss@3.4.3)
   '@types/lodash':
     specifier: ^4.14.202
     version: 4.17.0
@@ -189,7 +189,7 @@ devDependencies:
     version: 0.33.2
   tailwindcss:
     specifier: ^3.4.1
-    version: 3.4.2
+    version: 3.4.3
   typescript:
     specifier: ^5.3.3
     version: 5.4.3
@@ -3727,7 +3727,7 @@ packages:
       string.prototype.matchall: 4.0.11
     dev: true
 
-  /@tailwindcss/typography@0.5.10(tailwindcss@3.4.2):
+  /@tailwindcss/typography@0.5.10(tailwindcss@3.4.3):
     resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -3736,7 +3736,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.2
+      tailwindcss: 3.4.3
     dev: true
 
   /@tanstack/history@1.15.13:
@@ -10172,8 +10172,8 @@ packages:
     engines: {node: '>=18'}
     dev: false
 
-  /tailwindcss@3.4.2:
-    resolution: {integrity: sha512-1kIzVecynNKMhhX8mPTOwTkkVHupUTMbEvk4n1ByxdM8sQTJ8fE41Y4TdORG6GmiVXHhfZ/++0hiIFJFwfadsA==}
+  /tailwindcss@3.4.3:
+    resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
