@@ -85,7 +85,7 @@ dependencies:
     version: 11.0.20(react-dom@18.2.0)(react@18.2.0)
   isbot:
     specifier: ^5.1.1
-    version: 5.1.1
+    version: 5.1.2
   lodash-es:
     specifier: ^4.17.21
     version: 4.17.21
@@ -7349,8 +7349,8 @@ packages:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
     dev: true
 
-  /isbot@5.1.1:
-    resolution: {integrity: sha512-l4ArJhXWgEahbPEY5nVNh3Ojr0s4Eg2evSAmEQ6QkiFIwdsHg2wThzCMs/kcqgNc1D4HxwEg3+FEYP+bgAiplA==}
+  /isbot@5.1.2:
+    resolution: {integrity: sha512-Yk2X9QhmhzyxKx4JYfeanqxODxDc2CoU38/uymjkvW/CYww6GPH8e65sOuLz0SIkFjW6pCg/iM6vLdohzA4WOQ==}
     engines: {node: '>=18'}
     dev: false
 
