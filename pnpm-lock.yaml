@@ -167,8 +167,8 @@ devDependencies:
     specifier: ^0.20.14
     version: 0.20.14
   happy-dom:
-    specifier: ^13.6.2
-    version: 13.10.1
+    specifier: ^14.0.0
+    version: 14.3.9
   html-validate:
     specifier: ^8.13.0
     version: 8.18.0(vitest@1.4.0)
@@ -204,7 +204,7 @@ devDependencies:
     version: 0.19.7(@vite-pwa/assets-generator@0.2.4)(vite@5.1.6)(workbox-build@7.0.0)(workbox-window@7.0.0)
   vitest:
     specifier: ^1.2.2
-    version: 1.4.0(@types/node@20.11.30)(happy-dom@13.10.1)
+    version: 1.4.0(@types/node@20.11.30)(happy-dom@14.3.9)
   workbox-window:
     specifier: ^7.0.0
     version: 7.0.0
@@ -4241,7 +4241,7 @@ packages:
       strip-literal: 2.0.0
       test-exclude: 6.0.0
       v8-to-istanbul: 9.2.0
-      vitest: 1.4.0(@types/node@20.11.30)(happy-dom@13.10.1)
+      vitest: 1.4.0(@types/node@20.11.30)(happy-dom@14.3.9)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6650,8 +6650,8 @@ packages:
       sisteransi: 1.0.5
     dev: true
 
-  /happy-dom@13.10.1:
-    resolution: {integrity: sha512-9GZLEFvQL5EgfJX2zcBgu1nsPUn98JF/EiJnSfQbdxI6YEQGqpd09lXXxOmYonRBIEFz9JlGCOiPflDzgS1p8w==}
+  /happy-dom@14.3.9:
+    resolution: {integrity: sha512-0kPQchwthekcYpYN8CvCiq+/z5bqFYDLbTxZ+yDLwT8AFRVJDFadShHRxp3VAZRy7a5isOZ1j/LzsU1dtAIZMQ==}
     engines: {node: '>=16.0.0'}
     dependencies:
       entities: 4.5.0
@@ -6833,7 +6833,7 @@ packages:
       minimist: 1.2.8
       prompts: 2.4.2
       semver: 7.6.0
-      vitest: 1.4.0(@types/node@20.11.30)(happy-dom@13.10.1)
+      vitest: 1.4.0(@types/node@20.11.30)(happy-dom@14.3.9)
     dev: true
 
   /http-errors@2.0.0:
@@ -11065,7 +11065,7 @@ packages:
       vite: 4.5.0(@types/node@20.11.30)
     dev: false
 
-  /vitest@1.4.0(@types/node@20.11.30)(happy-dom@13.10.1):
+  /vitest@1.4.0(@types/node@20.11.30)(happy-dom@14.3.9):
     resolution: {integrity: sha512-gujzn0g7fmwf83/WzrDTnncZt2UiXP41mHuFYFrdwaLRVQ6JYQEiME2IfEjU3vcFL3VKa75XhI3lFgn+hfVsQw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -11100,7 +11100,7 @@ packages:
       chai: 4.4.1
       debug: 4.3.4
       execa: 8.0.1
-      happy-dom: 13.10.1
+      happy-dom: 14.3.9
       local-pkg: 0.5.0
       magic-string: 0.30.8
       pathe: 1.1.2
