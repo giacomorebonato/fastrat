@@ -126,7 +126,7 @@ devDependencies:
     version: 1.42.1
   '@tailwindcss/typography':
     specifier: ^0.5.10
-    version: 0.5.10(tailwindcss@3.4.3)
+    version: 0.5.12(tailwindcss@3.4.3)
   '@types/lodash':
     specifier: ^4.14.202
     version: 4.17.0
@@ -3698,8 +3698,8 @@ packages:
       string.prototype.matchall: 4.0.11
     dev: true
 
-  /@tailwindcss/typography@0.5.10(tailwindcss@3.4.3):
-    resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
+  /@tailwindcss/typography@0.5.12(tailwindcss@3.4.3):
+    resolution: {integrity: sha512-CNwpBpconcP7ppxmuq3qvaCxiRWnbhANpY/ruH4L5qs2GCiVDJXde/pjj2HWPV1+Q4G9+V/etrwUYopdcjAlyg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
