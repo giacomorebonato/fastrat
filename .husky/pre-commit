@@ -1,1 +1,1 @@
-pnpm check && pnpm build && pnpm exec run-p "test" "test:types" "e2e"
+pnpm check && git add . && pnpm build && pnpm exec run-p "test" "test:types" "e2e"
