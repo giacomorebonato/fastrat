@@ -24,7 +24,7 @@ export function createLink() {
 	if (import.meta.env.SSR) {
 		return httpBatchLink({
 			transformer: superjson,
-			url: `${process.env.SITE_URL}/trpc`
+			url: `${process.env.SITE_URL}/trpc`,
 		})
 	}
 
@@ -39,7 +39,7 @@ export function createLink() {
 		},
 		true: wsLink<ApiRouter>({
 			client: wsClient,
-			transformer: superjson
+			transformer: superjson,
 		}),
 		false: httpBatchLink({ url: httpUrl, transformer: superjson }),
 	})
