@@ -28,11 +28,7 @@ export async function createServer(
 			hook: 'onRequest',
 			secret: env.SECRET,
 		})
-		.register(import('@fastify/websocket'), {
-			connectionOptions: {
-				readableObjectMode: true,
-			},
-		})
+		.register(import('@fastify/websocket'))
 		.register(googleAuth, {
 			GOOGLE_CLIENT_ID: env.GOOGLE_CLIENT_ID,
 			GOOGLE_CLIENT_SECRET: env.GOOGLE_CLIENT_SECRET,

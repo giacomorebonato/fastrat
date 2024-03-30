@@ -3,7 +3,6 @@ import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
 import { DehydrateRouter } from '@tanstack/react-router-server/client'
 import { HelmetProvider } from 'react-helmet-async'
 import type { HelmetServerState } from 'react-helmet-async'
-import superjson from 'superjson'
 import { createLink, trpcClient } from '#browser/trpc-client'
 import type { RouterContext } from '#types/router-context'
 
@@ -16,8 +15,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 
 const queryClient = new QueryClient()
 const apiClient = trpcClient.createClient({
-	transformer: superjson,
-
 	links: [createLink()],
 })
 
