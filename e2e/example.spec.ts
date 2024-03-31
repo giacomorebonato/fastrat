@@ -67,8 +67,8 @@ test(`it renders valid HTML`, async ({ browser }) => {
 			'valid-id': 0,
 			'wcag/h32': 0,
 			'prefer-native-element': 0,
-			'no-implicit-button-type': 0
-		}
+			'no-implicit-button-type': 0,
+		},
 	})
 	const html = await page.content()
 	const report = await htmlvalidate.validateString(html)

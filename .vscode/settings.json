@@ -1,6 +1,8 @@
 {
-	"editor.defaultFormatter": "biomejs.biome",
-	"[html]": {
-		"editor.defaultFormatter": "vscode.html-language-features"
-	}
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports.biome": "explicit",
+		"quickfix.biome": "explicit"
+	},
+	"editor.defaultFormatter": "biomejs.biome"
 }
