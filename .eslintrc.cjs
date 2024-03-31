@@ -1,4 +1,9 @@
 module.exports = {
+	settings: {
+		react: {
+			version: '^18.2.0',
+		},
+	},
 	env: {
 		browser: true,
 		es2021: true,
@@ -8,6 +13,7 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react/recommended',
+		'plugin:@tanstack/eslint-plugin-query/recommended',
 	],
 	overrides: [
 		{
@@ -21,7 +27,7 @@ module.exports = {
 		},
 		{
 			files: ['*.ts', '*.js', '*.tsx', '*.jsx'],
-			extends: ['biome'],
+			extends: ['biome', 'plugin:drizzle/all'],
 		},
 	],
 	parser: '@typescript-eslint/parser',
@@ -29,8 +35,16 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint', 'react'],
+	plugins: ['@typescript-eslint', '@tanstack/query', 'react'],
 	rules: {
 		'react/react-in-jsx-scope': 0,
 	},
+	ignorePatterns: [
+		'node_modules/',
+		'e2e/user.json',
+		'coverage/',
+		'dist/',
+		'vite.config.ts*',
+		'vitest.config.ts*',
+	],
 }
