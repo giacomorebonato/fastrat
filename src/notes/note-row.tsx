@@ -10,7 +10,7 @@ export const NoteRow = ({ note }: { note: NoteSelect }) => {
 	const [isDeleting, setIsDeleting] = useState(false)
 
 	const deleteNote = trpcClient.note.delete.useMutation({
-		onMutate(variables) {
+		onMutate() {
 			setIsDeleting(true)
 		},
 		onSuccess(data) {

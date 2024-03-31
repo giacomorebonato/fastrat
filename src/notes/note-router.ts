@@ -84,7 +84,7 @@ export const noteRouter = router({
 
 			return note
 		}),
-	list: publicProcedure.query(async ({ ctx }) => {
+	list: publicProcedure.query(async () => {
 		return getNotes()
 	}),
 	upsert: publicProcedure

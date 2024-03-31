@@ -26,7 +26,7 @@ export function NoteTextarea(props: {
 	)
 
 	return (
-		<form className='p-4' onChange={(e) => {}}>
+		<form className='p-4' onChange={() => {}}>
 			{match(props.note)
 				.with(P.not(undefined), () => (
 					<textarea

@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -6,11 +6,11 @@ const config = {
 	theme: {
 		fontFamily: {
 			sans: ['"Proxima Nova"', ...defaultTheme.fontFamily.sans],
-    },
+		},
 		extend: {},
 	},
 	daisyui: {
-    themes: false
+		themes: false,
 	},
 	plugins: [require('@tailwindcss/typography'), require('daisyui')],
 }

@@ -2,9 +2,9 @@ import mdx from '@mdx-js/rollup'
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 import react from '@vitejs/plugin-react'
 import { vavite } from 'vavite'
-import { type UserConfig } from 'vite'
-import { VitePWA } from 'vite-plugin-pwa'
+import type { UserConfig } from 'vite'
 import { splitVendorChunkPlugin } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 const config: UserConfig = {
 	resolve: {
