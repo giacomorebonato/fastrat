@@ -21,6 +21,7 @@
 	},
 	"files": {
 		"ignore": [
+			"e2e/user.json",
 			"*.ico",
 			"*.jpg",
 			"src/route-tree.gen.ts",

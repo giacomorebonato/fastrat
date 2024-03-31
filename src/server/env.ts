@@ -3,7 +3,10 @@ import 'dotenv/config'
 import { z } from 'zod'
 
 const schema = z.object({
-	CI: z.optional(z.string().transform(Boolean)),
+	CI: z
+		.string()
+		.default('false')
+		.transform((value) => value === 'true'),
 	GOOGLE_CLIENT_ID: z.string().default('fake-client-id'),
 	GOOGLE_CLIENT_SECRET: z.string().default('fake-client-secret'),
 	HOST: z.string().default('0.0.0.0'),
