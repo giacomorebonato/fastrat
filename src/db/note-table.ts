@@ -2,7 +2,7 @@ import type { InferInsertModel, InferSelectModel } from 'drizzle-orm'
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core'
 import { createInsertSchema, createSelectSchema } from 'drizzle-zod'
 
-export const noteSchema = sqliteTable('notes', {
+export const noteTable = sqliteTable('notes', {
 	content: text('content').notNull(),
 	createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(() => {
 		return new Date()
@@ -12,8 +12,8 @@ export const noteSchema = sqliteTable('notes', {
 	updatedAt: integer('updated_at', { mode: 'timestamp' }),
 })
 
-export type NoteRecord = typeof noteSchema.$inferSelect
-export type NoteSelect = InferSelectModel<typeof noteSchema>
-export type NoteInsert = InferInsertModel<typeof noteSchema>
-export const insertNoteSchema = createInsertSchema(noteSchema)
-export const selectNoteSchema = createSelectSchema(noteSchema)
+export type NoteRecord = typeof noteTable.$inferSelect
+export type NoteSelect = InferSelectModel<typeof noteTable>
+export type NoteInsert = InferInsertModel<typeof noteTable>
+export const insertNoteSchema = createInsertSchema(noteTable)
+export const selectNoteSchema = createSelectSchema(noteTable)

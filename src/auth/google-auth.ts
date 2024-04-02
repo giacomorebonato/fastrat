@@ -1,13 +1,11 @@
-import Crypto from 'node:crypto'
 import { fastifyOauth2 } from '@fastify/oauth2'
 import type { FastifyReply } from 'fastify'
 import { fastifyPlugin } from 'fastify-plugin'
 import { z } from 'zod'
-import { db } from '#db/db'
 import { env } from '#server/env'
 import { USER_TOKEN } from './cookies'
 import { createToken } from './create-token'
-import { userSchema } from './user-schema'
+import { upsertUser } from './user-queries'
 
 export const googleUserSchema = z.object({
 	email: z.string(),
@@ -102,24 +100,7 @@ async function updateDatabaseAndRedirect({
 	reply: FastifyReply
 	user: GoogleUser
 }) {
-	const dbUsers = await db
-		.insert(userSchema)
-		.values({
-			email: user.email.trim(),
-			id: Crypto.randomUUID(),
-		})
-		.onConflictDoUpdate({
-			set: {
-				updatedAt: new Date(),
-			},
-			target: userSchema.email,
-		})
-		.returning({
-			email: userSchema.email,
-			id: userSchema.id,
-		})
-	const dbUser = dbUsers[0]
-
+	const dbUser = await upsertUser({ email: user.email })
 	const token = createToken(
 		{
 			email: dbUser.email,

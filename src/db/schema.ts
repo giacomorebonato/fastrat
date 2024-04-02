@@ -1,2 +1,2 @@
-export { noteSchema } from '#notes/note-schema'
-export { userSchema } from '#auth/user-schema'
+export { noteTable as noteSchema } from '#db/note-table'
+export { userTable as userSchema } from '#db/user-table'

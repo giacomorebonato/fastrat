@@ -6,8 +6,8 @@ import { z } from 'zod'
 import { noteSchema } from '#db/schema'
 import { env } from '#server/env'
 import { publicProcedure, router } from '#server/trpc-server'
+import { type NoteSelect, insertNoteSchema } from '../db/note-table'
 import { getNoteById, getNotes } from './note-queries'
-import { type NoteSelect, insertNoteSchema } from './note-schema'
 
 type Events = {
 	onDelete: [{ id: string }]

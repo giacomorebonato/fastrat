@@ -1,8 +1,8 @@
 import { useNavigate } from '@tanstack/react-router'
 import { toast } from 'react-toastify'
 import { trpcClient } from '#browser/trpc-client'
+import type { NoteRecord } from '#db/note-table'
 import { NoteRow } from './note-row'
-import type { NoteRecord } from './note-schema'
 
 export function NoteList({ notes }: { notes?: NoteRecord[] }) {
 	const navigate = useNavigate()
