@@ -168,7 +168,7 @@ devDependencies:
     version: 10.4.19(postcss@8.4.38)
   daisyui:
     specifier: ^4.9.0
-    version: 4.9.0(postcss@8.4.38)
+    version: 4.10.0(postcss@8.4.38)
   del-cli:
     specifier: ^5.1.0
     version: 5.1.0
@@ -5489,8 +5489,8 @@ packages:
       type: 2.7.2
     dev: true
 
-  /daisyui@4.9.0(postcss@8.4.38):
-    resolution: {integrity: sha512-9JsDx4E+30kPxThE+6yEwQokqg1957uwTx/skP2RE98fG6Ten6U+S9YXeQg1a3CI958aF5aOb0oEA+KZFfrZUA==}
+  /daisyui@4.10.0(postcss@8.4.38):
+    resolution: {integrity: sha512-x4px/nSv+/EHAvQp0Gy5u2o9W0EKTWHpjlzxnm632TUOWHaY4RSX4FpjccNsm8SfQ1AQtjR25/0fxx7eqdHkdQ==}
     engines: {node: '>=16.9.0'}
     dependencies:
       css-selector-tokenizer: 0.8.0
