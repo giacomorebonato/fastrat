@@ -1,5 +1,5 @@
-import { env } from '#server/env'
-import { publicProcedure, router } from '#server/trpc-server'
+import { env } from '#/server/env'
+import { publicProcedure, router } from '#/server/trpc-server'
 import { USER_TOKEN } from './cookies'
 
 export const authRouter = router({

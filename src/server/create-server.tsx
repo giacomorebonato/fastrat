@@ -1,6 +1,6 @@
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import { type FastifyServerOptions, fastify } from 'fastify'
-import { googleAuth } from '#auth/google-auth'
+import { googleAuth } from '#/auth/google-auth'
 import { apiRouter } from './api-router'
 import { env } from './env'
 import { createContext } from './trpc-context'

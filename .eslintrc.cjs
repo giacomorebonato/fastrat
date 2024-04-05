@@ -35,9 +35,19 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint', '@tanstack/query', 'react'],
+	plugins: [
+		'@typescript-eslint',
+		'@tanstack/query',
+		'react',
+		'no-relative-import-paths',
+	],
 	rules: {
 		'react/react-in-jsx-scope': 0,
+
+		'no-relative-import-paths/no-relative-import-paths': [
+			'warn',
+			{ allowSameFolder: true, prefix: '#', rootDir: 'src' },
+		],
 	},
 	ignorePatterns: [
 		'node_modules/',

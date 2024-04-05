@@ -3,7 +3,7 @@ import { createClient } from '@libsql/client'
 import appRootPath from 'app-root-path'
 import { drizzle } from 'drizzle-orm/libsql'
 import { migrate } from 'drizzle-orm/libsql/migrator'
-import { env } from '#server/env'
+import { env } from '#/server/env'
 
 const client = createClient({
 	authToken: env.TURSO_DB_AUTH_TOKEN,

@@ -6,7 +6,7 @@ import {
 	wsLink,
 } from '@trpc/react-query'
 import superjson from 'superjson'
-import type { ApiRouter } from '../server/api-router.js'
+import type { ApiRouter } from '#/server/api-router.js'
 
 export const trpcClient = createTRPCReact<ApiRouter>()
 

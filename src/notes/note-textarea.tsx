@@ -2,8 +2,8 @@ import { debounce } from 'lodash'
 import { useCallback, useState } from 'react'
 import { toast } from 'react-toastify'
 import { P, match } from 'ts-pattern'
-import { trpcClient } from '#browser/trpc-client'
-import type { NoteRecord } from '../db/note-table'
+import { trpcClient } from '#/browser/trpc-client'
+import type { NoteRecord } from '#/db/note-table'
 
 export function NoteTextarea(props: {
 	note?: NoteRecord

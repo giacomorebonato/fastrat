@@ -3,8 +3,8 @@ import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { toast } from 'react-toastify'
-import { trpcClient } from '#browser/trpc-client'
-import type { NoteSelect } from '../db/note-table'
+import { trpcClient } from '#/browser/trpc-client'
+import type { NoteSelect } from '#/db/note-table'
 
 export const NoteRow = ({ note }: { note: NoteSelect }) => {
 	const [isDeleting, setIsDeleting] = useState(false)

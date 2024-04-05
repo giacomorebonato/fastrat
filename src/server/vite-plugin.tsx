@@ -8,7 +8,7 @@ import appRootPath from 'app-root-path'
 import { fastifyPlugin } from 'fastify-plugin'
 import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
-import { createRouter } from '#browser/create-router'
+import { createRouter } from '#/browser/create-router'
 import { createTemplate } from './create-template'
 
 const distClientPath = import.meta.env.PROD

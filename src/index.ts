@@ -1,5 +1,5 @@
-import { createServer } from '#server/create-server'
-import { env } from '#server/env.js'
+import { createServer } from '#/server/create-server'
+import { env } from '#/server/env.js'
 
 async function start() {
 	try {

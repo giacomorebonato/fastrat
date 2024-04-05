@@ -1,8 +1,8 @@
 import type { CreateFastifyContextOptions } from '@trpc/server/adapters/fastify'
 import { z } from 'zod'
-import { USER_TOKEN } from '#auth/cookies'
-import { parseToken } from '#auth/create-token'
-import { db } from '#db/db.js'
+import { USER_TOKEN } from '#/auth/cookies'
+import { parseToken } from '#/auth/create-token'
+import { db } from '#/db/db.js'
 import { env } from './env'
 
 const userValidator = z.object({

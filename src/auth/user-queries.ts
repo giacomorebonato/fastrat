@@ -1,6 +1,6 @@
 import Crypto from 'node:crypto'
-import { db } from '#db/db'
-import { userTable } from '#db/user-table'
+import { db } from '#/db/db'
+import { userTable } from '#/db/user-table'
 
 export const upsertUser = async (user: { email: string }) => {
 	const dbUsers = await db

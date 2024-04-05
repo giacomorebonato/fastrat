@@ -10,7 +10,7 @@
 		"moduleResolution": "Bundler",
 		"noEmit": true,
 		"paths": {
-			"#*": ["./src/*"]
+			"#/*": ["./src/*"]
 		},
 		"strict": true,
 		"skipLibCheck": true,

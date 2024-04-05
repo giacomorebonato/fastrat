@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 import { z } from 'zod'
-import { createToken, parseToken } from '../create-token'
+import { createToken, parseToken } from '#/auth/create-token'
 
 test('creates a token and parses it back', () => {
 	const myData = {

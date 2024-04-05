@@ -1,6 +1,6 @@
 import { desc, eq } from 'drizzle-orm'
-import { db } from '#db/db'
-import { type NoteRecord, noteTable } from '#db/note-table'
+import { db } from '#/db/db'
+import { type NoteRecord, noteTable } from '#/db/note-table'
 
 export const getNoteById = (
 	noteId: string,

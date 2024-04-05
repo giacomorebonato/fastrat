@@ -1,12 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet-async'
 import { z } from 'zod'
-import { Layout } from '#browser/layout'
-import { SideMenu } from '#browser/side-menu'
-import { trpcClient } from '#browser/trpc-client'
-import { NoteList } from '#notes/note-list'
-import { NoteTextarea } from '#notes/note-textarea'
-import { useNoteSubscriptions } from '#notes/use-note-subscriptions'
+import { Layout } from '#/browser/layout'
+import { SideMenu } from '#/browser/side-menu'
+import { trpcClient } from '#/browser/trpc-client'
+import { NoteList } from '#/notes/note-list'
+import { NoteTextarea } from '#/notes/note-textarea'
+import { useNoteSubscriptions } from '#/notes/use-note-subscriptions'
 
 export const Route = createFileRoute('/notes/$noteId')({
 	parseParams: (params) => ({
@@ -14,8 +14,8 @@ export const Route = createFileRoute('/notes/$noteId')({
 	}),
 	async loader({ context, params }) {
 		if (import.meta.env.SSR) {
-			const { getNoteById } = await import('#notes/note-queries')
-			const { getNotes } = await import('#notes/note-queries')
+			const { getNoteById } = await import('#/notes/note-queries')
+			const { getNotes } = await import('#/notes/note-queries')
 			const note = await getNoteById(params.noteId)
 
 			if (!note) {

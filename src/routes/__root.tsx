@@ -3,8 +3,8 @@ import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
 import { DehydrateRouter } from '@tanstack/react-router-server/client'
 import { HelmetProvider } from 'react-helmet-async'
 import type { HelmetServerState } from 'react-helmet-async'
-import { createLink, trpcClient } from '#browser/trpc-client'
-import type { RouterContext } from '#types/router-context'
+import { createLink, trpcClient } from '#/browser/trpc-client'
+import type { RouterContext } from '#/types/router-context'
 
 export const Route = createRootRouteWithContext<RouterContext>()({
 	loader({ context }) {

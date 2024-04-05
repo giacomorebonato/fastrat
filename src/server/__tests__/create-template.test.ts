@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { createTemplate } from '../create-template'
+import { createTemplate } from '#/server/create-template'
 
 test('returns head and footer', () => {
 	const { head, footer } = createTemplate(null, 'production')

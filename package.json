@@ -3,7 +3,7 @@
 		"db:generate": "drizzle-kit generate:sqlite",
 		"dev": "vavite serve --port 3000 | pino-pretty",
 		"build": "pnpm clean && vavite build",
-		"clean": "del dist && del sqlite.db && del coverage",
+		"clean": "del dist sqlite.db coverage playwright-report",
 		"start": "NODE_ENV=production node dist/server/index.js",
 		"test": "vitest run --coverage",
 		"test:types": "tsc",
@@ -16,7 +16,7 @@
 		"prepare": "husky"
 	},
 	"imports": {
-		"#*": "./src/*"
+		"#/*": "./src/*"
 	},
 	"dependencies": {
 		"@apollo/client": "^3.9.9",
@@ -81,6 +81,7 @@
 		"eslint": "^8.57.0",
 		"eslint-config-biome": "^1.5.3",
 		"eslint-plugin-drizzle": "^0.2.3",
+		"eslint-plugin-no-relative-import-paths": "^1.5.3",
 		"eslint-plugin-react": "^7.34.1",
 		"happy-dom": "^14.3.9",
 		"html-validate": "^8.18.1",
