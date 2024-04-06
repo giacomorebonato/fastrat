@@ -192,7 +192,7 @@ devDependencies:
     version: 7.34.1(eslint@9.0.0)
   happy-dom:
     specifier: ^14.3.9
-    version: 14.6.1
+    version: 14.6.2
   html-validate:
     specifier: ^8.18.1
     version: 8.18.1(vitest@1.4.0)
@@ -228,7 +228,7 @@ devDependencies:
     version: 0.19.8(@vite-pwa/assets-generator@0.2.4)(vite@5.2.7)(workbox-build@7.0.0)(workbox-window@7.0.0)
   vitest:
     specifier: ^1.4.0
-    version: 1.4.0(@types/node@20.12.5)(happy-dom@14.6.1)
+    version: 1.4.0(@types/node@20.12.5)(happy-dom@14.6.2)
   workbox-window:
     specifier: ^7.0.0
     version: 7.0.0
@@ -4442,7 +4442,7 @@ packages:
       strip-literal: 2.1.0
       test-exclude: 6.0.0
       v8-to-istanbul: 9.2.0
-      vitest: 1.4.0(@types/node@20.12.5)(happy-dom@14.6.1)
+      vitest: 1.4.0(@types/node@20.12.5)(happy-dom@14.6.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7164,8 +7164,8 @@ packages:
       sisteransi: 1.0.5
     dev: true
 
-  /happy-dom@14.6.1:
-    resolution: {integrity: sha512-nIid31b7esld4oWbUyu8PwhBZxxI+8VLp5NeDPSLucVqH/kwM0HCjWm/uSdCcEP1XJJZdzLFsNJm3Mm+2x7erg==}
+  /happy-dom@14.6.2:
+    resolution: {integrity: sha512-yiaVI0Da/tGrBD6QwmXkJZH9RPW1/TCxqadbwkp0MgwRTTDNyBC09Ow+nppVLhbG4Ws2Z6t29Vzbbd6C0y7LCQ==}
     engines: {node: '>=16.0.0'}
     dependencies:
       entities: 4.5.0
@@ -7340,7 +7340,7 @@ packages:
       minimist: 1.2.8
       prompts: 2.4.2
       semver: 7.6.0
-      vitest: 1.4.0(@types/node@20.12.5)(happy-dom@14.6.1)
+      vitest: 1.4.0(@types/node@20.12.5)(happy-dom@14.6.2)
     dev: true
 
   /http-errors@2.0.0:
@@ -11753,7 +11753,7 @@ packages:
       vite: 4.5.0(@types/node@20.12.5)
     dev: false
 
-  /vitest@1.4.0(@types/node@20.12.5)(happy-dom@14.6.1):
+  /vitest@1.4.0(@types/node@20.12.5)(happy-dom@14.6.2):
     resolution: {integrity: sha512-gujzn0g7fmwf83/WzrDTnncZt2UiXP41mHuFYFrdwaLRVQ6JYQEiME2IfEjU3vcFL3VKa75XhI3lFgn+hfVsQw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -11788,7 +11788,7 @@ packages:
       chai: 4.4.1
       debug: 4.3.4
       execa: 8.0.1
-      happy-dom: 14.6.1
+      happy-dom: 14.6.2
       local-pkg: 0.5.0
       magic-string: 0.30.8
       pathe: 1.1.2
