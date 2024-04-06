@@ -225,7 +225,7 @@ devDependencies:
     version: 5.2.7(@types/node@20.12.5)
   vite-plugin-pwa:
     specifier: ^0.19.7
-    version: 0.19.7(@vite-pwa/assets-generator@0.2.4)(vite@5.2.7)(workbox-build@7.0.0)(workbox-window@7.0.0)
+    version: 0.19.8(@vite-pwa/assets-generator@0.2.4)(vite@5.2.7)(workbox-build@7.0.0)(workbox-window@7.0.0)
   vitest:
     specifier: ^1.4.0
     version: 1.4.0(@types/node@20.12.5)(happy-dom@14.6.1)
@@ -11640,8 +11640,8 @@ packages:
       - supports-color
     dev: false
 
-  /vite-plugin-pwa@0.19.7(@vite-pwa/assets-generator@0.2.4)(vite@5.2.7)(workbox-build@7.0.0)(workbox-window@7.0.0):
-    resolution: {integrity: sha512-18TECxoGPQE7tVZzKxbf5Icrl5688n1JGMPSgGotTsh89vLDxevY7ICfD3CFVfonZXh8ckuyJXg0NXE5+FAl2A==}
+  /vite-plugin-pwa@0.19.8(@vite-pwa/assets-generator@0.2.4)(vite@5.2.7)(workbox-build@7.0.0)(workbox-window@7.0.0):
+    resolution: {integrity: sha512-e1oK0dfhzhDhY3VBuML6c0h8Xfx6EkOVYqolj7g+u8eRfdauZe5RLteCIA/c5gH0CBQ0CNFAuv/AFTx4Z7IXTw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@vite-pwa/assets-generator': ^0.2.4
