@@ -109,7 +109,7 @@ dependencies:
     version: 2.2.1
   ts-pattern:
     specifier: ^5.0.8
-    version: 5.1.0
+    version: 5.1.1
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -11039,8 +11039,8 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /ts-pattern@5.1.0:
-    resolution: {integrity: sha512-sULbgZDTXrcr6WMeuR8gPb+dvNN/fNpxE8GHfosFHPJRPuxHVNtGcEiiNuQa6nxu40/dY6xYdTJmc7MG3w8B5g==}
+  /ts-pattern@5.1.1:
+    resolution: {integrity: sha512-i+owkHr5RYdQxj8olUgRrqpiWH9x27PuWVfXwDmJ/n/CoF/SAa7WW1i2oUpPDMQpJ4U+bGRUcZkVq7i1m3zFCg==}
     dev: false
 
   /tslib@2.6.2:
