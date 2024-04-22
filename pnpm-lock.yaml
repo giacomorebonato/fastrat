@@ -73,7 +73,7 @@ importers:
         version: 0.30.8(@libsql/client@0.6.0)(@types/react@18.2.78)(react@18.2.0)
       drizzle-zod:
         specifier: ^0.5.1
-        version: 0.5.1(drizzle-orm@0.30.8(@libsql/client@0.6.0)(@types/react@18.2.78)(react@18.2.0))(zod@3.22.5)
+        version: 0.5.1(drizzle-orm@0.30.8(@libsql/client@0.6.0)(@types/react@18.2.78)(react@18.2.0))(zod@3.23.0)
       fast-jwt:
         specifier: ^4.0.0
         version: 4.0.0
@@ -115,7 +115,7 @@ importers:
         version: 5.1.1
       zod:
         specifier: ^3.22.4
-        version: 3.22.5
+        version: 3.23.0
     devDependencies:
       '@biomejs/biome':
         specifier: 1.7.0
@@ -6515,8 +6515,8 @@ packages:
     resolution: {integrity: sha512-LfOdrUvPB8ZoXtvOBz6DlNClfvi//b5d56mSWyJi7XbH/HfhOHfUhOqxhT/rUiR7yiktlunqRo+jY6y/cWC/5g==}
     engines: {node: '>= 12.0.0'}
 
-  zod@3.22.5:
-    resolution: {integrity: sha512-HqnGsCdVZ2xc0qWPLdO25WnseXThh0kEYKIdV5F/hTHO75hNZFp8thxSeHhiPrHZKrFTo1SOgkAj9po5bexZlw==}
+  zod@3.23.0:
+    resolution: {integrity: sha512-OFLT+LTocvabn6q76BTwVB0hExEBS0IduTr3cqZyMqEDbOnYmcU+y0tUAYbND4uwclpBGi4I4UUBGzylWpjLGA==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -8372,7 +8372,7 @@ snapshots:
   '@tanstack/router-generator@1.26.16':
     dependencies:
       prettier: 3.2.5
-      zod: 3.22.5
+      zod: 3.23.0
 
   '@tanstack/router-vite-plugin@1.26.21(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))':
     dependencies:
@@ -8391,7 +8391,7 @@ snapshots:
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.5
       '@vitejs/plugin-react': 4.2.1(vite@5.2.8(@types/node@20.12.7)(terser@5.30.3))
-      zod: 3.22.5
+      zod: 3.23.0
     transitivePeerDependencies:
       - supports-color
       - vite
@@ -9658,7 +9658,7 @@ snapshots:
       json-diff: 0.9.0
       minimatch: 7.4.6
       semver: 7.6.0
-      zod: 3.22.5
+      zod: 3.23.0
     transitivePeerDependencies:
       - supports-color
 
@@ -9668,10 +9668,10 @@ snapshots:
       '@types/react': 18.2.78
       react: 18.2.0
 
-  drizzle-zod@0.5.1(drizzle-orm@0.30.8(@libsql/client@0.6.0)(@types/react@18.2.78)(react@18.2.0))(zod@3.22.5):
+  drizzle-zod@0.5.1(drizzle-orm@0.30.8(@libsql/client@0.6.0)(@types/react@18.2.78)(react@18.2.0))(zod@3.23.0):
     dependencies:
       drizzle-orm: 0.30.8(@libsql/client@0.6.0)(@types/react@18.2.78)(react@18.2.0)
-      zod: 3.22.5
+      zod: 3.23.0
 
   dts-buddy@0.2.5:
     dependencies:
@@ -13271,7 +13271,7 @@ snapshots:
       unstorage: 1.10.2
       vite: 4.5.0(@types/node@20.12.7)(terser@5.30.3)
       ws: 8.16.0
-      zod: 3.22.5
+      zod: 3.23.0
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -13670,6 +13670,6 @@ snapshots:
       compress-commons: 5.0.3
       readable-stream: 3.6.2
 
-  zod@3.22.5: {}
+  zod@3.23.0: {}
 
   zwitch@2.0.4: {}
