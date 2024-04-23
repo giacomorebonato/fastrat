@@ -227,13 +227,13 @@ importers:
         version: 5.2.10(@types/node@20.12.7)(terser@5.30.3)
       vite-plugin-pwa:
         specifier: ^0.19.7
-        version: 0.19.8(@vite-pwa/assets-generator@0.2.4)(vite@5.2.10(@types/node@20.12.7)(terser@5.30.3))(workbox-build@7.0.0(@types/babel__core@7.20.5))(workbox-window@7.0.0)
+        version: 0.19.8(@vite-pwa/assets-generator@0.2.4)(vite@5.2.10(@types/node@20.12.7)(terser@5.30.3))(workbox-build@7.0.0(@types/babel__core@7.20.5))(workbox-window@7.1.0)
       vitest:
         specifier: ^1.4.0
         version: 1.5.0(@types/node@20.12.7)(happy-dom@14.7.1)(terser@5.30.3)
       workbox-window:
         specifier: ^7.0.0
-        version: 7.0.0
+        version: 7.1.0
 
 packages:
 
@@ -6425,6 +6425,9 @@ packages:
   workbox-core@7.0.0:
     resolution: {integrity: sha512-81JkAAZtfVP8darBpfRTovHg8DGAVrKFgHpOArZbdFd78VqHr5Iw65f2guwjE2NlCFbPFDoez3D3/6ZvhI/rwQ==}
 
+  workbox-core@7.1.0:
+    resolution: {integrity: sha512-5KB4KOY8rtL31nEF7BfvU7FMzKT4B5TkbYa2tzkS+Peqj0gayMT9SytSFtNzlrvMaWgv6y/yvP9C0IbpFjV30Q==}
+
   workbox-expiration@7.0.0:
     resolution: {integrity: sha512-MLK+fogW+pC3IWU9SFE+FRStvDVutwJMR5if1g7oBJx3qwmO69BNoJQVaMXq41R0gg3MzxVfwOGKx3i9P6sOLQ==}
 
@@ -6458,6 +6461,9 @@ packages:
 
   workbox-window@7.0.0:
     resolution: {integrity: sha512-j7P/bsAWE/a7sxqTzXo3P2ALb1reTfZdvVp6OJ/uLr/C2kZAMvjeWGm8V4htQhor7DOvYg0sSbFN2+flT5U0qA==}
+
+  workbox-window@7.1.0:
+    resolution: {integrity: sha512-ZHeROyqR+AS5UPzholQRDttLFqGMwP0Np8MKWAdyxsDETxq3qOAyXvqessc3GniohG6e0mAqSQyKOHmT8zPF7g==}
 
   wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
@@ -13359,14 +13365,14 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-plugin-pwa@0.19.8(@vite-pwa/assets-generator@0.2.4)(vite@5.2.10(@types/node@20.12.7)(terser@5.30.3))(workbox-build@7.0.0(@types/babel__core@7.20.5))(workbox-window@7.0.0):
+  vite-plugin-pwa@0.19.8(@vite-pwa/assets-generator@0.2.4)(vite@5.2.10(@types/node@20.12.7)(terser@5.30.3))(workbox-build@7.0.0(@types/babel__core@7.20.5))(workbox-window@7.1.0):
     dependencies:
       debug: 4.3.4
       fast-glob: 3.3.2
       pretty-bytes: 6.1.1
       vite: 5.2.10(@types/node@20.12.7)(terser@5.30.3)
       workbox-build: 7.0.0(@types/babel__core@7.20.5)
-      workbox-window: 7.0.0
+      workbox-window: 7.1.0
     optionalDependencies:
       '@vite-pwa/assets-generator': 0.2.4
     transitivePeerDependencies:
@@ -13583,6 +13589,8 @@ snapshots:
 
   workbox-core@7.0.0: {}
 
+  workbox-core@7.1.0: {}
+
   workbox-expiration@7.0.0:
     dependencies:
       idb: 7.1.1
@@ -13637,6 +13645,11 @@ snapshots:
     dependencies:
       '@types/trusted-types': 2.0.7
       workbox-core: 7.0.0
+
+  workbox-window@7.1.0:
+    dependencies:
+      '@types/trusted-types': 2.0.7
+      workbox-core: 7.1.0
 
   wrap-ansi@7.0.0:
     dependencies:
