@@ -76,7 +76,7 @@ importers:
         version: 0.5.1(drizzle-orm@0.30.9(@libsql/client@0.6.0)(@types/react@18.2.79)(react@18.2.0))(zod@3.23.4)
       fast-jwt:
         specifier: ^4.0.0
-        version: 4.0.0
+        version: 4.0.1
       fastify:
         specifier: 4.26.2
         version: 4.26.2
@@ -3611,9 +3611,9 @@ packages:
   fast-json-stringify@5.14.1:
     resolution: {integrity: sha512-J1Grbf0oSXV3lKsBf3itz1AvRk43qVrx3Ac10sNvi3LZaz1by4oDdYKFrJycPhS8+Gb7y8rgV/Jqw1UZVjyNvw==}
 
-  fast-jwt@4.0.0:
-    resolution: {integrity: sha512-CnI93Tmk7eSzfw4e0Jlc5ZcWiN+/zK7xAKAhtXS8PAcKmYqfcXqxJl1hMyhk3iEt0M9JLo7DCYRDV2XcIacWAw==}
-    engines: {node: '>=16 <22'}
+  fast-jwt@4.0.1:
+    resolution: {integrity: sha512-+mdSoH0QdOdFSbbGBctJu7L1yfXRtbmjbVJ4W/PEjyvivobDena0RKwihtBkOML1P+kUJ1QuewnH8u+mROsR1w==}
+    engines: {node: '>=16'}
 
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
@@ -10191,7 +10191,7 @@ snapshots:
       json-schema-ref-resolver: 1.0.1
       rfdc: 1.3.1
 
-  fast-jwt@4.0.0:
+  fast-jwt@4.0.1:
     dependencies:
       '@lukeed/ms': 2.0.2
       asn1.js: 5.4.1
