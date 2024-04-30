@@ -78,7 +78,7 @@
 		"daisyui": "^4.9.0",
 		"del-cli": "^5.1.0",
 		"drizzle-kit": "^0.20.14",
-		"eslint": "^9.0.0",
+		"eslint": "^8.0.0",
 		"eslint-config-biome": "^1.5.3",
 		"eslint-plugin-drizzle": "^0.2.3",
 		"eslint-plugin-no-relative-import-paths": "^1.5.3",
@@ -99,7 +99,7 @@
 		"workbox-window": "^7.0.0"
 	},
 	"engines": {
-		"node": ">=21",
-		"pnpm": ">=8"
+		"node": ">=22",
+		"pnpm": ">=9"
 	}
 }
