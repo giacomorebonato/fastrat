@@ -10,6 +10,10 @@ const schema = z.object({
 	GOOGLE_CLIENT_ID: z.string().default('fake-client-id'),
 	GOOGLE_CLIENT_SECRET: z.string().default('fake-client-secret'),
 	HOST: z.string().default('0.0.0.0'),
+	HOST_NAMES_REDIRECT_FROM: z
+		.string()
+		.transform((text) => text.split(','))
+		.default(''),
 	NODE_ENV: z
 		.enum(['development', 'test', 'production'])
 		.default('development'),

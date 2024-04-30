@@ -8,6 +8,7 @@ primary_region = "ams"
 
 [env]
   HOST = "0.0.0.0"
+  HOST_NAMES_REDIRECT_FROM = "fastrat.fly.dev,fastrat.dev"
   SITE_URL = "https://www.fastrat.dev"
 
 [build]

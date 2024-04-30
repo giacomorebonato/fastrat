@@ -13,16 +13,11 @@ export async function createServer(
 ) {
 	const server = fastify(options)
 
-	server.addHook('onRequest', (request, reply, done) => {
-		request.log.info({ hostname: request.hostname })
-		if (['fastrat.fly.dev', 'fastrat.dev'].includes(request.hostname)) {
-			return reply.redirect(301, `https://www.fastrat.dev${request.url}`)
-		}
-
-		done()
-	})
-
 	await server
+		.register(import('./redirect-plugin'), {
+			hostNamesRedirectFrom: env.HOST_NAMES_REDIRECT_FROM,
+			hostNameRedirectTo: env.SITE_URL,
+		})
 		.register(import('./vite-plugin'))
 		.register(import('@fastify/cookie'), {
 			hook: 'onRequest',
