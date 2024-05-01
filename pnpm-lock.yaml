@@ -170,7 +170,7 @@ importers:
         version: 10.4.19(postcss@8.4.38)
       daisyui:
         specifier: ^4.9.0
-        version: 4.10.2(postcss@8.4.38)
+        version: 4.10.3(postcss@8.4.38)
       del-cli:
         specifier: ^5.1.0
         version: 5.1.0
@@ -3082,8 +3082,8 @@ packages:
     resolution: {integrity: sha512-MOqHvMWF9/9MX6nza0KgvFH4HpMU0EF5uUDXqX/BtxtU8NfB0QzRtJ8Oe/6SuS4kbhyzVJwjd97EA4PKrzJ8bw==}
     engines: {node: '>=0.12'}
 
-  daisyui@4.10.2:
-    resolution: {integrity: sha512-eCWS1W/JPyxW9IvlgW5m0R6rp9ZhRsBTW37rvEUthckkjsV04u8XipV519OoccSA46ixhSJa3q7XLI1WUFtRCA==}
+  daisyui@4.10.3:
+    resolution: {integrity: sha512-LuxUmktsfO8nk0MKbg8NAth0K199pL2FzPMqhy7PGKFQ9LWIDdYVnc4f60Ior1bvbyZcXoH6/hhU068UuHksjA==}
     engines: {node: '>=16.9.0'}
 
   data-uri-to-buffer@4.0.1:
@@ -9643,7 +9643,7 @@ snapshots:
       es5-ext: 0.10.64
       type: 2.7.2
 
-  daisyui@4.10.2(postcss@8.4.38):
+  daisyui@4.10.3(postcss@8.4.38):
     dependencies:
       css-selector-tokenizer: 0.8.0
       culori: 3.3.0
