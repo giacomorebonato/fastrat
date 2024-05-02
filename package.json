@@ -94,7 +94,7 @@
 		"typescript": "^5.4.3",
 		"vavite": "^4.1.1",
 		"vite": "^5.2.7",
-		"vite-plugin-pwa": "^0.19.7",
+		"vite-plugin-pwa": "^0.20.0",
 		"vitest": "^1.4.0",
 		"workbox-window": "^7.0.0"
 	},
