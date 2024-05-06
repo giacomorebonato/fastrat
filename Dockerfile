@@ -10,7 +10,7 @@ RUN pnpm i --frozen-lockfile --prod=false
 
 COPY . .
 
-RUN pnpm build
+RUN node --run build
 
 RUN rm -rf src
 
@@ -24,4 +24,4 @@ ENV NODE_ENV production
 
 EXPOSE 3000
 
-CMD ["pnpm", "start"]
+CMD ["node", "--run", "start"]
