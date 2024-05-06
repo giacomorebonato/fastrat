@@ -1,27 +1,19 @@
-FROM node:22 AS builder
+FROM node:22
 
 RUN npm i pnpm@9 -g
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
+COPY ./ ./
 
+ENV NODE_ENV development
 RUN pnpm i --frozen-lockfile --prod=false
-
-COPY . .
-
-RUN node --run build
-
+RUN pnpm build
+RUN pnpm prune --production --config.ignore-scripts=true
 RUN rm -rf src
-
-FROM node:22-alpine
-
-WORKDIR /app
-
-COPY --from=builder /app .
-
-ENV NODE_ENV production
 
 EXPOSE 3000
 
-CMD ["node", "--run", "start"]
+ENV NODE_ENV production
+
+CMD ["pnpm", "start"]
