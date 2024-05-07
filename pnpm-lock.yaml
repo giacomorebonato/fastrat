@@ -19,7 +19,7 @@ importers:
         version: 7.8.1
       '@fastify/static':
         specifier: ^7.0.2
-        version: 7.0.3
+        version: 7.0.4
       '@fastify/websocket':
         specifier: 10.0.1
         version: 10.0.1
@@ -1421,8 +1421,8 @@ packages:
   '@fastify/send@2.1.0':
     resolution: {integrity: sha512-yNYiY6sDkexoJR0D8IDy3aRP3+L4wdqCpvx5WP+VtEU58sn7USmKynBzDQex5X42Zzvw2gNzzYgP90UfWShLFA==}
 
-  '@fastify/static@7.0.3':
-    resolution: {integrity: sha512-2tmTdF+uFCykasutaO6k4/wOt7eXyi7m3dGuCPo5micXzv0qt6ttb/nWnDYL/BlXjYGfp1JI4a1gyluTIylvQA==}
+  '@fastify/static@7.0.4':
+    resolution: {integrity: sha512-p2uKtaf8BMOZWLs6wu+Ihg7bWNBdjNgCwDza4MJtTqg+5ovKmcbgbR9Xs5/smZ1YISfzKOCNYmZV8LaCj+eJ1Q==}
 
   '@fastify/websocket@10.0.1':
     resolution: {integrity: sha512-8/pQIxTPRD8U94aILTeJ+2O3el/r19+Ej5z1O1mXlqplsUH7KzCjAI0sgd5DM/NoPjAi5qLFNIjgM5+9/rGSNw==}
@@ -7725,7 +7725,7 @@ snapshots:
       http-errors: 2.0.0
       mime: 3.0.0
 
-  '@fastify/static@7.0.3':
+  '@fastify/static@7.0.4':
     dependencies:
       '@fastify/accept-negotiator': 1.1.0
       '@fastify/send': 2.1.0
