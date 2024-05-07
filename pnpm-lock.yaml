@@ -73,7 +73,7 @@ importers:
         version: 0.30.10(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/react@18.3.1)(react@18.3.1)
       drizzle-zod:
         specifier: ^0.5.1
-        version: 0.5.1(drizzle-orm@0.30.10(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/react@18.3.1)(react@18.3.1))(zod@3.23.6)
+        version: 0.5.1(drizzle-orm@0.30.10(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/react@18.3.1)(react@18.3.1))(zod@3.23.7)
       fast-jwt:
         specifier: ^4.0.0
         version: 4.0.1
@@ -115,7 +115,7 @@ importers:
         version: 5.1.1
       zod:
         specifier: ^3.22.4
-        version: 3.23.6
+        version: 3.23.7
     devDependencies:
       '@biomejs/biome':
         specifier: 1.7.3
@@ -6597,8 +6597,8 @@ packages:
     resolution: {integrity: sha512-LfOdrUvPB8ZoXtvOBz6DlNClfvi//b5d56mSWyJi7XbH/HfhOHfUhOqxhT/rUiR7yiktlunqRo+jY6y/cWC/5g==}
     engines: {node: '>= 12.0.0'}
 
-  zod@3.23.6:
-    resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
+  zod@3.23.7:
+    resolution: {integrity: sha512-NBeIoqbtOiUMomACV/y+V3Qfs9+Okr18vR5c/5pHClPpufWOrsx8TENboDPe265lFdfewX2yBtNTLPvnmCxwog==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -7771,10 +7771,10 @@ snapshots:
 
   '@hono/node-server@1.11.1': {}
 
-  '@hono/zod-validator@0.2.1(hono@4.3.2)(zod@3.23.6)':
+  '@hono/zod-validator@0.2.1(hono@4.3.2)(zod@3.23.7)':
     dependencies:
       hono: 4.3.2
-      zod: 3.23.6
+      zod: 3.23.7
 
   '@html-validate/stylish@4.2.0':
     dependencies:
@@ -8572,7 +8572,7 @@ snapshots:
   '@tanstack/router-generator@1.30.0':
     dependencies:
       prettier: 3.2.5
-      zod: 3.23.6
+      zod: 3.23.7
 
   '@tanstack/router-vite-plugin@1.31.18(vite@5.2.11(@types/node@20.12.10)(terser@5.31.0))':
     dependencies:
@@ -8591,7 +8591,7 @@ snapshots:
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.5
       '@vitejs/plugin-react': 4.2.1(vite@5.2.11(@types/node@20.12.10)(terser@5.31.0))
-      zod: 3.23.6
+      zod: 3.23.7
     transitivePeerDependencies:
       - supports-color
       - vite
@@ -9852,7 +9852,7 @@ snapshots:
     dependencies:
       '@esbuild-kit/esm-loader': 2.6.5
       '@hono/node-server': 1.11.1
-      '@hono/zod-validator': 0.2.1(hono@4.3.2)(zod@3.23.6)
+      '@hono/zod-validator': 0.2.1(hono@4.3.2)(zod@3.23.7)
       camelcase: 7.0.1
       chalk: 5.3.0
       commander: 9.5.0
@@ -9866,7 +9866,7 @@ snapshots:
       minimatch: 7.4.6
       semver: 7.6.0
       superjson: 2.2.1
-      zod: 3.23.6
+      zod: 3.23.7
     transitivePeerDependencies:
       - supports-color
 
@@ -9877,10 +9877,10 @@ snapshots:
       '@types/react': 18.3.1
       react: 18.3.1
 
-  drizzle-zod@0.5.1(drizzle-orm@0.30.10(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/react@18.3.1)(react@18.3.1))(zod@3.23.6):
+  drizzle-zod@0.5.1(drizzle-orm@0.30.10(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/react@18.3.1)(react@18.3.1))(zod@3.23.7):
     dependencies:
       drizzle-orm: 0.30.10(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/react@18.3.1)(react@18.3.1)
-      zod: 3.23.6
+      zod: 3.23.7
 
   dts-buddy@0.2.5:
     dependencies:
@@ -13475,7 +13475,7 @@ snapshots:
       unstorage: 1.10.2
       vite: 4.5.0(@types/node@20.12.10)(terser@5.31.0)
       ws: 8.17.0
-      zod: 3.23.6
+      zod: 3.23.7
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -13877,6 +13877,6 @@ snapshots:
       compress-commons: 5.0.3
       readable-stream: 3.6.2
 
-  zod@3.23.6: {}
+  zod@3.23.7: {}
 
   zwitch@2.0.4: {}
