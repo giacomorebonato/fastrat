@@ -182,7 +182,7 @@ importers:
         version: 8.57.0
       eslint-config-biome:
         specifier: ^1.5.3
-        version: 1.5.3
+        version: 1.7.3
       eslint-plugin-drizzle:
         specifier: ^0.2.3
         version: 0.2.3(eslint@8.57.0)
@@ -3539,8 +3539,8 @@ packages:
     resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
     engines: {node: '>=12'}
 
-  eslint-config-biome@1.5.3:
-    resolution: {integrity: sha512-BNw97cBpT/ZWoObBt5v5+NafSqKq6lek2LNd1yTKWObTKnu2dZKN4GWUM/1J9dOoqOX2oV3DWRW1JhnuqqSR5w==}
+  eslint-config-biome@1.7.3:
+    resolution: {integrity: sha512-HX8asstXGCOnTy8asvBhVesnkdvbX9OR6cRtE+vtDYokCzfy16OTzFpkGruYPcclUgSRs6VCDpR5ocJw3gpCXA==}
 
   eslint-plugin-drizzle@0.2.3:
     resolution: {integrity: sha512-BO+ymHo33IUNoJlC0rbd7HP9EwwpW4VIp49R/tWQF/d2E1K2kgTf0tCXT0v9MSiBr6gGR1LtPwMLapTKEWSg9A==}
@@ -10151,7 +10151,7 @@ snapshots:
 
   escape-string-regexp@5.0.0: {}
 
-  eslint-config-biome@1.5.3: {}
+  eslint-config-biome@1.7.3: {}
 
   eslint-plugin-drizzle@0.2.3(eslint@8.57.0):
     dependencies:
