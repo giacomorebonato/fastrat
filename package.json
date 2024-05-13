@@ -77,7 +77,7 @@
 		"autoprefixer": "^10.4.19",
 		"daisyui": "^4.9.0",
 		"del-cli": "^5.1.0",
-		"drizzle-kit": "^0.20.14",
+		"drizzle-kit": "^0.21.0",
 		"eslint": "^8.0.0",
 		"eslint-config-biome": "^1.5.3",
 		"eslint-plugin-drizzle": "^0.2.3",
