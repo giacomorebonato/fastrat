@@ -83,7 +83,6 @@
 		"eslint": "^9.0.0",
 		"eslint-config-biome": "^1.7.3",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-drizzle": "^0.2.3",
 		"eslint-plugin-no-relative-import-paths": "^1.5.4",
 		"eslint-plugin-react": "^7.34.1",
 		"globals": "^15.2.0",
