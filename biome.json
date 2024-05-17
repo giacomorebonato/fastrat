@@ -19,6 +19,17 @@
 			"jsxQuoteStyle": "single"
 		}
 	},
+	"overrides": [
+		{
+			"include": [".vscode/**"],
+			"json": {
+				"parser": {
+					"allowComments": true,
+					"allowTrailingCommas": true
+				}
+			}
+		}
+	],
 	"files": {
 		"ignore": [
 			"e2e/user.json",
