@@ -12,8 +12,7 @@
 		"e2e:ui": "CI=true playwright test --ui",
 		"format:check": "biome check . && eslint .",
 		"format": "biome check --apply-unsafe . && eslint --fix .",
-		"generate-pwa-assets": "pwa-assets-generator",
-		"prepare": "husky"
+		"generate-pwa-assets": "pwa-assets-generator"
 	},
 	"imports": {
 		"#/*": "./src/*"
@@ -60,6 +59,7 @@
 	"type": "module",
 	"devDependencies": {
 		"@biomejs/biome": "1.7.3",
+		"@eslint/compat": "^1.0.1",
 		"@mdx-js/rollup": "^3.0.1",
 		"@playwright/test": "^1.44.0",
 		"@tailwindcss/typography": "^0.5.13",
@@ -79,14 +79,16 @@
 		"daisyui": "^4.11.1",
 		"del-cli": "^5.1.0",
 		"drizzle-kit": "^0.21.2",
-		"eslint": "^8.0.0",
+		"eslint": "^9.0.0",
 		"eslint-config-biome": "^1.7.3",
+		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-drizzle": "^0.2.3",
 		"eslint-plugin-no-relative-import-paths": "^1.5.4",
 		"eslint-plugin-react": "^7.34.1",
+		"globals": "^15.2.0",
 		"happy-dom": "^14.11.0",
 		"html-validate": "^8.18.2",
-		"husky": "^9.0.11",
+		"lefthook": "^1.6.12",
 		"npm-run-all2": "^6.2.0",
 		"pino-pretty": "^11.0.0",
 		"postcss": "^8.4.38",
