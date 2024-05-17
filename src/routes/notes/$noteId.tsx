@@ -6,7 +6,7 @@ import { SideMenu } from '#/browser/side-menu'
 import { trpcClient } from '#/browser/trpc-client'
 import { NoteList } from '#/notes/note-list'
 import { NoteTextarea } from '#/notes/note-textarea'
-import { useNoteSubscriptions } from '#/notes/use-note-subscriptions'
+import { useNoteSubscriptions } from '../../notes/use-note-subscriptions'
 
 export const Route = createFileRoute('/notes/$noteId')({
 	parseParams: (params) => ({

@@ -9,7 +9,6 @@ import type { NoteSelect } from '#/db/note-table'
 export const NoteRow = ({ note }: { note: NoteSelect }) => {
 	const [isDeleting, setIsDeleting] = useState(false)
 
-	// eslint-disable-next-line drizzle/enforce-delete-with-where
 	const deleteNote = trpcClient.note.delete.useMutation({
 		onMutate() {
 			setIsDeleting(true)

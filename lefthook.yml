@@ -1,9 +1,0 @@
-pre-commit:
-  commands:
-    check:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: npx biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && npx eslint . --fix git update-index --again
-pre-push:
-  commands:
-    e2e:
-      run: node --run e2e
