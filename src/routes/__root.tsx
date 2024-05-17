@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
-import { DehydrateRouter } from '@tanstack/react-router-server/client'
+import { DehydrateRouter } from '@tanstack/start'
 import { HelmetProvider } from 'react-helmet-async'
 import type { HelmetServerState } from 'react-helmet-async'
 import { createLink, trpcClient } from '#/browser/trpc-client'

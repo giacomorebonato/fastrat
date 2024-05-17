@@ -1,8 +1,8 @@
 import Path from 'node:path'
 import Root from 'app-root-path'
-import type { Config } from 'drizzle-kit'
+import { defineConfig } from 'drizzle-kit'
 
-export default {
+export default defineConfig({
 	dbCredentials: {
 		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		url: process.env.TURSO_DB_URL!,
@@ -11,4 +11,5 @@ export default {
 	schema: Path.join(Root.path, 'src', 'db', 'schema.ts'),
 	driver: 'turso',
 	out: './migrations',
-} satisfies Config
+	dialect: 'sqlite',
+})
