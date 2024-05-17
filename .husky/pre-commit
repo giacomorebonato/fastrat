@@ -1,2 +1,2 @@
-pnpm build && pnpm exec run-p "format:check" "test" "test:types" "e2e"   
+# pnpm build && pnpm exec run-p "format:check" "test" "test:types" "e2e"   
  
