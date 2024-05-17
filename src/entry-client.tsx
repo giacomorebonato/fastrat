@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client'
 
 import { RouterProvider } from '@tanstack/react-router'
-import { StartClient } from '@tanstack/react-router-server/client'
+import { StartClient } from '@tanstack/start'
 import React from 'react'
 import { createRouter } from './browser/create-router'
 
