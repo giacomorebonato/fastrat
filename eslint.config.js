@@ -1,14 +1,12 @@
-import { fixupConfigRules } from '@eslint/compat'
+import { fixupConfigRules, fixupPluginRules } from '@eslint/compat'
 import eslintConfigBiome from 'eslint-config-biome'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths'
 import reactRecommended from 'eslint-plugin-react/configs/recommended.js'
-import valtio from 'eslint-plugin-valtio'
 import globals from 'globals'
 import { omit } from 'lodash-es'
 
 export default [
-	...fixupConfigRules(valtio.configs.recommended),
 	...fixupConfigRules(reactRecommended),
 	eslintConfigPrettier,
 	...fixupConfigRules(omit(eslintConfigBiome, 'extends')),
