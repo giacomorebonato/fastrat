@@ -79,7 +79,7 @@
 		"daisyui": "^4.11.1",
 		"del-cli": "^5.1.0",
 		"drizzle-kit": "^0.21.2",
-		"eslint": "^8.0.0",
+		"eslint": "^9.0.0",
 		"eslint-config-biome": "^1.7.3",
 		"eslint-plugin-drizzle": "^0.2.3",
 		"eslint-plugin-no-relative-import-paths": "^1.5.4",
