@@ -1,4 +1,4 @@
-FROM node:22
+FROM node:22 as build
 
 RUN npm i pnpm@9 -g
 
@@ -12,8 +12,12 @@ RUN pnpm build
 RUN pnpm prune --production --config.ignore-scripts=true
 RUN rm -rf src
 
+FROM node:22-alpine as run
+
+WORKDIR /app
+
+COPY --from=build /app .
+
 EXPOSE 3000
 
-ENV NODE_ENV production
-
-CMD ["pnpm", "start"]
+CMD ["node", "--run", "start"]
