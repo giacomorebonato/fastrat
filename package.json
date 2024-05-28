@@ -2,7 +2,7 @@
 	"scripts": {
 		"db:generate": "drizzle-kit generate:sqlite",
 		"dev": "vavite serve --port 3000 | pino-pretty",
-		"build": "pnpm clean && vavite build",
+		"build": "node --run clean && vavite build",
 		"clean": "del dist sqlite.db coverage playwright-report",
 		"start": "NODE_ENV=production node dist/server/index.js",
 		"test": "run-p test:**",
