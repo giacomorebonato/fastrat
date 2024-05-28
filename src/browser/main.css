@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.prose .link-hover:not(:hover) {
+  text-decoration: none;
+}
