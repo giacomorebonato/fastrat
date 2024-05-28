@@ -65,3 +65,5 @@ export function PwaReloadPrompt() {
 		</div>
 	)
 }
+
+export default PwaReloadPrompt

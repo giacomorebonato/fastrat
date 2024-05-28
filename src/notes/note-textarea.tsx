@@ -1,4 +1,4 @@
-import { debounce } from 'lodash'
+import debounce from 'debounce'
 import { useCallback, useState } from 'react'
 import { toast } from 'react-toastify'
 import { P, match } from 'ts-pattern'
