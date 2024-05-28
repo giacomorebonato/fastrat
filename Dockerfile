@@ -13,7 +13,7 @@ RUN pnpm prune --production --config.ignore-scripts=true
 RUN rm -rf src
 RUN rm -rf public
 
-FROM node:22-alpine as run
+FROM node:22 as run
 
 WORKDIR /app
 
