@@ -74,6 +74,13 @@ The markup in the `<head />` will be updated both on SSR and client side routing
 This starter kit uses [vite-plugin-pwa](https://vite-pwa-org.netlify.app) to provide the experience of an offline first web application.  
 Read more about [Progressive Web Apps](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps).
 
+To generate the assets required for the PWA you have to:
+
+* provide a `./public/logo.svg`
+* execute `node --run generate-pwa-assets`
+
+The assets will be generated in `./public` and they are referenced in `[index.html]('./index.html')`
+
 <h2 id='great-dx'>Great Developer Experience</h2>
 
 When using NextJS I like that with one command I have both my frontend and backend running and that I can share code between the two and import it in the same way.  
