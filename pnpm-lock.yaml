@@ -94,7 +94,7 @@ importers:
         version: 11.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       isbot:
         specifier: ^5.1.7
-        version: 5.1.7
+        version: 5.1.8
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -4204,8 +4204,8 @@ packages:
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
-  isbot@5.1.7:
-    resolution: {integrity: sha512-/U9wtTOhYcP1cnDUFKNalTSQHVD3y4ginXstBBQDRwDKTZ2liBb0IEnRu8X+RpX9VnNN/I3MNNgJvKnKQ5+CnA==}
+  isbot@5.1.8:
+    resolution: {integrity: sha512-Yv2uggFA7//8E9JcNEyjXweu3LD8cLAFEo3XyxAfTXn5TpHCa2XmZpEhfcwD4Bn0Ud9TmMQ9i+blQIy+KWq/iA==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -4342,6 +4342,7 @@ packages:
 
   libsql@0.3.18:
     resolution: {integrity: sha512-lvhKr7WV3NLWRbXkjn/MeKqXOAqWKU0PX9QYrvDh7fneukapj+iUQ4qgJASrQyxcCrEsClXCQiiK5W6OoYPAlA==}
+    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   light-my-request@5.13.0:
@@ -8391,7 +8392,7 @@ snapshots:
       '@vinxi/server-components': 0.3.3(vinxi@0.3.11(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/node@20.12.12)(drizzle-orm@0.30.10(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.0))
       '@vinxi/server-functions': 0.3.2(vinxi@0.3.11(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/node@20.12.12)(drizzle-orm@0.30.10(@libsql/client@0.6.0)(@opentelemetry/api@1.8.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(terser@5.31.0))
       import-meta-resolve: 4.1.0
-      isbot: 5.1.7
+      isbot: 5.1.8
       jsesc: 3.0.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -10688,7 +10689,7 @@ snapshots:
 
   isarray@2.0.5: {}
 
-  isbot@5.1.7: {}
+  isbot@5.1.8: {}
 
   isexe@2.0.0: {}
 
