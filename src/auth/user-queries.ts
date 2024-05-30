@@ -2,7 +2,10 @@ import Crypto from 'node:crypto'
 import { db } from '#/db/db'
 import { userTable } from '#/db/user-table'
 
-export const upsertUser = async (user: { email: string }) => {
+export const upsertUser = async (user: { email: string }): Promise<{
+	id: string
+	email: string | null
+}> => {
 	const dbUsers = await db
 		.insert(userTable)
 		.values({
@@ -21,5 +24,9 @@ export const upsertUser = async (user: { email: string }) => {
 		})
 	const dbUser = dbUsers[0]
 
-	return dbUser
+	if (dbUser) {
+		return dbUser
+	}
+
+	throw Error(`user not created`)
 }

@@ -15,12 +15,14 @@ export function NoteList({ notes }: { notes?: NoteRecord[] }) {
 			toast(error.message)
 		},
 		onSuccess(data) {
-			navigate({
-				to: `/notes/$noteId`,
-				params: {
-					noteId: data.id,
-				},
-			})
+			if (data) {
+				navigate({
+					to: `/notes/$noteId`,
+					params: {
+						noteId: data.id,
+					},
+				})
+			}
 		},
 	})
 

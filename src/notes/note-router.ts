@@ -117,7 +117,11 @@ export const noteRouter = router({
 				})
 				.all()
 
-			noteEmitter.emit('onUpsert', notes[0])
+			const note = notes[0]
+
+			if (note) {
+				noteEmitter.emit('onUpsert', note)
+			}
 
 			return notes[0]
 		}),
