@@ -176,7 +176,7 @@ importers:
         version: 14.12.0
       html-validate:
         specifier: ^8.19.1
-        version: 8.20.0(vitest@1.6.0(@types/node@20.14.2)(happy-dom@14.12.0)(terser@5.31.1))
+        version: 8.20.1(vitest@1.6.0(@types/node@20.14.2)(happy-dom@14.12.0)(terser@5.31.1))
       husky:
         specifier: ^9.0.11
         version: 9.0.11
@@ -3900,8 +3900,8 @@ packages:
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
-  html-validate@8.20.0:
-    resolution: {integrity: sha512-8tzr5b72BfUK/zBsfVN/1qrECfdATs12+3Q5jxUf24tDUquw3tHRW3QWoz9BBmeXKvDVmvuLrBk+Ad1u/i18EA==}
+  html-validate@8.20.1:
+    resolution: {integrity: sha512-EawDiHzvZtnbBIfxE90lvKOWqNsmZGqRXTy+utxlGo525Vqjowg+RK42q1AeJ6zm1AyVTFIDSah1eBe9tc6YHg==}
     engines: {node: '>= 16.14'}
     hasBin: true
     peerDependencies:
@@ -10500,7 +10500,7 @@ snapshots:
 
   html-escaper@2.0.2: {}
 
-  html-validate@8.20.0(vitest@1.6.0(@types/node@20.14.2)(happy-dom@14.12.0)(terser@5.31.1)):
+  html-validate@8.20.1(vitest@1.6.0(@types/node@20.14.2)(happy-dom@14.12.0)(terser@5.31.1)):
     dependencies:
       '@babel/code-frame': 7.24.7
       '@html-validate/stylish': 4.2.0
