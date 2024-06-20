@@ -155,7 +155,7 @@ importers:
         version: 4.3.1(vite@5.3.1(@types/node@20.14.6)(terser@5.31.1))
       '@vitest/coverage-v8':
         specifier: ^1.6.0
-        version: 1.6.0(vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.0)(terser@5.31.1))
+        version: 1.6.0(vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.3)(terser@5.31.1))
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.38)
@@ -173,10 +173,10 @@ importers:
         version: 15.6.0
       happy-dom:
         specifier: ^14.11.2
-        version: 14.12.0
+        version: 14.12.3
       html-validate:
         specifier: ^8.19.1
-        version: 8.20.1(vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.0)(terser@5.31.1))
+        version: 8.20.1(vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.3)(terser@5.31.1))
       husky:
         specifier: ^9.0.11
         version: 9.0.11
@@ -212,7 +212,7 @@ importers:
         version: 0.20.0(@vite-pwa/assets-generator@0.2.4)(vite@5.3.1(@types/node@20.14.6)(terser@5.31.1))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0)
       vitest:
         specifier: ^1.6.0
-        version: 1.6.0(@types/node@20.14.6)(happy-dom@14.12.0)(terser@5.31.1)
+        version: 1.6.0(@types/node@20.14.6)(happy-dom@14.12.3)(terser@5.31.1)
       workbox-window:
         specifier: ^7.1.0
         version: 7.1.0
@@ -3972,8 +3972,8 @@ packages:
   hanji@0.0.5:
     resolution: {integrity: sha512-Abxw1Lq+TnYiL4BueXqMau222fPSPMFtya8HdpWsz/xVAhifXou71mPh/kY2+08RgFcVccjG3uZHs6K5HAe3zw==}
 
-  happy-dom@14.12.0:
-    resolution: {integrity: sha512-dHcnlGFY2o2CdxfuYpqwSrBrpj/Kuzv4u4f3TU5yHW1GL24dKij4pv1BRjXnXc3uWo8qsCbToF9weaDsm/He8A==}
+  happy-dom@14.12.3:
+    resolution: {integrity: sha512-vsYlEs3E9gLwA1Hp+w3qzu+RUDFf4VTT8cyKqVICoZ2k7WM++Qyd2LwzyTi5bqMJFiIC/vNpTDYuxdreENRK/g==}
     engines: {node: '>=16.0.0'}
 
   hard-rejection@2.1.0:
@@ -9014,7 +9014,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.0)(terser@5.31.1))':
+  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.3)(terser@5.31.1))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -9029,7 +9029,7 @@ snapshots:
       std-env: 3.7.0
       strip-literal: 2.1.0
       test-exclude: 6.0.0
-      vitest: 1.6.0(@types/node@20.14.6)(happy-dom@14.12.0)(terser@5.31.1)
+      vitest: 1.6.0(@types/node@20.14.6)(happy-dom@14.12.3)(terser@5.31.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -10652,7 +10652,7 @@ snapshots:
       lodash.throttle: 4.1.1
       sisteransi: 1.0.5
 
-  happy-dom@14.12.0:
+  happy-dom@14.12.3:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -10749,7 +10749,7 @@ snapshots:
 
   html-escaper@2.0.2: {}
 
-  html-validate@8.20.1(vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.0)(terser@5.31.1)):
+  html-validate@8.20.1(vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.3)(terser@5.31.1)):
     dependencies:
       '@babel/code-frame': 7.24.7
       '@html-validate/stylish': 4.2.0
@@ -10763,7 +10763,7 @@ snapshots:
       prompts: 2.4.2
       semver: 7.6.2
     optionalDependencies:
-      vitest: 1.6.0(@types/node@20.14.6)(happy-dom@14.12.0)(terser@5.31.1)
+      vitest: 1.6.0(@types/node@20.14.6)(happy-dom@14.12.3)(terser@5.31.1)
 
   http-errors@2.0.0:
     dependencies:
@@ -13674,7 +13674,7 @@ snapshots:
     optionalDependencies:
       vite: 4.5.0(@types/node@20.14.6)(terser@5.31.1)
 
-  vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.0)(terser@5.31.1):
+  vitest@1.6.0(@types/node@20.14.6)(happy-dom@14.12.3)(terser@5.31.1):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -13698,7 +13698,7 @@ snapshots:
       why-is-node-running: 2.2.2
     optionalDependencies:
       '@types/node': 20.14.6
-      happy-dom: 14.12.0
+      happy-dom: 14.12.3
     transitivePeerDependencies:
       - less
       - lightningcss
