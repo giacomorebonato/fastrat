@@ -42,7 +42,7 @@
 		"clsx": "^2.1.1",
 		"debounce": "^2.1.0",
 		"dotenv": "^16.4.5",
-		"drizzle-orm": "^0.30.10",
+		"drizzle-orm": "^0.32.0",
 		"drizzle-zod": "^0.5.1",
 		"fast-jwt": "^4.0.1",
 		"fastify": "4.28.1",
