@@ -1,8 +1,10 @@
 import { createRouter as createTanstackRouter } from '@tanstack/react-router'
+import { SuperJSON } from 'superjson'
 import { routeTree } from '#/route-tree.gen'
 
 export function createRouter() {
 	return createTanstackRouter({
+		transformer: SuperJSON,
 		routeTree,
 		context: {
 			helmetContext: {},
