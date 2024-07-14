@@ -69,3 +69,27 @@ export const routeTree = rootRoute.addChildren({
 })
 
 /* prettier-ignore-end */
+
+/* ROUTE_MANIFEST_START
+{
+  "routes": {
+    "__root__": {
+      "filePath": "__root.tsx",
+      "children": [
+        "/",
+        "/notes/$noteId",
+        "/notes/"
+      ]
+    },
+    "/": {
+      "filePath": "index.tsx"
+    },
+    "/notes/$noteId": {
+      "filePath": "notes/$noteId.tsx"
+    },
+    "/notes/": {
+      "filePath": "notes/index.tsx"
+    }
+  }
+}
+ROUTE_MANIFEST_END */
