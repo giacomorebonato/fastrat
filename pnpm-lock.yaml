@@ -43,16 +43,16 @@ importers:
         version: 1.45.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router-server':
         specifier: ^1.31.24
-        version: 1.31.24(@types/node@20.14.11)(ioredis@5.4.1)(magicast@0.3.4)(preact@10.22.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.19.0)(terser@5.31.3)
+        version: 1.31.24(@types/node@20.14.12)(ioredis@5.4.1)(magicast@0.3.4)(preact@10.22.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.19.0)(terser@5.31.3)
       '@tanstack/router-devtools':
         specifier: ^1.45.1
         version: 1.45.8(@tanstack/react-router@1.45.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-vite-plugin':
         specifier: ^1.45.0
-        version: 1.45.8(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+        version: 1.45.8(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
       '@tanstack/start':
         specifier: 1.45.8
-        version: 1.45.8(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+        version: 1.45.8(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.466(@trpc/server@11.0.0-rc.466)
@@ -137,7 +137,7 @@ importers:
         version: 2.0.13
       '@types/node':
         specifier: ^20.14.10
-        version: 20.14.11
+        version: 20.14.12
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -152,10 +152,10 @@ importers:
         version: 0.2.4
       '@vitejs/plugin-react':
         specifier: ^4.3.1
-        version: 4.3.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+        version: 4.3.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
       '@vitest/coverage-v8':
         specifier: ^2.0.2
-        version: 2.0.4(vitest@2.0.4(@types/node@20.14.11)(happy-dom@14.12.3)(terser@5.31.3))
+        version: 2.0.4(vitest@2.0.4(@types/node@20.14.12)(happy-dom@14.12.3)(terser@5.31.3))
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.39)
@@ -176,7 +176,7 @@ importers:
         version: 14.12.3
       html-validate:
         specifier: ^8.20.1
-        version: 8.21.0(vitest@2.0.4(@types/node@20.14.11)(happy-dom@14.12.3)(terser@5.31.3))
+        version: 8.21.0(vitest@2.0.4(@types/node@20.14.12)(happy-dom@14.12.3)(terser@5.31.3))
       husky:
         specifier: ^9.0.11
         version: 9.1.1
@@ -203,16 +203,16 @@ importers:
         version: 5.5.4
       vavite:
         specifier: ^4.1.1
-        version: 4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+        version: 4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
       vite:
         specifier: ^5.3.3
-        version: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+        version: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
       vite-plugin-pwa:
         specifier: ^0.20.0
-        version: 0.20.0(@vite-pwa/assets-generator@0.2.4)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0)
+        version: 0.20.0(@vite-pwa/assets-generator@0.2.4)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0)
       vitest:
         specifier: ^2.0.2
-        version: 2.0.4(@types/node@20.14.11)(happy-dom@14.12.3)(terser@5.31.3)
+        version: 2.0.4(@types/node@20.14.12)(happy-dom@14.12.3)(terser@5.31.3)
       workbox-window:
         specifier: ^7.1.0
         version: 7.1.0
@@ -2337,8 +2337,8 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
-  '@types/node@20.14.11':
-    resolution: {integrity: sha512-kprQpL8MMeszbz6ojB5/tU8PLN4kesnN8Gjzw349rDlNgsSzg90lAVj3llK99Dh7JON+t9AuscPPFW6mPbTnSA==}
+  '@types/node@20.14.12':
+    resolution: {integrity: sha512-r7wNXakLeSsGT0H1AU863vS2wa5wBOK4bWMjZz2wj+8nBx+m5PeIn0k8AloSLpRuiwdRQZwarZqHE4FNArPuJQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -8067,13 +8067,13 @@ snapshots:
 
   '@polka/url@1.0.0-next.25': {}
 
-  '@preact/preset-vite@2.9.0(@babel/core@7.24.9)(preact@10.22.1)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3))':
+  '@preact/preset-vite@2.9.0(@babel/core@7.24.9)(preact@10.22.1)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
       '@babel/code-frame': 7.24.7
       '@babel/core': 7.24.9
       '@babel/plugin-transform-react-jsx': 7.24.7(@babel/core@7.24.9)
       '@babel/plugin-transform-react-jsx-development': 7.24.7(@babel/core@7.24.9)
-      '@prefresh/vite': 2.4.6(preact@10.22.1)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3))
+      '@prefresh/vite': 2.4.6(preact@10.22.1)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3))
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.24.9)
       debug: 4.3.5
@@ -8083,7 +8083,7 @@ snapshots:
       resolve: 1.22.8
       source-map: 0.7.4
       stack-trace: 1.0.0-pre2
-      vite: 4.5.0(@types/node@20.14.11)(terser@5.31.3)
+      vite: 4.5.0(@types/node@20.14.12)(terser@5.31.3)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -8096,7 +8096,7 @@ snapshots:
 
   '@prefresh/utils@1.2.0': {}
 
-  '@prefresh/vite@2.4.6(preact@10.22.1)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3))':
+  '@prefresh/vite@2.4.6(preact@10.22.1)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
       '@babel/core': 7.24.9
       '@prefresh/babel-plugin': 0.5.1
@@ -8104,7 +8104,7 @@ snapshots:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.22.1
-      vite: 4.5.0(@types/node@20.14.11)(terser@5.31.3)
+      vite: 4.5.0(@types/node@20.14.12)(terser@5.31.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -8347,7 +8347,7 @@ snapshots:
       '@tanstack/query-core': 5.51.9
       react: 18.3.1
 
-  '@tanstack/react-router-server@1.31.24(@types/node@20.14.11)(ioredis@5.4.1)(magicast@0.3.4)(preact@10.22.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.19.0)(terser@5.31.3)':
+  '@tanstack/react-router-server@1.31.24(@types/node@20.14.12)(ioredis@5.4.1)(magicast@0.3.4)(preact@10.22.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.19.0)(terser@5.31.3)':
     dependencies:
       '@tanstack/react-cross-context': 1.26.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router': 1.31.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8356,7 +8356,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tiny-invariant: 1.3.3
-      vinxi: 0.2.1(@types/node@20.14.11)(ioredis@5.4.1)(magicast@0.3.4)(preact@10.22.1)(rollup@4.19.0)(terser@5.31.3)
+      vinxi: 0.2.1(@types/node@20.14.12)(ioredis@5.4.1)(magicast@0.3.4)(preact@10.22.1)(rollup@4.19.0)(terser@5.31.3)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -8438,7 +8438,7 @@ snapshots:
       prettier: 3.3.3
       zod: 3.23.8
 
-  '@tanstack/router-plugin@1.45.8(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@tanstack/router-plugin@1.45.8(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
       '@babel/core': 7.24.9
       '@babel/generator': 7.24.10
@@ -8458,13 +8458,13 @@ snapshots:
       unplugin: 1.11.0
       zod: 3.23.8
     optionalDependencies:
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/router-vite-plugin@1.45.8(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@tanstack/router-vite-plugin@1.45.8(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
-      '@tanstack/router-plugin': 1.45.8(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+      '@tanstack/router-plugin': 1.45.8(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
     transitivePeerDependencies:
       - '@rsbuild/core'
       - supports-color
@@ -8488,26 +8488,26 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.45.8(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@tanstack/start@1.45.8(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
       '@tanstack/react-cross-context': 1.44.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router': 1.45.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-generator': 1.45.7
-      '@tanstack/router-plugin': 1.45.8(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+      '@tanstack/router-plugin': 1.45.8(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
       '@tanstack/start-vite-plugin': 1.45.8
       '@types/jsesc': 3.0.3
       '@vinxi/react': 0.2.3
-      '@vinxi/react-server-dom': 0.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
-      '@vinxi/server-components': 0.3.3(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
-      '@vinxi/server-functions': 0.3.3(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
+      '@vinxi/react-server-dom': 0.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
+      '@vinxi/server-components': 0.3.3(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
+      '@vinxi/server-functions': 0.3.3(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
       import-meta-resolve: 4.1.0
       isbot: 5.1.13
       jsesc: 3.0.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tiny-invariant: 1.3.3
-      vinxi: 0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
-      vite-tsconfig-paths: 4.3.2(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+      vinxi: 0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
+      vite-tsconfig-paths: 4.3.2(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
       zod: 3.23.8
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -8609,7 +8609,7 @@ snapshots:
 
   '@types/http-proxy@1.17.14':
     dependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.14.12
 
   '@types/jsesc@3.0.3': {}
 
@@ -8629,7 +8629,7 @@ snapshots:
 
   '@types/ms@0.7.34': {}
 
-  '@types/node@20.14.11':
+  '@types/node@20.14.12':
     dependencies:
       undici-types: 5.26.5
 
@@ -8655,12 +8655,12 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.14.11
+      '@types/node': 20.14.12
 
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.14.11
+      '@types/node': 20.14.12
       '@types/send': 0.17.4
 
   '@types/trusted-types@2.0.7': {}
@@ -8671,41 +8671,41 @@ snapshots:
 
   '@types/ws@8.5.11':
     dependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.14.12
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vavite/connect@4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@vavite/connect@4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
-      '@types/node': 20.14.11
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      '@types/node': 20.14.12
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
 
-  '@vavite/expose-vite-dev-server@4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@vavite/expose-vite-dev-server@4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
 
-  '@vavite/multibuild-cli@4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@vavite/multibuild-cli@4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
-      '@types/node': 20.14.11
-      '@vavite/multibuild': 4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+      '@types/node': 20.14.12
+      '@vavite/multibuild': 4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
       cac: 6.7.14
       picocolors: 1.0.1
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
 
-  '@vavite/multibuild@4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@vavite/multibuild@4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.14.12
       cac: 6.7.14
       picocolors: 1.0.1
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
 
-  '@vavite/node-loader@4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@vavite/node-loader@4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
 
-  '@vavite/reloader@4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@vavite/reloader@4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
 
   '@vercel/nft@0.24.4':
     dependencies:
@@ -8742,14 +8742,14 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vinxi/devtools@0.2.0(@babel/core@7.24.9)(preact@10.22.1)(rollup@4.19.0)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3))':
+  '@vinxi/devtools@0.2.0(@babel/core@7.24.9)(preact@10.22.1)(rollup@4.19.0)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
-      '@preact/preset-vite': 2.9.0(@babel/core@7.24.9)(preact@10.22.1)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3))
+      '@preact/preset-vite': 2.9.0(@babel/core@7.24.9)(preact@10.22.1)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3))
       '@solidjs/router': 0.8.4(solid-js@1.8.18)
       birpc: 0.2.17
       solid-js: 1.8.18
-      vite-plugin-inspect: 0.7.42(rollup@4.19.0)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3))
-      vite-plugin-solid: 2.10.2(solid-js@1.8.18)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3))
+      vite-plugin-inspect: 0.7.42(rollup@4.19.0)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3))
+      vite-plugin-solid: 2.10.2(solid-js@1.8.18)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3))
       ws: 8.18.0
     transitivePeerDependencies:
       - '@babel/core'
@@ -8782,7 +8782,7 @@ snapshots:
       untun: 0.1.3
       uqr: 0.1.2
 
-  '@vinxi/plugin-directives@0.3.1(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
+  '@vinxi/plugin-directives@0.3.1(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
     dependencies:
       '@babel/parser': 7.24.8
       acorn: 8.12.1
@@ -8793,38 +8793,38 @@ snapshots:
       magicast: 0.2.11
       recast: 0.23.9
       tslib: 2.6.3
-      vinxi: 0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
+      vinxi: 0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
 
-  '@vinxi/react-server-dom@0.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@vinxi/react-server-dom@0.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
       acorn-loose: 8.4.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
 
   '@vinxi/react@0.2.3': {}
 
-  '@vinxi/server-components@0.3.3(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
+  '@vinxi/server-components@0.3.3(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
     dependencies:
-      '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
+      '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
+      vinxi: 0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
 
-  '@vinxi/server-functions@0.3.3(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
+  '@vinxi/server-functions@0.3.3(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
     dependencies:
-      '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
+      '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
+      vinxi: 0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
 
   '@vite-pwa/assets-generator@0.2.4':
     dependencies:
@@ -8835,18 +8835,18 @@ snapshots:
       sharp-ico: 0.1.5
       unconfig: 0.3.13
 
-  '@vitejs/plugin-react@4.3.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))':
+  '@vitejs/plugin-react@4.3.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))':
     dependencies:
       '@babel/core': 7.24.9
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.24.9)
       '@babel/plugin-transform-react-jsx-source': 7.24.7(@babel/core@7.24.9)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@2.0.4(vitest@2.0.4(@types/node@20.14.11)(happy-dom@14.12.3)(terser@5.31.3))':
+  '@vitest/coverage-v8@2.0.4(vitest@2.0.4(@types/node@20.14.12)(happy-dom@14.12.3)(terser@5.31.3))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -8860,7 +8860,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.0.4(@types/node@20.14.11)(happy-dom@14.12.3)(terser@5.31.3)
+      vitest: 2.0.4(@types/node@20.14.12)(happy-dom@14.12.3)(terser@5.31.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -10513,7 +10513,7 @@ snapshots:
 
   html-escaper@2.0.2: {}
 
-  html-validate@8.21.0(vitest@2.0.4(@types/node@20.14.11)(happy-dom@14.12.3)(terser@5.31.3)):
+  html-validate@8.21.0(vitest@2.0.4(@types/node@20.14.12)(happy-dom@14.12.3)(terser@5.31.3)):
     dependencies:
       '@babel/code-frame': 7.24.7
       '@html-validate/stylish': 4.2.0
@@ -10527,7 +10527,7 @@ snapshots:
       prompts: 2.4.2
       semver: 7.6.3
     optionalDependencies:
-      vitest: 2.0.4(@types/node@20.14.11)(happy-dom@14.12.3)(terser@5.31.3)
+      vitest: 2.0.4(@types/node@20.14.12)(happy-dom@14.12.3)(terser@5.31.3)
 
   http-errors@2.0.0:
     dependencies:
@@ -13124,17 +13124,17 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vavite@4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3)):
+  vavite@4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3)):
     dependencies:
-      '@vavite/connect': 4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
-      '@vavite/expose-vite-dev-server': 4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
-      '@vavite/multibuild': 4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
-      '@vavite/multibuild-cli': 4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
-      '@vavite/node-loader': 4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
-      '@vavite/reloader': 4.1.1(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+      '@vavite/connect': 4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
+      '@vavite/expose-vite-dev-server': 4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
+      '@vavite/multibuild': 4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
+      '@vavite/multibuild-cli': 4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
+      '@vavite/node-loader': 4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
+      '@vavite/reloader': 4.1.1(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))
       cac: 6.7.14
       picocolors: 1.0.1
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
 
   vfile-message@4.0.2:
     dependencies:
@@ -13147,7 +13147,7 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vinxi@0.2.1(@types/node@20.14.11)(ioredis@5.4.1)(magicast@0.3.4)(preact@10.22.1)(rollup@4.19.0)(terser@5.31.3):
+  vinxi@0.2.1(@types/node@20.14.12)(ioredis@5.4.1)(magicast@0.3.4)(preact@10.22.1)(rollup@4.19.0)(terser@5.31.3):
     dependencies:
       '@babel/core': 7.24.9
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.24.9)
@@ -13155,7 +13155,7 @@ snapshots:
       '@types/micromatch': 4.0.9
       '@types/serve-static': 1.15.7
       '@types/ws': 8.5.11
-      '@vinxi/devtools': 0.2.0(@babel/core@7.24.9)(preact@10.22.1)(rollup@4.19.0)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3))
+      '@vinxi/devtools': 0.2.0(@babel/core@7.24.9)(preact@10.22.1)(rollup@4.19.0)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3))
       '@vinxi/listhen': 1.5.6
       boxen: 7.1.1
       c12: 1.11.1(magicast@0.3.4)
@@ -13191,7 +13191,7 @@ snapshots:
       unenv: 1.10.0
       unimport: 3.9.0(rollup@4.19.0)
       unstorage: 1.10.2(ioredis@5.4.1)
-      vite: 4.5.0(@types/node@20.14.11)(terser@5.31.3)
+      vite: 4.5.0(@types/node@20.14.12)(terser@5.31.3)
       ws: 8.18.0
       zod: 3.23.8
     transitivePeerDependencies:
@@ -13228,7 +13228,7 @@ snapshots:
       - utf-8-validate
       - xml2js
 
-  vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.11)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3):
+  vinxi@0.3.12(@libsql/client@0.7.0)(@types/node@20.14.12)(drizzle-orm@0.32.0(@libsql/client@0.7.0)(@types/react@18.3.3)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3):
     dependencies:
       '@babel/core': 7.24.9
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.24.9)
@@ -13262,7 +13262,7 @@ snapshots:
       unctx: 2.3.1
       unenv: 1.10.0
       unstorage: 1.10.2(ioredis@5.4.1)
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
       zod: 3.23.8
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -13295,13 +13295,13 @@ snapshots:
       - uWebSockets.js
       - xml2js
 
-  vite-node@2.0.4(@types/node@20.14.11)(terser@5.31.3):
+  vite-node@2.0.4(@types/node@20.14.12)(terser@5.31.3):
     dependencies:
       cac: 6.7.14
       debug: 4.3.5
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -13312,7 +13312,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-inspect@0.7.42(rollup@4.19.0)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3)):
+  vite-plugin-inspect@0.7.42(rollup@4.19.0)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3)):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.0(rollup@4.19.0)
@@ -13322,17 +13322,17 @@ snapshots:
       open: 9.1.0
       picocolors: 1.0.1
       sirv: 2.0.4
-      vite: 4.5.0(@types/node@20.14.11)(terser@5.31.3)
+      vite: 4.5.0(@types/node@20.14.12)(terser@5.31.3)
     transitivePeerDependencies:
       - rollup
       - supports-color
 
-  vite-plugin-pwa@0.20.0(@vite-pwa/assets-generator@0.2.4)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0):
+  vite-plugin-pwa@0.20.0(@vite-pwa/assets-generator@0.2.4)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0):
     dependencies:
       debug: 4.3.5
       fast-glob: 3.3.2
       pretty-bytes: 6.1.1
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
       workbox-build: 7.1.1(@types/babel__core@7.20.5)
       workbox-window: 7.1.0
     optionalDependencies:
@@ -13340,7 +13340,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-solid@2.10.2(solid-js@1.8.18)(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3)):
+  vite-plugin-solid@2.10.2(solid-js@1.8.18)(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3)):
     dependencies:
       '@babel/core': 7.24.9
       '@types/babel__core': 7.20.5
@@ -13348,47 +13348,47 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.8.18
       solid-refresh: 0.6.3(solid-js@1.8.18)
-      vite: 4.5.0(@types/node@20.14.11)(terser@5.31.3)
-      vitefu: 0.2.5(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3))
+      vite: 4.5.0(@types/node@20.14.12)(terser@5.31.3)
+      vitefu: 0.2.5(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3))
     transitivePeerDependencies:
       - supports-color
 
-  vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3)):
+  vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.12)(terser@5.31.3)):
     dependencies:
       debug: 4.3.5
       globrex: 0.1.2
       tsconfck: 3.1.1(typescript@5.5.4)
     optionalDependencies:
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@4.5.0(@types/node@20.14.11)(terser@5.31.3):
+  vite@4.5.0(@types/node@20.14.12)(terser@5.31.3):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.4.39
       rollup: 3.29.4
     optionalDependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.14.12
       fsevents: 2.3.3
       terser: 5.31.3
 
-  vite@5.3.4(@types/node@20.14.11)(terser@5.31.3):
+  vite@5.3.4(@types/node@20.14.12)(terser@5.31.3):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.39
       rollup: 4.19.0
     optionalDependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.14.12
       fsevents: 2.3.3
       terser: 5.31.3
 
-  vitefu@0.2.5(vite@4.5.0(@types/node@20.14.11)(terser@5.31.3)):
+  vitefu@0.2.5(vite@4.5.0(@types/node@20.14.12)(terser@5.31.3)):
     optionalDependencies:
-      vite: 4.5.0(@types/node@20.14.11)(terser@5.31.3)
+      vite: 4.5.0(@types/node@20.14.12)(terser@5.31.3)
 
-  vitest@2.0.4(@types/node@20.14.11)(happy-dom@14.12.3)(terser@5.31.3):
+  vitest@2.0.4(@types/node@20.14.12)(happy-dom@14.12.3)(terser@5.31.3):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.4
@@ -13406,11 +13406,11 @@ snapshots:
       tinybench: 2.8.0
       tinypool: 1.0.0
       tinyrainbow: 1.2.0
-      vite: 5.3.4(@types/node@20.14.11)(terser@5.31.3)
-      vite-node: 2.0.4(@types/node@20.14.11)(terser@5.31.3)
+      vite: 5.3.4(@types/node@20.14.12)(terser@5.31.3)
+      vite-node: 2.0.4(@types/node@20.14.12)(terser@5.31.3)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 20.14.11
+      '@types/node': 20.14.12
       happy-dom: 14.12.3
     transitivePeerDependencies:
       - less
