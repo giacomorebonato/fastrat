@@ -8,8 +8,10 @@ export const userTable = sqliteTable('user', {
 	email: text('email').unique(),
 	id: text('id').notNull().primaryKey(),
 	lastLoginAt: integer('updated_at', { mode: 'timestamp' }),
+	nickname: text('nickname'),
 	updatedAt: integer('updated_at', { mode: 'timestamp' }),
 })
 
+export type UserSchema = typeof userTable.$inferSelect
 export const insertUserSchema = createInsertSchema(userTable)
 export const selectUserSchema = createSelectSchema(userTable)

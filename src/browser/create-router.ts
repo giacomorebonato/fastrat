@@ -1,12 +1,18 @@
 import { createRouter as createTanstackRouter } from '@tanstack/react-router'
 import { SuperJSON } from 'superjson'
+import type { Queries } from '#/db/build-queries'
 import { routeTree } from '#/route-tree.gen'
 
-export function createRouter() {
+export function createRouter(
+	params: {
+		queries?: Queries
+	} = {},
+) {
 	return createTanstackRouter({
 		transformer: SuperJSON,
 		routeTree,
 		context: {
+			queries: params.queries,
 			helmetContext: {},
 			redirect: {},
 		},

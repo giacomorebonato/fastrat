@@ -21,8 +21,7 @@ const schema = z.object({
 	SECRET: z.string().default('a-good-repository-secret'),
 	SITE_URL: z.string().default('http://localhost:3000'),
 	TEST_EMAIL: z.string().default('fastrat@email.com'),
-	TURSO_DB_AUTH_TOKEN: z.optional(z.string()),
-	TURSO_DB_URL: z.string().default('file:local.db'),
+	DATABASE_URL: z.string().default('local.db'),
 })
 
 export const env = schema.parse(process.env)

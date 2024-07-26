@@ -8,12 +8,10 @@ import { useNoteSubscriptions } from '#/notes/use-note-subscriptions'
 
 export const Route = createFileRoute('/notes/')({
 	component: IndexComponent,
-	async loader() {
-		if (import.meta.env.SSR) {
-			const { getNotes } = await import('#/notes/note-queries')
-
+	async loader({ context }) {
+		if (context.queries) {
 			return {
-				notes: await getNotes(),
+				notes: context.queries.note.list(),
 			}
 		}
 	},
