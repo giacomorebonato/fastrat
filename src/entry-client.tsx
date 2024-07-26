@@ -18,8 +18,6 @@ if (divRoot.innerHTML === '<!--app-html-->') {
 		</React.StrictMode>,
 	)
 } else {
-	router.hydrate()
-
 	ReactDOM.hydrateRoot(
 		divRoot,
 		<React.StrictMode>

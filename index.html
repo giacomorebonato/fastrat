@@ -6,8 +6,8 @@
       __TSR__ = {
         matches: [],
         streamedValues: {},
-        initMatch: (index) => {
-          Object.entries(__TSR__.matches[index].extracted).forEach(([id, ex]) => {
+        initMatch(index) {
+          Object.entries(__TSR__.matches[index].extracted).forEach(([id, ex]) => {            
             if (ex.type === 'stream') {
               let controller;
               ex.value = new ReadableStream({

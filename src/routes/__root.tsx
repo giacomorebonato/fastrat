@@ -5,10 +5,10 @@ import {
 	createRootRouteWithContext,
 } from '@tanstack/react-router'
 import { Suspense, lazy } from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { HelmetProvider } from 'react-helmet-async'
 import type { HelmetServerState } from 'react-helmet-async'
 import { createLink, trpcClient } from '#/browser/trpc-client'
-import { useCustomMeta } from '#/server/use-custom-meta'
+import { CustomMeta } from '#/server/use-custom-meta'
 import type { RouterContext } from '#/types/router-context'
 
 export const Route = createRootRouteWithContext<RouterContext>()({
@@ -16,6 +16,9 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 		return { helmetContext: context?.helmetContext ?? {} }
 	},
 	component: RootComponent,
+	notFoundComponent: () => {
+		return <p>This setting page doesn't exist!</p>
+	},
 })
 
 const queryClient = new QueryClient()
@@ -31,14 +34,10 @@ function RootComponent() {
 	const loaderData = Route.useLoaderData<{
 		helmetContext: { helmet: HelmetServerState }
 	}>()
-	const customMeta = useCustomMeta()
 
 	return (
 		<HelmetProvider context={loaderData?.helmetContext || {}}>
-			<Helmet>
-				{/* Do not remove or it'll break hydration */}
-				<script>{customMeta}</script>
-			</Helmet>
+			<CustomMeta />
 			<trpcClient.Provider client={apiClient} queryClient={queryClient}>
 				<QueryClientProvider client={queryClient}>
 					<Outlet />
