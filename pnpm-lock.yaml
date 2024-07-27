@@ -91,7 +91,7 @@ importers:
         version: 4.5.1
       framer-motion:
         specifier: ^11.3.2
-        version: 11.3.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 11.3.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       isbot:
         specifier: ^5.1.12
         version: 5.1.13
@@ -3201,6 +3201,15 @@ packages:
       supports-color:
         optional: true
 
+  debug@4.3.6:
+    resolution: {integrity: sha512-O/09Bd4Z1fBrU4VzkhFqVgpPzaGbw6Sm9FEkBT1A/YBXQFGuuSxa1dN2nxgxS34JmKXqYx8CZAwEVoJFImUXIg==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
   decamelize-keys@1.1.1:
     resolution: {integrity: sha512-WiPxgEirIV0/eIOMcnFBA3/IJZAZqKnwAwWyvvdi4lsr1WCN22nhdf/3db3DoZcUjTV2SqfzIwNyp6y2xs3nmg==}
     engines: {node: '>=0.10.0'}
@@ -3740,8 +3749,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@11.3.18:
-    resolution: {integrity: sha512-pPJXcshW+AABch6FQxFCeBd/bZFaZC2w/VdkSEZGvKIaVGA4IsOS2SqUEIWMKMJJsKwr96O+7vY66M+/S7mOlw==}
+  framer-motion@11.3.19:
+    resolution: {integrity: sha512-+luuQdx4AsamyMcvzW7jUAJYIKvQs1KE7oHvKkW3eNzmo0S+3PSDWjBuQkuIP9WyneGnKGMLUSuHs8OP7jKpQg==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -6640,7 +6649,7 @@ snapshots:
       '@babel/core': 7.24.9
       '@babel/helper-compilation-targets': 7.24.8
       '@babel/helper-plugin-utils': 7.24.8
-      debug: 4.3.5
+      debug: 4.3.6
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -7407,7 +7416,7 @@ snapshots:
       '@babel/parser': 7.25.0
       '@babel/template': 7.25.0
       '@babel/types': 7.25.0
-      debug: 4.3.5
+      debug: 4.3.6
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -9685,6 +9694,10 @@ snapshots:
     dependencies:
       ms: 2.1.2
 
+  debug@4.3.6:
+    dependencies:
+      ms: 2.1.2
+
   decamelize-keys@1.1.1:
     dependencies:
       decamelize: 1.2.0
@@ -10292,7 +10305,7 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.3.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  framer-motion@11.3.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       tslib: 2.6.3
     optionalDependencies:
