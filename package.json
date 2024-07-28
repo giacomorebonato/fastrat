@@ -26,7 +26,6 @@
 		"@fastify/oauth2": "7.9.0",
 		"@fastify/static": "^7.0.4",
 		"@fastify/websocket": "10.0.1",
-		"@libsql/client": "0.7.0",
 		"@mdx-js/mdx": "^3.0.1",
 		"@mdx-js/react": "^3.0.1",
 		"@tanstack/react-cross-context": "^1.44.2",
