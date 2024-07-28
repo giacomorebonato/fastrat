@@ -8,7 +8,7 @@ exit-on-error: false
 
 proxy:
   addr: ":8080"
-  db: 'production'
+  db: 'production.sqlite'
   target: "0.0.0.0:3000"
 
 exec:
