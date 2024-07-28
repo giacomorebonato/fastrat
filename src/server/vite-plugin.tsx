@@ -80,7 +80,7 @@ export const vitePlugin = fastifyPlugin(
 			const pipeableStream = renderToPipeableStream(
 				<StartServer router={router} />,
 				{
-					[callbackName]: () => {
+					[callbackName]() {
 						reply.code(didError ? 500 : 200)
 						pipeableStream.pipe(passStream).write(footer)
 					},
