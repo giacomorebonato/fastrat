@@ -1,4 +1,5 @@
 import Crypto from 'node:crypto'
+import { desc } from 'drizzle-orm'
 import type { FastratDatabase } from '#/db/db-plugin'
 import { type UserSchema, userTable } from '#/db/user-table'
 
@@ -26,5 +27,13 @@ export class UserQueries {
 			.get()
 
 		return dbUser
+	}
+
+	list() {
+		return this.db
+			.select()
+			.from(userTable)
+			.orderBy(desc(userTable.createdAt))
+			.all()
 	}
 }

@@ -2,7 +2,7 @@ import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import { type FastifyServerOptions, fastify } from 'fastify'
 import { googleAuth } from '#/auth/google-auth'
 import { apiRouter } from './api-router'
-import { env } from './env'
+import { type Env, env } from './env'
 import { createTrpcContext } from './trpc-context'
 
 export async function createServer(
@@ -10,12 +10,13 @@ export async function createServer(
 		logger: true,
 		maxParamLength: 5_000,
 	},
+	overrideEnv: Partial<Env> = {},
 ) {
 	const server = fastify(options)
 
 	await server
 		.register(import('#/db/db-plugin'), {
-			dbUrl: env.DATABASE_URL,
+			dbUrl: overrideEnv.DATABASE_URL ?? env.DATABASE_URL,
 		})
 		.register(import('./redirect-plugin'), {
 			hostNamesRedirectFrom: env.HOST_NAMES_REDIRECT_FROM,
