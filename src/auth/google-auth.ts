@@ -2,10 +2,11 @@ import { fastifyOauth2 } from '@fastify/oauth2'
 import type { FastifyReply } from 'fastify'
 import { fastifyPlugin } from 'fastify-plugin'
 import { z } from 'zod'
+import type { FastratDatabase } from '#/db/db-plugin'
 import { env } from '#/server/env'
 import { USER_TOKEN } from './cookies'
 import { createToken } from './create-token'
-import { upsertUser } from './user-queries'
+import { UserQueries } from './user-queries'
 
 export const googleUserSchema = z.object({
 	email: z.string(),
@@ -50,7 +51,8 @@ export const googleAuth = fastifyPlugin<{
 		)
 
 		fastify.get('/login/google/ci', async (request, reply) => {
-			return await updateDatabaseAndRedirect({
+			return updateDatabaseAndRedirect({
+				db: fastify.db,
 				reply,
 				user: {
 					// biome-ignore lint/style/noNonNullAssertion: <explanation>
@@ -84,6 +86,7 @@ export const googleAuth = fastifyPlugin<{
 			const user = googleUserSchema.parse(userData)
 
 			await updateDatabaseAndRedirect({
+				db: fastify.db,
 				user,
 				reply,
 			})
@@ -93,14 +96,17 @@ export const googleAuth = fastifyPlugin<{
 	})
 })
 
-async function updateDatabaseAndRedirect({
+function updateDatabaseAndRedirect({
+	db,
 	reply,
 	user,
 }: {
+	db: FastratDatabase
 	reply: FastifyReply
 	user: GoogleUser
 }) {
-	const dbUser = await upsertUser({ email: user.email })
+	const userQueries = new UserQueries(db)
+	const dbUser = userQueries.upsert({ email: user.email })
 	const token = createToken(
 		{
 			email: dbUser.email,

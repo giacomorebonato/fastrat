@@ -1,13 +1,10 @@
 import { TRPCError } from '@trpc/server'
 import { observable } from '@trpc/server/observable'
-import { eq } from 'drizzle-orm'
 import { Emitter } from 'strict-event-emitter'
 import { z } from 'zod'
 import { type NoteSelect, insertNoteSchema } from '#/db/note-table'
-import { noteSchema } from '#/db/schema'
 import { env } from '#/server/env'
 import { publicProcedure, router } from '#/server/trpc-server'
-import { getNoteById, getNotes } from './note-queries'
 
 type Events = {
 	onDelete: [{ id: string }]
@@ -51,7 +48,7 @@ export const noteRouter = router({
 				id: z.string(),
 			}),
 		)
-		.mutation(async ({ input, ctx }) => {
+		.mutation(({ input, ctx }) => {
 			if (env.GOOGLE_CLIENT_ID && !ctx.user) {
 				throw new TRPCError({
 					code: 'UNAUTHORIZED',
@@ -59,11 +56,9 @@ export const noteRouter = router({
 				})
 			}
 
-			const result = await ctx.db
-				.delete(noteSchema)
-				.where(eq(noteSchema.id, input.id))
+			const result = ctx.queries.note.delete(input.id)
 
-			if (result.rowsAffected === 0) {
+			if (result.changes === 0) {
 				throw new TRPCError({
 					code: 'NOT_FOUND',
 				})
@@ -75,8 +70,8 @@ export const noteRouter = router({
 		}),
 	get: publicProcedure
 		.input(z.object({ id: z.string() }))
-		.query(async ({ input }) => {
-			const note = await getNoteById(input.id)
+		.query(({ ctx, input }) => {
+			const note = ctx.queries.note.byId(input.id)
 
 			if (!note) {
 				throw new TRPCError({ code: 'BAD_REQUEST', message: 'Note not found' })
@@ -84,8 +79,8 @@ export const noteRouter = router({
 
 			return note
 		}),
-	list: publicProcedure.query(async () => {
-		return getNotes()
+	list: publicProcedure.query(({ ctx }) => {
+		return ctx.queries.note.list()
 	}),
 	upsert: publicProcedure
 		.input(
@@ -94,35 +89,22 @@ export const noteRouter = router({
 				updatedAt: true,
 			}),
 		)
-		.mutation(async ({ ctx, input }) => {
-			if (env.GOOGLE_CLIENT_ID && !ctx.user) {
+		.mutation(({ ctx, input }) => {
+			if (!ctx.user) {
 				throw new TRPCError({
 					code: 'UNAUTHORIZED',
 					message: 'You need to be authenticated',
 				})
 			}
 
-			const notes = await ctx.db
-				.insert(noteSchema)
-				.values({
-					...input,
-					updatedAt: new Date(),
-					// biome-ignore lint/style/noNonNullAssertion: <explanation>
-					creatorId: ctx.user!.userId,
-				})
-				.returning()
-				.onConflictDoUpdate({
-					set: input,
-					target: noteSchema.id,
-				})
-				.all()
+			const note = ctx.queries.note.upsert({
+				...input,
+				updatedAt: new Date(),
+				creatorId: ctx.user.userId,
+			})
 
-			const note = notes[0]
+			noteEmitter.emit('onUpsert', note)
 
-			if (note) {
-				noteEmitter.emit('onUpsert', note)
-			}
-
-			return notes[0]
+			return note
 		}),
 })

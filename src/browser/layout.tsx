@@ -1,10 +1,11 @@
 import { Link, useRouter } from '@tanstack/react-router'
 import clsx from 'clsx'
 import type React from 'react'
-import { Suspense, lazy, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { P, match } from 'ts-pattern'
+import { ClientOnly } from '#/server/client-only'
 import { trpcClient } from './trpc-client'
 
 const contextClass = {
@@ -15,8 +16,6 @@ const contextClass = {
 	success: 'bg-blue-600',
 	warning: 'bg-orange-400',
 } as const
-
-let Devtools: React.FC = () => null
 
 export function Layout({
 	children,
@@ -44,14 +43,6 @@ export function Layout({
 			unsuscribe()
 		}
 	}, [router.history])
-
-	useEffect(() => {
-		if (import.meta.env.DEV && !import.meta.env.SSR) {
-			Devtools = lazy(() => {
-				return import('./devtools').then((c) => ({ default: c.Devtools }))
-			})
-		}
-	})
 
 	return (
 		<>
@@ -161,9 +152,11 @@ export function Layout({
 				</form>
 			</dialog>
 
-			<Suspense fallback={<div />}>
-				<Devtools />
-			</Suspense>
+			{import.meta.env.DEV && (
+				<ClientOnly load={() => import('./devtools')}>
+					{(Devtools) => <Devtools />}
+				</ClientOnly>
+			)}
 		</>
 	)
 }

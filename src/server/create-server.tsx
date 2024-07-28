@@ -3,7 +3,7 @@ import { type FastifyServerOptions, fastify } from 'fastify'
 import { googleAuth } from '#/auth/google-auth'
 import { apiRouter } from './api-router'
 import { env } from './env'
-import { createContext } from './trpc-context'
+import { createTrpcContext } from './trpc-context'
 
 export async function createServer(
 	options: FastifyServerOptions = {
@@ -14,6 +14,9 @@ export async function createServer(
 	const server = fastify(options)
 
 	await server
+		.register(import('#/db/db-plugin'), {
+			dbUrl: env.DATABASE_URL,
+		})
 		.register(import('./redirect-plugin'), {
 			hostNamesRedirectFrom: env.HOST_NAMES_REDIRECT_FROM,
 			hostNameRedirectTo: env.SITE_URL,
@@ -30,7 +33,10 @@ export async function createServer(
 		})
 		.register(fastifyTRPCPlugin, {
 			prefix: '/trpc',
-			trpcOptions: { createContext, router: apiRouter },
+			trpcOptions: {
+				createContext: createTrpcContext(server),
+				router: apiRouter,
+			},
 			useWSS: true,
 		})
 		.ready()
@@ -38,4 +44,4 @@ export async function createServer(
 	return await server
 }
 
-export type FastRatServer = Awaited<ReturnType<typeof createServer>>
+export type FastratServer = Awaited<ReturnType<typeof createServer>>

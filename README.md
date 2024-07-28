@@ -22,10 +22,6 @@ In a production environment, you should set those environment variables directly
 
 [Example with Fly.io](https://fly.io/docs/reference/secrets/)
 
-```bash
-fly secrets set TURSO_DB_URL=libsql://link-to-your-turso-db.turso.io
-```
-
 
 - [Authentication](#authentication)
 - [SSR and Routing](#ssr-and-routing)
@@ -42,7 +38,6 @@ fly secrets set TURSO_DB_URL=libsql://link-to-your-turso-db.turso.io
 * [tRPC](https://trpc.io/docs/server/adapters/fastify): for end points with E2E type safety
 * [Tanstack Router](https://tanstack.com/router/latest): for filesystem based routes with type safety
 * [Vavite](https://github.com/cyco130/vavite): use Vite to compile and bundle both client and server code
-* [Turso db](https://turso.tech): SQLite database which fallbacks to [libsql](https://github.com/tursodatabase/libsql) locally
 * [Fly.io](https://fly.io): for deployment
 
 

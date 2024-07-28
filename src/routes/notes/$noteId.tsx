@@ -6,17 +6,15 @@ import { SideMenu } from '#/browser/side-menu'
 import { trpcClient } from '#/browser/trpc-client'
 import { NoteList } from '#/notes/note-list'
 import { NoteTextarea } from '#/notes/note-textarea'
-import { useNoteSubscriptions } from '../../notes/use-note-subscriptions'
+import { useNoteSubscriptions } from '#/notes/use-note-subscriptions'
 
 export const Route = createFileRoute('/notes/$noteId')({
 	parseParams: (params) => ({
 		noteId: z.string().parse(params.noteId),
 	}),
 	async loader({ context, params }) {
-		if (import.meta.env.SSR) {
-			const { getNoteById } = await import('#/notes/note-queries')
-			const { getNotes } = await import('#/notes/note-queries')
-			const note = await getNoteById(params.noteId)
+		if (context.queries) {
+			const note = context.queries.note.byId(params.noteId)
 
 			if (!note) {
 				// this redirect is read server side
@@ -26,7 +24,7 @@ export const Route = createFileRoute('/notes/$noteId')({
 
 			return {
 				note,
-				notes: await getNotes(),
+				notes: context.queries.note.list(),
 			}
 		}
 	},

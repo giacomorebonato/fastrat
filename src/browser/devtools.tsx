@@ -9,3 +9,5 @@ export const Devtools = () => {
 		</section>
 	)
 }
+
+export default Devtools

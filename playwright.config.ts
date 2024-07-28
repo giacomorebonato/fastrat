@@ -10,6 +10,7 @@ import appRootPath from 'app-root-path'
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+process.env.DATABASE_URL = ':memory:'
 export default defineConfig({
 	forbidOnly: !!process.env.CI,
 	fullyParallel: true,
