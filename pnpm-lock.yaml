@@ -209,7 +209,7 @@ importers:
         version: 5.3.4(@types/node@20.14.13)(terser@5.31.3)
       vite-plugin-pwa:
         specifier: ^0.20.0
-        version: 0.20.0(@vite-pwa/assets-generator@0.2.4)(vite@5.3.4(@types/node@20.14.13)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0)
+        version: 0.20.1(@vite-pwa/assets-generator@0.2.4)(vite@5.3.4(@types/node@20.14.13)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0)
       vitest:
         specifier: ^2.0.2
         version: 2.0.4(@types/node@20.14.13)(happy-dom@14.12.3)(terser@5.31.3)
@@ -3700,6 +3700,14 @@ packages:
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
 
+  fdir@6.2.0:
+    resolution: {integrity: sha512-9XaWcDl0riOX5j2kYfy0kKdg7skw3IY6kA4LFT8Tk2yF9UdrADUy8D6AJuBLtf7ISm/MksumwAHE3WVbMRyCLw==}
+    peerDependencies:
+      picomatch: ^3 || ^4
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
+
   fetch-blob@3.2.0:
     resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
     engines: {node: ^12.20 || >= 14.13}
@@ -5069,6 +5077,10 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
+  picomatch@4.0.2:
+    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+    engines: {node: '>=12'}
+
   pidtree@0.6.0:
     resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
@@ -5874,6 +5886,10 @@ packages:
   tinybench@2.8.0:
     resolution: {integrity: sha512-1/eK7zUnIklz4JUUlL+658n58XO2hHLQfSk1Zf2LKieUjxidN16eKFEoDEfjHc3ohofSSqK3X5yO6VGb6iW8Lw==}
 
+  tinyglobby@0.2.0:
+    resolution: {integrity: sha512-+clyYQfAnNlt5a1x7CCQ6RLuTIztDfDAl6mAANvqRUlz6sVy5znCzJOhais8G6oyUyoeeaorLopO3HptVP8niA==}
+    engines: {node: '>=12.0.0'}
+
   tinypool@1.0.0:
     resolution: {integrity: sha512-KIKExllK7jp3uvrNtvRBYBWBOAXSX8ZvoaD8T+7KB/QHIuoJW3Pmr60zucywjAlMb5TeXUkcs/MWeWLu0qvuAQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -6210,8 +6226,8 @@ packages:
       '@nuxt/kit':
         optional: true
 
-  vite-plugin-pwa@0.20.0:
-    resolution: {integrity: sha512-/kDZyqF8KqoXRpMUQtR5Atri/7BWayW8Gp7Kz/4bfstsV6zSFTxjREbXZYL7zSuRL40HGA+o2hvUAFRmC+bL7g==}
+  vite-plugin-pwa@0.20.1:
+    resolution: {integrity: sha512-M6Pk4b18i5ryrhKgiIF8Zud0HGphYiCbEfLsCdlvmwn/CEnS6noVwfIDG/+3V7r6yxpPV/gLiKw+rIlCCiCCoQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@vite-pwa/assets-generator': ^0.2.4
@@ -6584,7 +6600,7 @@ snapshots:
       '@babel/traverse': 7.24.8
       '@babel/types': 7.24.9
       convert-source-map: 2.0.0
-      debug: 4.3.5
+      debug: 4.3.6
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -7404,7 +7420,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.24.7
       '@babel/parser': 7.24.8
       '@babel/types': 7.24.9
-      debug: 4.3.5
+      debug: 4.3.6
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -8194,7 +8210,7 @@ snapshots:
       '@prefresh/vite': 2.4.6(preact@10.22.1)(vite@4.5.0(@types/node@20.14.13)(terser@5.31.3))
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.24.9)
-      debug: 4.3.5
+      debug: 4.3.6
       kolorist: 1.8.0
       magic-string: 0.30.5
       node-html-parser: 6.1.13
@@ -9063,7 +9079,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.5
+      debug: 4.3.6
     transitivePeerDependencies:
       - supports-color
 
@@ -9982,7 +9998,7 @@ snapshots:
 
   esbuild-register@3.5.0(esbuild@0.19.12):
     dependencies:
-      debug: 4.3.5
+      debug: 4.3.6
       esbuild: 0.19.12
     transitivePeerDependencies:
       - supports-color
@@ -10259,6 +10275,10 @@ snapshots:
   fastq@1.17.1:
     dependencies:
       reusify: 1.0.4
+
+  fdir@6.2.0(picomatch@4.0.2):
+    optionalDependencies:
+      picomatch: 4.0.2
 
   fetch-blob@3.2.0:
     dependencies:
@@ -10672,7 +10692,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.5
+      debug: 4.3.6
     transitivePeerDependencies:
       - supports-color
 
@@ -10725,7 +10745,7 @@ snapshots:
     dependencies:
       '@ioredis/commands': 1.2.0
       cluster-key-slot: 1.1.2
-      debug: 4.3.5
+      debug: 4.3.6
       denque: 2.1.0
       lodash.defaults: 4.2.0
       lodash.isarguments: 3.1.0
@@ -11475,7 +11495,7 @@ snapshots:
   micromark@4.0.0:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.3.5
+      debug: 4.3.6
       decode-named-character-reference: 1.0.2
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.1
@@ -11987,6 +12007,8 @@ snapshots:
   picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
+
+  picomatch@4.0.2: {}
 
   pidtree@0.6.0: {}
 
@@ -12601,7 +12623,7 @@ snapshots:
     dependencies:
       '@hapi/hoek': 11.0.4
       '@hapi/wreck': 18.1.0
-      debug: 4.3.5
+      debug: 4.3.6
       joi: 17.13.3
     transitivePeerDependencies:
       - supports-color
@@ -12960,6 +12982,11 @@ snapshots:
   tiny-warning@1.0.3: {}
 
   tinybench@2.8.0: {}
+
+  tinyglobby@0.2.0:
+    dependencies:
+      fdir: 6.2.0(picomatch@4.0.2)
+      picomatch: 4.0.2
 
   tinypool@1.0.0: {}
 
@@ -13438,7 +13465,7 @@ snapshots:
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.0(rollup@4.19.0)
-      debug: 4.3.5
+      debug: 4.3.6
       error-stack-parser-es: 0.1.5
       fs-extra: 11.2.0
       open: 9.1.0
@@ -13449,11 +13476,11 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-plugin-pwa@0.20.0(@vite-pwa/assets-generator@0.2.4)(vite@5.3.4(@types/node@20.14.13)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0):
+  vite-plugin-pwa@0.20.1(@vite-pwa/assets-generator@0.2.4)(vite@5.3.4(@types/node@20.14.13)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0):
     dependencies:
-      debug: 4.3.5
-      fast-glob: 3.3.2
+      debug: 4.3.6
       pretty-bytes: 6.1.1
+      tinyglobby: 0.2.0
       vite: 5.3.4(@types/node@20.14.13)(terser@5.31.3)
       workbox-build: 7.1.1(@types/babel__core@7.20.5)
       workbox-window: 7.1.0
@@ -13477,7 +13504,7 @@ snapshots:
 
   vite-tsconfig-paths@4.3.2(typescript@5.5.4)(vite@5.3.4(@types/node@20.14.13)(terser@5.31.3)):
     dependencies:
-      debug: 4.3.5
+      debug: 4.3.6
       globrex: 0.1.2
       tsconfck: 3.1.1(typescript@5.5.4)
     optionalDependencies:
