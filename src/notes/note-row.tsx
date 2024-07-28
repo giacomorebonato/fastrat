@@ -1,6 +1,5 @@
 import { Link } from '@tanstack/react-router'
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { toast } from 'react-toastify'
 import { trpcClient } from '#/browser/trpc-client'
@@ -25,7 +24,7 @@ export const NoteRow = ({ note }: { note: NoteSelect }) => {
 	const linkRef = useRef<HTMLAnchorElement>()
 
 	return (
-		<motion.div key={note.id} data-testid={`note-${note.id}`}>
+		<div key={note.id} data-testid={`note-${note.id}`}>
 			<Link
 				to='/notes/$noteId'
 				params={{
@@ -64,6 +63,6 @@ export const NoteRow = ({ note }: { note: NoteSelect }) => {
 					Delete
 				</button>
 			</Link>
-		</motion.div>
+		</div>
 	)
 }

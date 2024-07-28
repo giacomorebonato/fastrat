@@ -48,7 +48,6 @@
 		"fast-jwt": "^4.0.2",
 		"fastify": "4.28.1",
 		"fastify-plugin": "^4.5.1",
-		"framer-motion": "^11.3.17",
 		"isbot": "^5.1.13",
 		"jsesc": "^3.0.2",
 		"react": "^18.3.1",
