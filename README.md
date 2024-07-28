@@ -24,7 +24,7 @@ In a production environment, you should set those environment variables directly
 
 
 - [Authentication](#authentication)
-- [sqlite](#sqlite)
+- [sqlite on LiteFS](#sqlite-on-litefs)
 - [SSR and Routing](#ssr-and-routing)
 - [tRPC](#trpc)
 - [Server side data fetching](#server-side-data-fetching)
@@ -50,10 +50,12 @@ Provide `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` into the `.env` file to al
 You can check how authentication is achieved in [src/features/auth/google-auth.ts](src/auth/google-auth.ts) by leveraging [fastify-oauth2](https://github.com/fastify/fastify-oauth2).  
 It should be easy for you to re-use this example to add other authentication providers.
 
-## sqlite
+## sqlite on LiteFS
 
-2. `fly volume create litefs -r ams -n 2`
-3. `fly consul attach`
+Follow the <a href='https://fly.io/docs/litefs/getting-started-fly/' target='_blank'>official steps for configuring LiteFS</a>
+
+1. create a volume `fly volumes create litefs --size 10`
+3. create a Consul URL `fly consul attach`
 
 ## SSR and Routing
 
