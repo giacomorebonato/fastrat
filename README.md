@@ -24,6 +24,7 @@ In a production environment, you should set those environment variables directly
 
 
 - [Authentication](#authentication)
+- [sqlite](#sqlite)
 - [SSR and Routing](#ssr-and-routing)
 - [tRPC](#trpc)
 - [Server side data fetching](#server-side-data-fetching)
@@ -49,6 +50,10 @@ Provide `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` into the `.env` file to al
 You can check how authentication is achieved in [src/features/auth/google-auth.ts](src/auth/google-auth.ts) by leveraging [fastify-oauth2](https://github.com/fastify/fastify-oauth2).  
 It should be easy for you to re-use this example to add other authentication providers.
 
+## sqlite
+
+2. `fly volume create litefs -r ams -n 2`
+3. `fly consul attach`
 
 ## SSR and Routing
 
