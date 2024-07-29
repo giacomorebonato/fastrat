@@ -40,16 +40,16 @@ importers:
         version: 5.51.15(@tanstack/react-query@5.51.15(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
         specifier: ^1.45.11
-        version: 1.45.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.45.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-devtools':
         specifier: ^1.45.11
-        version: 1.45.11(@tanstack/react-router@1.45.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.45.14(@tanstack/react-router@1.45.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-vite-plugin':
         specifier: ^1.45.8
-        version: 1.45.8(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
+        version: 1.45.13(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
       '@tanstack/start':
-        specifier: 1.45.11
-        version: 1.45.11(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
+        specifier: 1.45.14
+        version: 1.45.14(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.467(@trpc/server@11.0.0-rc.467)
@@ -2065,8 +2065,8 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-  '@tanstack/react-router@1.45.11':
-    resolution: {integrity: sha512-unVxPYsOwwMnyAW/ZeOCymWpstEV0tiUexUPqiCuYwb2rCwsrmjsgB4tIpVONHabPlFKrxoMbkUh5UCSpL0h+w==}
+  '@tanstack/react-router@1.45.14':
+    resolution: {integrity: sha512-eGSOaZI2urexpkoJb+SzOAnoZ61IuMzCzBziU6HD9b6lnySXQ2Z4LFGcHx2+BK5rzkGXtkfOoGLtQ2SE6lFTdA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18'
@@ -2078,11 +2078,11 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
 
-  '@tanstack/router-devtools@1.45.11':
-    resolution: {integrity: sha512-Na6L1lU00m18eqnWd4/Ex51LnCPGbsDpNNRu551tv3hlrtX9at4eJeI0ZOhv9IAKI2Ky3cW4OhvvHrtTalLCJg==}
+  '@tanstack/router-devtools@1.45.14':
+    resolution: {integrity: sha512-BZ/TiN47uV9DFeULYvXSzKKgQU6ezmWmEfPaQsx35KWSLC4awOOo+A7AVDITURBxgZ+vB1vqGkGbLp7d34mGIQ==}
     engines: {node: '>=12'}
     peerDependencies:
-      '@tanstack/react-router': ^1.45.11
+      '@tanstack/react-router': ^1.45.14
       react: '>=18'
       react-dom: '>=18'
 
@@ -2090,8 +2090,8 @@ packages:
     resolution: {integrity: sha512-5B756YXpZO0/yr7ahsxXoBOCpqroLx/D3l6X9qPlZaP0FVHVmTR6ZKGRX6zzuAxns/VO+sxnQso4AYLdDyZ9GA==}
     engines: {node: '>=12'}
 
-  '@tanstack/router-plugin@1.45.8':
-    resolution: {integrity: sha512-mncDu49pBEivRHWVOdCl9fHwtyUT3QLZ0X+gYIsm7o6LhT6i7BzC++BZqOOSrjDcyXy3dx2Nf/FMrB06qlXx9Q==}
+  '@tanstack/router-plugin@1.45.13':
+    resolution: {integrity: sha512-7IWdtIDC5jjhD6IZ5c/s11xNwvKDom/p6ZOO78FxeeA0FIaSx+3AQD7/iVhzfiRfepqGmecLn9a1KfNTFGQI/A==}
     engines: {node: '>=12'}
     peerDependencies:
       '@rsbuild/core': '>=0.7.9'
@@ -2105,16 +2105,16 @@ packages:
       webpack:
         optional: true
 
-  '@tanstack/router-vite-plugin@1.45.8':
-    resolution: {integrity: sha512-gIblg5X+7xl2/QT3UpD5opv6hYCwD6eaHJ4Ko63pV7Z5hdKH7vzlfoG2fZlf3QC+wYg47nTV1bxvFyEnQ8+YAA==}
+  '@tanstack/router-vite-plugin@1.45.13':
+    resolution: {integrity: sha512-AuZS7uVvLaw8oXtjL9/sC52pGNIbHGFRknq4RVonk4CGwdQ4qAvpV+Wh2oTxf1Aww5KqCaGxHAp0fujmeD55RA==}
     engines: {node: '>=12'}
 
-  '@tanstack/start-vite-plugin@1.45.8':
-    resolution: {integrity: sha512-I8UjeGXhutCnyFGo0GXYiiqFLIwQbPsuHVQbA3d1y2+5nSn1t9mbBAmAIVM900/DwKavtEj4/c5U7NHto2ZtlA==}
+  '@tanstack/start-vite-plugin@1.45.13':
+    resolution: {integrity: sha512-vddjtnQsZbvjD8+M0KvKHCMIuN0ONtda/SEQ4xGft8g3LN2HFCrOi5e66adKTdsVE9+WPGkWmeAJW6OMdP0XMA==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.45.11':
-    resolution: {integrity: sha512-PNyzihhZNQTg7/Wp2zZzSDxnkr7es1B8ZteDSR2VyExS6YXBXbvbaRajhYcCLPTORQYTV124HCsnNNL2vDQnPg==}
+  '@tanstack/start@1.45.14':
+    resolution: {integrity: sha512-SAnG/+I6vRnqpOXgPzUa58Cak1Gy07J4jT0z9pTA1jF1mSl9lVNmfVk6lmlrsNXRy86TDmRT3uLEGielKQIe7Q==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -2271,10 +2271,10 @@ packages:
     resolution: {integrity: sha512-WSN1z931BtasZJlgPp704zJFnQFRg7yzSjkm3MzAWQYe4uXFXlFr1hc5Ac2zae5/HDOz5x1/zDM5Cb54vTCnWw==}
     hasBin: true
 
-  '@vinxi/plugin-directives@0.3.1':
-    resolution: {integrity: sha512-4qz5WifjmJ864VS8Ik9nUG0wAkt/xIcxFpP29RXogGLgccRnceBpWQi+ghw5rm0F6LP/YMAhhO5iFORXclWd0Q==}
+  '@vinxi/plugin-directives@0.4.1':
+    resolution: {integrity: sha512-NsHCDyqU00i4RKGBoNNcBuONEirg/XfGgPCLFK1CZw3AYBE19haFSgvuo21Bx+BFGcwdRU3BRtaBMvwjLrUCnw==}
     peerDependencies:
-      vinxi: ^0.3.10
+      vinxi: ^0.4.0
 
   '@vinxi/react-server-dom@0.0.3':
     resolution: {integrity: sha512-ZJJZtuw1TbGFOBuDZBHmM3w40yzFpNFWoPCoC2QtZBkYEQXYF9sOHHxkjTfNvk4rSn/zaUAs6KNUbVRvebq/1Q==}
@@ -2287,15 +2287,15 @@ packages:
   '@vinxi/react@0.2.3':
     resolution: {integrity: sha512-/JMHdzGzmoBTrXtW95E7DAvsF5bMrstz/2hphkL47Yb5iRaBNKs2Si4yTyHPmRHSh4teNRm/2YmvClRHtvQi4Q==}
 
-  '@vinxi/server-components@0.3.3':
-    resolution: {integrity: sha512-xaW92nj9HUMLyswPcCmsIXOsS3TJll0m9u3WEjWjLrtZWheHggina6+kTCSeltp/Qe8WlUfNU5G02Xy8L4xQxA==}
+  '@vinxi/server-components@0.4.1':
+    resolution: {integrity: sha512-rMS+RCGr1tujO1xWgILMLpOWIyw2OwDO46EtkuhTfqaVgLLt/w7+hxzOnh4s3O9sXoKKuUswtj9/MpQQkFoMOQ==}
     peerDependencies:
-      vinxi: ^0.3.10
+      vinxi: ^0.4.0
 
-  '@vinxi/server-functions@0.3.3':
-    resolution: {integrity: sha512-yUrHov1gc+NM/YCEOekM1DCdu2tNSH1/j0mZPyIOhPZH/yAZKWA+t3dP79Q3g4QLDHchf6xf8z9u1INEADTlXw==}
+  '@vinxi/server-functions@0.4.1':
+    resolution: {integrity: sha512-dj5v9V+DurXK8w/nBDgJof+UsK3bkcgk6K/xBUg+WVmn7sUrLTurDTGRkCaknC6tQCyadNzj4FWGGc+qlrWf9g==}
     peerDependencies:
-      vinxi: ^0.3.12
+      vinxi: ^0.4.0
 
   '@vite-pwa/assets-generator@0.2.4':
     resolution: {integrity: sha512-DXyPLPR/IpbZPSpo1amZEPghY/ziIwpTUKNaz0v1xG+ELzCXmrVQhVzEMqr2JLSqRxjc+UzKfGJA/YdUuaao3w==}
@@ -5712,8 +5712,8 @@ packages:
   vfile@6.0.2:
     resolution: {integrity: sha512-zND7NlS8rJYb/sPqkb13ZvbbUoExdbi4w3SfRrMq6R3FvnLQmmfpajJNITuuYm6AZ5uao9vy4BAos3EXBPf2rg==}
 
-  vinxi@0.3.12:
-    resolution: {integrity: sha512-YU/Scild/Rdy6qwgdILYRlO99Wp8ti2CmlMlYioEg7lRtxAST5iCFjviDya+BYQDgc3Pugh4KzOypVwjZknF2A==}
+  vinxi@0.4.1:
+    resolution: {integrity: sha512-WGEYqIuJ2/P3sBoSVKsGvp/UKpW4wVSaAFdA18gthyMCEExN6nVteoA+Rv1wQFLKXTVL9JRpeGJjcLzcRRgGCA==}
     hasBin: true
 
   vite-node@2.0.4:
@@ -7714,7 +7714,7 @@ snapshots:
       '@tanstack/query-core': 5.51.15
       react: 18.3.1
 
-  '@tanstack/react-router@1.45.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-router@1.45.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.45.3
       '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7730,9 +7730,9 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       use-sync-external-store: 1.2.2(react@18.3.1)
 
-  '@tanstack/router-devtools@1.45.11(@tanstack/react-router@1.45.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/router-devtools@1.45.14(@tanstack/react-router@1.45.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/react-router': 1.45.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.45.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       goober: 2.1.14(csstype@3.1.3)
       react: 18.3.1
@@ -7745,7 +7745,7 @@ snapshots:
       prettier: 3.3.3
       zod: 3.23.8
 
-  '@tanstack/router-plugin@1.45.8(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))':
+  '@tanstack/router-plugin@1.45.13(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))':
     dependencies:
       '@babel/core': 7.24.9
       '@babel/generator': 7.25.0
@@ -7769,16 +7769,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/router-vite-plugin@1.45.8(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))':
+  '@tanstack/router-vite-plugin@1.45.13(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))':
     dependencies:
-      '@tanstack/router-plugin': 1.45.8(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
+      '@tanstack/router-plugin': 1.45.13(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
     transitivePeerDependencies:
       - '@rsbuild/core'
       - supports-color
       - vite
       - webpack
 
-  '@tanstack/start-vite-plugin@1.45.8':
+  '@tanstack/start-vite-plugin@1.45.13':
     dependencies:
       '@babel/core': 7.24.9
       '@babel/generator': 7.25.0
@@ -7795,25 +7795,25 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.45.11(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))':
+  '@tanstack/start@1.45.14(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))':
     dependencies:
       '@tanstack/react-cross-context': 1.44.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tanstack/react-router': 1.45.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.45.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-generator': 1.45.7
-      '@tanstack/router-plugin': 1.45.8(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
-      '@tanstack/start-vite-plugin': 1.45.8
+      '@tanstack/router-plugin': 1.45.13(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
+      '@tanstack/start-vite-plugin': 1.45.13
       '@types/jsesc': 3.0.3
       '@vinxi/react': 0.2.3
       '@vinxi/react-server-dom': 0.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
-      '@vinxi/server-components': 0.3.3(vinxi@0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
-      '@vinxi/server-functions': 0.3.3(vinxi@0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
+      '@vinxi/server-components': 0.4.1(vinxi@0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
+      '@vinxi/server-functions': 0.4.1(vinxi@0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
       import-meta-resolve: 4.1.0
       isbot: 5.1.13
       jsesc: 3.0.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tiny-invariant: 1.3.3
-      vinxi: 0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
+      vinxi: 0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
       vite-tsconfig-paths: 4.3.2(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
       zod: 3.23.8
     transitivePeerDependencies:
@@ -8024,7 +8024,7 @@ snapshots:
       consola: 3.2.3
       defu: 6.1.4
       get-port-please: 3.1.2
-      h3: 1.11.1
+      h3: 1.12.0
       http-shutdown: 1.2.2
       jiti: 1.21.6
       mlly: 1.7.1
@@ -8037,7 +8037,7 @@ snapshots:
     transitivePeerDependencies:
       - uWebSockets.js
 
-  '@vinxi/plugin-directives@0.3.1(vinxi@0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
+  '@vinxi/plugin-directives@0.4.1(vinxi@0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
     dependencies:
       '@babel/parser': 7.25.0
       acorn: 8.12.1
@@ -8048,7 +8048,7 @@ snapshots:
       magicast: 0.2.11
       recast: 0.23.9
       tslib: 2.6.3
-      vinxi: 0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
+      vinxi: 0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
 
   '@vinxi/react-server-dom@0.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))':
     dependencies:
@@ -8059,27 +8059,27 @@ snapshots:
 
   '@vinxi/react@0.2.3': {}
 
-  '@vinxi/server-components@0.3.3(vinxi@0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
+  '@vinxi/server-components@0.4.1(vinxi@0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
     dependencies:
-      '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
+      vinxi: 0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
 
-  '@vinxi/server-functions@0.3.3(vinxi@0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
+  '@vinxi/server-functions@0.4.1(vinxi@0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))':
     dependencies:
-      '@vinxi/plugin-directives': 0.3.1(vinxi@0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
+      '@vinxi/plugin-directives': 0.4.1(vinxi@0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3))
       acorn: 8.12.1
       acorn-loose: 8.4.0
       acorn-typescript: 1.4.13(acorn@8.12.1)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.9
-      vinxi: 0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
+      vinxi: 0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3)
 
   '@vite-pwa/assets-generator@0.2.4':
     dependencies:
@@ -9985,7 +9985,7 @@ snapshots:
       crossws: 0.2.4
       defu: 6.1.4
       get-port-please: 3.1.2
-      h3: 1.11.1
+      h3: 1.12.0
       http-shutdown: 1.2.2
       jiti: 1.21.6
       mlly: 1.7.1
@@ -11959,7 +11959,7 @@ snapshots:
       anymatch: 3.1.3
       chokidar: 3.6.0
       destr: 2.0.3
-      h3: 1.11.1
+      h3: 1.12.0
       listhen: 1.7.2
       lru-cache: 10.4.3
       mri: 1.2.0
@@ -12032,7 +12032,7 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vinxi@0.3.12(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3):
+  vinxi@0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3):
     dependencies:
       '@babel/core': 7.24.9
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.24.9)
