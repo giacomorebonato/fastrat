@@ -43,10 +43,10 @@ FastRat renders the HTML on the first request and then uses client side routing 
 
 <h2 id='server-side-data-fetching'>Server side data fetching</h2>
 
-With FastRat you can achieve what in NextJS can be done through <a className='link' href='https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props' target='_blank'>getServerSideProps</a>.  
+With FastRat you can achieve what in NextJS can be done through <a className='link' href='https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props' target='_blank'>**getServerSideProps**</a>.  
 We are just leveraging what <a href='https://tanstack.com/router/latest/docs/framework/react/guide/data-loading' target='_blank'>Tanstack Router</a> offers for the purpose, which is the loader function on the route definition.
 
-Check these key points in this sample app's file [src/routes/notes/$noteId.tsx](./src/routes/notes/$noteId.tsx)
+Check these key points in this sample app's file [src/routes/notes/$noteId.tsx](https://github.com/giacomorebonato/fastrat/blob/main/src/routes/notes/%24noteId.tsx)
 
 * the loader executes on server side when the page is requested directly
 * executes on client side when client side routing happens
