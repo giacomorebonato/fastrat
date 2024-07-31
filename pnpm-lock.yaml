@@ -40,16 +40,16 @@ importers:
         version: 5.51.15(@tanstack/react-query@5.51.15(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
         specifier: ^1.45.11
-        version: 1.45.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.45.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-devtools':
         specifier: ^1.45.11
-        version: 1.45.15(@tanstack/react-router@1.45.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.45.16(@tanstack/react-router@1.45.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-vite-plugin':
         specifier: ^1.45.8
         version: 1.45.13(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
       '@tanstack/start':
-        specifier: 1.45.15
-        version: 1.45.15(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
+        specifier: 1.45.16
+        version: 1.45.16(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.467(@trpc/server@11.0.0-rc.467)
@@ -2096,8 +2096,8 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-  '@tanstack/react-router@1.45.15':
-    resolution: {integrity: sha512-QVftG8QlD8u3QB38ZkpyWUHEuuaq12fsxm7Nr52pkxueKM099j8pqouoqLb6nDDyLC54/PhLZxavrIeH7aaqaA==}
+  '@tanstack/react-router@1.45.16':
+    resolution: {integrity: sha512-8CenKb8+l3CAAQqCNumPZOl+ipKviDPgV89E0haLC7SsN3EFR5EXeZrVygJrX/1dy8+Gcr0SdR7tsebj2+wYaA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18'
@@ -2109,11 +2109,11 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
 
-  '@tanstack/router-devtools@1.45.15':
-    resolution: {integrity: sha512-lCDfFTxlR4T6uaNOCHzt9h3QgqhudaNR1zWujxbLDtWKb0RssA7QeeqSU6YGuiOjUxm35QznCCOjYVUuTlqAeg==}
+  '@tanstack/router-devtools@1.45.16':
+    resolution: {integrity: sha512-jlHQFezGmggHa8eQvRVUAQjh02Z9pdXb4lSKCVUZn62ofzDDxSqb1NwFNybYj+vVNMFHCUGu78IaS2JAywVjsQ==}
     engines: {node: '>=12'}
     peerDependencies:
-      '@tanstack/react-router': ^1.45.15
+      '@tanstack/react-router': ^1.45.16
       react: '>=18'
       react-dom: '>=18'
 
@@ -2144,8 +2144,8 @@ packages:
     resolution: {integrity: sha512-vddjtnQsZbvjD8+M0KvKHCMIuN0ONtda/SEQ4xGft8g3LN2HFCrOi5e66adKTdsVE9+WPGkWmeAJW6OMdP0XMA==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.45.15':
-    resolution: {integrity: sha512-tMj9OuKqdfvqAq9BrGQnq8sDP454Kbjx8yd9Tq2rdsnjSBkI4qvB/A1INqKDuW4PAmulEpka2r1dDltl2I70Kg==}
+  '@tanstack/start@1.45.16':
+    resolution: {integrity: sha512-iB+eP7Twz/RT4pJzNHrjMo2NL6vFGPRkMngunqKxAXHKdresKebmcU9PdIZGngzJAib5GJJr0LeregsKUqHtgw==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -6173,8 +6173,8 @@ snapshots:
 
   '@babel/helper-module-imports@7.24.7':
     dependencies:
-      '@babel/traverse': 7.25.1
-      '@babel/types': 7.25.0
+      '@babel/traverse': 7.25.3
+      '@babel/types': 7.25.2
     transitivePeerDependencies:
       - supports-color
 
@@ -6224,8 +6224,8 @@ snapshots:
 
   '@babel/helper-simple-access@7.24.7':
     dependencies:
-      '@babel/traverse': 7.25.1
-      '@babel/types': 7.25.0
+      '@babel/traverse': 7.25.3
+      '@babel/types': 7.25.2
     transitivePeerDependencies:
       - supports-color
 
@@ -6359,6 +6359,11 @@ snapshots:
       '@babel/core': 7.24.9
       '@babel/helper-plugin-utils': 7.24.8
 
+  '@babel/plugin-syntax-jsx@7.24.7(@babel/core@7.25.2)':
+    dependencies:
+      '@babel/core': 7.25.2
+      '@babel/helper-plugin-utils': 7.24.8
+
   '@babel/plugin-syntax-logical-assignment-operators@7.10.4(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
@@ -6402,6 +6407,11 @@ snapshots:
   '@babel/plugin-syntax-typescript@7.24.7(@babel/core@7.24.9)':
     dependencies:
       '@babel/core': 7.24.9
+      '@babel/helper-plugin-utils': 7.24.8
+
+  '@babel/plugin-syntax-typescript@7.24.7(@babel/core@7.25.2)':
+    dependencies:
+      '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
 
   '@babel/plugin-syntax-unicode-sets-regex@7.18.6(@babel/core@7.25.2)':
@@ -7807,7 +7817,7 @@ snapshots:
       '@tanstack/query-core': 5.51.15
       react: 18.3.1
 
-  '@tanstack/react-router@1.45.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-router@1.45.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.45.3
       '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7823,9 +7833,9 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       use-sync-external-store: 1.2.2(react@18.3.1)
 
-  '@tanstack/router-devtools@1.45.15(@tanstack/react-router@1.45.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/router-devtools@1.45.16(@tanstack/react-router@1.45.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/react-router': 1.45.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.45.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       goober: 2.1.14(csstype@3.1.3)
       react: 18.3.1
@@ -7873,13 +7883,13 @@ snapshots:
 
   '@tanstack/start-vite-plugin@1.45.13':
     dependencies:
-      '@babel/core': 7.24.9
+      '@babel/core': 7.25.2
       '@babel/generator': 7.25.0
       '@babel/parser': 7.25.3
-      '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.24.9)
-      '@babel/plugin-syntax-typescript': 7.24.7(@babel/core@7.24.9)
+      '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.25.2)
+      '@babel/plugin-syntax-typescript': 7.24.7(@babel/core@7.25.2)
       '@babel/template': 7.25.0
-      '@babel/traverse': 7.25.1
+      '@babel/traverse': 7.25.3
       '@babel/types': 7.25.2
       '@types/babel__core': 7.20.5
       '@types/babel__generator': 7.6.8
@@ -7888,10 +7898,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.45.15(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))':
+  '@tanstack/start@1.45.16(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))':
     dependencies:
       '@tanstack/react-cross-context': 1.44.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tanstack/react-router': 1.45.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.45.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-generator': 1.45.7
       '@tanstack/router-plugin': 1.45.13(vite@5.3.5(@types/node@20.14.13)(terser@5.31.3))
       '@tanstack/start-vite-plugin': 1.45.13
@@ -12127,9 +12137,9 @@ snapshots:
 
   vinxi@0.4.1(@types/node@20.14.13)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.3):
     dependencies:
-      '@babel/core': 7.24.9
-      '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.24.9)
-      '@babel/plugin-syntax-typescript': 7.24.7(@babel/core@7.24.9)
+      '@babel/core': 7.25.2
+      '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.25.2)
+      '@babel/plugin-syntax-typescript': 7.24.7(@babel/core@7.25.2)
       '@types/micromatch': 4.0.9
       '@vinxi/listhen': 1.5.6
       boxen: 7.1.1
