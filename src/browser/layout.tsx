@@ -133,14 +133,14 @@ export function Layout({
 						}}
 					/>
 				</div>
-				<div className='drawer-side'>
+				<aside className='drawer-side min-h-screen'>
 					<label
 						aria-label='close sidebar'
 						className='drawer-overlay'
 						htmlFor='my-drawer-3'
 					/>
 					{sidebar}
-				</div>
+				</aside>
 			</div>
 			<dialog className='modal' id='my_modal_2' ref={dialogRef}>
 				<div className='modal-box grid grid-cols-1'>

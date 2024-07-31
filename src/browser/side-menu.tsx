@@ -32,7 +32,10 @@ const SmoothLink = ({ children, href }: { children: string; href: string }) => {
 
 export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 	return (
-		<ul className='menu bg-base-200 w-56 rounded-box h-full ' role='navigation'>
+		<ul
+			className='menu bg-base-200 w-56 rounded-box min-h-screen'
+			role='navigation'
+		>
 			{withBookmarks && (
 				<li>
 					<h2 className='menu-title'>Content</h2>
