@@ -50,8 +50,7 @@ Check these key points in this sample app's file [src/routes/notes/$noteId.tsx](
 
 * the loader executes on server side when the page is requested directly
 * executes on client side when client side routing happens
-* the condition `if (import.meta.env.SSR)` is used to conditionally access the database only on server
-* server bundle doesn't contain frontend code and vice versa (Vite apparently does that)
+* the condition `if (context.queries)` verifies that we have server queries appended to the context
 * fetched data can be passed to Tanstack Query `initialData` for the first render
 
 Points worth mentioning:
