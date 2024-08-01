@@ -2,35 +2,49 @@ import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
 import { type FastifyServerOptions, fastify } from 'fastify'
 import { googleAuth } from '#/auth/google-auth'
 import { apiRouter } from './api-router'
-import { type Env, env } from './env'
+import type { Env } from './env'
 import { createTrpcContext } from './trpc-context'
 
 export async function createServer(
-	options: FastifyServerOptions = {
+	fastifyOptions: FastifyServerOptions = {
 		logger: true,
 		maxParamLength: 5_000,
 	},
-	overrideEnv: Partial<Env> = {},
+	options: {
+		env?: Env
+		skipVite: boolean
+	} = {
+		skipVite: false,
+	},
 ) {
-	const server = fastify(options)
+	if (!options.env) {
+		throw Error(`Specify an env file`)
+	}
+
+	const server = fastify(fastifyOptions)
 
 	await server
 		.register(import('#/db/db-plugin'), {
-			dbUrl: overrideEnv.DATABASE_URL ?? env.DATABASE_URL,
+			dbUrl: options.env.DATABASE_URL,
 		})
 		.register(import('./redirect-plugin'), {
-			hostNamesRedirectFrom: env.HOST_NAMES_REDIRECT_FROM,
-			hostNameRedirectTo: env.SITE_URL,
+			hostNamesRedirectFrom: options.env.HOST_NAMES_REDIRECT_FROM,
+			hostNameRedirectTo: options.env.SITE_URL,
 		})
-		.register(import('./vite-plugin'))
+
+	if (!options.skipVite) {
+		await server.register(import('./vite-plugin'))
+	}
+
+	server
 		.register(import('@fastify/cookie'), {
 			hook: 'onRequest',
-			secret: env.SECRET,
+			secret: options.env.SECRET,
 		})
 		.register(import('@fastify/websocket'))
 		.register(googleAuth, {
-			GOOGLE_CLIENT_ID: env.GOOGLE_CLIENT_ID,
-			GOOGLE_CLIENT_SECRET: env.GOOGLE_CLIENT_SECRET,
+			GOOGLE_CLIENT_ID: options.env.GOOGLE_CLIENT_ID,
+			GOOGLE_CLIENT_SECRET: options.env.GOOGLE_CLIENT_SECRET,
 		})
 		.register(fastifyTRPCPlugin, {
 			prefix: '/trpc',

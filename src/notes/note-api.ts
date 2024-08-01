@@ -17,7 +17,7 @@ declare global {
 
 globalThis.noteEmitter ??= new Emitter<Events>()
 
-export const noteRouter = router({
+export const noteApi = router({
 	onDelete: publicProcedure.subscription(() => {
 		return observable<{ id: string }>((emit) => {
 			const emitNote = (data: { id: string }) => {

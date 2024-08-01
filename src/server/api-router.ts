@@ -1,10 +1,10 @@
-import { authRouter } from '#/auth/auth-routes'
-import { noteRouter } from '#/notes/note-router'
+import { authApi } from '#/auth/auth-api'
+import { noteApi } from '#/notes/note-api'
 import { router } from './trpc-server'
 
 export const apiRouter = router({
-	auth: authRouter,
-	note: noteRouter,
+	auth: authApi,
+	note: noteApi,
 })
 
 export type ApiRouter = typeof apiRouter

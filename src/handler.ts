@@ -1,8 +1,12 @@
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import type { Socket } from 'node:net'
 import { createServer } from '#/server/create-server'
+import { env } from './server/env'
 
-const server = await createServer()
+const server = await createServer(undefined, {
+	env,
+	skipVite: false,
+})
 
 declare module 'node:net' {
 	interface Socket {
