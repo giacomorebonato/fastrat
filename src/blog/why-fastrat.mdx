@@ -41,6 +41,8 @@ I think that it's a very common case to rely on a SPA for a private dashboard, b
 
 FastRat renders the HTML on the first request and then uses client side routing when the interaction happens on the page.
 
+Also since we have a server running for the API end points, the intention is to re-use such server for doing the first page render.
+
 <h2 id='server-side-data-fetching'>Server side data fetching</h2>
 
 With FastRat you can achieve what in NextJS can be done through <a className='link' href='https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props' target='_blank'>**getServerSideProps**</a>.  
@@ -111,6 +113,19 @@ It handles schema, migrations and queries.
 
 Everytime that you need to validate an object structure and to infer its type, you can use [Zod](https://github.com/colinhacks/zod).  
 Which is also at the root of the tRPC functionality.
+
+<h2 id='testing'>Testing</h2>
+
+FastRat comes with these commands:
+
+```bash
+node --run test # for testing backend code
+node --run e2e  # for integration and UI testing
+```
+
+They both output coverage.
+You can achieve 100% concurrencies of tests by relying on the fact that when starting a Fastify server, it creates a new in memory sqlite database.
+Both tests command run out of the box in GitHub actions and they report on PR.
 
 ### Deployment freedom
 
