@@ -13,6 +13,7 @@ const config: UserConfig = {
 				build: {
 					outDir: 'dist/client',
 					manifest: true,
+					sourcemap: process.env.ENABLE_SOURCEMAPS === 'true',
 				},
 			},
 		},

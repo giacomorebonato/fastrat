@@ -35,10 +35,7 @@ export default defineConfig({
 		},
 	],
 
-	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
 	reporter: 'html',
-
-	/* Retry on CI only */
 	retries: process.env.CI ? 2 : 0,
 
 	testDir: './e2e',
@@ -54,11 +51,14 @@ export default defineConfig({
 
 	/* Run your local dev server before starting the tests */
 	webServer: {
-		command: 'pnpm build && pnpm start',
+		command:
+			'node --run clean && ENABLE_SOURCEMAPS=true node --run build && node --run start',
 		reuseExistingServer: !process.env.CI,
 		url: 'http://localhost:3000',
 	},
 
 	/* Opt out of parallel tests on CI. */
 	workers: process.env.CI ? 1 : undefined,
+	globalSetup: 'e2e/global.setup.ts',
+	globalTeardown: 'e2e/global.teardown.ts',
 })
