@@ -64,6 +64,9 @@ export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 						<li>
 							<SmoothLink href='#fully-typed'>Fully typed</SmoothLink>
 						</li>
+						<li>
+							<SmoothLink href='#testing'>Testing</SmoothLink>
+						</li>
 					</ul>
 				</li>
 			)}

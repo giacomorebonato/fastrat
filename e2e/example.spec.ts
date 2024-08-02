@@ -1,5 +1,6 @@
-import { expect, test } from '@playwright/test'
+import { expect } from '@playwright/test'
 import { HtmlValidate } from 'html-validate/node'
+import { test } from './fixtures'
 
 const htmlvalidate = new HtmlValidate({
 	extends: ['html-validate:recommended'],

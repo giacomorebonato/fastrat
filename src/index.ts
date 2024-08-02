@@ -3,7 +3,10 @@ import { env } from '#/server/env.js'
 
 async function start() {
 	try {
-		const server = await createServer()
+		const server = await createServer(undefined, {
+			skipVite: false,
+			env,
+		})
 
 		await server.listen({
 			host: env.HOST,
