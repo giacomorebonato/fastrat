@@ -40,16 +40,16 @@ importers:
         version: 5.51.15(@tanstack/react-query@5.51.15(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
         specifier: ^1.45.11
-        version: 1.46.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.46.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-devtools':
         specifier: ^1.45.11
-        version: 1.46.3(@tanstack/react-router@1.46.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.46.4(@tanstack/react-router@1.46.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-vite-plugin':
         specifier: ^1.45.8
         version: 1.45.13(vite@5.3.5(@types/node@20.14.14)(terser@5.31.3))
       '@tanstack/start':
-        specifier: 1.46.3
-        version: 1.46.3(@types/node@20.14.14)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14)(terser@5.31.3))
+        specifier: 1.46.4
+        version: 1.46.4(@types/node@20.14.14)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14)(terser@5.31.3))
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.467(@trpc/server@11.0.0-rc.467)
@@ -2096,8 +2096,8 @@ packages:
     peerDependencies:
       react: ^18.0.0
 
-  '@tanstack/react-router@1.46.3':
-    resolution: {integrity: sha512-NVu/bQofLJIPQyq7W2drhi5veiDK1TwCvKIVCO3zBkkA4X7N2Bq6EqIbocwsN6wmHHmfKs7ovsSfz2dKQ4T0gg==}
+  '@tanstack/react-router@1.46.4':
+    resolution: {integrity: sha512-ELuHRaUCswAPwzrdf+X1BStKbogEQ82qW9Nyl0FfdK3qta7b28frBD9mmDOeyHW/Ff+OhWhY3KgpeViHef/+LQ==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18'
@@ -2109,11 +2109,11 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
 
-  '@tanstack/router-devtools@1.46.3':
-    resolution: {integrity: sha512-nGHtuH5a/0vLdMwDI2FubzyUZZSw8KbrXaLB4uej8vyGFOX70v3GOhN6n7bFAPT1i3SxE5uIyRq7/agC91xgTw==}
+  '@tanstack/router-devtools@1.46.4':
+    resolution: {integrity: sha512-MtOctTsHVwcBAixFrDv+gvlhMS3RhVvQHeRLt9qRCepUILilffTTWLGKhbarVRWuRsxBhQeTd4uIrFSKCKbSRA==}
     engines: {node: '>=12'}
     peerDependencies:
-      '@tanstack/react-router': ^1.46.3
+      '@tanstack/react-router': ^1.46.4
       react: '>=18'
       react-dom: '>=18'
 
@@ -2144,8 +2144,8 @@ packages:
     resolution: {integrity: sha512-vddjtnQsZbvjD8+M0KvKHCMIuN0ONtda/SEQ4xGft8g3LN2HFCrOi5e66adKTdsVE9+WPGkWmeAJW6OMdP0XMA==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.46.3':
-    resolution: {integrity: sha512-FuVX+90aKmk0ubPDP1uEn8rfSFcaeHdpK/UrbfKc/+wZZ+hWXtG5vFxAi+S/uJuDyMW+a5tosL1MiRtSxiUmjw==}
+  '@tanstack/start@1.46.4':
+    resolution: {integrity: sha512-e8+k+wpNUdDOiGlcaHPwdRncE7n3S6S8Bcs6wMluvtgZabtkQFDfI3cMC7UAnAqJJtjilQD5PT0NkeC3dTLSWQ==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -7832,7 +7832,7 @@ snapshots:
       '@tanstack/query-core': 5.51.15
       react: 18.3.1
 
-  '@tanstack/react-router@1.46.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-router@1.46.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.45.3
       '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7848,9 +7848,9 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       use-sync-external-store: 1.2.2(react@18.3.1)
 
-  '@tanstack/router-devtools@1.46.3(@tanstack/react-router@1.46.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/router-devtools@1.46.4(@tanstack/react-router@1.46.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/react-router': 1.46.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.46.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       goober: 2.1.14(csstype@3.1.3)
       react: 18.3.1
@@ -7913,10 +7913,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.46.3(@types/node@20.14.14)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14)(terser@5.31.3))':
+  '@tanstack/start@1.46.4(@types/node@20.14.14)(better-sqlite3@11.1.2)(drizzle-orm@0.32.1(@types/better-sqlite3@7.6.11)(@types/react@18.3.3)(better-sqlite3@11.1.2)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14)(terser@5.31.3))':
     dependencies:
       '@tanstack/react-cross-context': 1.44.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tanstack/react-router': 1.46.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.46.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-generator': 1.45.7
       '@tanstack/router-plugin': 1.45.13(vite@5.3.5(@types/node@20.14.14)(terser@5.31.3))
       '@tanstack/start-vite-plugin': 1.45.13
