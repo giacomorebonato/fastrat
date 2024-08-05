@@ -191,7 +191,7 @@ importers:
         version: 15.2.8
       monocart-coverage-reports:
         specifier: ^2.10.0
-        version: 2.10.0
+        version: 2.10.1
       npm-run-all2:
         specifier: ^6.2.2
         version: 6.2.2
@@ -4454,8 +4454,8 @@ packages:
   mnemonist@0.39.8:
     resolution: {integrity: sha512-vyWo2K3fjrUw8YeeZ1zF0fy6Mu59RHokURlld8ymdUPjMlD9EC9ov1/YPqTgqRvUN9nTr3Gqfz29LYAmu0PHPQ==}
 
-  monocart-coverage-reports@2.10.0:
-    resolution: {integrity: sha512-PxMFUGQ3gDVmQVbKejfwgXHncDDFX5zldPQLLbYNacDq7qFft2K8hvroEDGztQ5DionF9ztiqlbgKIGmeMyBeA==}
+  monocart-coverage-reports@2.10.1:
+    resolution: {integrity: sha512-BYjyBxxcg+qoSWtZBN6yeFi9HoySHzsNB9vxUvjpFe63FdnN2olbsvmG64hC5K3mE9y/Ptb75KNNOA0O55ITgQ==}
     hasBin: true
 
   monocart-locator@1.0.2:
@@ -10619,7 +10619,7 @@ snapshots:
     dependencies:
       obliterator: 2.0.4
 
-  monocart-coverage-reports@2.10.0:
+  monocart-coverage-reports@2.10.1:
     dependencies:
       '@bcoe/v8-coverage': 0.2.3
       '@jridgewell/sourcemap-codec': 1.5.0
