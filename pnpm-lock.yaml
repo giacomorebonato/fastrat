@@ -13,7 +13,7 @@ importers:
         version: 3.11.4(@types/react@18.3.3)(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@fastify/cookie':
         specifier: ^9.3.1
-        version: 9.3.1
+        version: 9.4.0
       '@fastify/oauth2':
         specifier: 7.9.0
         version: 7.9.0
@@ -1497,8 +1497,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@fastify/cookie@9.3.1':
-    resolution: {integrity: sha512-h1NAEhB266+ZbZ0e9qUE6NnNR07i7DnNXWG9VbbZ8uC6O/hxHpl+Zoe5sw1yfdZ2U6XhToUGDnzQtWJdCaPwfg==}
+  '@fastify/cookie@9.4.0':
+    resolution: {integrity: sha512-Th+pt3kEkh4MQD/Q2q1bMuJIB5NX/D5SwSpOKu3G/tjoGbwfpurIMJsWSPS0SJJ4eyjtmQ8OipDQspf8RbUOlg==}
 
   '@fastify/error@3.4.1':
     resolution: {integrity: sha512-wWSvph+29GR783IhmvdwWnN4bUxTD01Vm5Xad4i7i1VuAOItLvbPAb69sb0IQ2N57yprvhNIwAP5B6xfKTmjmQ==}
@@ -2510,6 +2510,9 @@ packages:
 
   async@3.2.5:
     resolution: {integrity: sha512-baNZyqaaLhyLVKm/DlvdW051MSgO6b8eVfIezl9E5PqWxFgzLm/wQntEW4zOytVburDEr0JlALEpdOFwvErLsg==}
+
+  async@3.2.6:
+    resolution: {integrity: sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==}
 
   at-least-node@1.0.0:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
@@ -7157,7 +7160,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@fastify/cookie@9.3.1':
+  '@fastify/cookie@9.4.0':
     dependencies:
       cookie-signature: 1.2.1
       fastify-plugin: 4.5.1
@@ -7174,7 +7177,7 @@ snapshots:
 
   '@fastify/oauth2@7.9.0':
     dependencies:
-      '@fastify/cookie': 9.3.1
+      '@fastify/cookie': 9.4.0
       fastify-plugin: 4.5.1
       simple-oauth2: 5.1.0
     transitivePeerDependencies:
@@ -8342,6 +8345,8 @@ snapshots:
   async-sema@3.1.1: {}
 
   async@3.2.5: {}
+
+  async@3.2.6: {}
 
   at-least-node@1.0.0: {}
 
@@ -9896,7 +9901,7 @@ snapshots:
 
   jake@10.9.2:
     dependencies:
-      async: 3.2.5
+      async: 3.2.6
       chalk: 4.1.2
       filelist: 1.0.4
       minimatch: 3.1.2
