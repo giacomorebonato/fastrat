@@ -9,7 +9,7 @@ import { fastifyPlugin } from 'fastify-plugin'
 import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
 import { createRouter } from '#/browser/create-router'
-import { createTemplate } from './create-template'
+import { createTemplate, getIndexHtml } from './create-template'
 import type { Env } from './env'
 
 const distClientPath = import.meta.env.PROD
@@ -39,6 +39,15 @@ export const vitePlugin = fastifyPlugin<{ nodeEnv: Env['NODE_ENV'] }>(
 
 		fastify.get('*', async (request, reply) => {
 			reply.type('text/html')
+
+			if (request.url === '/index.html') {
+				request.log.info(`Rendering index.html for PWA`)
+				// I don't know why this is needed given that there is
+				// Fastify Static serving assets, but if we enter here
+				// then it's not working as intended
+				reply.send(getIndexHtml(options.nodeEnv))
+				return
+			}
 
 			// helmetContext and redirect are passed to the rendering router
 			// and mutated, so we can verify their data
