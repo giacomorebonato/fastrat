@@ -9,14 +9,15 @@ import { fastifyPlugin } from 'fastify-plugin'
 import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
 import { createRouter } from '#/browser/create-router'
-import { createTemplate } from './create-template'
+import { createTemplate, getIndexHtml } from './create-template'
+import type { Env } from './env'
 
 const distClientPath = import.meta.env.PROD
 	? Path.join(appRootPath.path, 'dist/client')
 	: Path.join(appRootPath.path, 'public')
 
-export const vitePlugin = fastifyPlugin(
-	async (fastify) => {
+export const vitePlugin = fastifyPlugin<{ nodeEnv: Env['NODE_ENV'] }>(
+	async (fastify, options) => {
 		if (import.meta.env.PROD) {
 			await fastify.register(import('@fastify/static'), {
 				prefix: '/assets/',
@@ -37,6 +38,13 @@ export const vitePlugin = fastifyPlugin(
 		}
 
 		fastify.get('*', async (request, reply) => {
+			reply.type('text/html')
+
+			if (request.url === '/index.html') {
+				// this should be handled by Fastify Static, but apparently it's not
+				// it happens when we are in PWA mode and we don't use SSR
+				return reply.send(getIndexHtml(options.nodeEnv))
+			}
 			// helmetContext and redirect are passed to the rendering router
 			// and mutated, so we can verify their data
 			request.helmetContext = {}
@@ -75,7 +83,7 @@ export const vitePlugin = fastifyPlugin(
 				: 'onShellReady'
 
 			let didError = false
-			reply.type('text/html')
+
 			// https://react.dev/reference/react-dom/server/renderToPipeableStream
 			const pipeableStream = renderToPipeableStream(
 				<StartServer router={router} />,

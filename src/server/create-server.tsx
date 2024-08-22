@@ -33,7 +33,9 @@ export async function createServer(
 		})
 
 	if (!options.skipVite) {
-		await server.register(import('./vite-plugin'))
+		await server.register(import('./vite-plugin'), {
+			nodeEnv: options.env.NODE_ENV,
+		})
 	}
 
 	server
