@@ -4,12 +4,20 @@ import jsesc from 'jsesc'
 import { useContext } from 'react'
 import { Helmet } from 'react-helmet-async'
 
+declare global {
+	var IS_PWA: boolean
+}
+
 export function useCustomMeta() {
 	const router = useRouter()
 
 	const dehydratedCtx = useContext(
 		Context.get('TanStackRouterHydrationContext', {}),
 	)
+
+	if (globalThis.IS_PWA) {
+		return ''
+	}
 
 	return `__TSR__.dehydrated = ${jsesc(
 		router.options.transformer.stringify(dehydratedCtx),
