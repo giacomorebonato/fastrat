@@ -11,6 +11,7 @@ const divRoot = document.getElementById('root') as HTMLDivElement
 // innerHTML contains just the placeholder when nothing has been server rendered
 // it happens in PWA mode
 if (divRoot.innerHTML === '<!--app-html-->') {
+	console.log(`ReactDOM.createRoot`)
 	const root = ReactDOM.createRoot(divRoot)
 	root.render(
 		<React.StrictMode>
@@ -18,6 +19,7 @@ if (divRoot.innerHTML === '<!--app-html-->') {
 		</React.StrictMode>,
 	)
 } else {
+	console.log(`ReactDOM.hydrateRoot`)
 	ReactDOM.hydrateRoot(
 		divRoot,
 		<React.StrictMode>
