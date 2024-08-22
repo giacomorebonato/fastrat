@@ -85,12 +85,14 @@ export const vitePlugin = fastifyPlugin(
 						pipeableStream.pipe(passStream).write(footer)
 					},
 					onShellError(error) {
-						reply.log.error(error)
+						request.log.error('shell-error', error)
 
-						return reply.code(500).send(`<h1>Something went wrong</h1>`)
+						return reply.code(500).send(`<h1>${JSON.stringify(error)}</h1>`)
 					},
 					onError(error) {
 						didError = true
+
+						request.log.error('on-error', error)
 
 						reply.log.error(error)
 					},

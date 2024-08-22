@@ -19,6 +19,7 @@ test('creates a note and ensures note list is updated from websockets and that S
 	browser,
 	page,
 }) => {
+	await page.reload()
 	page.on('console', (msg) => {
 		if (msg.type() === 'error') {
 			throw Error(msg.text())
