@@ -9,18 +9,18 @@ const divRoot = document.getElementById('root') as HTMLDivElement
 
 // innerHTML contains just the placeholder when nothing has been server rendered
 // it happens in PWA mode
-if (divRoot.innerHTML === '<!--app-html-->') {
-	const root = ReactDOM.createRoot(divRoot)
-	root.render(
-		<React.StrictMode>
-			<StartClient router={router} />
-		</React.StrictMode>,
-	)
-} else {
-	ReactDOM.hydrateRoot(
-		divRoot,
-		<React.StrictMode>
-			<StartClient router={router} />
-		</React.StrictMode>,
-	)
-}
+// if (divRoot.innerHTML === '<!--app-html-->') {
+const root = ReactDOM.createRoot(divRoot)
+root.render(
+	<React.StrictMode>
+		<StartClient router={router} />
+	</React.StrictMode>,
+)
+// } else {
+// 	ReactDOM.hydrateRoot(
+// 		divRoot,
+// 		<React.StrictMode>
+// 			<StartClient router={router} />
+// 		</React.StrictMode>,
+// 	)
+// }
