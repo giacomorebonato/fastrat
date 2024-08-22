@@ -11,6 +11,8 @@ const divRoot = document.getElementById('root') as HTMLDivElement
 // innerHTML contains just the placeholder when nothing has been server rendered
 // it happens in PWA mode
 if (divRoot.innerHTML === '<!--app-html-->') {
+	console.log(`Running as PWA`)
+
 	globalThis.IS_PWA = true
 	const root = ReactDOM.createRoot(divRoot)
 	root.render(
@@ -19,6 +21,8 @@ if (divRoot.innerHTML === '<!--app-html-->') {
 		</React.StrictMode>,
 	)
 } else {
+	console.log(`Hydrating from server`)
+
 	globalThis.IS_PWA = false
 	ReactDOM.hydrateRoot(
 		divRoot,
