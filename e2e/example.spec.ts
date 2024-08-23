@@ -83,7 +83,7 @@ test(`it renders valid HTML of the main page`, async ({ page }) => {
 test(`it renders valid HTML of the main page with clientOnly rendering`, async ({
 	page,
 }) => {
-	await page.goto('http://localhost:3000')
+	await page.goto('http://localhost:3000?clientOnly=true')
 
 	const html = await page.content()
 	const report = await htmlvalidate.validateString(html)
