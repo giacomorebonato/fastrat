@@ -48,8 +48,8 @@ importers:
         specifier: ^1.49.3
         version: 1.49.3(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
       '@tanstack/start':
-        specifier: 1.49.3
-        version: 1.49.3(@types/node@22.5.0)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
+        specifier: 1.49.5
+        version: 1.49.5(@types/node@22.5.0)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.477(@trpc/server@11.0.0-rc.477)
@@ -2129,8 +2129,8 @@ packages:
     resolution: {integrity: sha512-QtJsr59LiYJcsqo1WJreH3me6oTfwFkqrE37+r6lBO75pQSC2saKa5NdpIbpm8O2AvGgEZ1C2h/qfZkiMTIsUg==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.49.3':
-    resolution: {integrity: sha512-EIsdQgTzipFQEchWFkee6fRmhpUK7y9JUcnNGbDCfcEd6UPM04HWAkyj93hyUVlxVR/8b5/XsNBZIfc44ARLTQ==}
+  '@tanstack/start@1.49.5':
+    resolution: {integrity: sha512-Pz9RJ0SdMa/rdEmq/pTAknpGJWBmp1jTYOU4RAr7ebxxlqoFt8S6AVffKzI/jD4GOkdE6fbAZdkTETmwkXiEyA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -6149,8 +6149,8 @@ snapshots:
 
   '@babel/helper-module-imports@7.24.7':
     dependencies:
-      '@babel/traverse': 7.25.3
-      '@babel/types': 7.25.2
+      '@babel/traverse': 7.25.4
+      '@babel/types': 7.25.4
     transitivePeerDependencies:
       - supports-color
 
@@ -6190,8 +6190,8 @@ snapshots:
 
   '@babel/helper-simple-access@7.24.7':
     dependencies:
-      '@babel/traverse': 7.25.3
-      '@babel/types': 7.25.2
+      '@babel/traverse': 7.25.4
+      '@babel/types': 7.25.4
     transitivePeerDependencies:
       - supports-color
 
@@ -7842,13 +7842,13 @@ snapshots:
   '@tanstack/start-vite-plugin@1.46.6':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/generator': 7.25.0
-      '@babel/parser': 7.25.3
+      '@babel/generator': 7.25.4
+      '@babel/parser': 7.25.4
       '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.25.2)
       '@babel/plugin-syntax-typescript': 7.24.7(@babel/core@7.25.2)
       '@babel/template': 7.25.0
-      '@babel/traverse': 7.25.3
-      '@babel/types': 7.25.2
+      '@babel/traverse': 7.25.4
+      '@babel/types': 7.25.4
       '@types/babel__core': 7.20.5
       '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
@@ -7856,7 +7856,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.49.3(@types/node@22.5.0)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))':
+  '@tanstack/start@1.49.5(@types/node@22.5.0)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.6)(typescript@5.5.4)(vite@5.4.2(@types/node@22.5.0)(terser@5.31.6))':
     dependencies:
       '@tanstack/react-cross-context': 1.44.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router': 1.49.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8105,7 +8105,7 @@ snapshots:
 
   '@vinxi/plugin-directives@0.4.1(vinxi@0.4.1(@types/node@22.5.0)(better-sqlite3@11.2.1)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.4)(better-sqlite3@11.2.1)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.4)(terser@5.31.6))':
     dependencies:
-      '@babel/parser': 7.25.3
+      '@babel/parser': 7.25.4
       acorn: 8.12.1
       acorn-jsx: 5.3.2(acorn@8.12.1)
       acorn-loose: 8.4.0
@@ -10141,8 +10141,8 @@ snapshots:
 
   magicast@0.2.11:
     dependencies:
-      '@babel/parser': 7.25.3
-      '@babel/types': 7.25.2
+      '@babel/parser': 7.25.4
+      '@babel/types': 7.25.4
       recast: 0.23.9
 
   magicast@0.3.4:
