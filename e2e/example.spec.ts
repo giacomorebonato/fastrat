@@ -80,6 +80,19 @@ test(`it renders valid HTML of the main page`, async ({ page }) => {
 	}
 })
 
+test(`it renders valid HTML of the main page with clientOnly rendering`, async ({
+	page,
+}) => {
+	await page.goto('http://localhost:3000')
+
+	const html = await page.content()
+	const report = await htmlvalidate.validateString(html)
+
+	for (const result of report.results) {
+		expect(result.messages).toHaveLength(0)
+	}
+})
+
 test(`it renders valid HTML of the notes page`, async ({ page, browser }) => {
 	await page.goto('http://localhost:3000/notes')
 	await page.getByTestId('btn-create-note').click()
