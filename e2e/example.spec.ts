@@ -80,6 +80,20 @@ test(`it renders valid HTML of the main page`, async ({ page }) => {
 	}
 })
 
+test(`it renders valid HTML of the main page with clientOnly rendering`, async ({
+	page,
+}) => {
+	page.on('console', (msg) => {
+		if (msg.type() === 'error') {
+			throw Error(msg.text())
+		}
+	})
+
+	await page.goto('http://localhost:3000?clientOnly=true')
+	await page.getByText(`Modern Web Development with Fastify + React`)
+	await page.getByTestId(`btn-logout`).click()
+})
+
 test(`it renders valid HTML of the notes page`, async ({ page, browser }) => {
 	await page.goto('http://localhost:3000/notes')
 	await page.getByTestId('btn-create-note').click()
