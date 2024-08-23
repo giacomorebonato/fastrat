@@ -91,7 +91,7 @@ test(`it renders valid HTML of the main page with clientOnly rendering`, async (
 
 	await page.goto('http://localhost:3000?clientOnly=true')
 	await page.getByText(`Modern Web Development with Fastify + React`)
-	await page.getByTestId(`btn-login`).click()
+	await page.getByTestId(`btn-logout`).click()
 })
 
 test(`it renders valid HTML of the notes page`, async ({ page, browser }) => {
