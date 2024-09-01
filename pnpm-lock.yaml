@@ -167,10 +167,10 @@ importers:
         version: 2.0.5(vitest@2.0.5(@types/node@22.5.2)(terser@5.31.6))
       autoprefixer:
         specifier: ^10.4.20
-        version: 10.4.20(postcss@8.4.42)
+        version: 10.4.20(postcss@8.4.43)
       daisyui:
         specifier: ^4.12.10
-        version: 4.12.10(postcss@8.4.42)
+        version: 4.12.10(postcss@8.4.43)
       del-cli:
         specifier: ^5.1.0
         version: 5.1.0
@@ -200,7 +200,7 @@ importers:
         version: 11.2.2
       postcss:
         specifier: ^8.4.41
-        version: 8.4.42
+        version: 8.4.43
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
@@ -4775,8 +4775,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.4.42:
-    resolution: {integrity: sha512-hywKUQB9Ra4dR1mGhldy5Aj1X3MWDSIA1cEi+Uy0CjheLvP6Ual5RlwMCh8i/X121yEDLDIKBsrCQ8ba3FDMfQ==}
+  postcss@8.4.43:
+    resolution: {integrity: sha512-gJAQVYbh5R3gYm33FijzCZj7CHyQ3hWMgJMprLUlIYqCwTeZhBQ19wp0e9mA25BUbEvY5+EXuuaAjqQsrBxQBQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prebuild-install@7.1.2:
@@ -8393,14 +8393,14 @@ snapshots:
 
   atomic-sleep@1.0.0: {}
 
-  autoprefixer@10.4.20(postcss@8.4.42):
+  autoprefixer@10.4.20(postcss@8.4.43):
     dependencies:
       browserslist: 4.23.3
       caniuse-lite: 1.0.30001653
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.1
-      postcss: 8.4.42
+      postcss: 8.4.43
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -8778,12 +8778,12 @@ snapshots:
 
   culori@3.3.0: {}
 
-  daisyui@4.12.10(postcss@8.4.42):
+  daisyui@4.12.10(postcss@8.4.43):
     dependencies:
       css-selector-tokenizer: 0.8.0
       culori: 3.3.0
       picocolors: 1.0.1
-      postcss-js: 4.0.1(postcss@8.4.42)
+      postcss-js: 4.0.1(postcss@8.4.43)
     transitivePeerDependencies:
       - postcss
 
@@ -10945,28 +10945,28 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-import@15.1.0(postcss@8.4.42):
+  postcss-import@15.1.0(postcss@8.4.43):
     dependencies:
-      postcss: 8.4.42
+      postcss: 8.4.43
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.42):
+  postcss-js@4.0.1(postcss@8.4.43):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.42
+      postcss: 8.4.43
 
-  postcss-load-config@4.0.2(postcss@8.4.42):
+  postcss-load-config@4.0.2(postcss@8.4.43):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.0
     optionalDependencies:
-      postcss: 8.4.42
+      postcss: 8.4.43
 
-  postcss-nested@6.2.0(postcss@8.4.42):
+  postcss-nested@6.2.0(postcss@8.4.43):
     dependencies:
-      postcss: 8.4.42
+      postcss: 8.4.43
       postcss-selector-parser: 6.1.2
 
   postcss-selector-parser@6.0.10:
@@ -10981,7 +10981,7 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.4.42:
+  postcss@8.4.43:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.1
@@ -11720,11 +11720,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.1
-      postcss: 8.4.42
-      postcss-import: 15.1.0(postcss@8.4.42)
-      postcss-js: 4.0.1(postcss@8.4.42)
-      postcss-load-config: 4.0.2(postcss@8.4.42)
-      postcss-nested: 6.2.0(postcss@8.4.42)
+      postcss: 8.4.43
+      postcss-import: 15.1.0(postcss@8.4.43)
+      postcss-js: 4.0.1(postcss@8.4.43)
+      postcss-load-config: 4.0.2(postcss@8.4.43)
+      postcss-nested: 6.2.0(postcss@8.4.43)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.8
       sucrase: 3.35.0
@@ -12231,7 +12231,7 @@ snapshots:
   vite@5.4.2(@types/node@22.5.2)(terser@5.31.6):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.42
+      postcss: 8.4.43
       rollup: 4.21.0
     optionalDependencies:
       '@types/node': 22.5.2
