@@ -82,7 +82,7 @@ importers:
         version: 0.5.1(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.5)(better-sqlite3@11.2.1)(react@18.3.1))(zod@3.23.8)
       fast-jwt:
         specifier: ^4.0.2
-        version: 4.0.3
+        version: 4.0.5
       fastify:
         specifier: 4.28.1
         version: 4.28.1
@@ -3521,8 +3521,8 @@ packages:
   fast-json-stringify@5.16.1:
     resolution: {integrity: sha512-KAdnLvy1yu/XrRtP+LJnxbBGrhN+xXu+gt3EUvZhYGKCr3lFHq/7UFJHHFgmJKoqlh6B40bZLEv7w46B0mqn1g==}
 
-  fast-jwt@4.0.3:
-    resolution: {integrity: sha512-t6mpAYoVV58zAs/0/zgQ0hv4sis9/ea/JchsnrnTtX2MH55B0GMI60x0ESZFP9/fl7xW7cgk+zdpP4C4xTllPQ==}
+  fast-jwt@4.0.5:
+    resolution: {integrity: sha512-QnpNdn0955GT7SlT8iMgYfhTsityUWysrQjM+Q7bGFijLp6+TNWzlbSMPvgalbrQGRg4ZaHZgMcns5fYOm5avg==}
     engines: {node: '>=16'}
 
   fast-querystring@1.1.2:
@@ -9491,7 +9491,7 @@ snapshots:
       json-schema-ref-resolver: 1.0.1
       rfdc: 1.4.1
 
-  fast-jwt@4.0.3:
+  fast-jwt@4.0.5:
     dependencies:
       '@lukeed/ms': 2.0.2
       asn1.js: 5.4.1
