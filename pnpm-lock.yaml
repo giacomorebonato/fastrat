@@ -70,7 +70,7 @@ importers:
         version: 2.1.1
       debounce:
         specifier: ^2.1.0
-        version: 2.1.0
+        version: 2.1.1
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -3078,8 +3078,8 @@ packages:
       drizzle-orm:
         optional: true
 
-  debounce@2.1.0:
-    resolution: {integrity: sha512-OkL3+0pPWCqoBc/nhO9u6TIQNTK44fnBnzuVtJAbp13Naxw9R6u21x+8tVTka87AhDZ3htqZ2pSSsZl9fqL2Wg==}
+  debounce@2.1.1:
+    resolution: {integrity: sha512-+xRWxgel9LgTC4PwKlm7TJUK6B6qsEK77NaiNvXmeQ7Y3e6OVVsBC4a9BSptS/mAYceyAz37Oa8JTTuPRft7uQ==}
     engines: {node: '>=18'}
 
   debug@2.6.9:
@@ -9007,7 +9007,7 @@ snapshots:
       better-sqlite3: 11.2.1
       drizzle-orm: 0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.5)(better-sqlite3@11.2.1)(react@18.3.1)
 
-  debounce@2.1.0: {}
+  debounce@2.1.1: {}
 
   debug@2.6.9:
     dependencies:
