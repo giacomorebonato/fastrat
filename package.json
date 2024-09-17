@@ -22,7 +22,7 @@
 	},
 	"dependencies": {
 		"@apollo/client": "^3.11.4",
-		"@fastify/cookie": "^9.4.0",
+		"@fastify/cookie": "^10.0.0",
 		"@fastify/oauth2": "7.9.0",
 		"@fastify/static": "^7.0.4",
 		"@fastify/websocket": "10.0.1",
