@@ -1,15 +1,15 @@
 import Crypto from 'node:crypto'
-import { desc } from 'drizzle-orm'
+import { desc, eq } from 'drizzle-orm'
 import type { FastratDatabase } from '#/db/db-plugin'
 import { type UserSchema, userTable } from '#/db/user-table'
+import { sessionTable } from './session-table'
 
 export class UserQueries {
 	constructor(private db: FastratDatabase) {}
-	upsert(user: Partial<UserSchema>) {
+	upsert(user: Partial<UserSchema> & Pick<UserSchema, 'email'>) {
 		const dbUser = this.db
 			.insert(userTable)
 			.values({
-				// email: user.email.trim(),
 				...user,
 				id: user.id ?? Crypto.randomUUID(),
 			})
@@ -27,6 +27,17 @@ export class UserQueries {
 			.get()
 
 		return dbUser
+	}
+
+	bySessionId(sessionId: string) {
+		return this.db
+			.select({
+				user: userTable,
+			})
+			.from(userTable)
+			.innerJoin(sessionTable, eq(userTable.id, sessionTable.userId))
+			.where(eq(sessionTable.id, sessionId))
+			.get()?.user
 	}
 
 	list() {

@@ -1,12 +1,8 @@
 import { fastifyOauth2 } from '@fastify/oauth2'
-import type { FastifyReply } from 'fastify'
 import { fastifyPlugin } from 'fastify-plugin'
 import { z } from 'zod'
-import type { FastratDatabase } from '#/db/db-plugin'
 import { env } from '#/server/env'
-import { USER_TOKEN } from './cookies'
-import { createToken } from './create-token'
-import { UserQueries } from './user-queries'
+import * as CookieHelpers from './cookie-helpers'
 
 export const googleUserSchema = z.object({
 	email: z.string(),
@@ -19,15 +15,11 @@ export const googleUserSchema = z.object({
 	verified_email: z.boolean(),
 })
 
-type GoogleUser = z.infer<typeof googleUserSchema>
-
-const isProduction = env.NODE_ENV === 'production'
-
 export const googleAuth = fastifyPlugin<{
 	GOOGLE_CLIENT_ID: string
 	GOOGLE_CLIENT_SECRET: string
-}>(async (fastify, clientCredentials) => {
-	fastify.register(fastifyOauth2, {
+}>(async (server, clientCredentials) => {
+	server.register(fastifyOauth2, {
 		callbackUri: `${env.SITE_URL}/login/google/callback`,
 		callbackUriParams: {
 			access_type: 'offline', // will tell Google to send a refreshToken too
@@ -46,30 +38,24 @@ export const googleAuth = fastifyPlugin<{
 	})
 
 	if (env.CI) {
-		fastify.log.warn(
+		server.log.warn(
 			`Google credentials not set. Falling back to fake authentication route for testing.`,
 		)
 
-		fastify.get('/login/google/ci', async (request, reply) => {
-			return updateDatabaseAndRedirect({
-				db: fastify.db,
+		server.get('/login/google/ci', async (request, reply) => {
+			return CookieHelpers.setAuthentication({
+				server,
 				reply,
 				user: {
 					// biome-ignore lint/style/noNonNullAssertion: <explanation>
 					email: env.TEST_EMAIL!,
 					id: '123',
-					name: 'test',
-					family_name: 'test',
-					locale: 'en',
-					verified_email: true,
-					given_name: 'test-given-name',
-					picture: '',
 				},
 			})
 		})
 	}
 
-	fastify.get('/login/google/callback', async function (request, reply) {
+	server.get('/login/google/callback', async function (request, reply) {
 		try {
 			const result =
 				await this.googleOAuth2.getAccessTokenFromAuthorizationCodeFlow(request)
@@ -85,8 +71,8 @@ export const googleAuth = fastifyPlugin<{
 			const userData = await response.json()
 			const user = googleUserSchema.parse(userData)
 
-			await updateDatabaseAndRedirect({
-				db: fastify.db,
+			CookieHelpers.setAuthentication({
+				server,
 				user,
 				reply,
 			})
@@ -95,36 +81,3 @@ export const googleAuth = fastifyPlugin<{
 		}
 	})
 })
-
-function updateDatabaseAndRedirect({
-	db,
-	reply,
-	user,
-}: {
-	db: FastratDatabase
-	reply: FastifyReply
-	user: GoogleUser
-}) {
-	const userQueries = new UserQueries(db)
-	const dbUser = userQueries.upsert({ email: user.email })
-	const token = createToken(
-		{
-			email: dbUser.email,
-			userId: dbUser.id,
-		},
-		env.SECRET,
-	)
-	const inSevenDays = new Date()
-
-	inSevenDays.setDate(inSevenDays.getDate() + 7)
-
-	reply
-		.setCookie(USER_TOKEN, token, {
-			expires: inSevenDays,
-			httpOnly: true,
-			path: '/',
-			secure: isProduction && !env.CI,
-			signed: isProduction && !env.CI,
-		})
-		.redirect('/')
-}
