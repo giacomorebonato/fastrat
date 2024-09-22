@@ -16,4 +16,5 @@ vite.config.ts.*
 coverage/
 .idea/
 local.db*
+local.sqlite*
 coverage-reports/
