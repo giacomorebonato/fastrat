@@ -37,7 +37,10 @@
 			"*.jpg",
 			"src/route-tree.gen.ts",
 			"migrations/",
-			"dist/"
+			"dist/",
+			"coverage/",
+			"coverage-reports/",
+			"playwright-report/"
 		]
 	}
 }

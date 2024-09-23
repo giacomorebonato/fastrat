@@ -1,6 +1,6 @@
-import { expect, test } from 'vitest'
+import { expect, test, vi } from 'vitest'
 import { z } from 'zod'
-import { createToken, parseToken } from '#/auth/create-token'
+import { createToken, parseToken } from '#/auth/token-helpers'
 
 test('creates a token and parses it back', () => {
 	const myData = {
@@ -13,7 +13,7 @@ test('creates a token and parses it back', () => {
 	})
 
 	const secret = 'my-secret'
-	const token = createToken<typeof myData>(myData, secret)
+	const token = createToken<typeof myData>(myData, { secret, expiresIn: '10m' })
 
 	const result = parseToken({
 		secret,
@@ -35,7 +35,7 @@ test('it throws if the validator fails', () => {
 	})
 
 	const secret = 'my-secret'
-	const token = createToken<typeof myData>(myData, secret)
+	const token = createToken<typeof myData>(myData, { secret, expiresIn: '10m' })
 
 	expect(() => {
 		parseToken({
@@ -44,4 +44,39 @@ test('it throws if the validator fails', () => {
 			validator,
 		})
 	}).throws()
+})
+
+test(`it let the token expire and then it's parsed as null`, () => {
+	vi.useFakeTimers()
+	const myData = {
+		a: 1,
+		test: 'hello',
+	} as const
+	const validator = z.object({
+		a: z.number(),
+		test: z.string(),
+	})
+
+	const secret = 'my-secret'
+	const token = createToken<typeof myData>(myData, { secret, expiresIn: '5m' })
+
+	let result = parseToken({
+		secret,
+		token,
+		validator,
+	})
+
+	expect(result).toStrictEqual(myData)
+
+	vi.advanceTimersByTime(1_000 * 60 * 10)
+
+	result = parseToken({
+		secret,
+		token,
+		validator,
+	})
+
+	expect(result).toBe(null)
+
+	vi.useRealTimers()
 })

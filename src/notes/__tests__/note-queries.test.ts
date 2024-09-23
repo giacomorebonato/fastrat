@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
 import { createDb } from '#/db/db-plugin'
-import { NoteQueries } from '#/notes/note-queries'
+import { NoteQueries } from '#/db/note-queries'
 
 test('creates, queries and deletes notes', () => {
 	const db = createDb(':memory:')

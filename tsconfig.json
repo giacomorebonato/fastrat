@@ -4,12 +4,15 @@
 		"allowSyntheticDefaultImports": true,
 		"jsx": "react-jsx",
 		"esModuleInterop": true,
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"lib": ["es2022", "dom", "dom.iterable"],
+		"verbatimModuleSyntax": true,
 		"forceConsistentCasingInFileNames": true,
 		"module": "ESNext",
 		"moduleResolution": "Bundler",
+		"sourceMap": true,
 		"noEmit": true,
 		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
 		"paths": {
 			"#/*": ["./src/*"]
 		},

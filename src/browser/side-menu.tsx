@@ -34,6 +34,7 @@ export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 	return (
 		<ul
 			className='menu bg-base-200 w-56 rounded-box min-h-screen'
+			// biome-ignore lint/a11y/useSemanticElements: this clearly has to be a <ul />
 			role='navigation'
 		>
 			{withBookmarks && (
