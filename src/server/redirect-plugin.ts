@@ -11,7 +11,7 @@ export const redirectPlugin = fastifyPlugin<{
 		})
 
 		if (options.hostNamesRedirectFrom.includes(request.hostname)) {
-			return reply.redirect(301, `${options.hostNameRedirectTo}${request.url}`)
+			return reply.redirect(`${options.hostNameRedirectTo}${request.url}`, 301)
 		}
 
 		done()
