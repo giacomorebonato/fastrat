@@ -1,5 +1,4 @@
 import EventEmitter from 'node:events'
-import Fs from 'node:fs'
 import Path from 'node:path'
 import appRootPath from 'app-root-path'
 import Database from 'better-sqlite3'
