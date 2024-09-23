@@ -57,8 +57,8 @@ test('CRUD notes through API calls', async () => {
 			'content-type': 'application/json',
 		},
 		cookies: {
-			[CookieHelpers.USER_TOKEN]: server.signCookie(token),
-			[CookieHelpers.REFRESH_TOKEN]: server.signCookie(sessionId),
+			[CookieHelpers.USER_TOKEN]: token,
+			[CookieHelpers.REFRESH_TOKEN]: sessionId,
 		},
 		body: superjson.stringify({
 			id: Crypto.randomUUID(),
@@ -75,7 +75,7 @@ test('CRUD notes through API calls', async () => {
 			'content-type': 'application/json',
 		},
 		cookies: {
-			[CookieHelpers.USER_TOKEN]: server.signCookie(token),
+			[CookieHelpers.USER_TOKEN]: token,
 		},
 		body: superjson.stringify({
 			id: Crypto.randomUUID(),
@@ -94,7 +94,7 @@ test('CRUD notes through API calls', async () => {
 			'content-type': 'application/json',
 		},
 		cookies: {
-			[CookieHelpers.REFRESH_TOKEN]: server.signCookie(sessionId),
+			[CookieHelpers.REFRESH_TOKEN]: sessionId,
 		},
 		body: superjson.stringify({
 			id: Crypto.randomUUID(),
@@ -114,8 +114,8 @@ test('CRUD notes through API calls', async () => {
 			'content-type': 'application/json',
 		},
 		cookies: {
-			[CookieHelpers.REFRESH_TOKEN]: server.signCookie(sessionId),
-			[CookieHelpers.USER_TOKEN]: server.signCookie(token),
+			[CookieHelpers.REFRESH_TOKEN]: sessionId,
+			[CookieHelpers.USER_TOKEN]: token,
 		},
 		body: superjson.stringify({
 			id: Crypto.randomUUID(),

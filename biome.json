@@ -38,7 +38,9 @@
 			"src/route-tree.gen.ts",
 			"migrations/",
 			"dist/",
-			"coverage/"
+			"coverage/",
+			"coverage-reports/",
+			"playwright-report/"
 		]
 	}
 }
