@@ -17,7 +17,6 @@ export const createTrpcContext =
 			request,
 			name: CookieHelpers.USER_TOKEN,
 		})
-
 		const refreshToken = CookieHelpers.getUnsignedCookie({
 			request,
 			name: CookieHelpers.REFRESH_TOKEN,

@@ -35,35 +35,13 @@ export function getUnsignedCookie(params: {
 		return null
 	}
 
+	if (params.request.protocol === 'http') {
+		return { value: signedCookie, renew: false, valid: true }
+	}
+
 	const unsigned = params.request.unsignCookie(signedCookie)
 
 	return unsigned
-}
-
-export function refreshCookie(params: {
-	reply: FastifyReply
-	request: FastifyRequest
-	name: string
-	expiration: Date
-}): void {
-	if (!params.request.cookies) {
-		return
-	}
-
-	const signedCookie = params.request.cookies[params.name]
-
-	if (!signedCookie) {
-		return
-	}
-
-	const unsigned = params.request.unsignCookie(signedCookie)
-
-	if (unsigned.valid) {
-		params.reply.setCookie(params.name, unsigned.value, {
-			...BASIC_COOKIE_PROPS,
-			expires: params.expiration,
-		})
-	}
 }
 
 export function clearAuthCookies(reply: FastifyReply) {
@@ -82,7 +60,7 @@ export function setAuthentication({
 	user,
 }: {
 	server: FastratServer
-	reply?: FastifyReply
+	reply: FastifyReply
 	user: {
 		id: string
 		email: string

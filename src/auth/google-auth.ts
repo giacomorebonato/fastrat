@@ -43,7 +43,7 @@ export const googleAuth = fastifyPlugin<{
 		)
 
 		server.get('/login/google/ci', async (request, reply) => {
-			return CookieHelpers.setAuthentication({
+			CookieHelpers.setAuthentication({
 				server,
 				reply,
 				user: {
@@ -52,6 +52,8 @@ export const googleAuth = fastifyPlugin<{
 					id: '123',
 				},
 			})
+
+			reply.redirect('/')
 		})
 	}
 
@@ -76,6 +78,7 @@ export const googleAuth = fastifyPlugin<{
 				user,
 				reply,
 			})
+			reply.redirect('/')
 		} catch (error) {
 			reply.send(error)
 		}
