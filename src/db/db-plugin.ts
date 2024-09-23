@@ -20,13 +20,7 @@ export function createDb(dbUrl: string) {
 
 	const db = drizzle(sqlite, { schema })
 
-	try {
-		migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'migrations') })
-	} catch (error) {
-		Fs.renameSync(dbUrl, dbUrl.replace(`.sqlite`, '-backup.sqlite'))
-
-		migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'migrations') })
-	}
+	migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'migrations') })
 
 	return db
 }

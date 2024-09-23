@@ -7,7 +7,7 @@ app = "fastrat"
 primary_region = "ams"
 
 [env]
-  DATABASE_URL = '/litefs/production.sqlite'
+  DATABASE_URL = '/litefs/production-v2.sqlite'
   HOST = "0.0.0.0"
   HOST_NAMES_REDIRECT_FROM = "fastrat.fly.dev,fastrat.dev"
   SITE_URL = "https://www.fastrat.dev"
