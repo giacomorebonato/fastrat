@@ -1,4 +1,5 @@
 import EventEmitter from 'node:events'
+import Fs from 'node:fs'
 import Path from 'node:path'
 import appRootPath from 'app-root-path'
 import Database from 'better-sqlite3'
@@ -19,7 +20,13 @@ export function createDb(dbUrl: string) {
 
 	const db = drizzle(sqlite, { schema })
 
-	migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'migrations') })
+	try {
+		migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'migrations') })
+	} catch (error) {
+		Fs.renameSync(dbUrl, dbUrl.replace(`.sqlite`, '-backup.sqlite'))
+
+		migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'migrations') })
+	}
 
 	return db
 }
