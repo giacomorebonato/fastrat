@@ -118,7 +118,7 @@ importers:
         version: 2.2.1
       ts-pattern:
         specifier: ^5.3.1
-        version: 5.3.1
+        version: 5.4.0
       typed-emitter:
         specifier: ^2.1.0
         version: 2.1.0
@@ -5690,8 +5690,8 @@ packages:
     resolution: {integrity: sha512-uivwYcQaxAucv1CzRp2n/QdYPo4ILf9VXgH19zEIjFx2EJufV16P0JtJVpYHy89DItG6Kwj2oIUjrcK5au+4tQ==}
     engines: {node: '>=8'}
 
-  ts-pattern@5.3.1:
-    resolution: {integrity: sha512-1RUMKa8jYQdNfmnK4jyzBK3/PS/tnjcZ1CW0v1vWDeYe5RBklc/nquw03MEoB66hVBm4BnlCfmOqDVxHyT1DpA==}
+  ts-pattern@5.4.0:
+    resolution: {integrity: sha512-hgfOMfjlrARCnYtGD/xEAkFHDXuSyuqjzFSltyQCbN689uNvoQL20TVN2XFcLMjfNuwSsQGU+xtH6MrjIwhwUg==}
 
   tsconfck@3.1.3:
     resolution: {integrity: sha512-ulNZP1SVpRDesxeMLON/LtWM8HIgAJEIVpVVhBM6gsmvQ8+Rh+ZG7FWGvHh7Ah3pRABwVJWklWCr/BTZSv0xnQ==}
@@ -12158,7 +12158,7 @@ snapshots:
     dependencies:
       tslib: 2.7.0
 
-  ts-pattern@5.3.1: {}
+  ts-pattern@5.4.0: {}
 
   tsconfck@3.1.3(typescript@5.6.2):
     optionalDependencies:
