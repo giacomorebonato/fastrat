@@ -164,7 +164,7 @@ importers:
         version: 0.2.6
       '@vitejs/plugin-react':
         specifier: ^4.3.1
-        version: 4.3.1(vite@5.4.8(@types/node@22.7.4)(terser@5.33.0))
+        version: 4.3.2(vite@5.4.8(@types/node@22.7.4)(terser@5.33.0))
       '@vitest/coverage-v8':
         specifier: ^2.0.5
         version: 2.1.1(vitest@2.1.1(@types/node@22.7.4)(terser@5.33.0))
@@ -2466,8 +2466,8 @@ packages:
     engines: {node: '>=16.14.0'}
     hasBin: true
 
-  '@vitejs/plugin-react@4.3.1':
-    resolution: {integrity: sha512-m/V2syj5CuVnaxcUJOQRel/Wr31FFXRFlnOoq1TVtkCxsY5veGMTEmpWHndrhB2U8ScHtCQB1e+4hWYExQc6Lg==}
+  '@vitejs/plugin-react@4.3.2':
+    resolution: {integrity: sha512-hieu+o05v4glEBucTcKMK3dlES0OeJlD9YVOAPraVMOInBCwzumaIFiUjr4bHK7NPgnAHgiskUoceKercrN8vg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
@@ -6284,7 +6284,7 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.25.4
       '@babel/helper-validator-option': 7.24.8
-      browserslist: 4.23.3
+      browserslist: 4.24.0
       lru-cache: 5.1.1
       semver: 6.3.1
 
@@ -8400,7 +8400,7 @@ snapshots:
       sharp-ico: 0.1.5
       unconfig: 0.3.13
 
-  '@vitejs/plugin-react@4.3.1(vite@5.4.8(@types/node@22.7.4)(terser@5.33.0))':
+  '@vitejs/plugin-react@4.3.2(vite@5.4.8(@types/node@22.7.4)(terser@5.33.0))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.25.2)
