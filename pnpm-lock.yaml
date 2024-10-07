@@ -194,7 +194,7 @@ importers:
         version: 15.2.10
       monocart-coverage-reports:
         specifier: ^2.10.3
-        version: 2.11.0
+        version: 2.11.1
       npm-run-all2:
         specifier: ^6.2.2
         version: 6.2.3
@@ -4484,8 +4484,8 @@ packages:
   mnemonist@0.39.8:
     resolution: {integrity: sha512-vyWo2K3fjrUw8YeeZ1zF0fy6Mu59RHokURlld8ymdUPjMlD9EC9ov1/YPqTgqRvUN9nTr3Gqfz29LYAmu0PHPQ==}
 
-  monocart-coverage-reports@2.11.0:
-    resolution: {integrity: sha512-FueI32k3gheTVSv20MzpCyC6NynQOkq6e+81My8An+FiLCDQoqPt4Rzt3GOeWs6+i4FTKvsJAOf7IZu1a0KzPw==}
+  monocart-coverage-reports@2.11.1:
+    resolution: {integrity: sha512-h4rc2i/A/aKuQ66EpswJ4y/dxXO6GDt0yuU9dt4MUsbbEXD1EoldFWvHszdo8M2dwVbAjDcAzHrQKBCs2ydfzA==}
     hasBin: true
 
   monocart-locator@1.0.2:
@@ -10514,7 +10514,7 @@ snapshots:
     dependencies:
       obliterator: 2.0.4
 
-  monocart-coverage-reports@2.11.0:
+  monocart-coverage-reports@2.11.1:
     dependencies:
       acorn: 8.12.1
       acorn-loose: 8.4.0
