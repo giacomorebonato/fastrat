@@ -39,7 +39,7 @@
 		"@tanstack/react-router": "^1.49.2",
 		"@tanstack/router-devtools": "^1.49.2",
 		"@tanstack/router-vite-plugin": "^1.49.3",
-		"@tanstack/start": "1.58.16",
+		"@tanstack/start": "1.64.2",
 		"@trpc/client": "npm:@trpc/client@next",
 		"@trpc/react-query": "npm:@trpc/react-query@next",
 		"@trpc/server": "npm:@trpc/server@next",
@@ -88,7 +88,7 @@
 		"@vitest/coverage-v8": "^2.0.5",
 		"autoprefixer": "^10.4.20",
 		"daisyui": "^4.12.10",
-		"del-cli": "^5.1.0",
+		"del-cli": "^6.0.0",
 		"drizzle-kit": "^0.24.0",
 		"globals": "^15.9.0",
 		"html-validate": "^8.21.0",
@@ -116,5 +116,5 @@
 			"biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
 		]
 	},
-	"packageManager": "pnpm@9.12.0"
+	"packageManager": "pnpm@9.12.1"
 }
