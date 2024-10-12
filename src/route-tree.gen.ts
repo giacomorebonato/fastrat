@@ -11,11 +11,17 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as CodeEditorImport } from './routes/code-editor'
 import { Route as IndexImport } from './routes/index'
 import { Route as NotesIndexImport } from './routes/notes/index'
 import { Route as NotesNoteIdImport } from './routes/notes/$noteId'
 
 // Create/Update Routes
+
+const CodeEditorRoute = CodeEditorImport.update({
+  path: '/code-editor',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
   path: '/',
@@ -43,6 +49,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/code-editor': {
+      id: '/code-editor'
+      path: '/code-editor'
+      fullPath: '/code-editor'
+      preLoaderRoute: typeof CodeEditorImport
+      parentRoute: typeof rootRoute
+    }
     '/notes/$noteId': {
       id: '/notes/$noteId'
       path: '/notes/$noteId'
@@ -64,12 +77,14 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/code-editor': typeof CodeEditorRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/notes': typeof NotesIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/code-editor': typeof CodeEditorRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/notes': typeof NotesIndexRoute
 }
@@ -77,27 +92,30 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/code-editor': typeof CodeEditorRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/notes/': typeof NotesIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/notes/$noteId' | '/notes'
+  fullPaths: '/' | '/code-editor' | '/notes/$noteId' | '/notes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/notes/$noteId' | '/notes'
-  id: '__root__' | '/' | '/notes/$noteId' | '/notes/'
+  to: '/' | '/code-editor' | '/notes/$noteId' | '/notes'
+  id: '__root__' | '/' | '/code-editor' | '/notes/$noteId' | '/notes/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CodeEditorRoute: typeof CodeEditorRoute
   NotesNoteIdRoute: typeof NotesNoteIdRoute
   NotesIndexRoute: typeof NotesIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CodeEditorRoute: CodeEditorRoute,
   NotesNoteIdRoute: NotesNoteIdRoute,
   NotesIndexRoute: NotesIndexRoute,
 }
@@ -115,12 +133,16 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/code-editor",
         "/notes/$noteId",
         "/notes/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/code-editor": {
+      "filePath": "code-editor.tsx"
     },
     "/notes/$noteId": {
       "filePath": "notes/$noteId.tsx"
