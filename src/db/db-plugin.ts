@@ -7,10 +7,12 @@ import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
 import { fastifyPlugin } from 'fastify-plugin'
 import type TypedEmitter from 'typed-emitter'
 import { type Queries, buildQueries } from './build-queries'
+import type { CollabSchema } from './collab-table'
 import * as schema from './schema'
 
-// biome-ignore lint/complexity/noBannedTypes: <explanation>
-export type DbEvents = TypedEmitter<{}>
+export type DbEvents = TypedEmitter<{
+	UPSERT_COLLAB: (entry: CollabSchema) => void
+}>
 
 export function createDb(dbUrl: string) {
 	const sqlite = new Database(dbUrl)
@@ -27,10 +29,11 @@ export function createDb(dbUrl: string) {
 export const dbPlugin = fastifyPlugin<{ dbUrl: string }>(
 	(fastify, params, done) => {
 		const db = createDb(params.dbUrl)
+		const dbEvents = new EventEmitter() as DbEvents
 
 		fastify.db = db
-		fastify.queries = buildQueries(db)
-		fastify.dbEvents = new EventEmitter() as DbEvents
+		fastify.queries = buildQueries(db, dbEvents)
+		fastify.dbEvents = dbEvents
 
 		done()
 	},
