@@ -15,8 +15,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1
       '@fastify/oauth2':
-        specifier: 8.0.1
-        version: 8.0.1
+        specifier: 8.1.0
+        version: 8.1.0
       '@fastify/static':
         specifier: ^8.0.1
         version: 8.0.1
@@ -1567,6 +1567,9 @@ packages:
   '@fastify/cookie@10.0.1':
     resolution: {integrity: sha512-NV/wbCUv4ETJ5KM1KMu0fLx0nSCm9idIxwg66NZnNbfPQH3rdbx6k0qRs5uy0y+MhBgvDudYRA30KlK659chyw==}
 
+  '@fastify/cookie@11.0.1':
+    resolution: {integrity: sha512-n1Ooz4bgQ5LcOlJQboWPfsMNxIrGV0SgU85UkctdpTlCQE0mtA3rlspOPUdqk9ubiiZn053ucnia4DjTquI4/g==}
+
   '@fastify/error@4.0.0':
     resolution: {integrity: sha512-OO/SA8As24JtT1usTUTKgGH7uLvhfwZPwlptRi2Dp5P4KKmJI3gvsZ8MIHnNwDs4sLf/aai5LzTyl66xr7qMxA==}
 
@@ -1576,8 +1579,8 @@ packages:
   '@fastify/merge-json-schemas@0.1.1':
     resolution: {integrity: sha512-fERDVz7topgNjtXsJTTW1JKLy0rhuLRcquYqNR9rF7OcVpCa2OVW49ZPDIhaRRCaUuvVxI+N416xUoF76HNSXA==}
 
-  '@fastify/oauth2@8.0.1':
-    resolution: {integrity: sha512-QJTsIfprMwpOS+Ms3tV6B+8awZu1gAMrtsM9BvaGo2s8uo+nBqPhaM7ersMfVYlN2Gl6VoMCce3zHx2OXxSjog==}
+  '@fastify/oauth2@8.1.0':
+    resolution: {integrity: sha512-SMcvStTvhF+UcyH+7uLWvKrxM4g5evZafjtQWRAg02C/dlsOrqLK0s9/1aszhWY6PBklJ6jduFPpl+sB4l2DlQ==}
 
   '@fastify/send@3.1.1':
     resolution: {integrity: sha512-LdiV2mle/2tH8vh6GwGl0ubfUAgvY+9yF9oGI1iiwVyNUVOQamvw5n+OFu6iCNNoyuCY80FFURBn4TZCbTe8LA==}
@@ -2887,6 +2890,10 @@ packages:
   cookie@0.7.2:
     resolution: {integrity: sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==}
     engines: {node: '>= 0.6'}
+
+  cookie@1.0.1:
+    resolution: {integrity: sha512-Xd8lFX4LM9QEEwxQpF9J9NTUh8pmdJO0cyRJhFiDoLTk2eH8FXlRv2IFGYVadZpqI3j8fhNrSdKCeYPxiAhLXw==}
+    engines: {node: '>=18'}
 
   copy-anything@3.0.5:
     resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
@@ -7031,6 +7038,11 @@ snapshots:
       cookie-signature: 1.2.1
       fastify-plugin: 5.0.1
 
+  '@fastify/cookie@11.0.1':
+    dependencies:
+      cookie: 1.0.1
+      fastify-plugin: 5.0.1
+
   '@fastify/error@4.0.0': {}
 
   '@fastify/fast-json-stringify-compiler@5.0.1':
@@ -7041,9 +7053,9 @@ snapshots:
     dependencies:
       fast-deep-equal: 3.1.3
 
-  '@fastify/oauth2@8.0.1':
+  '@fastify/oauth2@8.1.0':
     dependencies:
-      '@fastify/cookie': 10.0.1
+      '@fastify/cookie': 11.0.1
       fastify-plugin: 5.0.1
       simple-oauth2: 5.1.0
     transitivePeerDependencies:
@@ -8541,6 +8553,8 @@ snapshots:
   cookie-signature@1.2.1: {}
 
   cookie@0.7.2: {}
+
+  cookie@1.0.1: {}
 
   copy-anything@3.0.5:
     dependencies:
