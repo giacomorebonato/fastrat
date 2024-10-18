@@ -25,7 +25,7 @@ importers:
         version: 11.0.1
       '@mdx-js/mdx':
         specifier: ^3.0.1
-        version: 3.1.0(acorn@8.12.1)
+        version: 3.1.0(acorn@8.13.0)
       '@mdx-js/react':
         specifier: ^3.0.1
         version: 3.1.0(@types/react@18.3.11)(react@18.3.1)
@@ -40,16 +40,16 @@ importers:
         version: 5.59.15(@tanstack/react-query@5.59.15(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
         specifier: ^1.49.2
-        version: 1.70.2(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.73.0(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-devtools':
         specifier: ^1.49.2
-        version: 1.70.2(@tanstack/react-router@1.70.2(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.73.0(@tanstack/react-router@1.73.0(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-vite-plugin':
         specifier: ^1.49.3
         version: 1.69.1(vite@5.4.9(@types/node@22.7.6)(terser@5.34.1))
       '@tanstack/start':
-        specifier: 1.70.2
-        version: 1.70.2(@types/node@22.7.6)(better-sqlite3@11.4.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.34.1)(vite@5.4.9(@types/node@22.7.6)(terser@5.34.1))
+        specifier: 1.73.0
+        version: 1.73.0(@types/node@22.7.6)(better-sqlite3@11.4.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.34.1)(vite@5.4.9(@types/node@22.7.6)(terser@5.34.1))
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.571(@trpc/server@11.0.0-rc.571)
@@ -131,7 +131,7 @@ importers:
         version: 1.9.4
       '@mdx-js/rollup':
         specifier: ^3.0.1
-        version: 3.1.0(acorn@8.12.1)(rollup@4.24.0)
+        version: 3.1.0(acorn@8.13.0)(rollup@4.24.0)
       '@playwright/test':
         specifier: ^1.46.1
         version: 1.48.1
@@ -2130,8 +2130,8 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@tanstack/react-router@1.70.2':
-    resolution: {integrity: sha512-HjFePoGLYhyLbwsNxvxZXUf4AgV98uVXnwtP02cG5N+4ZUARDMnig4AMcnjCvvWWHohbkjgtAEWnC22m4In4yw==}
+  '@tanstack/react-router@1.73.0':
+    resolution: {integrity: sha512-jv5rk3jgJfgJsQT4yohS+RFnlYs4OT2w2Oqk1DvOSk32ogHz3s8gStwkso9IqRUrqMyffe9YIDc8TZvxnVQEEQ==}
     engines: {node: '>=12'}
     peerDependencies:
       '@tanstack/router-generator': 1.69.1
@@ -2147,11 +2147,11 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
 
-  '@tanstack/router-devtools@1.70.2':
-    resolution: {integrity: sha512-z99DhpDu8QysHgyoU0QH1LaQd43MwwD3rz3Dmbforb10+BERWjhhkDVEH4044lb9O/IB0K9UqbGHO5/fliqSBQ==}
+  '@tanstack/router-devtools@1.73.0':
+    resolution: {integrity: sha512-betbDfhXpZ6CwSqOA7HKu1FuW5MlmYseLZ5y1cAy/87M8mNyJrA73dNnBSA5/2VFuILu5I9tMojznJF620CeBA==}
     engines: {node: '>=12'}
     peerDependencies:
-      '@tanstack/react-router': ^1.70.2
+      '@tanstack/react-router': ^1.73.0
       react: '>=18'
       react-dom: '>=18'
 
@@ -2182,8 +2182,8 @@ packages:
     resolution: {integrity: sha512-ZWGlNqF7vAiEOMQxxFQvzzcc/MIcT2l1xBz5mkjzTR4rrsLumaTXd8++LPoGD57NmlaGncBkGkiTiDMWZn1cFw==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.70.2':
-    resolution: {integrity: sha512-C790IuTzJrSWK9iHOE+mhehk36jM8VP/BHdLBsVUChJer19sbH/7SBXegJDhj46IszZ0pem1IhNdmHx+iIkzEw==}
+  '@tanstack/start@1.73.0':
+    resolution: {integrity: sha512-a7k136+5UgrvITQP1YB3AhpQtkC+M9oNV7YgAsTEKNyklx6S5HnZdRGuzYOzO1RZAmFwwGPnjlgJUbwCspHMfg==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -7273,7 +7273,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@mdx-js/mdx@3.1.0(acorn@8.12.1)':
+  '@mdx-js/mdx@3.1.0(acorn@8.13.0)':
     dependencies:
       '@types/estree': 1.0.6
       '@types/estree-jsx': 1.0.5
@@ -7287,7 +7287,7 @@ snapshots:
       hast-util-to-jsx-runtime: 2.3.2
       markdown-extensions: 2.0.0
       recma-build-jsx: 1.0.0
-      recma-jsx: 1.0.0(acorn@8.12.1)
+      recma-jsx: 1.0.0(acorn@8.13.0)
       recma-stringify: 1.0.0
       rehype-recma: 1.0.0
       remark-mdx: 3.1.0
@@ -7309,9 +7309,9 @@ snapshots:
       '@types/react': 18.3.11
       react: 18.3.1
 
-  '@mdx-js/rollup@3.1.0(acorn@8.12.1)(rollup@4.24.0)':
+  '@mdx-js/rollup@3.1.0(acorn@8.13.0)(rollup@4.24.0)':
     dependencies:
-      '@mdx-js/mdx': 3.1.0(acorn@8.12.1)
+      '@mdx-js/mdx': 3.1.0(acorn@8.13.0)
       '@rollup/pluginutils': 5.1.2(rollup@4.24.0)
       rollup: 4.24.0
       source-map: 0.7.4
@@ -7633,7 +7633,7 @@ snapshots:
       '@tanstack/query-core': 5.59.13
       react: 18.3.1
 
-  '@tanstack/react-router@1.70.2(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-router@1.73.0(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.61.1
       '@tanstack/react-store': 0.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7651,9 +7651,9 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       use-sync-external-store: 1.2.2(react@18.3.1)
 
-  '@tanstack/router-devtools@1.70.2(@tanstack/react-router@1.70.2(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/router-devtools@1.73.0(@tanstack/react-router@1.73.0(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/react-router': 1.70.2(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.73.0(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       goober: 2.1.16(csstype@3.1.3)
       react: 18.3.1
@@ -7722,10 +7722,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.70.2(@types/node@22.7.6)(better-sqlite3@11.4.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.34.1)(vite@5.4.9(@types/node@22.7.6)(terser@5.34.1))':
+  '@tanstack/start@1.73.0(@types/node@22.7.6)(better-sqlite3@11.4.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.34.1)(vite@5.4.9(@types/node@22.7.6)(terser@5.34.1))':
     dependencies:
       '@tanstack/react-cross-context': 1.60.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tanstack/react-router': 1.70.2(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.73.0(@tanstack/router-generator@1.69.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-generator': 1.69.1
       '@tanstack/router-plugin': 1.69.1(vite@5.4.9(@types/node@22.7.6)(terser@5.34.1))
       '@tanstack/start-vite-plugin': 1.66.1
@@ -7968,10 +7968,10 @@ snapshots:
   '@vinxi/plugin-directives@0.4.3(vinxi@0.4.3(@types/node@22.7.6)(better-sqlite3@11.4.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(terser@5.34.1))':
     dependencies:
       '@babel/parser': 7.25.8
-      acorn: 8.12.1
-      acorn-jsx: 5.3.2(acorn@8.12.1)
+      acorn: 8.13.0
+      acorn-jsx: 5.3.2(acorn@8.13.0)
       acorn-loose: 8.4.0
-      acorn-typescript: 1.4.13(acorn@8.12.1)
+      acorn-typescript: 1.4.13(acorn@8.13.0)
       astring: 1.9.0
       magicast: 0.2.11
       recast: 0.23.9
@@ -7990,9 +7990,9 @@ snapshots:
   '@vinxi/server-components@0.4.3(vinxi@0.4.3(@types/node@22.7.6)(better-sqlite3@11.4.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(terser@5.34.1))':
     dependencies:
       '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@types/node@22.7.6)(better-sqlite3@11.4.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(terser@5.34.1))
-      acorn: 8.12.1
+      acorn: 8.13.0
       acorn-loose: 8.4.0
-      acorn-typescript: 1.4.13(acorn@8.12.1)
+      acorn-typescript: 1.4.13(acorn@8.13.0)
       astring: 1.9.0
       magicast: 0.2.11
       recast: 0.23.9
@@ -8001,9 +8001,9 @@ snapshots:
   '@vinxi/server-functions@0.4.3(vinxi@0.4.3(@types/node@22.7.6)(better-sqlite3@11.4.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(terser@5.34.1))':
     dependencies:
       '@vinxi/plugin-directives': 0.4.3(vinxi@0.4.3(@types/node@22.7.6)(better-sqlite3@11.4.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.11)(better-sqlite3@11.4.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(terser@5.34.1))
-      acorn: 8.12.1
+      acorn: 8.13.0
       acorn-loose: 8.4.0
-      acorn-typescript: 1.4.13(acorn@8.12.1)
+      acorn-typescript: 1.4.13(acorn@8.13.0)
       astring: 1.9.0
       magicast: 0.2.11
       recast: 0.23.9
@@ -8119,10 +8119,6 @@ snapshots:
     dependencies:
       acorn: 8.13.0
 
-  acorn-jsx@5.3.2(acorn@8.12.1):
-    dependencies:
-      acorn: 8.12.1
-
   acorn-jsx@5.3.2(acorn@8.13.0):
     dependencies:
       acorn: 8.13.0
@@ -8131,9 +8127,9 @@ snapshots:
     dependencies:
       acorn: 8.12.1
 
-  acorn-typescript@1.4.13(acorn@8.12.1):
+  acorn-typescript@1.4.13(acorn@8.13.0):
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.13.0
 
   acorn-walk@8.3.4:
     dependencies:
@@ -10372,7 +10368,7 @@ snapshots:
 
   mlly@1.7.2:
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.13.0
       pathe: 1.1.2
       pkg-types: 1.2.1
       ufo: 1.5.4
@@ -10951,9 +10947,9 @@ snapshots:
       estree-util-build-jsx: 3.0.1
       vfile: 6.0.3
 
-  recma-jsx@1.0.0(acorn@8.12.1):
+  recma-jsx@1.0.0(acorn@8.13.0):
     dependencies:
-      acorn-jsx: 5.3.2(acorn@8.12.1)
+      acorn-jsx: 5.3.2(acorn@8.13.0)
       estree-util-to-js: 2.0.0
       recma-parse: 1.0.0
       recma-stringify: 1.0.0
@@ -11730,7 +11726,7 @@ snapshots:
 
   unctx@2.3.1:
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.13.0
       estree-walker: 3.0.3
       magic-string: 0.30.12
       unplugin: 1.14.1
