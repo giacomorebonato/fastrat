@@ -34,7 +34,7 @@ importers:
         version: 2.13.6(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)
       '@hocuspocus/server':
         specifier: ^2.13.6
-        version: 2.13.6(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)
+        version: 2.13.7(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)
       '@mdx-js/mdx':
         specifier: ^3.0.1
         version: 3.1.0(acorn@8.13.0)
@@ -1657,12 +1657,6 @@ packages:
 
   '@hocuspocus/provider@2.13.6':
     resolution: {integrity: sha512-84tBdGU8275SXQirRQ5FbBGwsQ6iLNuIbmV2SV6/f361phBoAVUSobJ+CYAzdIJPlfIYSL2BwGJSRbbDhqJdJw==}
-    peerDependencies:
-      y-protocols: ^1.0.6
-      yjs: ^13.6.8
-
-  '@hocuspocus/server@2.13.6':
-    resolution: {integrity: sha512-VqiHkkQlfa2A5mFTe+rdePLt3kHJrk9ZzqDqWJfqQDlYHdyAXpW53cddsXYYDWQ/tZjYj3zQgZAT+78AHrnb/A==}
     peerDependencies:
       y-protocols: ^1.0.6
       yjs: ^13.6.8
@@ -7271,7 +7265,7 @@ snapshots:
 
   '@hocuspocus/extension-logger@2.13.6(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)':
     dependencies:
-      '@hocuspocus/server': 2.13.6(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)
+      '@hocuspocus/server': 2.13.7(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -7283,20 +7277,6 @@ snapshots:
       '@hocuspocus/common': 2.13.6
       '@lifeomic/attempt': 3.1.0
       lib0: 0.2.98
-      ws: 8.18.0
-      y-protocols: 1.0.6(yjs@13.6.19)
-      yjs: 13.6.19
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-
-  '@hocuspocus/server@2.13.6(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)':
-    dependencies:
-      '@hocuspocus/common': 2.13.6
-      async-lock: 1.4.1
-      kleur: 4.1.5
-      lib0: 0.2.98
-      uuid: 10.0.0
       ws: 8.18.0
       y-protocols: 1.0.6(yjs@13.6.19)
       yjs: 13.6.19
