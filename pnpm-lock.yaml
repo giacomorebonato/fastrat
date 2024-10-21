@@ -31,7 +31,7 @@ importers:
         version: 2.13.6(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)
       '@hocuspocus/provider':
         specifier: ^2.13.6
-        version: 2.13.6(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)
+        version: 2.13.7(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)
       '@hocuspocus/server':
         specifier: ^2.13.6
         version: 2.13.6(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)
@@ -1655,8 +1655,8 @@ packages:
   '@hocuspocus/extension-logger@2.13.6':
     resolution: {integrity: sha512-DQ1zBGFdRBCEmGfo3bcR2W3P/6SQmMmSYq4iqKB98U54901fKJz7cI+vrp6Xfr447Z1j2sfdlN9YTPaVMjv4rQ==}
 
-  '@hocuspocus/provider@2.13.6':
-    resolution: {integrity: sha512-84tBdGU8275SXQirRQ5FbBGwsQ6iLNuIbmV2SV6/f361phBoAVUSobJ+CYAzdIJPlfIYSL2BwGJSRbbDhqJdJw==}
+  '@hocuspocus/provider@2.13.7':
+    resolution: {integrity: sha512-BjZIIV8tWf/MD/8IcEMSFA+sW4wtR/M9MmhN+XSssYJOZxnszw44Gdwda23TmhsXvCV+qggS8lGEs+SfZSzEag==}
     peerDependencies:
       y-protocols: ^1.0.6
       yjs: ^13.6.8
@@ -7278,9 +7278,9 @@ snapshots:
       - y-protocols
       - yjs
 
-  '@hocuspocus/provider@2.13.6(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)':
+  '@hocuspocus/provider@2.13.7(y-protocols@1.0.6(yjs@13.6.19))(yjs@13.6.19)':
     dependencies:
-      '@hocuspocus/common': 2.13.6
+      '@hocuspocus/common': 2.13.7
       '@lifeomic/attempt': 3.1.0
       lib0: 0.2.98
       ws: 8.18.0
