@@ -95,7 +95,7 @@ export function Layout({
 							</a>
 						</div>
 						{match(profile.data)
-							.with(null, () => (
+							.with(undefined, () => (
 								<button
 									className='btn btn-ghost '
 									data-testid='btn-login'

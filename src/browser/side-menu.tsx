@@ -78,6 +78,9 @@ export const SideMenu = ({ withBookmarks }: { withBookmarks: boolean }) => {
 					<li>
 						<Link to='/notes'>Note taking</Link>
 					</li>
+					<li>
+						<Link to='/code-editor'>Code editor</Link>
+					</li>
 				</ul>
 			</li>
 		</ul>
