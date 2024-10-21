@@ -6,7 +6,6 @@ import { toast } from 'react-toastify'
 import { IndexeddbPersistence } from 'y-indexeddb'
 import { MonacoBinding } from 'y-monaco'
 import * as Y from 'yjs'
-import { trpcClient } from '#/browser/trpc-client'
 
 type AwarenessState = {
 	clientId: string
@@ -19,7 +18,6 @@ type AwarenessState = {
 
 export function CodeEditor(props: { docId?: string }) {
 	const providerRef = useRef<HocuspocusProvider>()
-	const profile = trpcClient.auth.profile.useQuery()
 	const docId = props.docId ?? 'example-document'
 
 	useEffect(() => {

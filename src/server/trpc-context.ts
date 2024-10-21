@@ -13,7 +13,7 @@ export const createTrpcContext =
 				request,
 				reply,
 				server,
-			}),
+			}).user,
 			queries: server.queries,
 		}
 
