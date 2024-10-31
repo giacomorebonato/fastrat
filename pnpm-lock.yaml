@@ -55,16 +55,16 @@ importers:
         version: 5.59.16(@tanstack/react-query@5.59.16(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router':
         specifier: ^1.49.2
-        version: 1.77.8(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.77.9(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-devtools':
         specifier: ^1.49.2
-        version: 1.77.8(@tanstack/react-router@1.77.8(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 1.77.9(@tanstack/react-router@1.77.9(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-vite-plugin':
         specifier: ^1.49.3
         version: 1.77.7(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
       '@tanstack/start':
-        specifier: 1.77.8
-        version: 1.77.8(@types/node@22.8.6)(better-sqlite3@11.5.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.12)(better-sqlite3@11.5.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
+        specifier: 1.77.9
+        version: 1.77.9(@types/node@22.8.6)(better-sqlite3@11.5.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.12)(better-sqlite3@11.5.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.593(@trpc/server@11.0.0-rc.593)
@@ -2211,8 +2211,8 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@tanstack/react-router@1.77.8':
-    resolution: {integrity: sha512-xZrrbXmwE8q3NKGz5PIomGM59BVGwsfI5nQLVjyA2ae5tkcOitEPXBx209jl5ihtXFp2r+pN+u8gZOZkGyc9GA==}
+  '@tanstack/react-router@1.77.9':
+    resolution: {integrity: sha512-m4fofUZT7d/fXUHIZ9+VUO4SJ9d+RxUE4HagnHLvoaR/gTaeRgXXdQjwSxg7uzzT27lScuvoroo/g1dUAJVCgA==}
     engines: {node: '>=12'}
     peerDependencies:
       '@tanstack/router-generator': 1.77.7
@@ -2228,11 +2228,11 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
 
-  '@tanstack/router-devtools@1.77.8':
-    resolution: {integrity: sha512-ENUs7enjq+VkFPdBlxD1wNyOBaO1B19D6bsDNmWgpjVgHA5aeSYZmkRM4r/24F0iRK5b9GmLkkIyfc9CoA7i5w==}
+  '@tanstack/router-devtools@1.77.9':
+    resolution: {integrity: sha512-KdbBO+shb6eW3rJIQxgYbsxwGm2JD5pcweiznHmBAGQCSr5ZtJZzKctGqTn/KOhecP458751PeVI24eA55S6aw==}
     engines: {node: '>=12'}
     peerDependencies:
-      '@tanstack/react-router': ^1.77.8
+      '@tanstack/react-router': ^1.77.9
       react: '>=18'
       react-dom: '>=18'
 
@@ -2263,8 +2263,8 @@ packages:
     resolution: {integrity: sha512-b1oGORk+NEqMpNdOOY4fDOqfGXCb+LGwMc11wR3kdpGM2DGqAJAjrXKRPRRDF0l2szY2p3di82VfgTeOcg63jA==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.77.8':
-    resolution: {integrity: sha512-H2EV5UGwz+rqzmKfhNO6oCklJkJ/iZT4aadmyVHfYTmCj2CugO7QJNZa1BeaKxhriMHZOA/yc0nVscEAiEgv5w==}
+  '@tanstack/start@1.77.9':
+    resolution: {integrity: sha512-myqnSKgwfGw9m4q8+oWjmpVGQ5LARx5du/Xcbt2y9g6uFjmaXo6dBTmFqmle/H1DMALJ7qQI9m6t22wi8mi40Q==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -7795,7 +7795,7 @@ snapshots:
       '@tanstack/query-core': 5.59.16
       react: 18.3.1
 
-  '@tanstack/react-router@1.77.8(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-router@1.77.9(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.61.1
       '@tanstack/react-store': 0.5.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7813,9 +7813,9 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       use-sync-external-store: 1.2.2(react@18.3.1)
 
-  '@tanstack/router-devtools@1.77.8(@tanstack/react-router@1.77.8(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/router-devtools@1.77.9(@tanstack/react-router@1.77.9(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/react-router': 1.77.8(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.77.9(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
       goober: 2.1.16(csstype@3.1.3)
       react: 18.3.1
@@ -7884,10 +7884,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.77.8(@types/node@22.8.6)(better-sqlite3@11.5.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.12)(better-sqlite3@11.5.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))':
+  '@tanstack/start@1.77.9(@types/node@22.8.6)(better-sqlite3@11.5.0)(drizzle-orm@0.33.0(@types/better-sqlite3@7.6.11)(@types/react@18.3.12)(better-sqlite3@11.5.0)(react@18.3.1))(ioredis@5.4.1)(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))':
     dependencies:
       '@tanstack/react-cross-context': 1.74.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tanstack/react-router': 1.77.8(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.77.9(@tanstack/router-generator@1.77.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-generator': 1.77.7
       '@tanstack/router-plugin': 1.77.7(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
       '@tanstack/start-vite-plugin': 1.77.7
