@@ -53,7 +53,7 @@
 		"drizzle-orm": "^0.33.0",
 		"drizzle-zod": "^0.5.1",
 		"fast-jwt": "^4.0.2",
-		"fastify": "5.0.0",
+		"fastify": "5.1.0",
 		"fastify-plugin": "^5.0.1",
 		"isbot": "^5.1.17",
 		"jsesc": "^3.0.2",
