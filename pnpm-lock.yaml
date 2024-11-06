@@ -221,7 +221,7 @@ importers:
         version: 15.2.10
       monocart-coverage-reports:
         specifier: ^2.10.3
-        version: 2.11.1
+        version: 2.11.2
       npm-run-all2:
         specifier: ^6.2.2
         version: 6.2.6
@@ -4679,8 +4679,8 @@ packages:
   monaco-editor@0.52.0:
     resolution: {integrity: sha512-OeWhNpABLCeTqubfqLMXGsqf6OmPU6pHM85kF3dhy6kq5hnhuVS1p3VrEW/XhWHc71P2tHyS5JFySD8mgs1crw==}
 
-  monocart-coverage-reports@2.11.1:
-    resolution: {integrity: sha512-h4rc2i/A/aKuQ66EpswJ4y/dxXO6GDt0yuU9dt4MUsbbEXD1EoldFWvHszdo8M2dwVbAjDcAzHrQKBCs2ydfzA==}
+  monocart-coverage-reports@2.11.2:
+    resolution: {integrity: sha512-CQN6ivZAC/tONctenrzGXfhrCuLTUr74Kb/V93Xyo8TMYXFJ2hKTQUNkmZDtvou/s11dBpW+28BHqtRYrP4ccg==}
     hasBin: true
 
   monocart-locator@1.0.2:
@@ -10879,7 +10879,7 @@ snapshots:
 
   monaco-editor@0.52.0: {}
 
-  monocart-coverage-reports@2.11.1:
+  monocart-coverage-reports@2.11.2:
     dependencies:
       acorn: 8.14.0
       acorn-loose: 8.4.0
