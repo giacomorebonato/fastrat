@@ -89,7 +89,7 @@
 		"autoprefixer": "^10.4.20",
 		"daisyui": "^4.12.10",
 		"del-cli": "^6.0.0",
-		"drizzle-kit": "^0.24.0",
+		"drizzle-kit": "^0.28.0",
 		"globals": "^15.9.0",
 		"html-validate": "^8.21.0",
 		"husky": "^9.1.5",
