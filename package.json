@@ -96,7 +96,7 @@
 		"lint-staged": "^15.2.9",
 		"monocart-coverage-reports": "^2.10.3",
 		"npm-run-all2": "^6.2.2",
-		"pino-pretty": "^11.2.2",
+		"pino-pretty": "^13.0.0",
 		"postcss": "^8.4.41",
 		"sharp": "^0.33.5",
 		"tailwindcss": "^3.4.10",
