@@ -212,7 +212,7 @@ importers:
         version: 15.12.0
       html-validate:
         specifier: ^8.21.0
-        version: 8.24.2(vitest@2.1.4(@types/node@22.9.0)(terser@5.36.0))
+        version: 8.25.0(vitest@2.1.4(@types/node@22.9.0)(terser@5.36.0))
       husky:
         specifier: ^9.1.5
         version: 9.1.6
@@ -3953,8 +3953,8 @@ packages:
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
-  html-validate@8.24.2:
-    resolution: {integrity: sha512-PpZLlH3gpOSBLRBID4QovOyZ97Ka5dCIhHMPjUxQlMGqk5pc+mgG5enCXbC8ngdjG0jpkTvM8AMhnPv1EiU9Pw==}
+  html-validate@8.25.0:
+    resolution: {integrity: sha512-ZMQcxHxQJ7vrj8o9mKGexkCBENfuyXSZOeBop2CanbbyeBgHwKhIKhksmc2TmhT8+chi657O+XqdDWZLAhMCJA==}
     engines: {node: '>= 16.14'}
     hasBin: true
     peerDependencies:
@@ -10007,7 +10007,7 @@ snapshots:
 
   html-escaper@2.0.2: {}
 
-  html-validate@8.24.2(vitest@2.1.4(@types/node@22.9.0)(terser@5.36.0)):
+  html-validate@8.25.0(vitest@2.1.4(@types/node@22.9.0)(terser@5.36.0)):
     dependencies:
       '@html-validate/stylish': 4.2.0
       '@sidvind/better-ajv-errors': 3.0.1(ajv@8.17.1)
