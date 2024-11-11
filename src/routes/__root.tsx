@@ -5,7 +5,6 @@ import {
 	createRootRouteWithContext,
 } from '@tanstack/react-router'
 import { HelmetProvider } from 'react-helmet-async'
-import type { HelmetServerState } from 'react-helmet-async'
 import { createLink, trpcClient } from '#/browser/trpc-client'
 import { ClientOnly } from '#/server/client-only'
 import { CustomMeta } from '#/server/use-custom-meta'
@@ -27,9 +26,7 @@ const apiClient = trpcClient.createClient({
 })
 
 function RootComponent() {
-	const loaderData = Route.useLoaderData<{
-		helmetContext: { helmet: HelmetServerState }
-	}>()
+	const loaderData = Route.useLoaderData()
 
 	return (
 		<HelmetProvider context={loaderData?.helmetContext || {}}>
