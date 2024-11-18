@@ -2,31 +2,74 @@
 <html lang="en">
   <head>
     <script>
-      // https://github.com/TanStack/router/blob/main/packages/start/src/client/Meta.tsx#L123
+      // https://github.com/TanStack/router/blob/main/packages/start/src/client/Meta.tsx#L123           
       __TSR__ = {
         matches: [],
         streamedValues: {},
-        initMatch(index) {
-          Object.entries(__TSR__.matches[index].extracted).forEach(([id, ex]) => {            
-            if (ex.type === 'stream') {
-              let controller;
-              ex.value = new ReadableStream({
-                start(c) { controller = c; }
-              })
-              ex.value.controller = controller
-            } else if (ex.type === 'promise') {
-              let r, j
-              ex.value = new Promise((r_, j_) => { r = r_, j = j_ })
-              ex.resolve = r; ex.reject = j
+        queue: [],
+        runQueue: () => {
+          let changed = false
+          __TSR__.queue = __TSR__.queue.filter((fn) => {
+            if (fn()) {
+              changed = true
+              return false
             }
+            return true
           })
+          if (changed) {
+            __TSR__.runQueue()
+          }
         },
-        cleanScripts() {
+        initMatch: (match) => {
+          __TSR__.queue.push(() => {
+            if (!__TSR__.matches[match.index]) {
+              __TSR__.matches[match.index] = match
+              Object.entries(match.extracted).forEach(([id, ex]) => {
+                if (ex.type === 'stream') {
+                  let controller
+                  ex.value = new ReadableStream({
+                    start(c) {
+                      controller = c
+                    },
+                  })
+                  ex.value.controller = controller
+                } else if (ex.type === 'promise') {
+                  let r, j
+                  ex.value = new Promise((r_, j_) => {
+                    ;(r = r_), (j = j_)
+                  })
+                  ex.resolve = r
+                  ex.reject = j
+                }
+              })
+            }
+
+            return true
+          })
+
+          __TSR__.runQueue()
+        },
+        resolvePromise: (entry) => {
+          __TSR__.queue.push(() => {
+            const match = __TSR__.matches[entry.matchIndex]
+            if (match) {
+              const ex = match.extracted[entry.id]
+              if (ex) {
+                ex.resolve(entry.value.data)
+                return true
+              }
+            }
+            return false
+          })
+
+          __TSR__.runQueue()
+        },
+        cleanScripts: () => {
           document.querySelectorAll('.tsr-once').forEach((el) => {
             el.remove()
           })
         },
-      }
+      }            
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
