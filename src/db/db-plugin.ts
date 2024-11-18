@@ -26,9 +26,9 @@ export function createDb(dbUrl: string, authToken?: string) {
 	return db
 }
 
-export const dbPlugin = fastifyPlugin<{ dbUrl: string }>(
+export const dbPlugin = fastifyPlugin<{ dbUrl: string; dbToken?: string }>(
 	(fastify, params, done) => {
-		const db = createDb(params.dbUrl)
+		const db = createDb(params.dbUrl, params.dbToken)
 		const dbEvents = new EventEmitter() as DbEvents
 
 		fastify.db = db

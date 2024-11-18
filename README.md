@@ -24,7 +24,7 @@ In a production environment, you should set those environment variables directly
 
 
 - [Authentication](#authentication)
-- [sqlite on LiteFS](#sqlite-on-litefs)
+- [sqlite on Turso](#sqlite-on-turso)
 - [SSR and Routing](#ssr-and-routing)
 - [tRPC](#trpc)
 - [Server side data fetching](#server-side-data-fetching)
@@ -50,12 +50,12 @@ Provide `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` into the `.env` file to al
 You can check how authentication is achieved in [src/features/auth/google-auth.ts](src/auth/google-auth.ts) by leveraging [fastify-oauth2](https://github.com/fastify/fastify-oauth2).  
 It should be easy for you to re-use this example to add other authentication providers.
 
-## sqlite on LiteFS
+## sqlite on Turso
 
-Follow the <a href='https://fly.io/docs/litefs/getting-started-fly/' target='_blank'>official steps for configuring LiteFS</a>
-
-1. create a volume `fly volumes create litefs --size 10`
-3. create a Consul URL `fly consul attach`
+1. install the [turso CLI](https://docs.turso.tech/cli/installation)
+2. login and create a database `turso db create fastrat`
+3. get an authentication token with `turso db tokens create fastrat`
+4. [set Fly.io secrets accordingly](https://fly.io/docs/flyctl/secrets-set/)
 
 ## SSR and Routing
 
