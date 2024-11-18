@@ -2,6 +2,7 @@
 	"scripts": {
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
+		"db:studio": "drizzle-kit studio",
 		"dev": "vavite serve --port 3000 | pino-pretty",
 		"build": "node --run clean && vavite build",
 		"clean": "del dist sqlite.db coverage playwright-report coverage-reports",
