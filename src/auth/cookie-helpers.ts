@@ -5,8 +5,6 @@ import type { FastratServer } from '#/server/create-server'
 import { env } from '#/server/env'
 import { createToken } from './token-helpers'
 
-const isProduction = env.NODE_ENV === 'production'
-
 export const USER_TOKEN =
 	env.NODE_ENV === 'production' && !env.CI ? '__Host-userToken' : 'userToken'
 
@@ -15,12 +13,17 @@ export const REFRESH_TOKEN =
 		? '__Host-refreshToken'
 		: 'refreshToken'
 
-export const BASIC_COOKIE_PROPS = {
-	httpOnly: true,
-	path: '/',
-	secure: isProduction && !env.CI,
-	signed: isProduction && !env.CI,
-} as const
+function getBasicCookieProps(isHttps = true) {
+	const BASIC_COOKIE_PROPS = {
+		httpOnly: true,
+		path: '/',
+		secure: isHttps,
+		signed: isHttps,
+		SameSite: 'Lax',
+	} as const
+
+	return { ...BASIC_COOKIE_PROPS }
+}
 
 export function getUnsignedCookie(params: {
 	request: FastifyRequest
@@ -45,12 +48,13 @@ export function getUnsignedCookie(params: {
 }
 
 export function clearAuthCookies(reply: FastifyReply) {
+	const cookieProps = getBasicCookieProps()
 	reply
 		.clearCookie(USER_TOKEN, {
-			...BASIC_COOKIE_PROPS,
+			...cookieProps,
 		})
 		.clearCookie(REFRESH_TOKEN, {
-			...BASIC_COOKIE_PROPS,
+			...cookieProps,
 		})
 }
 
@@ -78,16 +82,16 @@ export async function setAuthentication({
 	)
 	const inSevenDays = addDays(new Date(), 7)
 	const inTenMinutes = addMinutes(new Date(), 10)
+	const cookieProps = getBasicCookieProps()
 
 	if (reply) {
-		console.log(JSON.stringify({ name: `Setting cookies`, token }))
 		reply
 			.setCookie(USER_TOKEN, token, {
-				...BASIC_COOKIE_PROPS,
+				...cookieProps,
 				expires: inTenMinutes,
 			})
 			.setCookie(REFRESH_TOKEN, token, {
-				...BASIC_COOKIE_PROPS,
+				...cookieProps,
 				expires: inSevenDays,
 			})
 	}
