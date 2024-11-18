@@ -11,7 +11,7 @@ export const Route = createFileRoute('/notes/')({
 	async loader({ context }) {
 		if (context.queries) {
 			return {
-				notes: context.queries.note.list(),
+				notes: await context.queries.note.list(),
 			}
 		}
 	},

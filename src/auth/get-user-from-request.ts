@@ -11,7 +11,7 @@ const userValidator = z.object({
 })
 type MaybeUser = z.infer<typeof userValidator> | null
 
-export function getUserFromRequest({
+export async function getUserFromRequest({
 	request,
 	reply,
 	server,
@@ -19,9 +19,9 @@ export function getUserFromRequest({
 	request: FastifyRequest
 	reply?: FastifyReply
 	server: FastratServer
-}): {
+}): Promise<{
 	user: MaybeUser
-} {
+}> {
 	const userToken = CookieHelpers.getUnsignedCookie({
 		request,
 		name: CookieHelpers.USER_TOKEN,
@@ -42,8 +42,8 @@ export function getUserFromRequest({
 
 	// we try to update the cookie only if reply is present
 	if (reply && !user && refreshToken?.value) {
-		const session = server.queries.session.byId(refreshToken.value)
-		const dbUser = server.queries.user.bySessionId(refreshToken.value)
+		const session = await server.queries.session.byId(refreshToken.value)
+		const dbUser = await server.queries.user.bySessionId(refreshToken.value)
 
 		if (session?.disabled !== false || !dbUser) {
 			CookieHelpers.clearAuthCookies(reply)

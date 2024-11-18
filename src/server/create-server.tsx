@@ -27,6 +27,7 @@ export async function createServer(
 	await server
 		.register(import('#/db/db-plugin'), {
 			dbUrl: options.env.DATABASE_URL,
+			dbToken: options.env.DATABASE_TOKEN,
 		})
 		.register(import('./redirect-plugin'), {
 			hostNamesRedirectFrom: options.env.HOST_NAMES_REDIRECT_FROM,

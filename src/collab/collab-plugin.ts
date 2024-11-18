@@ -18,7 +18,7 @@ export const collabPlugin = (
 			new Logger(),
 			new Database({
 				async fetch(data): Promise<Uint8Array | null> {
-					const file = server.queries.collab.byId(data.documentName)
+					const file = await server.queries.collab.byId(data.documentName)
 					// const context = data.context as CollabContext
 					// context.user
 
@@ -28,7 +28,7 @@ export const collabPlugin = (
 					// const context = data.context as CollabContext
 					// context.user
 
-					server.queries.collab.upsert({
+					await server.queries.collab.upsert({
 						content: data.state,
 						id: data.documentName,
 					})
@@ -38,7 +38,7 @@ export const collabPlugin = (
 	})
 
 	server.addHook('preValidation', async (request, reply) => {
-		getUserFromRequest({
+		await getUserFromRequest({
 			request,
 			reply,
 			server,

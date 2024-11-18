@@ -15,22 +15,10 @@ RUN rm -rf public
 
 FROM node:22 as run
 
-# Install LiteFS
-RUN apt-get update && apt-get install -y ca-certificates fuse3 sqlite3
-    
 WORKDIR /app
 
 COPY --from=build /app .
-COPY --from=flyio/litefs:0.5 /usr/local/bin/litefs /usr/local/bin/litefs
-
-# Copy LiteFS config
-COPY litefs.yml /etc/litefs.yml
-
-# Create necessary directories for FUSE and set permissions
-RUN mkdir -p /litefs /var/lib/litefs && \
-    chown node:node /litefs /var/lib/litefs
 
 EXPOSE 3000
 
-# CMD ["node", "--run", "start"]
-CMD litefs mount
+CMD ["node", "--run", "start"]

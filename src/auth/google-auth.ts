@@ -19,7 +19,7 @@ export const googleAuth = fastifyPlugin<{
 	GOOGLE_CLIENT_ID: string
 	GOOGLE_CLIENT_SECRET: string
 }>(async (server, clientCredentials) => {
-	server.register(fastifyOauth2, {
+	await server.register(fastifyOauth2, {
 		callbackUri: `${env.SITE_URL}/login/google/callback`,
 		callbackUriParams: {
 			access_type: 'offline', // will tell Google to send a refreshToken too
@@ -43,7 +43,7 @@ export const googleAuth = fastifyPlugin<{
 		)
 
 		server.get('/login/google/ci', async (request, reply) => {
-			CookieHelpers.setAuthentication({
+			await CookieHelpers.setAuthentication({
 				server,
 				reply,
 				user: {
@@ -73,7 +73,7 @@ export const googleAuth = fastifyPlugin<{
 			const userData = await response.json()
 			const user = googleUserSchema.parse(userData)
 
-			CookieHelpers.setAuthentication({
+			await CookieHelpers.setAuthentication({
 				server,
 				user,
 				reply,

@@ -7,7 +7,6 @@ app = "fastrat"
 primary_region = "ams"
 
 [env]
-  DATABASE_URL = '/litefs/production-v2.sqlite'
   HOST = "0.0.0.0"
   HOST_NAMES_REDIRECT_FROM = "fastrat.fly.dev,fastrat.dev"
   SITE_URL = "https://www.fastrat.dev"
@@ -21,7 +20,7 @@ primary_region = "ams"
 [http_service]
   internal_port = 3000
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = "stop"
   auto_start_machines = true
   min_machines_running = 0
   processes = ["app"]

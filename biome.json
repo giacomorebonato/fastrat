@@ -9,6 +9,9 @@
 			"recommended": true,
 			"style": {
 				"noUnusedTemplateLiteral": "off"
+			},
+			"suspicious": {
+				"useAwait": "error"
 			}
 		}
 	},

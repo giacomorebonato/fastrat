@@ -14,7 +14,7 @@ export const Route = createFileRoute('/notes/$noteId')({
 	}),
 	async loader({ context, params }) {
 		if (context.queries) {
-			const note = context.queries.note.byId(params.noteId)
+			const note = await context.queries.note.byId(params.noteId)
 
 			if (!note) {
 				// this redirect is read server side
@@ -24,7 +24,7 @@ export const Route = createFileRoute('/notes/$noteId')({
 
 			return {
 				note,
-				notes: context.queries.note.list(),
+				notes: await context.queries.note.list(),
 			}
 		}
 	},

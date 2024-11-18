@@ -48,7 +48,7 @@ export const noteApi = router({
 				id: z.string(),
 			}),
 		)
-		.mutation(({ input, ctx }) => {
+		.mutation(async ({ input, ctx }) => {
 			if (env.GOOGLE_CLIENT_ID && !ctx.user) {
 				throw new TRPCError({
 					code: 'UNAUTHORIZED',
@@ -56,9 +56,9 @@ export const noteApi = router({
 				})
 			}
 
-			const result = ctx.queries.note.delete(input.id)
+			const result = await ctx.queries.note.delete(input.id)
 
-			if (result.changes === 0) {
+			if (result.rowsAffected === 0) {
 				throw new TRPCError({
 					code: 'NOT_FOUND',
 				})
@@ -89,7 +89,7 @@ export const noteApi = router({
 				updatedAt: true,
 			}),
 		)
-		.mutation(({ ctx, input }) => {
+		.mutation(async ({ ctx, input }) => {
 			if (!ctx.user) {
 				throw new TRPCError({
 					code: 'UNAUTHORIZED',
@@ -97,7 +97,7 @@ export const noteApi = router({
 				})
 			}
 
-			const note = ctx.queries.note.upsert({
+			const note = await ctx.queries.note.upsert({
 				...input,
 				updatedAt: new Date(),
 				creatorId: ctx.user.userId,

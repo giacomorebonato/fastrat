@@ -5,8 +5,10 @@ import { type SessionSchema, sessionTable } from '#/db/session-table'
 
 export class SessionQueries {
 	constructor(private db: FastratDatabase) {}
-	upsert(session: Partial<SessionSchema> & Pick<SessionSchema, 'userId'>) {
-		return this.db
+	async upsert(
+		session: Partial<SessionSchema> & Pick<SessionSchema, 'userId'>,
+	) {
+		return await this.db
 			.insert(sessionTable)
 			.values({
 				// email: user.email.trim(),
@@ -17,16 +19,16 @@ export class SessionQueries {
 			.get()
 	}
 
-	byId(refreshToken: string) {
-		return this.db
+	async byId(refreshToken: string) {
+		return await this.db
 			.select()
 			.from(sessionTable)
 			.where(eq(sessionTable.id, refreshToken))
 			.get()
 	}
 
-	list() {
-		return this.db
+	async list() {
+		return await this.db
 			.select()
 			.from(sessionTable)
 			.orderBy(desc(sessionTable.createdAt))

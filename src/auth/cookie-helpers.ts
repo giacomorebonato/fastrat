@@ -54,7 +54,7 @@ export function clearAuthCookies(reply: FastifyReply) {
 		})
 }
 
-export function setAuthentication({
+export async function setAuthentication({
 	server,
 	reply,
 	user,
@@ -66,7 +66,7 @@ export function setAuthentication({
 		email: string
 	}
 }) {
-	const dbUser = server.queries.user.upsert({
+	const dbUser = await server.queries.user.upsert({
 		email: user.email,
 	})
 	const token = createToken(
