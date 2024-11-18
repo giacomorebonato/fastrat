@@ -32,6 +32,14 @@ export async function getUserFromRequest({
 	})
 	let user: MaybeUser = null
 
+	console.log(
+		JSON.stringify({
+			name: `Fetching cookies`,
+			userToken,
+			refreshToken,
+		}),
+	)
+
 	if (userToken?.value) {
 		user = TokenHelpers.parseToken({
 			token: userToken?.value,

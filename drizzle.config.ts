@@ -7,7 +7,7 @@ export default defineConfig({
 	},
 	schema: './src/db/schema.ts',
 	out: './migrations',
-	dialect: 'sqlite',
+	dialect: 'turso',
 	verbose: true,
 	strict: true,
 })

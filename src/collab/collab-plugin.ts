@@ -5,7 +5,7 @@ import type { FastifyInstance } from 'fastify'
 import { getUserFromRequest } from '#/auth/get-user-from-request'
 
 type CollabContext = {
-	user: ReturnType<typeof getUserFromRequest>
+	user: Awaited<ReturnType<typeof getUserFromRequest>>
 }
 
 export const collabPlugin = (
@@ -45,16 +45,20 @@ export const collabPlugin = (
 		})
 	})
 
-	server.get('/collab/:docName', { websocket: true }, (connection, request) => {
-		const user = getUserFromRequest({
-			request,
-			server,
-		})
-		const context: CollabContext = {
-			user,
-		}
-		hocusPocusServer.handleConnection(connection, request.raw, context)
-	})
+	server.get(
+		'/collab/:docName',
+		{ websocket: true },
+		async (connection, request) => {
+			const user = await getUserFromRequest({
+				request,
+				server,
+			})
+			const context: CollabContext = {
+				user,
+			}
+			hocusPocusServer.handleConnection(connection, request.raw, context)
+		},
+	)
 
 	done()
 }

@@ -80,6 +80,7 @@ export async function setAuthentication({
 	const inTenMinutes = addMinutes(new Date(), 10)
 
 	if (reply) {
+		console.log(JSON.stringify({ name: `Setting cookies`, token }))
 		reply
 			.setCookie(USER_TOKEN, token, {
 				...BASIC_COOKIE_PROPS,
