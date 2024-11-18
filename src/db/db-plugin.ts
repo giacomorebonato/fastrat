@@ -13,7 +13,7 @@ export type DbEvents = TypedEmitter<{
 	UPSERT_COLLAB: (entry: CollabSchema) => void
 }>
 
-export function createDb(dbUrl: string, authToken?: string) {
+export async function createDb(dbUrl: string, authToken?: string) {
 	const db = drizzle<typeof schema>({
 		connection: {
 			url: dbUrl,
@@ -21,21 +21,21 @@ export function createDb(dbUrl: string, authToken?: string) {
 		},
 	})
 
-	migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'migrations') })
+	await migrate(db, {
+		migrationsFolder: Path.join(appRootPath.path, 'migrations'),
+	})
 
 	return db
 }
 
 export const dbPlugin = fastifyPlugin<{ dbUrl: string; dbToken?: string }>(
-	(fastify, params, done) => {
-		const db = createDb(params.dbUrl, params.dbToken)
+	async (fastify, params) => {
+		const db = await createDb(params.dbUrl, params.dbToken)
 		const dbEvents = new EventEmitter() as DbEvents
 
 		fastify.db = db
 		fastify.queries = buildQueries(db, dbEvents)
 		fastify.dbEvents = dbEvents
-
-		done()
 	},
 	{
 		name: 'db-plugin',
@@ -44,7 +44,7 @@ export const dbPlugin = fastifyPlugin<{ dbUrl: string; dbToken?: string }>(
 
 export default dbPlugin
 
-export type FastratDatabase = ReturnType<typeof createDb>
+export type FastratDatabase = Awaited<ReturnType<typeof createDb>>
 
 declare module 'fastify' {
 	interface FastifyInstance {
