@@ -28,7 +28,7 @@ export const collabPlugin = (
 					// const context = data.context as CollabContext
 					// context.user
 
-					server.queries.collab.upsert({
+					await server.queries.collab.upsert({
 						content: data.state,
 						id: data.documentName,
 					})
@@ -38,7 +38,7 @@ export const collabPlugin = (
 	})
 
 	server.addHook('preValidation', async (request, reply) => {
-		getUserFromRequest({
+		await getUserFromRequest({
 			request,
 			reply,
 			server,
