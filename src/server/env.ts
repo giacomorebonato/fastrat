@@ -22,7 +22,7 @@ const schema = z.object({
 	SITE_URL: z.string().default('http://localhost:3000'),
 	TEST_EMAIL: z.string().default('fastrat@email.com'),
 	DATABASE_URL: z.string().default('file:local.db'),
-	DATABASE_TOKEN: z.string(),
+	DATABASE_TOKEN: z.string().optional(),
 })
 
 export const env = schema.parse(process.env)
