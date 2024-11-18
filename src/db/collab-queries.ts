@@ -9,9 +9,9 @@ export class CollabQueries {
 		private dbEvents: DbEvents,
 	) {}
 
-	upsert(collab: Pick<CollabSchema, 'content' | 'id'>) {
+	async upsert(collab: Pick<CollabSchema, 'content' | 'id'>) {
 		const id = collab.id ?? Crypto.randomUUID()
-		const entry = this.db
+		const entry = (await this.db
 			.insert(collabTable)
 			.values({
 				...collab,
@@ -24,20 +24,18 @@ export class CollabQueries {
 				},
 			})
 			.returning()
-			.get() as CollabSchema
+			.get()) as CollabSchema
 
 		this.dbEvents.emit('UPSERT_COLLAB', entry)
 
 		return entry
 	}
 
-	byId(id: string) {
-		return this.db.query.collabTable
-			.findFirst({
-				where: (collab, { eq }) => {
-					return eq(collab.id, id)
-				},
-			})
-			.sync()
+	async byId(id: string) {
+		return await this.db.query.collabTable.findFirst({
+			where: (collab, { eq }) => {
+				return eq(collab.id, id)
+			},
+		})
 	}
 }

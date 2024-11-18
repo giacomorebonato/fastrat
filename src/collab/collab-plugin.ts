@@ -18,7 +18,7 @@ export const collabPlugin = (
 			new Logger(),
 			new Database({
 				async fetch(data): Promise<Uint8Array | null> {
-					const file = server.queries.collab.byId(data.documentName)
+					const file = await server.queries.collab.byId(data.documentName)
 					// const context = data.context as CollabContext
 					// context.user
 

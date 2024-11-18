@@ -6,8 +6,8 @@ import { sessionTable } from './session-table'
 
 export class UserQueries {
 	constructor(private db: FastratDatabase) {}
-	upsert(user: Partial<UserSchema> & Pick<UserSchema, 'email'>) {
-		const dbUser = this.db
+	async upsert(user: Partial<UserSchema> & Pick<UserSchema, 'email'>) {
+		return await this.db
 			.insert(userTable)
 			.values({
 				...user,
@@ -25,23 +25,24 @@ export class UserQueries {
 				id: userTable.id,
 			})
 			.get()
-
-		return dbUser
 	}
 
-	bySessionId(sessionId: string) {
-		return this.db
+	async bySessionId(sessionId: string) {
+		return await this.db
 			.select({
 				user: userTable,
 			})
 			.from(userTable)
 			.innerJoin(sessionTable, eq(userTable.id, sessionTable.userId))
 			.where(eq(sessionTable.id, sessionId))
-			.get()?.user
+			.get()
+			.then((entry) => {
+				return entry?.user
+			})
 	}
 
-	list() {
-		return this.db
+	async list() {
+		return await this.db
 			.select()
 			.from(userTable)
 			.orderBy(desc(userTable.createdAt))

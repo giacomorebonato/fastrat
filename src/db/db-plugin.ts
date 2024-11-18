@@ -1,25 +1,25 @@
 import EventEmitter from 'node:events'
 import Path from 'node:path'
 import appRootPath from 'app-root-path'
-import Database from 'better-sqlite3'
-import { type BetterSQLite3Database, drizzle } from 'drizzle-orm/better-sqlite3'
-import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
+import { drizzle } from 'drizzle-orm/libsql'
+import { migrate } from 'drizzle-orm/libsql/migrator'
 import { fastifyPlugin } from 'fastify-plugin'
 import type TypedEmitter from 'typed-emitter'
 import { type Queries, buildQueries } from './build-queries'
 import type { CollabSchema } from './collab-table'
-import * as schema from './schema'
+import type * as schema from './schema'
 
 export type DbEvents = TypedEmitter<{
 	UPSERT_COLLAB: (entry: CollabSchema) => void
 }>
 
-export function createDb(dbUrl: string) {
-	const sqlite = new Database(dbUrl)
-
-	sqlite.pragma('journal_mode = WAL')
-
-	const db = drizzle(sqlite, { schema })
+export function createDb(dbUrl: string, authToken?: string) {
+	const db = drizzle<typeof schema>({
+		connection: {
+			url: dbUrl,
+			authToken,
+		},
+	})
 
 	migrate(db, { migrationsFolder: Path.join(appRootPath.path, 'migrations') })
 
@@ -44,7 +44,7 @@ export const dbPlugin = fastifyPlugin<{ dbUrl: string }>(
 
 export default dbPlugin
 
-export type FastratDatabase = BetterSQLite3Database<typeof schema>
+export type FastratDatabase = ReturnType<typeof createDb>
 
 declare module 'fastify' {
 	interface FastifyInstance {

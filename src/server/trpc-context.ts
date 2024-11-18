@@ -4,16 +4,18 @@ import type { FastratServer } from './create-server'
 
 export const createTrpcContext =
 	(server: FastratServer) =>
-	({ req: request, res: reply }: CreateFastifyContextOptions) => {
+	async ({ req: request, res: reply }: CreateFastifyContextOptions) => {
 		const context = {
 			db: server.db,
 			reply,
 			request: request,
-			user: getUserFromRequest({
-				request,
-				reply,
-				server,
-			}).user,
+			user: (
+				await getUserFromRequest({
+					request,
+					reply,
+					server,
+				})
+			).user,
 			queries: server.queries,
 		}
 
