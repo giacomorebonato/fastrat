@@ -108,7 +108,7 @@
 		"workbox-window": "^7.3.0"
 	},
 	"engines": {
-		"node": ">=22",
+		"node": ">=23",
 		"pnpm": ">=9"
 	},
 	"lint-staged": {

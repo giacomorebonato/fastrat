@@ -1,4 +1,4 @@
-FROM node:22 as build
+FROM node:23 as build
 
 RUN npm i pnpm@9 -g
 
@@ -13,7 +13,7 @@ RUN pnpm prune --production --config.ignore-scripts=true
 RUN rm -rf src
 RUN rm -rf public
 
-FROM node:22 as run
+FROM node:23 as run
 
 WORKDIR /app
 
