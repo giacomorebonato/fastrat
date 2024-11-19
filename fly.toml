@@ -1,17 +1,12 @@
-# fly.toml app configuration file generated for fastrat on 2024-11-19T18:13:45+01:00
+# fly.toml app configuration file generated for fastrat on 2024-11-19T19:39:57+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'fastrat'
-primary_region = 'ams'
+primary_region = 'arn'
 
 [build]
-
-[env]
-  HOST = '0.0.0.0'
-  HOST_NAMES_REDIRECT_FROM = 'fastrat.fly.dev,fastrat.dev'
-  SITE_URL = 'https://www.fastrat.dev'
 
 [http_service]
   internal_port = 3000
@@ -22,6 +17,6 @@ primary_region = 'ams'
   processes = ['app']
 
 [[vm]]
+  memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 1024
