@@ -18,3 +18,5 @@ coverage/
 local.db*
 local.sqlite*
 coverage-reports/
+localhost.pem
+localhost-key.pem

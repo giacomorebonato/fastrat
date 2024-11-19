@@ -1,10 +1,17 @@
+import Fs from 'node:fs'
+import Path from 'node:path'
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify'
+import appRootPath from 'app-root-path'
 import { type FastifyServerOptions, fastify } from 'fastify'
 import { googleAuth } from '#/auth/google-auth'
 import { collabPlugin } from '#/collab/collab-plugin'
 import { apiRouter } from './api-router'
 import type { Env } from './env'
 import { createTrpcContext } from './trpc-context'
+
+const certPath = Path.join(appRootPath.path, 'localhost.pem')
+const keyPath = Path.join(appRootPath.path, 'localhost-key.pem')
+const isHttps = Fs.existsSync(certPath) && Fs.existsSync(keyPath)
 
 export async function createServer(
 	fastifyOptions: FastifyServerOptions = {
@@ -22,7 +29,19 @@ export async function createServer(
 		throw Error(`Specify an env file`)
 	}
 
-	const server = fastify(fastifyOptions)
+	console.info(`isHttps is true. Loading certificates`)
+
+	const server = fastify({
+		...fastifyOptions,
+		...(isHttps
+			? {
+					https: {
+						key: Fs.readFileSync(keyPath),
+						cert: Fs.readFileSync(certPath),
+					},
+				}
+			: null),
+	})
 
 	await server
 		.register(import('#/db/db-plugin'), {
