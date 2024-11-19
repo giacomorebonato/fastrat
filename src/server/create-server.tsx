@@ -29,8 +29,6 @@ export async function createServer(
 		throw Error(`Specify an env file`)
 	}
 
-	console.info(`isHttps is true. Loading certificates`)
-
 	const server = fastify({
 		...fastifyOptions,
 		...(isHttps
