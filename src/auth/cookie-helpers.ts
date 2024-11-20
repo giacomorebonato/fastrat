@@ -77,7 +77,7 @@ export async function setAuthentication({
 		id: string
 		email: string
 	}
-}) {
+}): Promise<{ token: string }> {
 	const dbUser = await server.queries.user.upsert({
 		email: user.email,
 	})

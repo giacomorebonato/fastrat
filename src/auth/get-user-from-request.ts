@@ -48,7 +48,7 @@ export async function getUserFromRequest({
 		if (session?.disabled !== false || !dbUser) {
 			CookieHelpers.clearAuthCookies(request, reply)
 		} else {
-			CookieHelpers.setAuthentication({
+			await CookieHelpers.setAuthentication({
 				request,
 				server: request.server,
 				reply: reply,
