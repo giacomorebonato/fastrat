@@ -36,21 +36,10 @@ export function getUnsignedCookie(params: {
 	const signedCookie = params.request.cookies[params.name]
 
 	if (!signedCookie) {
-		console.log(
-			JSON.stringify({
-				msg: `Couldn't find cookie ${params.name} among:`,
-				cookies: Object.keys(params.request.cookies).join(', '),
-				headers: Object.keys(params.request.headers).join(', '),
-			}),
-		)
-
 		return null
 	}
 
-	console.log(JSON.stringify({ msg: `${params.name} cookie found` }))
-
 	if (params.request.protocol === 'http') {
-		console.log(JSON.stringify({ msg: `${params.name} http` }))
 		return { value: signedCookie, renew: false, valid: true }
 	}
 

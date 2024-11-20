@@ -94,7 +94,6 @@ export function CodeEditor(props: { docId?: string }) {
 					}: {
 						states: AwarenessState[]
 					}) => {
-						console.log(states)
 						for (const state of states) {
 							if (!state.user?.color) {
 								continue

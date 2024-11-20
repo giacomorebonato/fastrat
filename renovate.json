@@ -3,7 +3,8 @@
 	"extends": ["config:recommended"],
 	"lockFileMaintenance": {
 		"enabled": true,
-		"automerge": true
+		"automerge": true,
+		"requiredStatusChecks": ["Unit Tests", "Playwright Tests"]
 	},
 	"packageRules": [
 		{
