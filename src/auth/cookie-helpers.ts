@@ -117,19 +117,13 @@ export async function setAuthentication({
 		protocol: request.protocol,
 	})
 
-	if (reply) {
-		reply
-			.setCookie(USER_TOKEN, token, {
-				...cookieProps,
-				expires: inTenMinutes,
-			})
-			.setCookie(REFRESH_TOKEN, token, {
-				...cookieProps,
-				expires: inSevenDays,
-			})
-	}
-
-	return {
-		token,
-	}
+	return reply
+		.setCookie(USER_TOKEN, token, {
+			...cookieProps,
+			expires: inTenMinutes,
+		})
+		.setCookie(REFRESH_TOKEN, token, {
+			...cookieProps,
+			expires: inSevenDays,
+		})
 }
