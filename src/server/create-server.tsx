@@ -17,6 +17,7 @@ export async function createServer(
 	fastifyOptions: FastifyServerOptions = {
 		logger: true,
 		maxParamLength: 5_000,
+		trustProxy: true,
 	},
 	options: {
 		env?: Env
