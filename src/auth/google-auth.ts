@@ -81,9 +81,6 @@ export const googleAuth = fastifyPlugin<{
 				reply,
 			})
 
-			reply.log.info('Authentication cookies set')
-			reply.log.info({ msg: 'Response headers', headers: reply.getHeaders() })
-
 			reply.redirect('/')
 		} catch (error) {
 			reply.send(error)

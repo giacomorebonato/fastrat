@@ -98,15 +98,13 @@ export async function setAuthentication({
 	const inTenMinutes = addMinutes(new Date(), 10)
 	const cookieProps = getBasicCookieProps(request)
 
-	reply.log.info(
-		JSON.stringify({
-			msg: 'Setting authentication cookies',
-			token,
-			cookieProps,
-			reply: !!reply,
-			protocol: request.protocol,
-		}),
-	)
+	reply.log.info({
+		msg: 'Setting authentication cookies',
+		token,
+		cookieProps,
+		reply: !!reply,
+		protocol: request.protocol,
+	})
 
 	if (reply) {
 		reply
