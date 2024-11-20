@@ -5,16 +5,6 @@ import type { FastratServer } from '#/server/create-server'
 import { env } from '#/server/env'
 import { createToken } from './token-helpers'
 
-function extractDomain(urlString: string) {
-	const { hostname } = new URL(urlString)
-
-	if (hostname === 'localhost') {
-		return hostname
-	}
-
-	return `.${hostname.replace(/^www\./, '')}`
-}
-
 export const USER_TOKEN =
 	env.NODE_ENV === 'production' && !env.CI ? '__Host-userToken' : 'userToken'
 
@@ -26,7 +16,6 @@ export const REFRESH_TOKEN =
 function getBasicCookieProps(request: FastifyRequest) {
 	const isHttps = request.protocol === 'https'
 	const BASIC_COOKIE_PROPS = {
-		domain: extractDomain(env.SITE_URL),
 		httpOnly: true,
 		path: '/',
 		secure: isHttps,
