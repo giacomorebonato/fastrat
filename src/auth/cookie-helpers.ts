@@ -19,12 +19,14 @@ export const REFRESH_TOKEN =
 		: 'refreshToken'
 
 function getBasicCookieProps(request: FastifyRequest) {
+	const protocol = request.headers['x-forwarded-proto'] || request.protocol
+	const isHttps = protocol === 'https'
 	const BASIC_COOKIE_PROPS = {
 		domain: extractDomain(env.SITE_URL),
 		httpOnly: true,
 		path: '/',
-		secure: request.protocol === 'https',
-		signed: request.protocol === 'https',
+		secure: isHttps,
+		signed: isHttps,
 		SameSite: 'strict',
 	} as const
 
