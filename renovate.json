@@ -10,7 +10,7 @@
 			"matchUpdateTypes": ["minor", "patch"],
 			"matchCurrentVersion": "!/^0/",
 			"automerge": true,
-			"requiredStatusChecks": ["tests"]
+			"requiredStatusChecks": ["Unit Tests", "Playwright Tests"]
 		}
 	]
 }
