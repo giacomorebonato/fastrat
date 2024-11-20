@@ -24,11 +24,11 @@ export async function getUserFromRequest({
 }> {
 	const userToken = CookieHelpers.getUnsignedCookie({
 		request,
-		name: CookieHelpers.USER_TOKEN,
+		name: CookieHelpers.getUserTokenKey(request),
 	})
 	const refreshToken = CookieHelpers.getUnsignedCookie({
 		request,
-		name: CookieHelpers.REFRESH_TOKEN,
+		name: CookieHelpers.getRefreshTokenKey(request),
 	})
 	console.log(
 		JSON.stringify({

@@ -5,13 +5,13 @@ import type { FastratServer } from '#/server/create-server'
 import { env } from '#/server/env'
 import { createToken } from './token-helpers'
 
-export const USER_TOKEN =
-	env.NODE_ENV === 'production' && !env.CI ? '__Host-userToken' : 'userToken'
+export function getUserTokenKey(request?: FastifyRequest) {
+	return request?.protocol === 'https' ? '__Host-userToken' : 'userToken'
+}
 
-export const REFRESH_TOKEN =
-	env.NODE_ENV === 'production' && !env.CI
-		? '__Host-refreshToken'
-		: 'refreshToken'
+export function getRefreshTokenKey(request?: FastifyRequest) {
+	return request?.protocol === 'https' ? '__Host-refreshToken' : 'refreshToken'
+}
 
 function getBasicCookieProps(request: FastifyRequest) {
 	const isHttps = request.protocol === 'https'
@@ -62,10 +62,10 @@ export function getUnsignedCookie(params: {
 export function clearAuthCookies(request: FastifyRequest, reply: FastifyReply) {
 	const cookieProps = getBasicCookieProps(request)
 	reply
-		.clearCookie(USER_TOKEN, {
+		.clearCookie(getUserTokenKey(request), {
 			...cookieProps,
 		})
-		.clearCookie(REFRESH_TOKEN, {
+		.clearCookie(getRefreshTokenKey(request), {
 			...cookieProps,
 		})
 }
@@ -83,7 +83,7 @@ export async function setAuthentication({
 		id: string
 		email: string
 	}
-}): Promise<{ token: string }> {
+}): Promise<void> {
 	const dbUser = await server.queries.user.upsert({
 		email: user.email,
 	})
@@ -106,12 +106,12 @@ export async function setAuthentication({
 		protocol: request.protocol,
 	})
 
-	return reply
-		.setCookie(USER_TOKEN, token, {
+	reply
+		.setCookie(getUserTokenKey(request), token, {
 			...cookieProps,
 			expires: inTenMinutes,
 		})
-		.setCookie(REFRESH_TOKEN, token, {
+		.setCookie(getRefreshTokenKey(request), token, {
 			...cookieProps,
 			expires: inSevenDays,
 		})
