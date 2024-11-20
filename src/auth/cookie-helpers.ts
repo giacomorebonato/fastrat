@@ -20,6 +20,7 @@ function getBasicCookieProps(isHttps = true) {
 		secure: isHttps,
 		signed: isHttps,
 		SameSite: 'Lax',
+		domain: 'fastrat.dev',
 	} as const
 
 	return { ...BASIC_COOKIE_PROPS }
@@ -83,6 +84,12 @@ export async function setAuthentication({
 	const inSevenDays = addDays(new Date(), 7)
 	const inTenMinutes = addMinutes(new Date(), 10)
 	const cookieProps = getBasicCookieProps()
+
+	reply.log.info('Setting authentication cookies', {
+		token,
+		cookieProps,
+		reply: !!reply,
+	})
 
 	if (reply) {
 		reply
