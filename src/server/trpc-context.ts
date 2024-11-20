@@ -13,7 +13,7 @@ export const createTrpcContext =
 				await getUserFromRequest({
 					request,
 					reply,
-					server,
+					queries: server.queries,
 				})
 			).user,
 			queries: server.queries,

@@ -2,7 +2,7 @@ import type { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
 import * as CookieHelpers from '#/auth/cookie-helpers'
 import * as TokenHelpers from '#/auth/token-helpers'
-import type { FastratServer } from '#/server/create-server'
+import type { Queries } from '#/db/build-queries'
 import { env } from '#/server/env'
 
 const userValidator = z.object({
@@ -14,11 +14,11 @@ type MaybeUser = z.infer<typeof userValidator> | null
 export async function getUserFromRequest({
 	request,
 	reply,
-	server,
+	queries,
 }: {
 	request: FastifyRequest
 	reply?: FastifyReply
-	server: FastratServer
+	queries: Queries
 }): Promise<{
 	user: MaybeUser
 }> {
@@ -49,8 +49,8 @@ export async function getUserFromRequest({
 
 	// we try to update the cookie only if reply is present
 	if (reply && !user && refreshToken?.value) {
-		const session = await server.queries.session.byId(refreshToken.value)
-		const dbUser = await server.queries.user.bySessionId(refreshToken.value)
+		const session = await queries.session.byId(refreshToken.value)
+		const dbUser = await queries.user.bySessionId(refreshToken.value)
 
 		if (session?.disabled !== false || !dbUser) {
 			CookieHelpers.clearAuthCookies(request, reply)

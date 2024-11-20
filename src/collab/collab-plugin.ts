@@ -41,7 +41,7 @@ export const collabPlugin = (
 		await getUserFromRequest({
 			request,
 			reply,
-			server,
+			queries: request.server.queries,
 		})
 	})
 
@@ -51,7 +51,7 @@ export const collabPlugin = (
 		async (connection, request) => {
 			const user = await getUserFromRequest({
 				request,
-				server,
+				queries: request.server.queries,
 			})
 			const context: CollabContext = {
 				user,
