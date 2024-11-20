@@ -10,8 +10,8 @@ primary_region = 'arn'
 
 [http_service]
   [http_service.env]
-    # Explicitly set some forwarding headers
-    TRUST_PROXY = "true"
+    FORWARDED_HEADERS = "true"
+    PRESERVE_HEADERS = "set-cookie,cookie"
     
   internal_port = 3000
   force_https = true

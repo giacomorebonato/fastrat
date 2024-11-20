@@ -49,7 +49,9 @@ export function getUnsignedCookie(params: {
 	if (!signedCookie) {
 		console.log(
 			JSON.stringify({
-				msg: `Couldn't find cookie ${params.name} among ${Object.keys(params.request.cookies).join(', ')} or ${Object.keys(params.request.headers).join(', ')}`,
+				msg: `Couldn't find cookie ${params.name} among:`,
+				cookies: Object.keys(params.request.cookies).join(', '),
+				headers: Object.keys(params.request.headers).join(', '),
 			}),
 		)
 
