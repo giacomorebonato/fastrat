@@ -98,6 +98,7 @@ export async function setAuthentication({
 			token,
 			cookieProps,
 			reply: !!reply,
+			protocol: request.protocol,
 		}),
 	)
 
