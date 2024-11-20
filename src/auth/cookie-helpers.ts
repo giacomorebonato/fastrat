@@ -31,7 +31,7 @@ function getBasicCookieProps(request: FastifyRequest) {
 		path: '/',
 		secure: isHttps,
 		signed: isHttps,
-		// sameSite: 'none', doesn't work properly
+		sameSite: 'lax',
 	} as const
 
 	return { ...BASIC_COOKIE_PROPS }
@@ -50,7 +50,10 @@ export function getUnsignedCookie(params: {
 		return null
 	}
 
+	params.request.log.info(`${params.name} cookie found`)
+
 	if (params.request.protocol === 'http') {
+		params.request.log.info(`${params.name} http`)
 		return { value: signedCookie, renew: false, valid: true }
 	}
 
