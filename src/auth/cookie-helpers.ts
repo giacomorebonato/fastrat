@@ -50,10 +50,10 @@ export function getUnsignedCookie(params: {
 		return null
 	}
 
-	params.request.log.info(`${params.name} cookie found`)
+	console.log(JSON.stringify({ msg: `${params.name} cookie found` }))
 
 	if (params.request.protocol === 'http') {
-		params.request.log.info(`${params.name} http`)
+		console.log(JSON.stringify({ msg: `${params.name} http` }))
 		return { value: signedCookie, renew: false, valid: true }
 	}
 
