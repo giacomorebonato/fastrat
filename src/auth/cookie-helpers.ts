@@ -7,7 +7,7 @@ import { createToken } from './token-helpers'
 
 function extractDomain(urlString: string) {
 	const { hostname } = new URL(urlString)
-	return hostname.replace(/^www\./, '')
+	return `.${hostname.replace(/^www\./, '')}`
 }
 
 export const USER_TOKEN =
@@ -26,7 +26,7 @@ function getBasicCookieProps(request: FastifyRequest) {
 		path: '/',
 		secure: isHttps,
 		signed: isHttps,
-		SameSite: 'strict',
+		sameSite: 'none',
 	} as const
 
 	return { ...BASIC_COOKIE_PROPS }
