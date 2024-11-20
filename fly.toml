@@ -9,6 +9,10 @@ primary_region = 'arn'
 [build]
 
 [http_service]
+  [http_service.env]
+    # Explicitly set some forwarding headers
+    TRUST_PROXY = "true"
+    
   internal_port = 3000
   force_https = true
   auto_stop_machines = 'stop'
