@@ -5,6 +5,11 @@ import type { FastratServer } from '#/server/create-server'
 import { env } from '#/server/env'
 import { createToken } from './token-helpers'
 
+function extractDomain(urlString: string) {
+	const { hostname } = new URL(urlString)
+	return hostname.replace(/^www\./, '')
+}
+
 export const USER_TOKEN =
 	env.NODE_ENV === 'production' && !env.CI ? '__Host-userToken' : 'userToken'
 
@@ -13,14 +18,14 @@ export const REFRESH_TOKEN =
 		? '__Host-refreshToken'
 		: 'refreshToken'
 
-function getBasicCookieProps(isHttps = true) {
+function getBasicCookieProps(request: FastifyRequest) {
 	const BASIC_COOKIE_PROPS = {
+		domain: extractDomain(env.SITE_URL),
 		httpOnly: true,
 		path: '/',
-		secure: isHttps,
-		signed: isHttps,
-		SameSite: 'Lax',
-		domain: 'fastrat.dev',
+		secure: request.protocol === 'https',
+		signed: request.protocol === 'https',
+		SameSite: 'strict',
 	} as const
 
 	return { ...BASIC_COOKIE_PROPS }
@@ -48,8 +53,8 @@ export function getUnsignedCookie(params: {
 	return unsigned
 }
 
-export function clearAuthCookies(reply: FastifyReply) {
-	const cookieProps = getBasicCookieProps()
+export function clearAuthCookies(request: FastifyRequest, reply: FastifyReply) {
+	const cookieProps = getBasicCookieProps(request)
 	reply
 		.clearCookie(USER_TOKEN, {
 			...cookieProps,
@@ -62,9 +67,11 @@ export function clearAuthCookies(reply: FastifyReply) {
 export async function setAuthentication({
 	server,
 	reply,
+	request,
 	user,
 }: {
 	server: FastratServer
+	request: FastifyRequest
 	reply: FastifyReply
 	user: {
 		id: string
@@ -83,7 +90,7 @@ export async function setAuthentication({
 	)
 	const inSevenDays = addDays(new Date(), 7)
 	const inTenMinutes = addMinutes(new Date(), 10)
-	const cookieProps = getBasicCookieProps()
+	const cookieProps = getBasicCookieProps(request)
 
 	reply.log.info('Setting authentication cookies', {
 		token,

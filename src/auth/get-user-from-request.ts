@@ -46,9 +46,10 @@ export async function getUserFromRequest({
 		const dbUser = await server.queries.user.bySessionId(refreshToken.value)
 
 		if (session?.disabled !== false || !dbUser) {
-			CookieHelpers.clearAuthCookies(reply)
+			CookieHelpers.clearAuthCookies(request, reply)
 		} else {
 			CookieHelpers.setAuthentication({
+				request,
 				server: request.server,
 				reply: reply,
 				user: {

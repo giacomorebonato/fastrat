@@ -44,6 +44,7 @@ export const googleAuth = fastifyPlugin<{
 
 		server.get('/login/google/ci', async (request, reply) => {
 			await CookieHelpers.setAuthentication({
+				request,
 				server,
 				reply,
 				user: {
@@ -74,6 +75,7 @@ export const googleAuth = fastifyPlugin<{
 			const user = googleUserSchema.parse(userData)
 
 			await CookieHelpers.setAuthentication({
+				request,
 				server,
 				user,
 				reply,

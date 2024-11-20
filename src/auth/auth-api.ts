@@ -3,7 +3,7 @@ import * as CookieHelpers from './cookie-helpers'
 
 export const authApi = router({
 	logout: publicProcedure.mutation(({ ctx }) => {
-		CookieHelpers.clearAuthCookies(ctx.reply)
+		CookieHelpers.clearAuthCookies(ctx.request, ctx.reply)
 
 		return
 	}),
