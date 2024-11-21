@@ -218,7 +218,7 @@ importers:
         version: 15.2.10
       monocart-coverage-reports:
         specifier: ^2.11.2
-        version: 2.11.2
+        version: 2.11.3
       npm-run-all2:
         specifier: ^7.0.1
         version: 7.0.1
@@ -3328,6 +3328,10 @@ packages:
     resolution: {integrity: sha512-ZVJrKKYunU38/76t0RMOulHOnUcbU9GbpWKAOZ0mhjr7CX6FVrH+4FrAapSOekrgFQ3f/8gwMEuIft0aKq6Hug==}
     engines: {node: '>= 8'}
 
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
+    engines: {node: '>= 8'}
+
   crossws@0.2.4:
     resolution: {integrity: sha512-DAxroI2uSOgUKLz00NX6A8U/8EE3SZHmIND+10jkVSaypvyt57J5JEOxAQOL6lQxyzi/wZbTIwssU1uy69h5Vg==}
     peerDependencies:
@@ -4917,8 +4921,8 @@ packages:
   monaco-editor@0.52.0:
     resolution: {integrity: sha512-OeWhNpABLCeTqubfqLMXGsqf6OmPU6pHM85kF3dhy6kq5hnhuVS1p3VrEW/XhWHc71P2tHyS5JFySD8mgs1crw==}
 
-  monocart-coverage-reports@2.11.2:
-    resolution: {integrity: sha512-CQN6ivZAC/tONctenrzGXfhrCuLTUr74Kb/V93Xyo8TMYXFJ2hKTQUNkmZDtvou/s11dBpW+28BHqtRYrP4ccg==}
+  monocart-coverage-reports@2.11.3:
+    resolution: {integrity: sha512-4wUKlebRpeDZxtvqoflmQs7AULeiZmwvFpFg3PNs64LiG2IbVu48fzznTLheIc8t/MxStIRxRd4EIoS8aRsU7A==}
     hasBin: true
 
   monocart-locator@1.0.2:
@@ -9601,6 +9605,12 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
+  cross-spawn@7.0.6:
+    dependencies:
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
+
   crossws@0.2.4: {}
 
   crossws@0.3.1:
@@ -10310,7 +10320,7 @@ snapshots:
 
   foreground-child@3.3.0:
     dependencies:
-      cross-spawn: 7.0.5
+      cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
   formdata-polyfill@4.0.10:
@@ -11506,7 +11516,7 @@ snapshots:
 
   monaco-editor@0.52.0: {}
 
-  monocart-coverage-reports@2.11.2:
+  monocart-coverage-reports@2.11.3:
     dependencies:
       acorn: 8.14.0
       acorn-loose: 8.4.0
