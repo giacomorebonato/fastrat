@@ -24,7 +24,7 @@ In a production environment, you should set those environment variables directly
 
 
 - [Authentication](#authentication)
-- [sqlite on Turso](#sqlite-on-turso)
+- [libSQL (SQLite fork) on Turso](#libsql-sqlite-fork-on-turso)
 - [SSR and Routing](#ssr-and-routing)
 - [tRPC](#trpc)
 - [Server side data fetching](#server-side-data-fetching)
@@ -50,7 +50,7 @@ Provide `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` into the `.env` file to al
 You can check how authentication is achieved in [src/features/auth/google-auth.ts](src/auth/google-auth.ts) by leveraging [fastify-oauth2](https://github.com/fastify/fastify-oauth2).  
 It should be easy for you to re-use this example to add other authentication providers.
 
-## sqlite on Turso
+## libSQL (SQLite fork) on Turso
 
 1. install the [turso CLI](https://docs.turso.tech/cli/installation)
 2. login and create a database `turso db create fastrat`
@@ -66,7 +66,7 @@ The page content is streamed and meta tags in `<head />` are rendered following 
 ## tRPC
 
 This project comes with [tRPC](https://trpc.io) ready to be used.
-Check [note-router.ts](src/notes/note-router.ts) to see how queries, mutations and subscriptions can be implemented.  
+Check [note-router.ts](src/notes/note-api.ts) to see how queries, mutations and subscriptions can be implemented.  
 All the routers are collected in [api-router.ts](src/server/api-router.ts), but you can organise files in the way you prefer.
 
 ## Server side data fetching
@@ -99,9 +99,9 @@ This probably looks less magical than `getServerSideProps`, but still gives you 
 This starter contains a few unit tests and an E2E test.
 
 ```bash
-pnpm test        # uses Vitest to run unit tests
-pnpm e2e         # uses PlayWright to run E2E tests
-pnpm e2e:headed  # uses PlayWright to run E2E tests opening the browser
+node --run test        # uses Vitest to run unit tests
+node --run e2e         # uses PlayWright to run E2E tests
+node --run e2e:headed  # uses PlayWright to run E2E tests opening the browser
 ```
 
 The present E2E tests verify that the page is server rendered and that websockets are working.
