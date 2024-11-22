@@ -66,8 +66,8 @@ importers:
         specifier: ^1.81.9
         version: 1.81.9(vite@5.4.11(@types/node@22.9.1)(terser@5.36.0))
       '@tanstack/start':
-        specifier: 1.82.2
-        version: 1.82.2(@libsql/client@0.14.0)(@types/node@22.9.1)(better-sqlite3@11.5.0)(drizzle-orm@0.36.3(@libsql/client@0.14.0)(@types/better-sqlite3@7.6.11)(@types/react@18.3.12)(better-sqlite3@11.5.0)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.11(@types/node@22.9.1)(terser@5.36.0))
+        specifier: 1.82.3
+        version: 1.82.3(@libsql/client@0.14.0)(@types/node@22.9.1)(better-sqlite3@11.5.0)(drizzle-orm@0.36.3(@libsql/client@0.14.0)(@types/better-sqlite3@7.6.11)(@types/react@18.3.12)(better-sqlite3@11.5.0)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.11(@types/node@22.9.1)(terser@5.36.0))
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.638(@trpc/server@11.0.0-rc.638(@babel/core@7.26.0)(@playwright/test@1.49.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -2524,8 +2524,8 @@ packages:
     resolution: {integrity: sha512-FK+RXsnm/ukkTDLcpESSuvYw5+gNGT0TbYsUCdGjxo2hqQ4AbwhxwIWyOxvcfzgSjMJxjGWvXa1lbJmaep5MaA==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.82.2':
-    resolution: {integrity: sha512-bV19eHRsGyMdRRUzbqSlq6KxeHPztLrcu2+XuB9HgShAOeey6SgZFqBJqNEQc6wk03LVE9/pYBEiyL/NCfURLw==}
+  '@tanstack/start@1.82.3':
+    resolution: {integrity: sha512-l7yHtRcdpjFi3gjA3ikCoGAEEiSjBel+nLCz6whvjkeQb6A6asjthwtBawxcCrsgV2SSEgCOwUVIBOPO6fsOzg==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -8574,7 +8574,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.82.2(@libsql/client@0.14.0)(@types/node@22.9.1)(better-sqlite3@11.5.0)(drizzle-orm@0.36.3(@libsql/client@0.14.0)(@types/better-sqlite3@7.6.11)(@types/react@18.3.12)(better-sqlite3@11.5.0)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.11(@types/node@22.9.1)(terser@5.36.0))':
+  '@tanstack/start@1.82.3(@libsql/client@0.14.0)(@types/node@22.9.1)(better-sqlite3@11.5.0)(drizzle-orm@0.36.3(@libsql/client@0.14.0)(@types/better-sqlite3@7.6.11)(@types/react@18.3.12)(better-sqlite3@11.5.0)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.11(@types/node@22.9.1)(terser@5.36.0))':
     dependencies:
       '@tanstack/react-cross-context': 1.81.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router': 1.82.2(@tanstack/router-generator@1.81.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
