@@ -41,7 +41,7 @@
 		"@tanstack/react-router": "^1.82.1",
 		"@tanstack/router-devtools": "^1.82.1",
 		"@tanstack/router-vite-plugin": "^1.81.9",
-		"@tanstack/start": "1.82.5",
+		"@tanstack/start": "1.82.6",
 		"@trpc/client": "npm:@trpc/client@next",
 		"@trpc/react-query": "npm:@trpc/react-query@next",
 		"@trpc/server": "npm:@trpc/server@next",
