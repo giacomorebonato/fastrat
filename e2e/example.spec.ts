@@ -121,3 +121,13 @@ test(`it redirects from server side when passing not existing id in the URL`, as
 
 	expect(response?.url()).toEqual('http://localhost:3000/notes')
 })
+
+test(`collaborative editor working`, async ({ page, context }) => {
+	const page2 = await context.newPage()
+	await page.goto(`http://localhost:3000/code-editor`)
+	await page2.goto(`http://localhost:3000/code-editor`)
+
+	const monacoEditor = page.locator('.monaco-editor').nth(0)
+	await monacoEditor.click()
+	await page.keyboard.type('Hello world!')
+})
