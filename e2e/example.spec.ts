@@ -1,6 +1,5 @@
-import { expect } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 import { HtmlValidate } from 'html-validate/node'
-import { test } from './fixtures'
 
 const htmlvalidate = new HtmlValidate({
 	extends: ['html-validate:recommended'],
@@ -120,4 +119,27 @@ test(`it redirects from server side when passing not existing id in the URL`, as
 	const response = await page.goto('http://localhost:3000/notes/12345')
 
 	expect(response?.url()).toEqual('http://localhost:3000/notes')
+})
+
+test(`collaborative editor working`, async ({ page, context }) => {
+	const page2 = await context.newPage()
+	await page.goto(`http://localhost:3000/code-editor`)
+	await page2.goto(`http://localhost:3000/code-editor`)
+
+	const monacoEditor = page.locator('.monaco-editor').nth(0)
+	await monacoEditor.click()
+
+	await page.keyboard.press('ControlOrMeta+A')
+	await page.keyboard.press(`Backspace`)
+
+	let editor1Value = await page.locator('.monaco-editor').nth(0).textContent()
+
+	await page.keyboard.type('# Hello world!')
+
+	await page.waitForTimeout(5_000)
+	editor1Value = await page.locator('.monaco-editor').nth(0).textContent()
+
+	const value = await page2.locator('.monaco-editor').nth(0).textContent()
+
+	expect(value?.trim()).toEqual(editor1Value?.trim())
 })
