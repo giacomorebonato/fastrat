@@ -117,7 +117,7 @@ test(`it renders valid HTML of the notes page`, async ({ page, browser }) => {
 test(`it redirects from server side when passing not existing id in the URL`, async ({
 	page,
 }) => {
-	const response = await page.goto('http://localhost:3000/not]es/12345')
+	const response = await page.goto('http://localhost:3000/notes/12345')
 
 	expect(response?.url()).toEqual('http://localhost:3000/notes')
 })
