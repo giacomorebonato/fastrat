@@ -128,6 +128,9 @@ test(`collaborative editor working`, async ({ page, context }) => {
 
 	const monacoEditor = page.locator('.monaco-editor').nth(0)
 	await monacoEditor.click()
+
+	await page.keyboard.press('ControlOrMeta+A')
+	await page.keyboard.press(`Backspace`)
 	await page.keyboard.type('# Hello world!')
 
 	await page.waitForTimeout(5_000)
