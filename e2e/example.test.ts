@@ -130,7 +130,9 @@ test(`collaborative editor working`, async ({ page, context }) => {
 	await monacoEditor.click()
 	await page.keyboard.type('# Hello world!')
 
-	const value = await page
+	await page.waitForTimeout(5_000)
+
+	const value = await page2
 		.locator('.monaco-editor textarea')
 		.nth(0)
 		.getAttribute('value')
