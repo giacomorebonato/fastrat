@@ -117,7 +117,7 @@ test(`it renders valid HTML of the notes page`, async ({ page, browser }) => {
 test(`it redirects from server side when passing not existing id in the URL`, async ({
 	page,
 }) => {
-	const response = await page.goto('http://localhost:3000/notes/12345')
+	const response = await page.goto('http://localhost:3000/not]es/12345')
 
 	expect(response?.url()).toEqual('http://localhost:3000/notes')
 })
@@ -129,5 +129,12 @@ test(`collaborative editor working`, async ({ page, context }) => {
 
 	const monacoEditor = page.locator('.monaco-editor').nth(0)
 	await monacoEditor.click()
-	await page.keyboard.type('Hello world!')
+	await page.keyboard.type('# Hello world!')
+
+	const value = page
+		.locator('.monaco-editor textarea')
+		.nth(0)
+		.getAttribute('value')
+
+	expect(value).toEqual('# Hello world!')
 })
