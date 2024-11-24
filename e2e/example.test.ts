@@ -135,7 +135,7 @@ test(`collaborative editor working`, async ({ page, context }) => {
 	const value = await page2
 		.locator('.monaco-editor textarea')
 		.nth(0)
-		.getAttribute('value')
+		.inputValue()
 
 	expect(value).toEqual('# Hello world!')
 })
