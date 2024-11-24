@@ -24,11 +24,11 @@ importers:
         specifier: 11.0.1
         version: 11.0.1
       '@hocuspocus/extension-database':
-        specifier: 2.13.7
-        version: 2.13.7(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
+        specifier: 2.14.0
+        version: 2.14.0(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
       '@hocuspocus/extension-logger':
-        specifier: 2.13.7
-        version: 2.13.7(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
+        specifier: 2.14.0
+        version: 2.14.0(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
       '@hocuspocus/provider':
         specifier: 2.14.0
         version: 2.14.0(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
@@ -235,7 +235,7 @@ importers:
         specifier: ^3.4.15
         version: 3.4.15
       typescript:
-        specifier: ^5.6.3
+        specifier: ^5.7.2
         version: 5.7.2
       vavite:
         specifier: ^5.0.1
@@ -1784,13 +1784,13 @@ packages:
   '@hocuspocus/common@2.14.0':
     resolution: {integrity: sha512-ACtaKxfpf9p5GkrAHn3/lkD/evLAMkud1EZo3T2VTEDORqj2Es8MKx2QwhdY+PyGUlWZFKhgQrshWnzJmnCQDA==}
 
-  '@hocuspocus/extension-database@2.13.7':
-    resolution: {integrity: sha512-GMSnluhmfpy3V+P8uCyR/dwh7nNqIERSAf+Jpkg0GVSeOuGdDuoWTJr+gkQWTAVDVMwNAqlp+ZLpzc0Y/L34mg==}
+  '@hocuspocus/extension-database@2.14.0':
+    resolution: {integrity: sha512-6lz75I4F84rkITrl6gk3w4BqQAZwlJEiYSkJ54c20yepFX+c1NICmbq/TKRaTJRbmzrWkBu9CQRhPGBt9lrVAQ==}
     peerDependencies:
       yjs: ^13.6.8
 
-  '@hocuspocus/extension-logger@2.13.7':
-    resolution: {integrity: sha512-mjlY0RjocWg4Qe1uVVL5lYXQs9yy80/5vrSuHMh9oFaXGGBOiVM7sOoM2IWl9k3ehBvlCid1xgNnNkNIJKDOPw==}
+  '@hocuspocus/extension-logger@2.14.0':
+    resolution: {integrity: sha512-Z6kffQK/wO+JW43UzfDXkFl5s+3eNc92ReDz8nayByjSOAAXz5EZ/e/YWhrwU+ViwONQ4yLyx2x/lmxDA8lZ5g==}
 
   '@hocuspocus/provider@2.14.0':
     resolution: {integrity: sha512-RvluPeNSJH+AkAAYz76DsBxMKQJBp+UQh1qRPtjbHy7QtqnBX/xiCDw1g/FIdphWY+uH0vHTpnohjUPDDhcauw==}
@@ -4576,7 +4576,6 @@ packages:
 
   libsql@0.4.7:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
-    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   light-my-request@6.3.0:
@@ -7844,7 +7843,7 @@ snapshots:
     dependencies:
       lib0: 0.2.98
 
-  '@hocuspocus/extension-database@2.13.7(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)':
+  '@hocuspocus/extension-database@2.14.0(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)':
     dependencies:
       '@hocuspocus/server': 2.14.0(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
       yjs: 13.6.20
@@ -7853,7 +7852,7 @@ snapshots:
       - utf-8-validate
       - y-protocols
 
-  '@hocuspocus/extension-logger@2.13.7(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)':
+  '@hocuspocus/extension-logger@2.14.0(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)':
     dependencies:
       '@hocuspocus/server': 2.14.0(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
     transitivePeerDependencies:
