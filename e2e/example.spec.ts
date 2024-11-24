@@ -1,6 +1,5 @@
-import { expect } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 import { HtmlValidate } from 'html-validate/node'
-import { test } from './fixtures'
 
 const htmlvalidate = new HtmlValidate({
 	extends: ['html-validate:recommended'],
@@ -129,12 +128,18 @@ test(`collaborative editor working`, async ({ page, context }) => {
 
 	const monacoEditor = page.locator('.monaco-editor').nth(0)
 	await monacoEditor.click()
+
+	await page.keyboard.press('ControlOrMeta+A')
+	await page.keyboard.press(`Backspace`)
+
+	let editor1Value = await page.locator('.monaco-editor').nth(0).textContent()
+
 	await page.keyboard.type('# Hello world!')
 
-	const value = page
-		.locator('.monaco-editor textarea')
-		.nth(0)
-		.getAttribute('value')
+	await page.waitForTimeout(5_000)
+	editor1Value = await page.locator('.monaco-editor').nth(0).textContent()
 
-	expect(value).toEqual('# Hello world!')
+	const value = await page2.locator('.monaco-editor').nth(0).textContent()
+
+	expect(value?.trim()).toEqual(editor1Value?.trim())
 })
