@@ -30,13 +30,6 @@ export async function getUserFromRequest({
 		request,
 		name: CookieHelpers.getRefreshTokenKey(request),
 	})
-	console.log(
-		JSON.stringify({
-			msg: 'auth-tokens',
-			userToken,
-			refreshToken,
-		}),
-	)
 	let user: MaybeUser = null
 
 	if (userToken?.value) {

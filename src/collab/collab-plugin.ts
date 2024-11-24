@@ -14,15 +14,17 @@ export const collabPlugin = (
 	done: () => void,
 ) => {
 	const hocusPocusServer = HocusPocusServer.configure({
+		onAuthenticate() {
+			return Promise.resolve({})
+		},
 		extensions: [
 			new Logger(),
 			new Database({
 				async fetch(data): Promise<Uint8Array | null> {
 					const file = await server.queries.collab.byId(data.documentName)
-					// const context = data.context as CollabContext
-					// context.user
+					const content = (file?.content as Uint8Array) ?? null
 
-					return (file?.content as Uint8Array) ?? null
+					return content
 				},
 				async store(data): Promise<void> {
 					// const context = data.context as CollabContext
@@ -56,6 +58,7 @@ export const collabPlugin = (
 			const context: CollabContext = {
 				user,
 			}
+
 			hocusPocusServer.handleConnection(connection, request.raw, context)
 		},
 	)

@@ -63,6 +63,7 @@ export function CodeEditor(props: { docId?: string }) {
 					url: `${protocol}:${origin}/collab/${docId}`,
 					name: docId,
 					document: ydoc,
+					token: 'fake-auth-token',
 					onConnect() {
 						toast(`CRDT connected`)
 						const color = getRandomColor()

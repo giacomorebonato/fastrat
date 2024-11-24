@@ -1,4 +1,5 @@
 import Crypto from 'node:crypto'
+import { eq } from 'drizzle-orm'
 import type { CollabSchema } from '#/db/collab-table'
 import type { DbEvents, FastratDatabase } from '#/db/db-plugin'
 import { collabTable } from '#/db/schema'
@@ -32,10 +33,11 @@ export class CollabQueries {
 	}
 
 	async byId(id: string) {
-		return await this.db.query.collabTable.findFirst({
-			where: (collab, { eq }) => {
-				return eq(collab.id, id)
-			},
-		})
+		const data = await this.db
+			.select()
+			.from(collabTable)
+			.where(eq(collabTable.id, id))
+
+		return data.length ? data[0] : null
 	}
 }
