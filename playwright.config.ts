@@ -4,7 +4,7 @@ import appRootPath from 'app-root-path'
 
 process.env.DATABASE_URL = ':memory:'
 export default defineConfig({
-	forbidOnly: !!process.env.CI,
+	forbidOnly: process.env.CI === 'true',
 	fullyParallel: true,
 	projects: [
 		{

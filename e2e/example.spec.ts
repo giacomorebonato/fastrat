@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test'
+import { type Page, expect, test } from '@playwright/test'
 import { HtmlValidate } from 'html-validate/node'
 
 const htmlvalidate = new HtmlValidate({
@@ -121,25 +121,55 @@ test(`it redirects from server side when passing not existing id in the URL`, as
 	expect(response?.url()).toEqual('http://localhost:3000/notes')
 })
 
-test(`collaborative editor working`, async ({ page, context }) => {
+test(`collaborative editor is working with CRDT`, async ({
+	page: page1,
+	context,
+}) => {
 	const page2 = await context.newPage()
-	await page.goto(`http://localhost:3000/code-editor`)
+	await page1.goto(`http://localhost:3000/code-editor`)
 	await page2.goto(`http://localhost:3000/code-editor`)
 
-	const monacoEditor = page.locator('.monaco-editor').nth(0)
-	await monacoEditor.click()
+	await expect(page1.getByText(`CRDT connected`)).toBeVisible()
+	await expect(page2.getByText(`CRDT connected`)).toBeVisible()
 
-	await page.keyboard.press('ControlOrMeta+A')
-	await page.keyboard.press(`Backspace`)
+	const normalizeSpaces = (str?: string | null) => {
+		if (!str) {
+			return ''
+		}
+		return str.replace(/\u00A0/g, ' ').trim()
+	}
+	const writeIntoMonaco = async (page: Page, text: string): Promise<string> => {
+		const monacoEditor = page.locator('.monaco-editor').nth(0)
+		await monacoEditor.click()
 
-	let editor1Value = await page.locator('.monaco-editor').nth(0).textContent()
+		await page.keyboard.press('ControlOrMeta+KeyA')
+		await page.keyboard.press('Backspace')
+		await page1.waitForTimeout(1_000)
 
-	await page.keyboard.type('# Hello world!')
+		await page1.keyboard.type(text)
 
-	await page.waitForTimeout(5_000)
-	editor1Value = await page.locator('.monaco-editor').nth(0).textContent()
+		await page1.waitForTimeout(1_000)
 
-	const value = await page2.locator('.monaco-editor').nth(0).textContent()
+		const value = await page.locator('.monaco-editor').nth(0).textContent()
 
-	expect(value?.trim()).toEqual(editor1Value?.trim())
+		return normalizeSpaces(value)
+	}
+
+	const readFromMonaco = async (page: Page) => {
+		const value = await page.locator('.monaco-editor').nth(0).textContent()
+
+		return normalizeSpaces(value)
+	}
+
+	let editor1Value = await writeIntoMonaco(page1, '# Hello world!')
+	let editor2Value = await readFromMonaco(page2)
+
+	expect(editor1Value).toEqual(editor2Value)
+	expect(editor1Value).toEqual(`1# Hello world!`)
+
+	editor2Value = await writeIntoMonaco(page2, '# Good morning!')
+	editor1Value = await readFromMonaco(page1)
+
+	expect(editor1Value).toEqual(editor2Value)
+	expect(editor1Value).toEqual(`1# Good morning!`)
 })
