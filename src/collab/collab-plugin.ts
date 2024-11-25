@@ -27,9 +27,6 @@ export const collabPlugin = (
 					return content
 				},
 				async store(data): Promise<void> {
-					// const context = data.context as CollabContext
-					// context.user
-
 					await server.queries.collab.upsert({
 						content: data.state,
 						id: data.documentName,
