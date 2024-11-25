@@ -14,7 +14,7 @@
 ```bash
 gh repo clone giacomorebonato/fastrat-test # clone the repository
 pnpm install # install dependencies
-pnpm dev     # start the project in dev mode
+node --run dev     # start the project in dev mode
 ```
 
 To enable authentication and a production database, rename `.env.example` to `.env` and fill the fields properly.  
