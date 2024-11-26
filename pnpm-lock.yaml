@@ -188,7 +188,7 @@ importers:
         version: 0.2.6
       '@vitejs/plugin-react':
         specifier: ^4.3.3
-        version: 4.3.3(vite@5.4.11(@types/node@22.10.0)(terser@5.36.0))
+        version: 4.3.4(vite@5.4.11(@types/node@22.10.0)(terser@5.36.0))
       '@vitest/coverage-v8':
         specifier: ^2.1.5
         version: 2.1.5(vitest@2.1.5(@types/node@22.10.0)(terser@5.36.0))
@@ -2664,11 +2664,11 @@ packages:
     engines: {node: '>=16.14.0'}
     hasBin: true
 
-  '@vitejs/plugin-react@4.3.3':
-    resolution: {integrity: sha512-NooDe9GpHGqNns1i8XDERg0Vsg5SSYRhRxxyTGogUdkdNt47jal+fbuYi+Yfq6pzRCKXyoPcWisfxE6RIM3GKA==}
+  '@vitejs/plugin-react@4.3.4':
+    resolution: {integrity: sha512-SCCPBJtYLdE8PX/7ZQAs1QAZ8Jqwih+0VBLum1EGqmCCQal+MIUqLCzj3ZUy8ufbC0cAM4LRlSTm7IQJwWT4ug==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: ^4.2.0 || ^5.0.0
+      vite: ^4.2.0 || ^5.0.0 || ^6.0.0
 
   '@vitest/coverage-v8@2.1.5':
     resolution: {integrity: sha512-/RoopB7XGW7UEkUndRXF87A9CwkoZAJW01pj8/3pgmDVsjMH2IKy6H1A38po9tmUlwhSyYs0az82rbKd9Yaynw==}
@@ -8370,7 +8370,7 @@ snapshots:
       '@vinxi/react-server-dom': 0.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.4.11(@types/node@22.10.0)(terser@5.36.0))
       '@vinxi/server-components': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.10.0)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.12)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.7.2))
       '@vinxi/server-functions': 0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.10.0)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.12)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.7.2))
-      '@vitejs/plugin-react': 4.3.3(vite@5.4.11(@types/node@22.10.0)(terser@5.36.0))
+      '@vitejs/plugin-react': 4.3.4(vite@5.4.11(@types/node@22.10.0)(terser@5.36.0))
       import-meta-resolve: 4.1.0
       isbot: 5.1.17
       jsesc: 3.0.2
@@ -8661,7 +8661,7 @@ snapshots:
       sharp-ico: 0.1.5
       unconfig: 0.3.13
 
-  '@vitejs/plugin-react@4.3.3(vite@5.4.11(@types/node@22.10.0)(terser@5.36.0))':
+  '@vitejs/plugin-react@4.3.4(vite@5.4.11(@types/node@22.10.0)(terser@5.36.0))':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.0)
