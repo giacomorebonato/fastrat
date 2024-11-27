@@ -5,7 +5,7 @@ import {
 	createRootRouteWithContext,
 } from '@tanstack/react-router'
 import { HelmetProvider } from 'react-helmet-async'
-import { createLink, trpcClient } from '#/browser/trpc-client'
+import { createLinks, trpcClient } from '#/browser/trpc-client'
 import { ClientOnly } from '#/server/client-only'
 import { CustomMeta } from '#/server/use-custom-meta'
 import type { RouterContext } from '#/types/router-context'
@@ -22,7 +22,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 
 const queryClient = new QueryClient()
 const apiClient = trpcClient.createClient({
-	links: [createLink()],
+	links: [...createLinks()],
 })
 
 function RootComponent() {
