@@ -66,8 +66,8 @@ importers:
         specifier: ^1.81.9
         version: 1.85.3(vite@5.4.11(@types/node@22.10.1)(terser@5.36.0))
       '@tanstack/start':
-        specifier: 1.85.7
-        version: 1.85.7(@libsql/client@0.14.0)(@types/node@22.10.1)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.14)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.1)(terser@5.36.0))
+        specifier: 1.85.8
+        version: 1.85.8(@libsql/client@0.14.0)(@types/node@22.10.1)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.14)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.1)(terser@5.36.0))
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.648(@trpc/server@11.0.0-rc.648(typescript@5.7.2))(typescript@5.7.2)
@@ -2476,8 +2476,8 @@ packages:
     resolution: {integrity: sha512-/hHPYW3JShufTKW9mZcTgnGWclKfsbd7GbOgbVZgVwyKg3qNwYnc8pUMC8ycBsacG/ClDBTornEOPYygtbcnWg==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.85.7':
-    resolution: {integrity: sha512-kH6tEvnnodTrv2IeKZMjQXyCoBQRofLfZEBq8KWMjQlz7aGpuV0JN3ZKcwrtcZjYm/gv+TULwm+qdRKMUcfq2w==}
+  '@tanstack/start@1.85.8':
+    resolution: {integrity: sha512-Zbc9+B8Yn4PeqjluFd9qMX/dWKbMZINsr1Yo5/crl5vNP19RclehHY6XCUN840w3moiBRr3CK1PjsgCHbLUj7w==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -8368,13 +8368,13 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.26.2
       '@babel/core': 7.26.0
-      '@babel/generator': 7.26.2
-      '@babel/parser': 7.26.2
+      '@babel/generator': 7.26.3
+      '@babel/parser': 7.26.3
       '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.0)
       '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.0)
       '@babel/template': 7.25.9
-      '@babel/traverse': 7.25.9
-      '@babel/types': 7.26.0
+      '@babel/traverse': 7.26.4
+      '@babel/types': 7.26.3
       '@types/babel__code-frame': 7.0.6
       '@types/babel__core': 7.20.5
       '@types/babel__generator': 7.6.8
@@ -8385,7 +8385,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.85.7(@libsql/client@0.14.0)(@types/node@22.10.1)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.14)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.1)(terser@5.36.0))':
+  '@tanstack/start@1.85.8(@libsql/client@0.14.0)(@types/node@22.10.1)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.14)(react@18.3.1))(ioredis@5.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.36.0)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.1)(terser@5.36.0))':
     dependencies:
       '@tanstack/react-cross-context': 1.85.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router': 1.85.5(@tanstack/router-generator@1.85.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8637,7 +8637,7 @@ snapshots:
 
   '@vinxi/plugin-directives@0.4.3(vinxi@0.4.3(@libsql/client@0.14.0)(@types/node@22.10.1)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.14)(react@18.3.1))(ioredis@5.4.1)(terser@5.36.0)(typescript@5.7.2))':
     dependencies:
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.3
       acorn: 8.14.0
       acorn-jsx: 5.3.2(acorn@8.14.0)
       acorn-loose: 8.4.0
@@ -10738,8 +10738,8 @@ snapshots:
 
   magicast@0.2.11:
     dependencies:
-      '@babel/parser': 7.26.2
-      '@babel/types': 7.26.0
+      '@babel/parser': 7.26.3
+      '@babel/types': 7.26.3
       recast: 0.23.9
 
   magicast@0.3.5:
@@ -12624,7 +12624,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.26.0
       '@babel/standalone': 7.26.2
-      '@babel/types': 7.26.0
+      '@babel/types': 7.26.3
       defu: 6.1.4
       jiti: 2.4.1
       mri: 1.2.0
