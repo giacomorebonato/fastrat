@@ -8,7 +8,8 @@
 		"rules": {
 			"recommended": true,
 			"style": {
-				"noUnusedTemplateLiteral": "off"
+				"noUnusedTemplateLiteral": "off",
+				"noNamespace": "error"
 			},
 			"suspicious": {
 				"useAwait": "error"
@@ -43,7 +44,8 @@
 			"dist/",
 			"coverage/",
 			"coverage-reports/",
-			"playwright-report/"
+			"playwright-report/",
+			"./test-results/"
 		]
 	}
 }
