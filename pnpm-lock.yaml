@@ -200,7 +200,7 @@ importers:
         version: 9.1.0
       daisyui:
         specifier: ^4.12.14
-        version: 4.12.21(postcss@8.4.49)
+        version: 4.12.22(postcss@8.4.49)
       del-cli:
         specifier: ^6.0.0
         version: 6.0.0
@@ -3237,8 +3237,8 @@ packages:
     resolution: {integrity: sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  daisyui@4.12.21:
-    resolution: {integrity: sha512-dKfJoGTf5b7D75pVYdNcbhBQd73IOUh9wuXeWHm0qXus4FYvFJJpS9/EX41hAyhojE6s09/ow6wGgPGERzD5wg==}
+  daisyui@4.12.22:
+    resolution: {integrity: sha512-HDLWbmTnXxhE1MrMgSWjVgdRt+bVYHvfNbW3GTsyIokRSqTHonUTrxV3RhpPDjGIWaHt+ELtDCTYCtUFgL2/Nw==}
     engines: {node: '>=16.9.0'}
 
   data-uri-to-buffer@4.0.1:
@@ -4170,8 +4170,8 @@ packages:
     resolution: {integrity: sha512-RKtWF8pGmS87i2D6gqQu/l7EYRlVdfzemCJN/P3UOs//x1QE7mfhvzHIApBTRf7axvT6DMGwSwBXYCT0nfB9xw==}
     engines: {node: '>= 0.4'}
 
-  is-date-object@1.0.5:
-    resolution: {integrity: sha512-9YQaSxsAiSwcvS33MBk3wTCVnWK+HhF8VZR2jRxehM16QcVOdHqPn4VPHmRK4lSr38n9JriurInLcP90xsYNfQ==}
+  is-date-object@1.1.0:
+    resolution: {integrity: sha512-PwwhEakHVKTdRNVOw+/Gyh0+MzlCl4R6qKvkhuvLtPMggI1WAHt9sOwZxQLSGpUaDnrdyDsomoRgNnCfKNSXXg==}
     engines: {node: '>= 0.4'}
 
   is-decimal@2.0.1:
@@ -9316,7 +9316,7 @@ snapshots:
 
   culori@3.3.0: {}
 
-  daisyui@4.12.21(postcss@8.4.49):
+  daisyui@4.12.22(postcss@8.4.49):
     dependencies:
       css-selector-tokenizer: 0.8.0
       culori: 3.3.0
@@ -9593,7 +9593,7 @@ snapshots:
   es-to-primitive@1.3.0:
     dependencies:
       is-callable: 1.2.7
-      is-date-object: 1.0.5
+      is-date-object: 1.1.0
       is-symbol: 1.1.0
 
   esast-util-from-estree@2.0.0:
@@ -10377,8 +10377,9 @@ snapshots:
       get-intrinsic: 1.2.6
       is-typed-array: 1.1.13
 
-  is-date-object@1.0.5:
+  is-date-object@1.1.0:
     dependencies:
+      call-bound: 1.0.2
       has-tostringtag: 1.0.2
 
   is-decimal@2.0.1: {}
@@ -12915,7 +12916,7 @@ snapshots:
       function.prototype.name: 1.1.6
       has-tostringtag: 1.0.2
       is-async-function: 2.0.0
-      is-date-object: 1.0.5
+      is-date-object: 1.1.0
       is-finalizationregistry: 1.1.0
       is-generator-function: 1.0.10
       is-regex: 1.2.1
