@@ -66,8 +66,8 @@ importers:
         specifier: ^1.81.9
         version: 1.87.13(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))
       '@tanstack/start':
-        specifier: 1.90.0
-        version: 1.90.0(@libsql/client@0.14.0)(@types/node@22.10.2)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.16)(react@18.3.1))(ioredis@5.4.1)(jiti@2.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(yaml@2.6.1)
+        specifier: 1.90.1
+        version: 1.90.1(@libsql/client@0.14.0)(@types/node@22.10.2)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.16)(react@18.3.1))(ioredis@5.4.1)(jiti@2.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(yaml@2.6.1)
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.660(@trpc/server@11.0.0-rc.660(typescript@5.7.2))(typescript@5.7.2)
@@ -2465,8 +2465,8 @@ packages:
     resolution: {integrity: sha512-hPjcAiuz2Cpi758buZkUCIPmJE2bRHbUQZD6r8W46G6tlwWzYEjSYCOBpZ2LojBBLX9sYp6WV00nEGhIj6k5mQ==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.90.0':
-    resolution: {integrity: sha512-fsgdey/zVQmmBxFfi3rAR3BKDlnTGDM//4EP6+SHZBheeA56LDBvsru+UhqbK5P4C7A5L+WgItbTq6F6sWrz/g==}
+  '@tanstack/start@1.90.1':
+    resolution: {integrity: sha512-SojByodtO4ynMyePHs2o5uQsDaAmoJbp8RMA7dh/1tM5/1wxgLUfc14Oq4BG7ZyBsj6UFGGdlHMLGt6zlokxEA==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -8377,7 +8377,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.90.0(@libsql/client@0.14.0)(@types/node@22.10.2)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.16)(react@18.3.1))(ioredis@5.4.1)(jiti@2.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(yaml@2.6.1)':
+  '@tanstack/start@1.90.1(@libsql/client@0.14.0)(@types/node@22.10.2)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.16)(react@18.3.1))(ioredis@5.4.1)(jiti@2.4.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(yaml@2.6.1)':
     dependencies:
       '@tanstack/react-cross-context': 1.87.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router': 1.90.0(@tanstack/router-generator@1.87.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
