@@ -209,7 +209,7 @@ importers:
         version: 0.28.1
       globals:
         specifier: ^15.12.0
-        version: 15.13.0
+        version: 15.14.0
       html-validate:
         specifier: ^8.25.1
         version: 8.27.0(vitest@2.1.8(@types/node@22.10.2)(terser@5.37.0))
@@ -3916,8 +3916,8 @@ packages:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
     engines: {node: '>=4'}
 
-  globals@15.13.0:
-    resolution: {integrity: sha512-49TewVEz0UxZjr1WYYsWpPrhyC/B/pA8Bq0fUmet2n+eR7yn0IvNzNaoBwnK6mdkzcN+se7Ez9zUgULTz2QH4g==}
+  globals@15.14.0:
+    resolution: {integrity: sha512-OkToC372DtlQeje9/zHIo5CT8lRP/FUgEOKBEhU4e0abL7J7CD24fD9ohiLN5hagG/kWCYj4K5oaxxtj2Z0Dig==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -10062,7 +10062,7 @@ snapshots:
 
   globals@11.12.0: {}
 
-  globals@15.13.0: {}
+  globals@15.14.0: {}
 
   globalthis@1.0.4:
     dependencies:
