@@ -66,8 +66,8 @@ importers:
         specifier: ^1.81.9
         version: 1.91.1(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))
       '@tanstack/start':
-        specifier: 1.92.9
-        version: 1.92.9(@libsql/client@0.14.0)(@types/node@22.10.2)(db0@0.2.1(@libsql/client@0.14.0)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1)))(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1))(ioredis@5.4.2)(jiti@2.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(yaml@2.6.1)
+        specifier: 1.92.10
+        version: 1.92.10(@libsql/client@0.14.0)(@types/node@22.10.2)(db0@0.2.1(@libsql/client@0.14.0)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1)))(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1))(ioredis@5.4.2)(jiti@2.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(yaml@2.6.1)
       '@trpc/client':
         specifier: npm:@trpc/client@next
         version: 11.0.0-rc.666(@trpc/server@11.0.0-rc.666(typescript@5.7.2))(typescript@5.7.2)
@@ -2615,8 +2615,8 @@ packages:
     resolution: {integrity: sha512-dwfMgjPBszAc8sE0qBGx4VW/cwQ849KX3XgSb/hlwv/z4k+Ll2UpIkUxcpCxMSox423ZvIc6N+rByIU0xmP1zA==}
     engines: {node: '>=12'}
 
-  '@tanstack/start@1.92.9':
-    resolution: {integrity: sha512-gdHN5TcD+9RNpqkoMvQizb0eDYmUWc/zU7SDxgMZ7Z1emyuVJvAa0vU589EEKQLhfH7pLWUKqKqgPTbpvC32fw==}
+  '@tanstack/start@1.92.10':
+    resolution: {integrity: sha512-YzMX7jl8cmyguVoaeZ0FZjTDxP0CBwc1cin7+efJC+1xIkbpGUBUCb02Pz/ul1nlEqTbivNpVQ1BRMBPhypOTw==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=18.0.0 || >=19.0.0'
@@ -8613,7 +8613,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/start@1.92.9(@libsql/client@0.14.0)(@types/node@22.10.2)(db0@0.2.1(@libsql/client@0.14.0)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1)))(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1))(ioredis@5.4.2)(jiti@2.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(yaml@2.6.1)':
+  '@tanstack/start@1.92.10(@libsql/client@0.14.0)(@types/node@22.10.2)(db0@0.2.1(@libsql/client@0.14.0)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1)))(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1))(ioredis@5.4.2)(jiti@2.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(yaml@2.6.1)':
     dependencies:
       '@tanstack/react-cross-context': 1.87.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-router': 1.92.9(@tanstack/router-generator@1.87.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
