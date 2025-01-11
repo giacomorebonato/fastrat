@@ -21,8 +21,8 @@ importers:
         specifier: ^8.0.3
         version: 8.0.4
       '@fastify/websocket':
-        specifier: 11.0.1
-        version: 11.0.1
+        specifier: 11.0.2
+        version: 11.0.2
       '@hocuspocus/extension-database':
         specifier: 2.15.0
         version: 2.15.0(y-protocols@1.0.6(yjs@13.6.21))(yjs@13.6.21)
@@ -1788,8 +1788,8 @@ packages:
   '@fastify/static@8.0.4':
     resolution: {integrity: sha512-JdJIlXDYXZxbTFQazWOEfHxyD5uRXqRsLnp4rV9MwJnxadA0rrWBI8ZelPF2TPk/xDi5wunY/6ZmfwHXld13bA==}
 
-  '@fastify/websocket@11.0.1':
-    resolution: {integrity: sha512-44yam5+t1I9v09hWBYO+ezV88+mb9Se2BjgERtzB/68+0mGeTfFkjBeDBe2y+ZdiPpeO2rhevhdnfrBm5mqH+Q==}
+  '@fastify/websocket@11.0.2':
+    resolution: {integrity: sha512-1oyJkNSZNJGjo/A5fXvlpEcm1kTBD91nRAN9lA7RNVsVNsyC5DuhOXdNL9/4UawVe7SKvzPT/QVI4RdtE9ylnA==}
 
   '@graphql-typed-document-node/core@3.2.0':
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
@@ -7733,7 +7733,7 @@ snapshots:
       fastq: 1.18.0
       glob: 11.0.1
 
-  '@fastify/websocket@11.0.1':
+  '@fastify/websocket@11.0.2':
     dependencies:
       duplexify: 4.1.3
       fastify-plugin: 5.0.1
