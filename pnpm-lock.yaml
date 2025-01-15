@@ -25,16 +25,16 @@ importers:
         version: 11.0.2
       '@hocuspocus/extension-database':
         specifier: 2.15.0
-        version: 2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
+        version: 2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
       '@hocuspocus/extension-logger':
         specifier: 2.15.0
-        version: 2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
+        version: 2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
       '@hocuspocus/provider':
         specifier: 2.15.0
-        version: 2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
+        version: 2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
       '@hocuspocus/server':
         specifier: 2.15.0
-        version: 2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
+        version: 2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
       '@libsql/client':
         specifier: ^0.14.0
         version: 0.14.0
@@ -142,13 +142,13 @@ importers:
         version: 2.1.0
       y-indexeddb:
         specifier: ^9.0.12
-        version: 9.0.12(yjs@13.6.22)
+        version: 9.0.12(yjs@13.6.23)
       y-monaco:
         specifier: ^0.1.6
-        version: 0.1.6(monaco-editor@0.52.2)(yjs@13.6.22)
+        version: 0.1.6(monaco-editor@0.52.2)(yjs@13.6.23)
       yjs:
         specifier: ^13.6.20
-        version: 13.6.22
+        version: 13.6.23
       zod:
         specifier: ^3.23.8
         version: 3.24.1
@@ -6455,8 +6455,8 @@ packages:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
 
-  yjs@13.6.22:
-    resolution: {integrity: sha512-+mJxdbmitioqqsql1Zro4dqT3t9HgmW4dxlPtkcsKFJhXSAMyk3lwawhQFxZjj2upJXzhrTUDsaDkZgJWnv3NA==}
+  yjs@13.6.23:
+    resolution: {integrity: sha512-ExtnT5WIOVpkL56bhLeisG/N5c4fmzKn4k0ROVfJa5TY2QHbH7F0Wu2T5ZhR7ErsFWQEFafyrnSI8TPKVF9Few==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
 
   zen-observable-ts@1.2.5:
@@ -7797,37 +7797,37 @@ snapshots:
     dependencies:
       lib0: 0.2.99
 
-  '@hocuspocus/extension-database@2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)':
+  '@hocuspocus/extension-database@2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)':
     dependencies:
-      '@hocuspocus/server': 2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
-      yjs: 13.6.22
+      '@hocuspocus/server': 2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
+      yjs: 13.6.23
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
       - y-protocols
 
-  '@hocuspocus/extension-logger@2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)':
+  '@hocuspocus/extension-logger@2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)':
     dependencies:
-      '@hocuspocus/server': 2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
+      '@hocuspocus/server': 2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
       - y-protocols
       - yjs
 
-  '@hocuspocus/provider@2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)':
+  '@hocuspocus/provider@2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)':
     dependencies:
       '@hocuspocus/common': 2.15.0
       '@lifeomic/attempt': 3.1.0
       lib0: 0.2.99
       ws: 8.18.0
-      y-protocols: 1.0.6(yjs@13.6.22)
-      yjs: 13.6.22
+      y-protocols: 1.0.6(yjs@13.6.23)
+      yjs: 13.6.23
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@hocuspocus/server@2.15.0(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)':
+  '@hocuspocus/server@2.15.0(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)':
     dependencies:
       '@hocuspocus/common': 2.15.0
       async-lock: 1.4.1
@@ -7835,8 +7835,8 @@ snapshots:
       lib0: 0.2.99
       uuid: 11.0.4
       ws: 8.18.0
-      y-protocols: 1.0.6(yjs@13.6.22)
-      yjs: 13.6.22
+      y-protocols: 1.0.6(yjs@13.6.23)
+      yjs: 13.6.23
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -13331,21 +13331,21 @@ snapshots:
 
   ws@8.18.0: {}
 
-  y-indexeddb@9.0.12(yjs@13.6.22):
+  y-indexeddb@9.0.12(yjs@13.6.23):
     dependencies:
       lib0: 0.2.99
-      yjs: 13.6.22
+      yjs: 13.6.23
 
-  y-monaco@0.1.6(monaco-editor@0.52.2)(yjs@13.6.22):
+  y-monaco@0.1.6(monaco-editor@0.52.2)(yjs@13.6.23):
     dependencies:
       lib0: 0.2.99
       monaco-editor: 0.52.2
-      yjs: 13.6.22
+      yjs: 13.6.23
 
-  y-protocols@1.0.6(yjs@13.6.22):
+  y-protocols@1.0.6(yjs@13.6.23):
     dependencies:
       lib0: 0.2.99
-      yjs: 13.6.22
+      yjs: 13.6.23
 
   y18n@5.0.8: {}
 
@@ -13373,7 +13373,7 @@ snapshots:
       y18n: 5.0.8
       yargs-parser: 21.1.1
 
-  yjs@13.6.22:
+  yjs@13.6.23:
     dependencies:
       lib0: 0.2.99
 
