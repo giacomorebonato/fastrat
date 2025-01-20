@@ -221,7 +221,7 @@ importers:
         version: 15.4.1
       monocart-coverage-reports:
         specifier: ^2.11.3
-        version: 2.11.6
+        version: 2.12.0
       pino-pretty:
         specifier: ^13.0.0
         version: 13.0.0
@@ -4804,8 +4804,8 @@ packages:
   monaco-editor@0.52.2:
     resolution: {integrity: sha512-GEQWEZmfkOGLdd3XK8ryrfWz3AIP8YymVXiPHEdewrUq7mh0qrKrfHLNCXcbB6sTnMLnOZ3ztSiKcciFUkIJwQ==}
 
-  monocart-coverage-reports@2.11.6:
-    resolution: {integrity: sha512-BBKfb3LKjt/Y28t3W2jqMbff2Au5EtKjGn1rScPI7D8FN5QlTw+V9pJBkNSkh+R+FqMXNUeNVoUeNAk1CySchg==}
+  monocart-coverage-reports@2.12.0:
+    resolution: {integrity: sha512-smAwiZfU+bjhprWAw329CX6ng1KxoEdz4wtAFI7IKWv1ptHzGRI6qhL1NCREMq0cyqQPDYpiQzbztx0sSyEm3g==}
     hasBin: true
 
   monocart-locator@1.0.2:
@@ -11264,7 +11264,7 @@ snapshots:
 
   monaco-editor@0.52.2: {}
 
-  monocart-coverage-reports@2.11.6:
+  monocart-coverage-reports@2.12.0:
     dependencies:
       acorn: 8.14.0
       acorn-loose: 8.4.0
