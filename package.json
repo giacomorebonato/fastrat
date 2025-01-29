@@ -28,7 +28,7 @@
 		"@fastify/static": "^8.0.3",
 		"@fastify/websocket": "11.0.2",
 		"@hocuspocus/extension-database": "2.15.1",
-		"@hocuspocus/extension-logger": "2.15.0",
+		"@hocuspocus/extension-logger": "2.15.1",
 		"@hocuspocus/provider": "2.15.0",
 		"@hocuspocus/server": "2.15.0",
 		"@libsql/client": "^0.14.0",
