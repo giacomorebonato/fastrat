@@ -29,7 +29,7 @@
 		"@fastify/websocket": "11.0.2",
 		"@hocuspocus/extension-database": "2.15.2",
 		"@hocuspocus/extension-logger": "2.15.2",
-		"@hocuspocus/provider": "2.15.1",
+		"@hocuspocus/provider": "2.15.2",
 		"@hocuspocus/server": "2.15.1",
 		"@libsql/client": "^0.14.0",
 		"@mdx-js/mdx": "^3.1.0",
