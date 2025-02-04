@@ -27,8 +27,8 @@ importers:
         specifier: 2.15.2
         version: 2.15.2(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
       '@hocuspocus/extension-logger':
-        specifier: 2.15.1
-        version: 2.15.1(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
+        specifier: 2.15.2
+        version: 2.15.2(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
       '@hocuspocus/provider':
         specifier: 2.15.1
         version: 2.15.1(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
@@ -1796,8 +1796,8 @@ packages:
     peerDependencies:
       yjs: ^13.6.8
 
-  '@hocuspocus/extension-logger@2.15.1':
-    resolution: {integrity: sha512-bhmgA8alwGjJOdBqfi6WXJX8X8AkNzeKnBW9tPpMq7ktMr6GtyYIalzEbnIOc+HzJ6gbi6uAtrOZN2A4/flM1Q==}
+  '@hocuspocus/extension-logger@2.15.2':
+    resolution: {integrity: sha512-nqSnSFI+xO7dBTsgzSANKvx09ptq8J4Doz3AdLgxfaweYC85qFao7mAx1ZCtWoVHseVwBYua6S3dTwQq5IsWEg==}
 
   '@hocuspocus/provider@2.15.1':
     resolution: {integrity: sha512-XIWdu6WYasmfMxmlw2XqZrKvSYJ7qY4Tv+eFL+3PKt3Zqkfw7X0P8GkmApVOOa/1ZzfCTCILV4n4G0cppCJLcw==}
@@ -7764,9 +7764,9 @@ snapshots:
       - utf-8-validate
       - y-protocols
 
-  '@hocuspocus/extension-logger@2.15.1(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)':
+  '@hocuspocus/extension-logger@2.15.2(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)':
     dependencies:
-      '@hocuspocus/server': 2.15.1(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
+      '@hocuspocus/server': 2.15.2(y-protocols@1.0.6(yjs@13.6.23))(yjs@13.6.23)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
