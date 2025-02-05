@@ -102,7 +102,7 @@
 		"tailwindcss": "^3.4.15",
 		"typescript": "^5.7.2",
 		"vavite": "^5.0.1",
-		"vite": "^5.4.11",
+		"vite": "^6.0.0",
 		"vite-plugin-pwa": "^0.21.0",
 		"vitest": "^2.1.5",
 		"workbox-window": "^7.3.0"
