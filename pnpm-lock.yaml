@@ -99,8 +99,8 @@ importers:
         specifier: ^0.36.4
         version: 0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1)
       drizzle-zod:
-        specifier: ^0.5.1
-        version: 0.5.1(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1))(zod@3.24.1)
+        specifier: ^0.8.0
+        version: 0.8.0(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1))(zod@3.24.1)
       fast-jwt:
         specifier: ^5.0.0
         version: 5.0.5
@@ -3596,11 +3596,11 @@ packages:
       sqlite3:
         optional: true
 
-  drizzle-zod@0.5.1:
-    resolution: {integrity: sha512-C/8bvzUH/zSnVfwdSibOgFjLhtDtbKYmkbPbUCq46QZyZCH6kODIMSOgZ8R7rVjoI+tCj3k06MRJMDqsIeoS4A==}
+  drizzle-zod@0.8.0:
+    resolution: {integrity: sha512-nt8tzHD5zF+zgvVna00ZuTq7eIvM2fDeQfcO5/QFqombQSBb7RU/zp69vB4IM8DbRi2ejNj/raOdE/XTTLl5/g==}
     peerDependencies:
-      drizzle-orm: '>=0.23.13'
-      zod: '*'
+      drizzle-orm: '>=0.36.0'
+      zod: ^3.25.0
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -4899,6 +4899,7 @@ packages:
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
+    deprecated: Use your platform's native DOMException instead
 
   node-fetch-native@1.6.6:
     resolution: {integrity: sha512-8Mc2HhqPdlIfedsuZoc3yioPuzp6b+L5jRCRY1QzuWZh2EGJVQrGppC6V6cF0bLdbW0+O2YpqCA25aF/1lvipQ==}
@@ -10059,7 +10060,7 @@ snapshots:
       '@types/react': 18.3.18
       react: 18.3.1
 
-  drizzle-zod@0.5.1(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1))(zod@3.24.1):
+  drizzle-zod@0.8.0(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1))(zod@3.24.1):
     dependencies:
       drizzle-orm: 0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1)
       zod: 3.24.1
