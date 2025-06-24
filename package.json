@@ -24,7 +24,7 @@
 	"dependencies": {
 		"@apollo/client": "^3.11.10",
 		"@fastify/cookie": "^11.0.1",
-		"@fastify/oauth2": "8.1.1",
+		"@fastify/oauth2": "8.1.2",
 		"@fastify/static": "^8.0.3",
 		"@fastify/websocket": "11.0.2",
 		"@hocuspocus/extension-database": "2.15.2",
