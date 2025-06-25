@@ -112,7 +112,7 @@ importers:
         version: 5.0.1
       isbot:
         specifier: ^5.1.17
-        version: 5.1.22
+        version: 5.1.28
       jsesc:
         specifier: ^3.0.2
         version: 3.1.0
@@ -4471,8 +4471,8 @@ packages:
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
-  isbot@5.1.22:
-    resolution: {integrity: sha512-RqCFY3cJy3c2y1I+rMn81cfzAR4XJwfPBC+M8kffUjbPzxApzyyv7Tbm1C/gXXq2dSCuD238pKFEWlQMTWsTFw==}
+  isbot@5.1.28:
+    resolution: {integrity: sha512-qrOp4g3xj8YNse4biorv6O5ZShwsJM0trsoda4y7j/Su7ZtTTfVXFzbKkpgcSoDrHS8FcTuUwcU04YimZlZOxw==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -9135,7 +9135,7 @@ snapshots:
       '@tanstack/start-client': 1.99.6(@libsql/client@0.14.0)(@types/node@22.13.1)(db0@0.2.1(@libsql/client@0.14.0)(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1)))(drizzle-orm@0.36.4(@libsql/client@0.14.0)(@types/react@18.3.18)(react@18.3.1))(ioredis@5.4.2)(jiti@2.4.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.37.0)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
       '@vitejs/plugin-react': 4.3.4(vite@5.4.14(@types/node@22.13.1)(terser@5.37.0))
       h3: 1.13.0
-      isbot: 5.1.22
+      isbot: 5.1.28
       jsesc: 3.1.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -11251,7 +11251,7 @@ snapshots:
 
   isarray@2.0.5: {}
 
-  isbot@5.1.22: {}
+  isbot@5.1.28: {}
 
   isexe@2.0.0: {}
 
