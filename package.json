@@ -90,7 +90,7 @@
 		"concurrently": "^9.1.0",
 		"daisyui": "^4.12.14",
 		"del-cli": "^6.0.0",
-		"drizzle-kit": "^0.28.1",
+		"drizzle-kit": "^0.31.0",
 		"globals": "^15.12.0",
 		"html-validate": "^8.25.1",
 		"husky": "^9.1.7",
