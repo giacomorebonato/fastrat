@@ -51,7 +51,7 @@
 		"date-fns": "^4.1.0",
 		"debounce": "^2.2.0",
 		"dotenv": "^16.4.5",
-		"drizzle-orm": "^0.36.4",
+		"drizzle-orm": "^0.44.0",
 		"drizzle-zod": "^0.5.1",
 		"fast-jwt": "^5.0.0",
 		"fastify": "5.2.1",
