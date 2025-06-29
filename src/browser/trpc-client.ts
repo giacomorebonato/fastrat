@@ -1,10 +1,4 @@
-import {
-	createTRPCReact,
-	createWSClient,
-	httpBatchLink,
-	splitLink,
-	wsLink,
-} from '@trpc/react-query'
+import { createTRPCReact, httpBatchLink, loggerLink } from '@trpc/react-query'
 import superjson from 'superjson'
 import type { ApiRouter } from '#/server/api-router.js'
 
@@ -20,27 +14,17 @@ const getProtocol = (
 	return type
 }
 
-export function createLink() {
+export function createLinks() {
 	if (import.meta.env.SSR) {
-		return httpBatchLink({
-			transformer: superjson,
-			url: `${process.env.SITE_URL}/trpc`,
-		})
+		return [
+			httpBatchLink({
+				transformer: superjson,
+				url: `${process.env.SITE_URL}/trpc`,
+			}),
+		]
 	}
 
-	const wsUrl = `${getProtocol('ws')}://${window.location.host}/trpc`
 	const httpUrl = `${getProtocol('http')}://${window.location.host}/trpc`
 
-	const wsClient = createWSClient({ url: wsUrl })
-
-	return splitLink({
-		condition(op) {
-			return op.type === 'subscription'
-		},
-		true: wsLink<ApiRouter>({
-			client: wsClient,
-			transformer: superjson,
-		}),
-		false: httpBatchLink({ url: httpUrl, transformer: superjson }),
-	})
+	return [loggerLink(), httpBatchLink({ url: httpUrl, transformer: superjson })]
 }
